@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:RuleResults>
+    <run:Category name="NIPRGatewaySchemaValidation">
+      <run:Result name="matchesPatternForDATESTAMPOnResponseType" subjectType="com.nipr.ResponseType" message="DATESTAMP in ResponseType value must match one of the patterns ([1-2][0-9][0-9][0-9]01(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31))" category="NIPRGatewaySchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="ResponseType(session/id = 1/134)"/>
+        <run:Detail value="false" message="DATESTAMP &quot;20131024&quot; matches pattern &quot;([1-2][0-9][0-9][0-9]01(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31))&quot; is false"/>
+      </run:Result>
+    </run:Category>
+  </run:RuleResults>
+</run:RuntimeReport>

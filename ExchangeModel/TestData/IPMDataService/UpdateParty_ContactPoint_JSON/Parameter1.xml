@@ -1,0 +1,26 @@
+{
+  "dxsi:type": "com.partyinformation.UpdateParty",
+  "PartyID": "8",
+  "ContactPoint": [{
+    "Pager": "999999999",
+    "Phone": "888888888",
+    "Cell": "777777777",
+    "ContactPointUsage": "STATEMENTS",
+    "Email": "Email@test.com",
+    "Fax": "666666666",
+    "Address": {
+      "Street1": "Street 11",
+      "Street2": "Street 22",
+      "Street3": "Street 33",
+      "POBox": "POBox",
+      "County": "Middlesex",
+      "State": "MA",
+      "AddressType": "HOME",
+      "Country": "US",
+      "ZipCode": "55555",
+      "City": "City"
+    },
+    "WebSite": "www.WebSite.com",
+    "ContactPointType": "WORK"
+  }]
+}

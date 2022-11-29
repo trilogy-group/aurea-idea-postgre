@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<BIG>
+    <BI_RESPONSE>
+        <UserNm>USER1</UserNm>
+        <UserPwd>pass</UserPwd>
+        <RequestId>Ascde546tf4678uhn</RequestId>
+        <ClientCaseId>123456</ClientCaseId>
+        <StatusCd>Done</StatusCd>
+        <PassReviewStatusCd>Done</PassReviewStatusCd>
+        <CreditCheckResultCd>Done</CreditCheckResultCd>
+        <CriminalBackgroundCheckResultCd>Done</CriminalBackgroundCheckResultCd>
+        <OFACBackgroundCheckResultCd>Done</OFACBackgroundCheckResultCd>
+        <RedirectLink>http://test.abc.com/</RedirectLink>
+    </BI_RESPONSE>
+</BIG>

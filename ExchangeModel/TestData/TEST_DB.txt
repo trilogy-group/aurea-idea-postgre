@@ -1,0 +1,96 @@
+DROP DATABASE IF EXISTS TEST_DB;
+CREATE DATABASE TEST_DB;
+
+use TEST_DB ;
+SET FOREIGN_KEY_CHECKS=0;
+
+CREATE TABLE `sc_object` (
+  `tril_gid` varchar(34),
+  `lcid` int(10),
+  `modificationdate` timestamp,
+  `realmid` int(10),
+  `seqid` int(10),
+  `type` int(10),
+  PRIMARY KEY  (`tril_gid`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `sc_data_object` (
+  `tril_gid` varchar(34),
+  `attributes` varchar(34),
+  `description` varchar(255),
+  `fs_nameupper` varchar(255),
+  `name` varchar(255),
+  PRIMARY KEY  (`tril_gid`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `sc_person` (
+  `tril_gid` varchar(34),
+  `address` varchar(34),
+  `countryofbirth` int(10),
+  `email` varchar(50),
+  `eyecolor` int(10),
+  `fax` varchar(20),
+  `firstname` varchar(50),
+  `fs_altlastname` varchar(64),
+  `fs_birthdate` timestamp,
+  `fs_currentdetails` varchar(34),
+  `fs_firstnameupper` varchar(50),
+  `fs_gender` varchar(8),
+  `fs_legalname` varchar(34),
+  `fs_maritalstatus` varchar(16),
+  `fs_natlorigin` varchar(32),
+  `fs_officenumber` varchar(32),
+  `fs_preferredname` varchar(64),
+  `fs_publicityname` varchar(64),
+  `fs_salutation` varchar(64),
+  `fs_spousefirstname` varchar(64),
+  `fs_spouselastname` varchar(64),
+  `fs_suffix` varchar(64),
+  `fs_taxid` varchar(64),
+  `fs_taxidupper` varchar(32),
+  `haircolor` int(10),
+  `heightfeet` int(10),
+  `heightinches` int(10),
+  `iadualregistration` int(10),
+  `ismarkdeleted` int(10),
+  `joindate` timestamp,
+  `lastname` varchar(50),
+  `lastnameupper` varchar(50),
+  `middlename` varchar(50),
+  `npn` varchar(50),
+  `organization` varchar(50),
+  `organizationtype` varchar(50),
+  `phone1` varchar(50),
+  `phone2` varchar(50),
+  `salesitems` int(10),
+  `title` varchar(50),
+  `weig` int(10),
+  PRIMARY KEY  (`tril_gid`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `fs_party` (
+  `tril_gid` varchar(34),
+  `dirtybyte` int(10),
+  `fs_comments` varchar(34),
+  `fs_crdnumber` varchar(255),
+  `fs_dtccid` varchar(4),
+  `fs_dtccid_upper` varchar(34),
+  `fs_healthsavingsaccount` int(17),
+  `fs_k401` int(17),
+  `fs_party` varchar(34),
+  `fs_primarycontactu` varchar(34),
+  `fs_renewalfeepayee` int(10),
+  `fs_savedwitherrors` int(10),
+  `fs_scuser` varchar(34),
+  `fs_syncpdb` int(5),
+  `fs_unid` varchar(255),
+  `fs_unidupper` varchar(255),
+  `lcid` int(10),
+  `modificationdate` timestamp,
+  `partyrole` int(10),
+  `partytype` int(10),
+  `realmid` int(10),
+  `seqid` int(10),
+  `serverseqid` int(10),
+  PRIMARY KEY  (`tril_gid`)
+) ENGINE=InnoDB;

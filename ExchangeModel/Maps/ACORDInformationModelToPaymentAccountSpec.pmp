@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToPaymentAccountSpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='paymentaccountspec.PaymentAccountSpec'>
+  <ClassMap isSynthetic='false' name='ClassMap1' sourceTypeName='org.acord.aim.Party.Party' targetTypeName='paymentaccountspec.ROOT' autoReverse='false'>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AccountForAccountOnParty/asBankAccount'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='BankAccountToRECORD' sourceTypeName='org.acord.aim.Finance.BankAccount.BankAccount' targetTypeName='paymentaccountspec.RECORD' autoReverse='false'>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <CollectionExpression isSynthetic='false' prefixFunction='allOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='hasValue'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='accountentryaccount/description'>
+              </PathExpression>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='true'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+              </MethodReference>
+              <MethodExpression isSynthetic='false' infix='true'>
+                <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isNotEqualTo'>
+                </MethodReference>
+                <PathExpression isSynthetic='false' pathString='accountentryaccount/description'>
+                </PathExpression>
+                <Literal isSynthetic='false' typeName='java.lang.String' literalString=''>
+                </Literal>
+              </MethodExpression>
+            </MethodExpression>
+          </CollectionExpression>
+          <PathExpression isSynthetic='false' pathString='accountentryaccount/description'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='ABARoutingNumber'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='accountIdentifier'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='accountIdentifier'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AccountNumber'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='effecitvePeriod/endDateTime/date/DateType'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='enddate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='effecitvePeriod/startDateTime/date/DateType'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='startdate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AccountOnParty/TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='partytaxid'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='status'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='bankCheckIdentifier'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PaymentMode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <CollectionExpression isSynthetic='false' prefixFunction='allOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='hasValue'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='AccountOnParty/asOrganization/OrganizationOwnsOrganizationName/fullName'>
+              </PathExpression>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+              </MethodReference>
+              <MethodExpression isSynthetic='false' infix='true'>
+                <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isNotEqualTo'>
+                </MethodReference>
+                <PathExpression isSynthetic='false' pathString='AccountOnParty/asOrganization/OrganizationOwnsOrganizationName/fullName'>
+                </PathExpression>
+                <Literal isSynthetic='false' typeName='java.lang.String' literalString=''>
+                </Literal>
+              </MethodExpression>
+            </MethodExpression>
+          </CollectionExpression>
+          <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+            </Literal>
+            <MethodExpression isSynthetic='false' infix='true'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='AccountOnParty/asOrganization/OrganizationOwnsOrganizationName/fullName'>
+              </PathExpression>
+            </MethodExpression>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+            </Literal>
+          </CollectionExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AccountHolderName'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AccountOnParty/asOrganization/PartyID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PartyID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='bankAccountTypeCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='BankAccountType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <CollectionExpression isSynthetic='false' prefixFunction='allOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='hasValue'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='AccountOnParty/asPerson/PersonOwnsPersonName/fullName'>
+              </PathExpression>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+              </MethodReference>
+              <MethodExpression isSynthetic='false' infix='true'>
+                <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isNotEqualTo'>
+                </MethodReference>
+                <PathExpression isSynthetic='false' pathString='AccountOnParty/asPerson/PersonOwnsPersonName/fullName'>
+                </PathExpression>
+                <Literal isSynthetic='false' typeName='java.lang.String' literalString=''>
+                </Literal>
+              </MethodExpression>
+            </MethodExpression>
+          </CollectionExpression>
+          <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+            </Literal>
+            <MethodExpression isSynthetic='false' infix='true'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='AccountOnParty/asPerson/PersonOwnsPersonName/fullName'>
+              </PathExpression>
+            </MethodExpression>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+            </Literal>
+          </CollectionExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AccountHolderName'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AccountOnParty/asPerson/PartyID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PartyID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='agreementName'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='agreementName'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='PersonToROOT' sourceTypeName='org.acord.aim.Party.Person' targetTypeName='paymentaccountspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForPersonToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForPerson/ContextExtension/hasPaymentAccount'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrganizationToROOT' sourceTypeName='org.acord.aim.Party.Organization' targetTypeName='paymentaccountspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForOrganizationToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForOrganization/ContextExtension/hasPaymentAccount'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+  </ClassMap>
+</SchemaMap>

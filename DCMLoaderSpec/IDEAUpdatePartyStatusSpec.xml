@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loader:loader_spec
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+	xmlns="http://dms.trilogy.com/Loader/Spec"
+	xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+	name="Update Party Status Loader Spec">
+
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	
+	<strategy name="strategy" class="${STRATEGY}">
+		<!--  batch size must be set to 1, because  that the  class StatusValidator don't support batch size  great than 1 -->
+		<property name="memory.batch_size" value="1"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+	</strategy>
+	
+	<object name="st" class="PartyStatusValidator"/>
+
+	<source name="load_file" class="delimited_file_parser">
+			<property name="filename" value="${FILENAME}"/>
+			<property name="delimiters" value=","/>
+			<property name="headerRows" value="1"/>
+			<property name="quote_chars" value="&quot;"/>
+			
+			<indexed_field name="partyid" index="0"/>
+			<indexed_field name="status" index="1" translator="status_code_translator"/>
+			<indexed_field name="statusReason" index="2"/>
+			<indexed_field name="startDate" index="3" translator="date_translator"/>
+			<indexed_field name="endDate" index="4" translator="date_translator"/>
+			<indexed_field name="cascadeStatusChange" index="5"/>
+			<indexed_field name="statusUpdateAction" index="6"/> 
+			
+	</source>
+
+	<translator name="date_translator" class="date_format_translator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="treatEmptyAsNull" value="true"/>
+	</translator>
+
+    <translator name="status_code_translator" class="enum_translator">
+        <property name="enumName" value="Party.RecontractableStatus"/>
+		<property name="throwException" value="true"/>
+        <property name="useDefaultValue" value="false"/>
+		<property name="caseInsensitive" value="true"/>
+    </translator>
+
+	<translator name="status_reason_translator" class="com.trilogy.fs.dms.tools.loader.translate.PartyStatusReasonTranslator">
+		<property name="statusReasonBaseEnumName" value="Party.RecontractableStatus.Reason"/>
+		<property name="statusEnumName" value="Party.RecontractableStatus"/>
+	</translator>
+	
+	<translator name="cascade_status_change_translator" class="boolean_translator">
+		<property name="true" value="true"/>
+		<property name="false" value="false"/>
+		<property name="defaultValue" value="true"/>
+	</translator>
+		
+	<translator name="status_update_action_translator" class="enum_translator">
+        <property name="enumName" value="StatusUpdate.Action"/>
+		<property name="throwException" value="true"/>
+        <property name="useDefaultValue" value="true"/>
+	</translator>
+	
+	<constant name="statusType" class="value">
+              <property name="value" value="22"/>
+    </constant>
+	
+	<constant name="statusTypeName" class="value">
+		<property name="value" value="FSParty.RECONTRACTABLE_STATUS"/>
+    </constant>
+	
+	<!--resolver name="party_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[
+			SELECT party.GID g FROM FSParty party WHERE party.Unid = {0}	
+			]]>
+		</property>
+		<property name="keys" value="string partyid"/>
+	</resolver-->
+
+	<resolver name="party_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value = "SELECT party.GID gid, party.UNID unid FROM FSParty party"/>
+        <property name="gidAlias" value="gid"/>
+        <property name="keys" value="unid"/>
+    </resolver>
+	
+	<constant name="false constant" class="java_static_field">
+	    <property name="className" value="java.lang.Boolean"/>
+        <property name="fieldName" value="FALSE"/>
+	</constant>
+	
+	<map object="st">
+		<action name="update" resolver="party_resolver" >
+			<field name="partyid"/>
+		</action>
+        <map_simple property="NewStatus.StartDate" field="startDate" tag="validator"/>
+        <map_simple property="NewStatus.EndDate" field="endDate" tag="validator"/>
+        <map_simple property="NewStatus.StatusCode" field="status" tag="validator"/>
+		<map_merge property="NewStatus.StatusReason" tag="validator" translator="status_reason_translator">
+			<field name="status"/>
+			<field name="statusReason"/>
+		</map_merge>
+		<map_constant property="CascadeStatusChange" constant="false constant" tag="validator"/>
+		<!--map_simple property="CascadeStatusChange" field="cascadeStatusChange" tag="validator" translator="cascade_status_change_translator"/-->
+		<map_simple property="StatusUpdateAction" field="statusUpdateAction" tag="validator" translator="status_update_action_translator"/>
+		<map_constant property="NewStatus.StatusType" constant="statusType" tag="validator"/>
+		<map_constant property="StatusTypeName" constant="statusTypeName" tag="state"/>
+	</map>
+	
+</loader:loader_spec>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.acord.org/schema/data/awsp/2" targetNamespace="http://www.acord.org/schema/data/awsp/2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--Elements-->
+	<xsd:element name="Acknowledgement" type="Acknowledgement_Type"/>
+	<xsd:element name="Retrieve" type="Retrieve_Type"/>
+	<xsd:element name="RetrieveResponse" type="RetrieveResponse_Type"/>
+	<xsd:element name="FaultReport" type="FaultReport_Type"/>
+	<!-- Types -->
+	<xsd:complexType name="Acknowledgement_Type">
+		<xsd:sequence>
+			<xsd:element name="MessageId" type="UUIDIdentifier_Type" minOccurs="0"/>
+			<xsd:element name="TraceId" type="xsd:anyURI" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Retrieve_Type">
+		<xsd:sequence>
+			<xsd:element name="RequestCode" type="RetrieveRequestCode_Type"/>
+			<xsd:element name="RetrievalParameters" type="RetrievalParameters_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RetrieveResponse_Type">
+		<xsd:sequence minOccurs="0">
+			<xsd:any namespace="##other"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FaultReport_Type">
+		<xsd:sequence>
+			<xsd:element name="MessageId" type="UUIDIdentifier_Type"/>
+			<xsd:element name="FaultDescription" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="TraceId" type="xsd:anyURI" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="UUIDIdentifier_Type">
+		<xsd:restriction base="xsd:token">
+			<xsd:maxLength value="36"/>
+			<xsd:minLength value="36"/>
+			<xsd:pattern value="[0-9A-Fa-f]{8}(-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RetrieveRequestCode_Type">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Next"/>
+			<xsd:enumeration value="Retry"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="RetrievalParameters_Type">
+		<xsd:sequence>
+			<xsd:any namespace="##other" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

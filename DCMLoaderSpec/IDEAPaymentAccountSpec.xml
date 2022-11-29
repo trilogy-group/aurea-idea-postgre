@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by LevT (LevT Inc.) -->
+<loader:loader_spec xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:loader="http://dms.trilogy.com/Loader/Spec" xmlns="http://dms.trilogy.com/Loader/Spec" name="Insert Payment Account Loader Spec">
+	<!--
+This spec is used to create/update Payment Account(Payment management module). The Payment Management module provides functionality related to the updating and settling of internal payment accounts for distributors. In DCM portal, the payment account page is available under Management Tools - Payment Management.
+
+Pre-requiste:
+1) Create person party and need to mention tax id in the data file.
+2) The system should have input rule and payment rule to create Balance Type.
+3) The sample rule file is available under <MCC-HOME>\Apps\DMSDMPM\util. Run "ImportRules.bat <MCC_HOME> ExampleRules.xml" from command prompt. Re-start the servers if required.
+
+Data File Format:
+TaxId,AccountName,AccountType,Status,StartDate,End Date,MinAllowedBalance,MaxAllowedBalance,MinPayment,TargetPayment,Reason,Comment,BalType1,InputRule1,PaymentRule1,BalType2,InputRule2,PaymentRule2,BalType3,InputRule3,PaymentRule3,ABARoutingNumber,AccountNumber
+
+Sample Data:
+999,PaymentAccount111,Default Payment,Active,07/07/2008,08/08/2009,0,0,0,0,Account Created,Comment1,W2,InputRule 2,PaymentRule 2,1099,InputRule 1,PaymentRule 1,1099-NonProprietary,InputRule 1,PaymentRule 2,,
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}/PaymentAccountSpec.xml -DDATA_FILE={File-Location}/PaymentAccountSpecData.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=100
+-->
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>		
+	</strategy>
+	<object name="payment_account" class="FSPaymentAccountLoader"/>
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="quote_chars" value="&quot;"/>
+		<property name="headerRows" value="1"/>
+		<indexed_field name="party taxid" index="0"/>
+		<indexed_field name="account name" index="1"/>
+		<indexed_field name="account type" index="2"/>
+		<indexed_field name="status" index="3"/>
+		<indexed_field name="start date" index="4"/>
+		<indexed_field name="end date" index="5"/>
+		<indexed_field name="MinAllowedBalance" index="6"/>
+		<indexed_field name="MaxAllowedBalance" index="7"/>
+		<indexed_field name="MinPayment" index="8"/>
+		<indexed_field name="TargetPayment" index="9"/>
+		<indexed_field name="Reason" index="10"/>
+		<indexed_field name="Comment" index="11"/>
+		<indexed_field name="BalType1" index="12"/>
+		<indexed_field name="InputRule1" index="13"/>
+		<indexed_field name="PaymentRule1" index="14"/>
+		<indexed_field name="BalType2" index="15"/>
+		<indexed_field name="InputRule2" index="16"/>
+		<indexed_field name="PaymentRule2" index="17"/>
+		<indexed_field name="BalType3" index="18"/>
+		<indexed_field name="InputRule3" index="19"/>
+		<indexed_field name="PaymentRule3" index="20"/>
+		<indexed_field name="ABARoutingNumber" index="21"/>
+		<indexed_field name="AccountNumber" index="22"/>
+		
+		<indexed_field name="Payment Mode" index="23"/>
+		<indexed_field name="Account Holder Name" index="24"/>
+		<indexed_field name="Bank Account Type" index="25"/>
+		<indexed_field name="Party ID" index="26"/>
+		<indexed_field name="agreementName" index="27"/>
+	</source>
+	<translator name="date_translator" class="com.aviva.fs.dms.tools.loader.translate.AVDateFormatTranslator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="treatEmptyAsNull" value="true"/>
+	</translator>
+	<translator name="accounttype_translator" class="enum_translator">
+		<property name="enumName" value="PaymentAccount.Type"/>
+		<property name="useDefaultValue" value="false"/>
+		<property name="throwException" value="true"/>
+	</translator>
+	<translator name="settlementstatus_translator" class="enum_translator">
+		<property name="enumName" value="CurrentDetails.SettlementStatus.AVSettlementStatus"/>
+	</translator>
+	<translator name="reason_translator" class="enum_translator">
+		<property name="enumName" value="PaymentDetails.Reason"/>
+		<property name="useDefaultValue" value="false"/>
+		<property name="throwException" value="true"/>
+	</translator>
+	<translator name="paymentmode_translator" class="enum_translator">
+		<property name="enumName" value="AVPaymentMode"/>
+		<property name="useDefaultValue" value="false"/>
+		<property name="throwException" value="true"/>
+	</translator>
+	<translator name="bankaccttype_translator" class="enum_translator">
+		<property name="enumName" value="AVBankAccountType"/>
+	</translator>
+	<translator name="balancetype_translator" class="enum_translator">
+		<property name="enumName" value="PaymentBalance.Type"/>
+	</translator>
+	<translator name="merge_balance_translator" class="concatenator">
+		<property name="seperator" value=","/>
+		<!-- Use Comma as seperator, because the data file is comma seperated, means we will not have commas in the data-->
+	</translator>
+	<resolver name="rule_resolver" class="single_key_resolver">
+		<property name="className" value="FSPaymentAccount"/>
+		<property name="key" value="Party.UNID"/>
+		<property name="preCacheTables" value="false"/>
+	</resolver>
+	
+	<!--resolver name="party_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+				SELECT party
+                FROM FSParty party
+                WHERE party.UNID={0}
+            ]]></property>
+		<property name="keys" value="string PartyID"/>
+	</resolver-->
+	
+	<resolver name="party_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value = "SELECT party.GID gid, party.UNID unid FROM FSParty party"/>
+        <property name="gidAlias" value="gid"/>
+        <property name="keys" value="unid"/>
+    </resolver>
+	<constant name="invokedByUI" class="java_static_field">
+		<property name="className" value="java.lang.Boolean"/>
+		<property name="fieldName" value="FALSE"/>
+	</constant>
+	
+	<map object="payment_account">
+		<action name="update or insert" resolver="rule_resolver">
+			<field name="Party ID"/>
+		</action>
+		<map_object property="Party" resolver="party_resolver">
+			<field name="Party ID"/>
+		</map_object>
+		<!--map_simple property="Name" field="account name"/-->
+		<!--map_simple property="AccountType" field="account type" translator="accounttype_translator"/-->
+		<map_simple property="CurrentDetails.SettlementStatus" field="status" translator="settlementstatus_translator"/>
+		<map_simple property="CurrentDetails.StartDate" field="start date" translator="date_translator"/>
+		<map_simple property="CurrentDetails.EndDate" field="end date" translator="date_translator"/>
+		<!--map_simple property="CurrentDetails.MinAllowedBalance" field="MinAllowedBalance"/-->
+		<!--map_simple property="CurrentDetails.MaxAllowedBalance" field="MaxAllowedBalance"/-->
+		<!--map_simple property="CurrentDetails.MinPayment" field="MinPayment"/-->
+		<!--map_simple property="CurrentDetails.TargetPayment" field="TargetPayment"/-->
+		<!--map_simple property="CurrentDetails.Reason" field="Reason" translator="reason_translator"/-->
+		<!--map_simple property="CurrentDetails.Comment" field="Comment"/-->
+		<map_simple property="AVRoutingNumber" field="ABARoutingNumber"/>
+		<map_simple property="AVAccountNumber" field="AccountNumber"/>
+		<map_simple property="AVPaymentMode" field="Payment Mode" translator="paymentmode_translator"/>
+		<!--map_simple property="CurrentDetails.AVPaymentThreshold" field="PaymentThreshold" /-->
+		<map_simple property="AVAccountHolderName" field="Account Holder Name"/>
+		<map_simple property="AVBankAccountType" field="Bank Account Type" translator="bankaccttype_translator"/>
+		<map_simple property="AgreementName" field="agreementName" tag="precreate" />
+		<map_constant property="InvokedByUI" constant="invokedByUI" tag="validator"/>
+		<!--map_simple property="AVBackupWithholdingIndicator" field="Backup Withholding Indicator"/-->
+		<!--<map_simple property="CurrentDetails" field="TargetPayment"/>
+		<map_simple property="CurrentDetails.TargetPayment" field="TargetPayment"/>
+		<map_simple property="CurrentDetails.TargetPayment" field="TargetPayment"/>-->
+		<!--  
+	The Balance Types for any given customer are pre-defined and are limited to a few 1 or 2 or 3 or 4 .. 9.
+	This spec file assumes 3 as is supported in the UI.
+	Supported Balance Types using a seperate loader, compromises Data Integrity, as Payment Account along with W2, 1099 information is super critical and the atomicity of the data 
+	has to be preserved.
+	It is Super Critical that Data Integrity of Payment Account is gauranteed, which includes Balance Types.
+	-->
+		<!--
+	BalType, InputRule PaymentRule are being passed as input to setAddBalance Method. 
+	For scenario's where PaymentAccount is being updated, the Balance being processed, may be processed as Insert or Update. This can be determined by calling getCollection() which 
+	returns m_balnacesMap and looping through m_balancesMap and make a determination based on BalType, if the Balance is to be Inserted or Updated. 
+	For scenario's, where PaymentAccount is inserted,  the Balance being processed, is always processed as Insert. Parent is processed as Insert means all childern are always processed as Inserts.
+	-->
+		<!-- 
+	There are several limitations documented below, which justifies the approach of calling a method setAddBalance().
+	1. FSBalance is a Backbone object and Not a Validator.  Note the Spec File, is using Validator Strategy and not back bone. Even, if a Validator were to be written for Balances, there are other
+	limitations discussed below.
+	2. Balances is a collection and is a property of FSPaymentAccount. Balances contain rows, where each row points to FSPaymentBalance. FSPaymentBalance does not refer to FSPaymentAccount.
+	   The way Backbone organizes this data, there is no way to join such that you can obtain FSPaymentBalance's that belong to a FSPaymentAccount, in a single OQL Query. (may be possible in SQL, 
+	   needs to be researched further.
+	 3. Java Resolvers is not an option, as this results in reading Balances via PaymentAccount Validator. The Validator is already in memory and the resolver does not add any value (may even result in lock 
+	 exception).
+	-->
+		<!--map_merge property="AddBalance" translator="merge_balance_translator" tag="validator">
+			<field name="BalType1"/>
+			<field name="InputRule1"/>
+			<field name="PaymentRule1"/>
+		</map_merge-->
+		<!--map_merge property="AddBalance" translator="merge_balance_translator" tag="validator">
+			<field name="BalType2"/>
+			<field name="InputRule2"/>
+			<field name="PaymentRule2"/>
+		</map_merge-->
+		<!--map_merge property="AddBalance" translator="merge_balance_translator" tag="validator">
+			<field name="BalType3"/>
+			<field name="InputRule3"/>
+			<field name="PaymentRule3"/>
+		</map_merge-->
+	</map>
+</loader:loader_spec>

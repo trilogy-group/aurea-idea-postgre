@@ -1,0 +1,2290 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+   ====================================================================== 
+   ===== Business Data Aggregates Schema Module ===== 
+   NON NORMATIVE EXAMPLE PROVIDED FOR ACORD NDR ILLUSTRATION 
+    ====================================================================== 
+   
+      Standard Organization: ACORD
+      Version: Draft 18pla01 
+      Generated on: 25 March 2011
+    
+     COPYRIGHT NOTICE:
+     
+(c) 2011 ACORD. All Rights Reserved.
+
+Use of this Schema and its documentation are covered by the terms and conditions file that was included in the distribution file that you found this Schema.http://www.ACORD.org
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:acord-doc="http://www.acord.org/schema/documentation/draft/Annotations/1" xmlns="http://www.acord.org/schema/data/draft/ReusableDataComponents/1" targetNamespace="http://www.acord.org/schema/data/draft/ReusableDataComponents/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+   <xsd:annotation>
+      <xsd:appinfo>
+         <acord-doc:GenerationDateTime>3/25/2011</acord-doc:GenerationDateTime>
+      </xsd:appinfo>
+   </xsd:annotation>
+   <xsd:include schemaLocation="BusinessDataTypes.xsd"/>
+<!--
+*******************************************************************************
+            Business Data Aggregates
+*******************************************************************************
+-->
+
+   <xsd:complexType name="ACORDAggregate_Type">
+
+      <xsd:attribute name="key" type="SimpleIdentifier_Type"/>
+
+   </xsd:complexType>
+   <xsd:complexType name="ACORDMessage_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="MessageHeader" minOccurs="1" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ACORDMessageResult_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="MessageHeader" minOccurs="1" maxOccurs="1"/>
+
+               <xsd:element ref="MessageResult" minOccurs="1" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Address_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="FullAddressDescription" minOccurs="0" maxOccurs="1" type="LongText_Type"/>
+
+               <xsd:element name="LineOne" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element ref="LineOneDetails" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="LineTwo" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="LineThree" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="LineFour" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="CityName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="StateOrProvinceCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="StateOrProvinceName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="PostalCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="CountryCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="CountryName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="CountyCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="CountyName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="RegionCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="RegionName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="AddressReferences_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+
+            <xsd:attribute name="addressReference" type="SimpleIdentifier_Type"/>
+
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="AffiliatedOrganization_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedOrganizationRole_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Affiliation_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="AffiliatedOrganization" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="AmountItemValue_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="FinancialPeriodCode" minOccurs="0" maxOccurs="1" type="FinancialPeriodCode_Type"/>
+
+               <xsd:element name="DomesticForeignCode" minOccurs="0" maxOccurs="1" type="DomesticForeignCode_Type"/>
+
+               <xsd:element name="StateOrProvinceCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:group ref="ItemValue_Choice" minOccurs="1" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="AssignedIdentifier_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="RoleCode" minOccurs="1" maxOccurs="1" type="CoreRoleCode_Type"/>
+
+               <xsd:element name="Id" minOccurs="1" maxOccurs="1" type="Identifier_Type"/>
+
+               <xsd:group ref="AssignedIdentifierAssigner_Choice" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="AttachmentDocument_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="DocumentURI" minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+
+               <xsd:element ref="AttachmentFile" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="AttachmentFile_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="FileContentTypeCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="FileName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:group ref="FileResource_Choice" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="AuthorizingEntity_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedPartyRole_Type">
+            <xsd:sequence>
+
+               <xsd:element name="Contact" minOccurs="0" maxOccurs="unbounded" type="AuthorizingEntityContact_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="AuthorizingEntityContact_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PersonReferences" minOccurs="0" maxOccurs="1" type="PersonReferences_Type"/>
+
+               <xsd:element name="RoleCode" minOccurs="0" maxOccurs="1" type="AuthorizingEntityContactRoleCode_Type"/>
+
+               <xsd:element ref="Telephone" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="MailingAddress" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="BatchPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="BillingAddress_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ContactAddress_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="BlackoutPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="LocalStandardTimeAppliesToInceptionDateIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="BranchOfficeAddress_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ContactAddress_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="BusinessActivity_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="BusinessActivityTypeCode_Type"/>
+
+               <xsd:element name="Description" minOccurs="0" maxOccurs="1" type="InfiniteText_Type"/>
+
+               <xsd:element name="FinancialAmountItem" minOccurs="0" maxOccurs="unbounded" type="BusinessActivityFinancialAmountItem_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="BusinessActivityFinancialAmountItem_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="BusinessActivityFinancialAmountItemTypeCode_Type"/>
+
+               <xsd:element ref="AmountItemValue" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="BusinessCommunication_Type">
+      <xsd:complexContent>
+         <xsd:extension base="PartyCommunication_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="BusinessPrincipal_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedPersonRole_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="CurrentPracticingPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="PreviousPracticingPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="PreviousBusiness" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ChangeStatus_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="ElementPath" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="ActionCode" minOccurs="0" maxOccurs="1" type="ActionCode_Type"/>
+
+               <xsd:element name="Description" minOccurs="0" maxOccurs="1" type="InfiniteText_Type"/>
+
+               <xsd:element name="SequenceNumberNumeric" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="CodeList_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="ListId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="ListAgencyCode" minOccurs="0" maxOccurs="1" type="CodeListOwnerCodeContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="CommunicationMethod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PrimaryIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="PreviousIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element ref="CommunicationPreferences" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="CommunicationPreferences_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PriorityRank" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element ref="ContactPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="BlackoutPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="DoNotContactIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Contact_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PersonReferences" minOccurs="0" maxOccurs="1" type="PersonReferences_Type"/>
+
+               <xsd:element name="RoleCode" minOccurs="0" maxOccurs="1" type="ContactRoleCode_Type"/>
+
+               <xsd:element ref="Telephone" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="MailingAddress" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ContactAddress_Type">
+      <xsd:complexContent>
+         <xsd:extension base="CommunicationMethod_Type">
+            <xsd:sequence>
+
+               <xsd:element name="AttentionName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="AddressReferences" minOccurs="0" maxOccurs="1" type="AddressReferences_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ContactPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="LocalStandardTimeAppliesToInceptionDateIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="CorporateSharesIssued_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="CorporateSharesIssuedTypeCode_Type"/>
+
+               <xsd:element name="AsOfDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="SharePriceAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+               <xsd:element name="OutstandingShareCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="CreditScore_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="AssignedIdentifier" minOccurs="0" maxOccurs="unbounded" type="AssignedIdentifier_Type"/>
+
+               <xsd:element name="CreditScoreDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="CreditScoreValue" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="CurrentPracticingPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="LocalStandardTimeAppliesToInceptionDateIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Education_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="EducationalInstitution" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element name="EducationLevelCode" minOccurs="0" maxOccurs="1" type="EducationLevelCode_Type"/>
+
+               <xsd:element name="EducationLevelYear" minOccurs="0" maxOccurs="1" type="xsd:gYear"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="EducationalInstitution_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedOrganizationRole_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Email_Type">
+      <xsd:complexContent>
+         <xsd:extension base="CommunicationMethod_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="EmailTypeCode_Type"/>
+
+               <xsd:element name="EmailAddress" minOccurs="0" maxOccurs="unbounded" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Employer_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedPartyRole_Type">
+            <xsd:sequence>
+
+               <xsd:element name="ConcurrentIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="EmployerCode" minOccurs="0" maxOccurs="1" type="EmployerCode_Type"/>
+
+               <xsd:element name="EmployerDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="SelfInsuredIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="EmployerIsLessorIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="SpecificProductsDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="EmployerPayrollCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Employment_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PreviousIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element ref="Employer" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="TitleRelationshipCode" minOccurs="0" maxOccurs="1" type="TitleRelationshipCode_Type"/>
+
+               <xsd:element ref="EmploymentPeriod" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element name="EmploymentTitle" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="DutiesDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="EmploymentPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="EndPointActor_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="RoleCode" minOccurs="0" maxOccurs="1" type="CoreRoleCode_Type"/>
+
+               <xsd:element name="OrganizationReferences" minOccurs="1" maxOccurs="1" type="OrganizationReferences_Type"/>
+
+               <xsd:element ref="Address" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="Contact" minOccurs="0" maxOccurs="unbounded" type="EndPointActorContact_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="EndPointActorContact_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PersonReferences" minOccurs="0" maxOccurs="1" type="PersonReferences_Type"/>
+
+               <xsd:element name="RoleCode" minOccurs="0" maxOccurs="1" type="EndPointActorContactRoleCode_Type"/>
+
+               <xsd:element ref="Telephone" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="MailingAddress" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="EndPointSystem_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="SystemVendorId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="SystemVendorName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="VendorProductName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="VendorProductVersion" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExportInformation_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ImportExportInformation_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExtendedStatus_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="ElementPath" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="StatusCode" minOccurs="0" maxOccurs="1" type="ExtendedStatusCode_Type"/>
+
+               <xsd:element name="Description" minOccurs="0" maxOccurs="1" type="InfiniteText_Type"/>
+
+               <xsd:element name="SequenceNumberNumeric" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExternalIdentifier_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="ExternalIdentifierTypeCode_Type"/>
+
+               <xsd:element name="SourceURI" minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+
+               <xsd:element name="JurisdictionCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="Id" minOccurs="1" maxOccurs="1" type="SimpleIdentifier_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="FileAttachment_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="AttachmentTypeCode" minOccurs="0" maxOccurs="1" type="AttachmentTypeCode_Type"/>
+
+               <xsd:element ref="AttachmentDocument" minOccurs="1" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="FileResource_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="CommunicationChannelCode" minOccurs="0" maxOccurs="1" type="CommunicationChannelCode_Type"/>
+
+               <xsd:element name="CommunicationProcessCode" minOccurs="0" maxOccurs="1" type="CommunicationProcessCode_Type"/>
+
+               <xsd:element name="ResourceReferenceURI" minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialAmountItem_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="FinancialAmountItemTypeCode_Type"/>
+
+               <xsd:element ref="AmountItemValue" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialStatement_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="FinancialStatementTypeCode_Type"/>
+
+               <xsd:element name="StatementDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element ref="StatementPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="ConsolidatedReportIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="FinancialAmountItem" minOccurs="0" maxOccurs="unbounded" type="FinancialStatementFinancialAmountItem_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialStatementFinancialAmountItem_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="FinancialStatementFinancialAmountItemTypeCode_Type"/>
+
+               <xsd:element ref="AmountItemValue" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="FromAccount_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="AccountNumberId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="RoutingNumberId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="ChequeNumberId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="ChequeDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="CardExpirationYearMonth" minOccurs="0" maxOccurs="1" type="xsd:gYearMonth"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="HumanResources_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="HumanResourcesTypeCode_Type"/>
+
+               <xsd:element name="JobCategoryCode" minOccurs="0" maxOccurs="1" type="JobCategoryCode_Type"/>
+
+               <xsd:element name="JobCategoryDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="UnitCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element name="WorkPerformedCode" minOccurs="0" maxOccurs="1" type="WorkPerformedCode_Type"/>
+
+               <xsd:element name="HoursPerWeekCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ImportExportInformation_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ImportInformation_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ImportExportInformation_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="InlandTransitInformation_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ImportExportInformation_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsuredExternalIdentifier_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="InsuredExternalIdentifierTypeCode_Type"/>
+
+               <xsd:element name="JurisdictionCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="SourceURI" minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+
+               <xsd:element name="Id" minOccurs="1" maxOccurs="1" type="SimpleIdentifier_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsuredReferences_Type">
+      <xsd:sequence>
+
+         <xsd:group ref="Insured_Keys" minOccurs="0" maxOccurs="1"/>
+
+         <xsd:group ref="ReferencedParty_Choice" minOccurs="0" maxOccurs="1"/>
+
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Insurer_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedOrganizationRole_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="Insurer_Keys" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="Contact" minOccurs="0" maxOccurs="unbounded" type="InsurerContact_Type"/>
+
+               <xsd:element name="InsolventIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="CommercialPremiumVolumeAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+               <xsd:element name="PersonalPremiumVolumeAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+               <xsd:element name="LifeHealthPremiumVolumeAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsurerContact_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PersonReferences" minOccurs="0" maxOccurs="1" type="PersonReferences_Type"/>
+
+               <xsd:element name="RoleCode" minOccurs="0" maxOccurs="1" type="InsurerContactRoleCode_Type"/>
+
+               <xsd:element ref="Telephone" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="MailingAddress" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsurerExternalIdentifier_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="InsurerExternalIdentifierTypeCode_Type"/>
+
+               <xsd:element name="JurisdictionCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="SourceURI" minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+
+               <xsd:element name="Id" minOccurs="1" maxOccurs="1" type="SimpleIdentifier_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsurerReferences_Type">
+      <xsd:sequence>
+
+         <xsd:group ref="Insurer_Keys" minOccurs="0" maxOccurs="1"/>
+
+         <xsd:element name="OrganizationReferences" minOccurs="0" maxOccurs="1" type="OrganizationReferences_Type"/>
+
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="LegalAddress_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ContactAddress_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="License_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="LicenseNumberId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element ref="LicensePeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="StatusCode" minOccurs="0" maxOccurs="1" type="LicenseStatusCode_Type"/>
+
+               <xsd:element name="IssueDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="RenewalDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="LicenseClassCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="TerminationReasonCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="StateOrProvinceCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="StateOrProvinceName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="CountryCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="CountryName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="CountyCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="CountyName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="LicensePeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="LineOfAuthority_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="LOACode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element ref="LOAPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="StateApprovedIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TerminationReasonCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="LineOneDetails_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StreetName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="StreetNumber" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="UnitNumber" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="LOAPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="MailingAddress_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ContactAddress_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ManufacturingAddress_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ContactAddress_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Membership_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageDocument_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="FileAttachment" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="RemarkInformation" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="CodeList" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Address" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Person" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Organization" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageDocumentReferences_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="MessageDocument_Keys" minOccurs="1" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageDocumentResult_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="MessageDocumentReferences" minOccurs="1" maxOccurs="1" type="MessageDocumentReferences_Type"/>
+
+               <xsd:element name="StatusCode" minOccurs="1" maxOccurs="1" type="MessageDocumentResultStatusCode_Type"/>
+
+               <xsd:element name="Description" minOccurs="0" maxOccurs="1" type="InfiniteText_Type"/>
+
+               <xsd:group ref="ResultStatusCode_Choice" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="ExtendedStatus" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="ChangeStatus" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageHeader_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="ACORDStandardVersionCode" minOccurs="0" maxOccurs="1" type="ACORDStandardVersionCode_Type"/>
+
+               <xsd:element name="MessageId" minOccurs="1" maxOccurs="1" type="UUIDIdentifierContent_Type"/>
+
+               <xsd:element name="CorrelationId" minOccurs="1" maxOccurs="1" type="UUIDIdentifierContent_Type"/>
+
+               <xsd:element name="MessageDateTime" minOccurs="1" maxOccurs="1" type="xsd:dateTime"/>
+
+               <xsd:element ref="Sender" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="Receiver" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="ProcessingIntermediary" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="SendingSystem" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="AccountNumberId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="BatchId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="MessageDocumentCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element name="BatchSequenceNumberNumeric" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element ref="BatchPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="MessageSubmissionTypeCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageResult_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StatusCode" minOccurs="1" maxOccurs="1" type="MessageResultStatusCode_Type"/>
+
+               <xsd:element ref="MessageDocumentResult" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Occupation_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PreviousIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="OccupationClassCode" minOccurs="0" maxOccurs="unbounded" type="OccupationClassCode_Type"/>
+
+               <xsd:element name="OccupationDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element ref="OccupationPeriod" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OccupationPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Operations_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="OperationsTypeCode_Type"/>
+
+               <xsd:element name="SICCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="NAICSCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element ref="ManufacturingAddress" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="OperationsStartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element ref="OperationsPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="ActiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="OperationsScopeCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="Description" minOccurs="0" maxOccurs="1" type="InfiniteText_Type"/>
+
+               <xsd:element ref="ProfessionalLicense" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element name="HumanResources" minOccurs="0" maxOccurs="unbounded" type="OperationsHumanResources_Type"/>
+
+               <xsd:element name="DomesticLocationCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element name="ForeignLocationCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element name="FinancialAmountItem" minOccurs="0" maxOccurs="unbounded" type="OperationsFinancialAmountItem_Type"/>
+
+               <xsd:element ref="BusinessActivity" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="BusinessPrincipal" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element name="PrimaryInsuredPercent" minOccurs="0" maxOccurs="1" type="xsd:decimal"/>
+
+               <xsd:element ref="ExportInformation" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="ImportInformation" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="InlandTransitInformation" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsFinancialAmountItem_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="OperationsFinancialAmountItemTypeCode_Type"/>
+
+               <xsd:element ref="AmountItemValue" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsHumanResources_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="OperationsHumanResourcesTypeCode_Type"/>
+
+               <xsd:element name="JobCategoryCode" minOccurs="0" maxOccurs="1" type="JobCategoryCode_Type"/>
+
+               <xsd:element name="JobCategoryDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="UnitCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Organization_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="Organization_Keys" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="OrganizationCommunication" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="LegalEntityCode" minOccurs="0" maxOccurs="1" type="LegalEntityCode_Type"/>
+
+               <xsd:element name="LegalEntityDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="IncorporatedDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="TaxExemptOrganizationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element ref="Operations" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="FinancialStatement" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Stock" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Ownership" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="ParentOrganizationReferences" minOccurs="0" maxOccurs="1" type="OrganizationReferences_Type"/>
+
+               <xsd:element name="UltimateParentOrganizationReferences" minOccurs="0" maxOccurs="1" type="OrganizationReferences_Type"/>
+
+               <xsd:element name="SubsidiaryOrganizationReferences" minOccurs="0" maxOccurs="unbounded" type="OrganizationReferences_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationCommunication_Type">
+      <xsd:complexContent>
+         <xsd:extension base="PartyCommunication_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="PrincipalAddress" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="BranchOfficeAddress" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationExternalIdentifier_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="OrganizationExternalIdentifierTypeCode_Type"/>
+
+               <xsd:element name="JurisdictionCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="SourceURI" minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+
+               <xsd:element name="Id" minOccurs="1" maxOccurs="1" type="Identifier_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationName_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="OrganizationNameTypeCode_Type"/>
+
+               <xsd:element name="IndexName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="FullName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationReferences_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="Organization_Keys" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+
+            <xsd:attribute name="organizationReference" type="SimpleIdentifier_Type"/>
+
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationRole_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="OrganizationReferences_Choice" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Owner_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedPartyRole_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="Owner_Keys" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="PreviousIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="EffectiveDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Ownership_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="OwnerCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element ref="Shareholder" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Owner" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PartyCommunication_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="Telephone" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element name="WebsiteURI" minOccurs="0" maxOccurs="unbounded" type="xsd:anyURI"/>
+
+               <xsd:element ref="MailingAddress" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="BillingAddress" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="ShippingAddress" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="LegalAddress" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PartyRole_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="PartyReferences_Choice" minOccurs="1" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Payment_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="PaymentTypeCode_Type"/>
+
+               <xsd:element name="AssignedIdentifier" minOccurs="0" maxOccurs="unbounded" type="AssignedIdentifier_Type"/>
+
+               <xsd:element name="TrackingId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="PaymentDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EffectiveDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="PaymentAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+               <xsd:element ref="FromAccount" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="ToAccount" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Period_Type">
+      <xsd:sequence>
+
+         <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+         <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+         <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+         <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+         <xsd:element name="LocalStandardTimeAppliesToInceptionDateIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+         <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+         <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+         <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+         <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Person_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="Person_Keys" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="PersonCommunication" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="BusinessCommunication" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="GenderCode" minOccurs="0" maxOccurs="1" type="GenderCode_Type"/>
+
+               <xsd:element name="MaritalStatusCode" minOccurs="0" maxOccurs="1" type="MaritalStatusCode_Type"/>
+
+               <xsd:group ref="BirthDate_Choice" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="DeathDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element ref="Occupation" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Employment" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Affiliation" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Education" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="CreditScore" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Membership" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonCommunication_Type">
+      <xsd:complexContent>
+         <xsd:extension base="PartyCommunication_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonExternalIdentifier_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="PersonExternalIdentifierTypeCode_Type"/>
+
+               <xsd:element name="JurisdictionCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="SourceURI" minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+
+               <xsd:element name="Id" minOccurs="1" maxOccurs="1" type="SimpleIdentifier_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonName_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="PersonNameTypeCode_Type"/>
+
+               <xsd:element name="IndexName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="FullName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="Surname" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="GivenName" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="OtherGivenName" minOccurs="0" maxOccurs="unbounded" type="LongTextContent_Type"/>
+
+               <xsd:element name="CombinedGivenNames" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="PersonTitlePrefix" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="PersonTitlePrefixCode" minOccurs="0" maxOccurs="1" type="PersonTitlePrefixCode_Type"/>
+
+               <xsd:element name="NameSuffix" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="Nickname" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonReferences_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="Person_Keys" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+
+            <xsd:attribute name="personReference" type="SimpleIdentifier_Type"/>
+
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PreviousBusiness_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedOrganizationRole_Type">
+            <xsd:sequence>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PreviousPracticingPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="LocalStandardTimeAppliesToInceptionDateIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="ContinuousDurationIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="TimePeriodDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PrincipalAddress_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ContactAddress_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProcessingIntermediary_Type">
+      <xsd:complexContent>
+         <xsd:extension base="EndPointActor_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Producer_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedPartyRole_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="Producer_Keys" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="PartyRoleTypeCode_Type"/>
+
+               <xsd:element name="Contact" minOccurs="0" maxOccurs="unbounded" type="ProducerContact_Type"/>
+
+               <xsd:element ref="ProducerLicense" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="ResponsibleProducer" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerAppointment_Type">
+      <xsd:complexContent>
+         <xsd:extension base="MessageDocument_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="MessageDocument_Keys" minOccurs="1" maxOccurs="1"/>
+
+               <xsd:group ref="ProducerTransactionPartyRole_Sequence" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="TransactionFunctionCode" minOccurs="1" maxOccurs="1" type="ProducerAppointmentTransactionFunctionCode_Type"/>
+
+               <xsd:element name="StatusCode" minOccurs="0" maxOccurs="1" type="ProducerTransactionStatusCode_Type"/>
+
+               <xsd:element name="ReasonCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="ReasonDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="ApplicantActionRequiredIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="VersionDateTime" minOccurs="0" maxOccurs="1" type="xsd:dateTime"/>
+
+               <xsd:element name="ResponseDateTime" minOccurs="0" maxOccurs="1" type="xsd:dateTime"/>
+
+               <xsd:element name="StateOrProvinceCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="Contact" minOccurs="0" maxOccurs="1" type="Contact_Type"/>
+
+               <xsd:element name="TransactionAmountItem" minOccurs="0" maxOccurs="unbounded" type="ProducerAppointmentTransactionAmountItem_Type"/>
+
+               <xsd:element ref="Payment" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerAppointmentTransactionAmountItem_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="ProducerAppointmentTransactionAmountItemTypeCode_Type"/>
+
+               <xsd:element name="ItemAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerContact_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PersonReferences" minOccurs="0" maxOccurs="1" type="PersonReferences_Type"/>
+
+               <xsd:element name="RoleCode" minOccurs="0" maxOccurs="1" type="ProducerContactRoleCode_Type"/>
+
+               <xsd:element ref="Telephone" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
+
+               <xsd:element ref="MailingAddress" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerExternalIdentifier_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="ProducerExternalIdentifierTypeCode_Type"/>
+
+               <xsd:element name="JurisdictionCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="SourceURI" minOccurs="0" maxOccurs="1" type="xsd:anyURI"/>
+
+               <xsd:element name="Id" minOccurs="1" maxOccurs="1" type="SimpleIdentifier_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerLicense_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="ProducerLicenseTypeCode_Type"/>
+
+               <xsd:element name="StateApprovedIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element ref="License" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element ref="LineOfAuthority" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerLicenseApplication_Type">
+      <xsd:complexContent>
+         <xsd:extension base="MessageDocument_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="MessageDocument_Keys" minOccurs="1" maxOccurs="1"/>
+
+               <xsd:group ref="ProducerTransactionPartyRole_Sequence" minOccurs="1" maxOccurs="1"/>
+
+               <xsd:element name="TransactionFunctionCode" minOccurs="1" maxOccurs="1" type="ProducerLicenseApplicationTransactionFunctionCode_Type"/>
+
+               <xsd:element name="StatusCode" minOccurs="0" maxOccurs="1" type="ProducerTransactionStatusCode_Type"/>
+
+               <xsd:element name="ReasonCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="ReasonDescription" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="ApplicantActionRequiredIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="VersionDateTime" minOccurs="0" maxOccurs="1" type="xsd:dateTime"/>
+
+               <xsd:element name="ResponseDateTime" minOccurs="0" maxOccurs="1" type="xsd:dateTime"/>
+
+               <xsd:element name="StateOrProvinceCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element name="QuestionAnswer" minOccurs="0" maxOccurs="unbounded" type="ProducerLicenseApplicationQuestionAnswer_Type"/>
+
+               <xsd:element name="Contact" minOccurs="0" maxOccurs="1" type="Contact_Type"/>
+
+               <xsd:element name="TransactionAmountItem" minOccurs="0" maxOccurs="unbounded" type="ProducerLicenseApplicationTransactionAmountItem_Type"/>
+
+               <xsd:element ref="Payment" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerLicenseApplicationQuestionAnswer_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="ProducerLicenseApplicationQuestionCode_Choice" minOccurs="1" maxOccurs="1"/>
+
+               <xsd:element name="AnswerCode" minOccurs="1" maxOccurs="1" type="AnswerCode_Type"/>
+
+               <xsd:element name="Explanation" minOccurs="0" maxOccurs="1" type="InfiniteText_Type"/>
+
+               <xsd:element name="ExplanationDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="ExplanationCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerLicenseApplicationTransactionAmountItem_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="ProducerAppointmentTransactionAmountItemTypeCode_Type"/>
+
+               <xsd:element name="ItemAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerReferences_Type">
+      <xsd:sequence>
+
+         <xsd:group ref="Producer_Keys" minOccurs="0" maxOccurs="1"/>
+
+         <xsd:group ref="ReferencedParty_Choice" minOccurs="0" maxOccurs="1"/>
+
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="ProfessionalLicense_Type">
+      <xsd:complexContent>
+         <xsd:extension base="License_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="QuestionAnswer_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="QuestionCode" minOccurs="1" maxOccurs="1" type="QuestionCode_Type"/>
+
+               <xsd:element name="AnswerCode" minOccurs="1" maxOccurs="1" type="AnswerCode_Type"/>
+
+               <xsd:element name="Explanation" minOccurs="0" maxOccurs="1" type="InfiniteText_Type"/>
+
+               <xsd:element name="ExplanationDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="ExplanationCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Receiver_Type">
+      <xsd:complexContent>
+         <xsd:extension base="EndPointActor_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ReferencedOrganizationRole_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="OrganizationReferences" minOccurs="1" maxOccurs="1" type="OrganizationReferences_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ReferencedPartyRole_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="ReferencedParty_Choice" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ReferencedPersonRole_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="PersonReferences" minOccurs="1" maxOccurs="1" type="PersonReferences_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="RemarkInformation_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="ElementPath" minOccurs="0" maxOccurs="1" type="LongTextContent_Type"/>
+
+               <xsd:element name="Remark" minOccurs="0" maxOccurs="1" type="InfiniteText_Type"/>
+
+               <xsd:element name="SequenceNumberNumeric" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element name="RemarkTypeCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ResponsibleProducer_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedPersonRole_Type">
+            <xsd:sequence>
+
+               <xsd:group ref="Producer_Keys" minOccurs="0" maxOccurs="1"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Sender_Type">
+      <xsd:complexContent>
+         <xsd:extension base="EndPointActor_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Shareholder_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ReferencedPartyRole_Type">
+            <xsd:sequence>
+
+               <xsd:element name="OwnedShareCount" minOccurs="0" maxOccurs="1" type="xsd:unsignedInt"/>
+
+               <xsd:element name="SharesHeldPercent" minOccurs="0" maxOccurs="1" type="xsd:decimal"/>
+
+               <xsd:element name="DirectorOrOfficerIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="BoardOfDirectorsRepresentedIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ShippingAddress_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ContactAddress_Type"/>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="StatementPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Stock_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="ExchangeTradedCode" minOccurs="0" maxOccurs="1" type="ExchangeTradedCode_Type"/>
+
+               <xsd:element name="ExchangeTickerSymbolCode" minOccurs="0" maxOccurs="1" type="Code_Type"/>
+
+               <xsd:element ref="StockPeriod" minOccurs="0" maxOccurs="1"/>
+
+               <xsd:element name="HighestPriceAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+               <xsd:element name="LowestPriceAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+               <xsd:element ref="CorporateSharesIssued" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="StockPeriod_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="StartDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="EndDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+
+               <xsd:element name="StartTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="EndTime" minOccurs="0" maxOccurs="1" type="xsd:time"/>
+
+               <xsd:element name="PeriodDuration" minOccurs="0" maxOccurs="1" type="xsd:duration"/>
+
+               <xsd:element name="BothDaysInclusiveIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="Telephone_Type">
+      <xsd:complexContent>
+         <xsd:extension base="CommunicationMethod_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="1" maxOccurs="1" type="TelephoneTypeCode_Type"/>
+
+               <xsd:element name="DayIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="EveningIndicator" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+
+               <xsd:element name="PhoneNumber" minOccurs="0" maxOccurs="1" type="PhoneNumberTextContent_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="ToAccount_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="AccountNumberId" minOccurs="0" maxOccurs="1" type="SimpleIdentifierContent_Type"/>
+
+               <xsd:element name="CardExpirationYearMonth" minOccurs="0" maxOccurs="1" type="xsd:gYearMonth"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="TransactionAmountItem_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDAggregate_Type">
+            <xsd:sequence>
+
+               <xsd:element name="TypeCode" minOccurs="0" maxOccurs="1" type="TransactionAmountItemTypeCode_Type"/>
+
+               <xsd:element name="ItemAmount" minOccurs="0" maxOccurs="1" type="Amount_Type"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <!--
+      
+      *******************************************************************************
+      Groups
+      *******************************************************************************
+   -->
+   <xsd:group name="AssignedIdentifierAssigner_Choice">
+      <xsd:choice>
+         <xsd:element name="OrganizationReferences" minOccurs="0" maxOccurs="1" type="OrganizationReferences_Type"/>
+         <xsd:element name="InsurerReferences" minOccurs="0" maxOccurs="1" type="InsurerReferences_Type"/>
+         <xsd:element name="ProducerReferences" minOccurs="0" maxOccurs="1" type="ProducerReferences_Type"/>
+         <xsd:element name="InsuredReferences" minOccurs="0" maxOccurs="1" type="InsuredReferences_Type"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="BirthDate_Choice">
+      <xsd:choice>
+         <xsd:element name="BirthDate" minOccurs="0" maxOccurs="1" type="xsd:date"/>
+         <xsd:element name="BirthYear" minOccurs="0" maxOccurs="1" type="xsd:gYear"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="FileResource_Choice">
+      <xsd:choice>
+         <xsd:element name="FileContentBinaryObject" minOccurs="1" maxOccurs="1" type="xsd:base64Binary"/>
+         <xsd:element ref="FileResource" minOccurs="1" maxOccurs="1"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="Insured_Keys">
+      <xsd:sequence>
+         <xsd:element name="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded" type="InsuredExternalIdentifier_Type"/>
+      </xsd:sequence>
+   </xsd:group>
+   <xsd:group name="Insurer_Keys">
+      <xsd:sequence>
+         <xsd:element name="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded" type="InsurerExternalIdentifier_Type"/>
+      </xsd:sequence>
+   </xsd:group>
+   <xsd:group name="ItemValue_Choice">
+      <xsd:choice>
+         <xsd:element name="ItemAmount" minOccurs="1" maxOccurs="1" type="Amount_Type"/>
+         <xsd:element name="ItemPercent" minOccurs="1" maxOccurs="1" type="xsd:decimal"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="MessageDocument_Keys">
+      <xsd:sequence>
+         <xsd:element name="DocumentId" minOccurs="1" maxOccurs="1" type="UUIDIdentifier_Type"/>
+         <xsd:element name="AssignedIdentifier" minOccurs="0" maxOccurs="unbounded" type="AssignedIdentifier_Type"/>
+      </xsd:sequence>
+   </xsd:group>
+   <xsd:group name="Organization_Keys">
+      <xsd:sequence>
+         <xsd:element name="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded" type="OrganizationExternalIdentifier_Type"/>
+         <xsd:element ref="OrganizationName" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:group>
+   <xsd:group name="OrganizationReferences_Choice">
+      <xsd:choice>
+         <xsd:element ref="Organization" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="OrganizationReferences" minOccurs="0" maxOccurs="1" type="OrganizationReferences_Type"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="Owner_Keys">
+      <xsd:sequence>
+         <xsd:element name="AssignedIdentifier" minOccurs="0" maxOccurs="unbounded" type="AssignedIdentifier_Type"/>
+      </xsd:sequence>
+   </xsd:group>
+   <xsd:group name="PartyReferences_Choice">
+      <xsd:choice>
+         <xsd:group ref="PersonReferences_Choice" minOccurs="0" maxOccurs="1"/>
+         <xsd:group ref="OrganizationReferences_Choice" minOccurs="0" maxOccurs="1"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="Person_Keys">
+      <xsd:sequence>
+         <xsd:element name="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded" type="PersonExternalIdentifier_Type"/>
+         <xsd:element ref="PersonName" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:group>
+   <xsd:group name="PersonReferences_Choice">
+      <xsd:choice>
+         <xsd:element ref="Person" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="PersonReferences" minOccurs="0" maxOccurs="1" type="PersonReferences_Type"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="Producer_Keys">
+      <xsd:sequence>
+         <xsd:element name="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded" type="ProducerExternalIdentifier_Type"/>
+      </xsd:sequence>
+   </xsd:group>
+   <xsd:group name="ProducerLicenseApplicationQuestionCode_Choice">
+      <xsd:choice>
+         <xsd:element name="QuestionCode" minOccurs="1" maxOccurs="1" type="ProducerLicenseApplicationQuestionCode_Type"/>
+         <xsd:element name="QuestionNumberCode" minOccurs="1" maxOccurs="1" type="Code_Type"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="ProducerTransactionPartyRole_Sequence">
+      <xsd:sequence>
+         <xsd:element ref="Insurer" minOccurs="0" maxOccurs="1"/>
+         <xsd:element ref="Producer" minOccurs="0" maxOccurs="1"/>
+         <xsd:element ref="AuthorizingEntity" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:group>
+   <xsd:group name="ReferencedParty_Choice">
+      <xsd:choice>
+         <xsd:element name="PersonReferences" minOccurs="0" maxOccurs="1" type="PersonReferences_Type"/>
+         <xsd:element name="OrganizationReferences" minOccurs="0" maxOccurs="1" type="OrganizationReferences_Type"/>
+      </xsd:choice>
+   </xsd:group>
+   <xsd:group name="ResultStatusCode_Choice">
+      <xsd:choice>
+         <xsd:element name="SuccessCode" minOccurs="1" maxOccurs="1" type="ResultSuccessCode_Type"/>
+         <xsd:element name="RejectCode" minOccurs="1" maxOccurs="1" type="ResultRejectCode_Type"/>
+         <xsd:element name="PendedCode" minOccurs="1" maxOccurs="1" type="ResultPendedCode_Type"/>
+      </xsd:choice>
+   </xsd:group>
+   <!--
+      
+      *********************************** ********************************************
+      Business Data Elements
+      *******************************************************************************
+   -->
+   <xsd:element name="Address" type="Address_Type"/>
+   <xsd:element name="AffiliatedOrganization" type="AffiliatedOrganization_Type"/>
+   <xsd:element name="Affiliation" type="Affiliation_Type"/>
+   <xsd:element name="AmountItemValue" type="AmountItemValue_Type"/>
+   <xsd:element name="AttachmentDocument" type="AttachmentDocument_Type"/>
+   <xsd:element name="AttachmentFile" type="AttachmentFile_Type"/>
+   <xsd:element name="AuthorizingEntity" type="AuthorizingEntity_Type"/>
+   <xsd:element name="BatchPeriod" type="BatchPeriod_Type"/>
+   <xsd:element name="BillingAddress" type="BillingAddress_Type"/>
+   <xsd:element name="BlackoutPeriod" type="BlackoutPeriod_Type"/>
+   <xsd:element name="BranchOfficeAddress" type="BranchOfficeAddress_Type"/>
+   <xsd:element name="BusinessActivity" type="BusinessActivity_Type"/>
+   <xsd:element name="BusinessCommunication" type="BusinessCommunication_Type"/>
+   <xsd:element name="BusinessPrincipal" type="BusinessPrincipal_Type"/>
+   <xsd:element name="ChangeStatus" type="ChangeStatus_Type"/>
+   <xsd:element name="CodeList" type="CodeList_Type"/>
+   <xsd:element name="CommunicationPreferences" type="CommunicationPreferences_Type"/>
+   <xsd:element name="ContactPeriod" type="ContactPeriod_Type"/>
+   <xsd:element name="CorporateSharesIssued" type="CorporateSharesIssued_Type"/>
+   <xsd:element name="CreditScore" type="CreditScore_Type"/>
+   <xsd:element name="CurrentPracticingPeriod" type="CurrentPracticingPeriod_Type"/>
+   <xsd:element name="Education" type="Education_Type"/>
+   <xsd:element name="EducationalInstitution" type="EducationalInstitution_Type"/>
+   <xsd:element name="Email" type="Email_Type"/>
+   <xsd:element name="Employer" type="Employer_Type"/>
+   <xsd:element name="Employment" type="Employment_Type"/>
+   <xsd:element name="EmploymentPeriod" type="EmploymentPeriod_Type"/>
+   <xsd:element name="ExportInformation" type="ExportInformation_Type"/>
+   <xsd:element name="ExtendedStatus" type="ExtendedStatus_Type"/>
+   <xsd:element name="FileAttachment" type="FileAttachment_Type"/>
+   <xsd:element name="FileResource" type="FileResource_Type"/>
+   <xsd:element name="FinancialStatement" type="FinancialStatement_Type"/>
+   <xsd:element name="FromAccount" type="FromAccount_Type"/>
+   <xsd:element name="ImportInformation" type="ImportInformation_Type"/>
+   <xsd:element name="InlandTransitInformation" type="InlandTransitInformation_Type"/>
+   <xsd:element name="Insurer" type="Insurer_Type"/>
+   <xsd:element name="LegalAddress" type="LegalAddress_Type"/>
+   <xsd:element name="License" type="License_Type"/>
+   <xsd:element name="LicensePeriod" type="LicensePeriod_Type"/>
+   <xsd:element name="LineOfAuthority" type="LineOfAuthority_Type"/>
+   <xsd:element name="LineOneDetails" type="LineOneDetails_Type"/>
+   <xsd:element name="LOAPeriod" type="LOAPeriod_Type"/>
+   <xsd:element name="MailingAddress" type="MailingAddress_Type"/>
+   <xsd:element name="ManufacturingAddress" type="ManufacturingAddress_Type"/>
+   <xsd:element name="Membership" type="Membership_Type"/>
+   <xsd:element name="MessageDocumentResult" type="MessageDocumentResult_Type"/>
+   <xsd:element name="MessageHeader" type="MessageHeader_Type"/>
+   <xsd:element name="MessageResult" type="MessageResult_Type"/>
+   <xsd:element name="Occupation" type="Occupation_Type"/>
+   <xsd:element name="OccupationPeriod" type="OccupationPeriod_Type"/>
+   <xsd:element name="Operations" type="Operations_Type"/>
+   <xsd:element name="OperationsPeriod" type="OperationsPeriod_Type"/>
+   <xsd:element name="Organization" type="Organization_Type"/>
+   <xsd:element name="OrganizationCommunication" type="OrganizationCommunication_Type"/>
+   <xsd:element name="OrganizationName" type="OrganizationName_Type"/>
+   <xsd:element name="Owner" type="Owner_Type"/>
+   <xsd:element name="Ownership" type="Ownership_Type"/>
+   <xsd:element name="Payment" type="Payment_Type"/>
+   <xsd:element name="Person" type="Person_Type"/>
+   <xsd:element name="PersonCommunication" type="PersonCommunication_Type"/>
+   <xsd:element name="PersonName" type="PersonName_Type"/>
+   <xsd:element name="PreviousBusiness" type="PreviousBusiness_Type"/>
+   <xsd:element name="PreviousPracticingPeriod" type="PreviousPracticingPeriod_Type"/>
+   <xsd:element name="PrincipalAddress" type="PrincipalAddress_Type"/>
+   <xsd:element name="ProcessingIntermediary" type="ProcessingIntermediary_Type"/>
+   <xsd:element name="Producer" type="Producer_Type"/>
+   <xsd:element name="ProducerAppointment" type="ProducerAppointment_Type"/>
+   <xsd:element name="ProducerLicense" type="ProducerLicense_Type"/>
+   <xsd:element name="ProducerLicenseApplication" type="ProducerLicenseApplication_Type"/>
+   <xsd:element name="ProfessionalLicense" type="ProfessionalLicense_Type"/>
+   <xsd:element name="Receiver" type="Receiver_Type"/>
+   <xsd:element name="RemarkInformation" type="RemarkInformation_Type"/>
+   <xsd:element name="ResponsibleProducer" type="ResponsibleProducer_Type"/>
+   <xsd:element name="Sender" type="Sender_Type"/>
+   <xsd:element name="SendingSystem" type="EndPointSystem_Type"/>
+   <xsd:element name="Shareholder" type="Shareholder_Type"/>
+   <xsd:element name="ShippingAddress" type="ShippingAddress_Type"/>
+   <xsd:element name="StatementPeriod" type="StatementPeriod_Type"/>
+   <xsd:element name="Stock" type="Stock_Type"/>
+   <xsd:element name="StockPeriod" type="StockPeriod_Type"/>
+   <xsd:element name="Telephone" type="Telephone_Type"/>
+   <xsd:element name="ToAccount" type="ToAccount_Type"/>
+</xsd:schema>

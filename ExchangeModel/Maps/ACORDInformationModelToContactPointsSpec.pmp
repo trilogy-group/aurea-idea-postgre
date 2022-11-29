@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToContactPointsSpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='contactpointsspec.ContactPointsSpec'>
+  <ClassMap isSynthetic='false' name='PersonToROOT' sourceTypeName='org.acord.aim.Party.Person' targetTypeName='contactpointsspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForContextToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForPerson/ContextExtension/hasContactPoint'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='ContactPointHelper'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrganizationToROOT' sourceTypeName='org.acord.aim.Party.Organization' targetTypeName='contactpointsspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForOrganizationToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForOrganization/ContextExtension/hasContactPoint'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='ContactPointHelper'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='ContactPointHelperToRECORD' sourceTypeName='org.acord.ContactPointHelper' targetTypeName='contactpointsspec.RECORD' autoReverse='false'>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='Cell'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='Cell'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='cellphone'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Type'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='contacttype'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyForContactPointHelper/TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='taxid'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Address/postalBarcode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='zipcode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='elementAtPosition'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='Address/AddressLineCollection'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.Integer' literalString='1'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='street1'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='elementAtPosition'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='Address/AddressLineCollection'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.Integer' literalString='3'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='street3'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='elementAtPosition'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='Address/AddressLineCollection'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.Integer' literalString='2'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='street2'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Address/City/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='city'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Address/PostalAddressOnCountry/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='country'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='Address/State/abbreviation'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='Address/State/abbreviation'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='AL'>
+          </Literal>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='state'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='Phone'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='Phone'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='phonenumber'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='Pager'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='Pager'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='pager'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='Fax'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='Fax'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='faxnumber'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='Email'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='Email'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='emailaddress'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyForContactPointHelper/asPerson/PartyID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='partyid'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyForContactPointHelper/asOrganization/PartyID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='partyid'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AVContactName'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVContactName'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='ContactPointGID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='GID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='CommMode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='communicationmode'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

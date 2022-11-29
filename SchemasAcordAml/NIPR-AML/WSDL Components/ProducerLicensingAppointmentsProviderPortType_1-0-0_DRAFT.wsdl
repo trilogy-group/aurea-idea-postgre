@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--WSDL definition for Producer Licensing and Appointments Port Types based on AML (ACORD Messaging Library)-->
+<wsdl:definitions name="ProducerLicensingAppointments_PortTypes"
+	targetNamespace="http://www.acord.org/schema/ws-porttypes/AML/1/draft"
+	xmlns:awspmsg="http://www.acord.org/schema/ws-messages/awsp/2/draft"
+	xmlns:msg="http://www.acord.org/schema/ws-messages/AML/1/draft"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.xmlsoap.org/wsdl/
+	..\..\crossindustryschemas\wsdl-2004-08-24.xsd">
+	<!--Import Messages-->
+	<wsdl:import namespace="http://www.acord.org/schema/ws-messages/awsp/2/draft"
+		location="AWSPMessages_2-0-0_DRAFT.wsdl"/>
+	<wsdl:import namespace="http://www.acord.org/schema/ws-messages/AML/1/draft"
+		location="ProducerLicensingAppointmentsAMLMessages_1-0-0_DRAFT.wsdl"/>
+	<!--Define Port Types-->
+	<wsdl:portType name="ProducerLicensingAppointments">
+		<!--Business service operations use the reques-response pattern-->
+		<wsdl:operation name="ProducerAppointmentProcess">
+			<wsdl:input name="ProducerAppointmentProcess"
+				message="msg:ProducerAppointmentProcess"/>
+			<wsdl:output name="ProducerAppointmentProcessResult"
+				message="msg:ProducerAppointmentProcessResult"/>
+			<wsdl:fault name="AnyFault" message="awspmsg:SOAPFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ProducerLicenseApplicationProcess">
+			<wsdl:input name="ProducerLicenseApplicationProcess"
+				message="msg:ProducerLicenseApplicationProcess"/>
+			<wsdl:output name="ProducerLicenseApplicationProcessResult"
+				message="msg:ProducerLicenseApplicationProcessResult"/>
+			<wsdl:fault name="AnyFault" message="awspmsg:SOAPFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="Retrieve">
+			<wsdl:input name="Retrieve"
+				message="awspmsg:Retrieve"/>
+			<wsdl:output name="RetrieveResponse"
+				message="awspmsg:RetrieveResponse"/>
+			<wsdl:fault name="AnyFault" message="awspmsg:SOAPFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

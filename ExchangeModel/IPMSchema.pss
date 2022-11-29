@@ -1,0 +1,1017 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DomainSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='com.ipm.IPMSchema' preserveWhitespaces='false'>
+  <Package isSynthetic='false' name='IPM' javaPackage='com.ipm'>
+  </Package>
+  <EntityType isSynthetic='false' name='com.ipm.Party' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='AddressLine1' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AddressLine2' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='City' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Country' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Email' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyType' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='State' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Zip' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TaxID' assignable='true' index='12'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='13'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Status' assignable='true' index='14'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusReason' assignable='true' index='15'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusStartDate' assignable='true' index='16'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='AthenePersonCustomFields' assignable='true' index='17' cardinality='One2One' containment='true'>
+      <TypeName>com.partyinformation.AthenePersonCustomFields</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PartyForAthenePersonCustomFields' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='AtheneOrgCustomFields' assignable='true' index='18' cardinality='One2One' containment='true'>
+      <TypeName>com.partyinformation.AtheneOrgCustomFields</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PartyForAtheneOrgCustomFields' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='Salutation' assignable='true' index='19'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Suffix' assignable='true' index='20'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='MiddleName' assignable='true' index='21'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AltLastName' assignable='true' index='22'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PreferredName' assignable='true' index='23'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Gender' assignable='true' index='24'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='BirthDate' assignable='true' index='25'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='PartyRole' assignable='true' index='26' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.ipm.PartyRole</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PartyForPartyRole' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PartyRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TaxID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyType' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <Rule isSynthetic='false' name='RequiredParameter' connective='All' reportAtTop='true'>
+      <TrueAction>
+        <ReportRuleAction>At least one attribute should have a value.</ReportRuleAction>
+      </TrueAction>
+      <FalseAction>
+        <IgnoreRuleAction/>
+      </FalseAction>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasNoValue'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Name'>
+        </PathExpression>
+      </MethodExpression>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasNoValue'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='NPN'>
+        </PathExpression>
+      </MethodExpression>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasNoValue'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='PartyID'>
+        </PathExpression>
+      </MethodExpression>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasNoValue'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='TaxID'>
+        </PathExpression>
+      </MethodExpression>
+    </Rule>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PaymentAccountRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='EndDate' assignable='true' index='2'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StartDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PaymentAccountUpdate' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Amount' assignable='true' index='4'>
+      <TypeName>java.math.BigDecimal</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='BalanceType' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CreateDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Description' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PAUID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PaymentType' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.Transaction' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ContractKit' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ProducName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='SalesTeamID' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TransactionDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TransactionID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TransactionValid' assignable='true' index='13'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TransactionStatus' assignable='true' index='12'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.TransactionRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ContactKit' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='EndDate' assignable='true' index='3'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ProductName' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StartDate' assignable='true' index='2'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.User' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='UserName' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Password' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EnumerationType isSynthetic='false' name='com.ipm.SearchTypeEnum' restricts='java.lang.String'>
+    <Enumerand isSynthetic='false' name='Person' generator='Person'>
+    </Enumerand>
+    <Enumerand isSynthetic='false' name='Organization' generator='Organization'>
+    </Enumerand>
+  </EnumerationType>
+  <EntityType isSynthetic='false' name='com.ipm.PositionRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='SearchType' assignable='true' index='2'>
+      <TypeName>com.ipm.SearchTypeEnum</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OrganizationName' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RootNode' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionName' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PositionData' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OrganizationName' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionName' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='SearchType' assignable='true' index='1'>
+      <TypeName>com.ipm.SearchTypeEnum</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='HierachyName' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ParentPositionID' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ParentPositionName' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ParentPositionType' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='PositionHolderData' assignable='true' index='12' cardinality='One2Many' containment='false' collectionType='List'>
+      <TypeName>com.ipm.PositionHolderData</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PositionDataForPositionHolderData' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PositionResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='data' assignable='true' index='0' cardinality='One2Many' containment='true' collectionType='List'>
+      <TypeName>com.ipm.PositionData</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PositionResponseFordata' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='totalRowCount' assignable='true' index='1'>
+      <TypeName>java.lang.Integer</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.Error' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Description' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.UserResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='User' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.ipm.User</TypeName>
+      <RelationshipProperty isSynthetic='false' name='UserRespondForUser' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.TransactionResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Transaction' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.ipm.Transaction</TypeName>
+      <RelationshipProperty isSynthetic='false' name='TransactionRespondForTransaction' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PersonResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Person' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.ipm.Party</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PersonRespondForPerson' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PaymentAccountResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='PaymentAccountUpdate' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.ipm.PaymentAccountUpdate</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PaymentAccountRespondForPaymentAccountUpdate' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PartyResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='PartyInformation' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.ipm.Party</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PartyRespondForPartyInformation' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.OrganizationResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Organization' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='List'>
+      <TypeName>com.ipm.Party</TypeName>
+      <RelationshipProperty isSynthetic='false' name='OrganizationRespondForOrganization' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.EmailRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.EmailResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='EmailAddresses' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.AgreementParticipantRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.AgreementParticipantResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='data' assignable='true' index='1' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.ipm.AgreementParticipantData</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AgreementParticipantResponseFordata' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.AgreementParticipantData' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='APGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APUnid' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AgreementName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusCode' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusReason' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StartDate' assignable='true' index='5'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='EndDate' assignable='true' index='6'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.AppointmentRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.AppointmentData' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='StatusCode' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusReason' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StartDate' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='EndDate' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ApptGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Jurisdiction' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Company' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ApptLine' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LicenseGID' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FEIN' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LOA' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.AppointmentResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='AppointmentData' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.ipm.AppointmentData</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AppointmentResponseForAppointmentData' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.NPNRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyType' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TaxID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.NPNResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Errors' assignable='true' index='1'>
+      <TypeName>Set&lt;com.ipm.Error&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.DownloadUpdateFromPDBRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.DownloadUpdateFromPDBResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Success' assignable='true' index='0'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Alerts' assignable='true' index='1'>
+      <TypeName>Set&lt;com.ipm.Error&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ContactPointResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ContactPointData' assignable='true' index='0'>
+      <TypeName>List&lt;com.partyinformation.ContactPoint&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ContactPointRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.LicenseRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.LicenseResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='LicenseData' assignable='true' index='0'>
+      <TypeName>Set&lt;com.partyinformation.License&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ContactPointUsageRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ContactPointUsageResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ContactPointUsageData' assignable='true' index='0'>
+      <TypeName>List&lt;com.partyinformation.ContactPointUsage&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.RegulatoryActionRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.RegulatoryActionResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='RegulatoryActionData' assignable='true' index='0'>
+      <TypeName>List&lt;com.partyinformation.RegulatoryAction&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.CorrespondenceEmailRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CoverLetterEmailAddress' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='3'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.NIPRDetailsForAppointmentRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.NIPRDetailsForAppointmentResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='NIPRDetailsForAppointmentData' assignable='true' index='0'>
+      <TypeName>List&lt;com.partyinformation.NIPRDetailsForAppointment&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.Cancelledin90daysRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.checkPartyRecontractabilityRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.checkPartyRecontractabilityResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Result' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Reason' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.Cancelledin90daysResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Result' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.EOAndBCWaivedRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='0' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='1' required='true'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.EOAndBCWaivedResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='EOWaived' assignable='true' index='0'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='BCExempt' assignable='true' index='1'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.OtherCompanyAppointmentsRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.OtherCompanyAppointmentsResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='OtherCompanyAppointmentsData' assignable='true' index='0'>
+      <TypeName>List&lt;com.partyinformation.OtherCompanyAppoinments&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ChildPositionTypeRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='HierarchyType' assignable='true' index='0' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='1' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ChildPositionTypeResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PositionTypes' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ErrorAndOmissionRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ErrorAndOmissionResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='data' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>Set&lt;com.partyinformation.ErrorAndOmissionData&gt;</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ErrorAndOmissionResponseFordata' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.APIDForCaseRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AgreementName' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CaseID' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.APIDForCaseResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='data' assignable='true' index='0' cardinality='One2One' containment='false'>
+      <TypeName>com.ipm.AgreementParticipantID</TypeName>
+      <RelationshipProperty isSynthetic='false' name='APIDForCaseResponseFordata' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PaymentAccountsRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PaymentAccountsResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='data' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='Set'>
+      <TypeName>com.partyinformation.PaymentAccountData</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PaymentAccountsResponseFordata' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.SubmitBackgroundCheckRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CaseID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.BackgroundCheckResponseRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='CaseID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.SubmitBackgroundCheckResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='RequestID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusCode' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Errors' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.BackgroundCheckResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='RequestId' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ClientCaseId' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusCode' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PassReviewStatusCode' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CreditCheckResultCode' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CriminalBackgroundCheckResultCode' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OFACBackgroundCheckResultCode' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RedirectLink' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.AgreementParticipantID' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='APUnid' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.setupDCMDataRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ActivityType' assignable='true' index='0' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='1' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='isBackgroundcheckRequired' assignable='true' index='2' required='true'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LegalQuestionD' assignable='true' index='3' required='true'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LegalQuestionH' assignable='true' index='4' required='true'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='5' required='true'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ParentPositionGID' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CaseID' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AgreementName' assignable='true' index='11' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ProductProfileName' assignable='true' index='12' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AMLTrainingDate' assignable='true' index='12'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ModelLawTrainingDate' assignable='true' index='13'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='IAIndexTrainingDate' assignable='true' index='14'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='HasRegulatoryAction' assignable='true' index='16'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FourHRIntTrainingDate' assignable='true' index='17'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NYREGTrainingDate' assignable='true' index='19'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OneHRIntTrainingDate' assignable='true' index='18'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ServicingOnly' assignable='true' index='20'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+	<AttributeProperty isSynthetic='false' name='ProductPrefPreset' assignable='true' index='21'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+	<AttributeProperty isSynthetic='false' name='ProductGroup' assignable='true' index='22'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.setupDCMDataResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Errors' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PartyRole' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Role' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.HierarchyPositionRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.HierarchyPositionResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PositionName' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Error' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PositionHolderData' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyName' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APStatus' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PosHolderStartDate' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PosHolderEndDate' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ServicingOnly' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PositionDetailedRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='SearchType' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OrganizationName' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionName' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PositionDetailedResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='data' assignable='true' index='0' cardinality='One2Many' containment='true' collectionType='List'>
+      <TypeName>com.ipm.PositionData</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PositionDetailedResponseFordata' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.FIAgreementsRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.FIAgreementsResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='FIAgreementsData' assignable='true' index='0'>
+      <TypeName>List&lt;com.partyinformation.FIAgreement&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.UplinePartyRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.UplinePartyResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Error' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyName' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVBusinessType' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVAccToWeb' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+	  <AttributeProperty isSynthetic='false' name='AVProductGroup' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ChannelEligibilityResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ChannelEligibilityResponse' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PartyChannelEligibilityRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0' required='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='2'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ActiveProductProfilesResponse' isAbstract='false'>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ActiveProductProfileRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='2'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ActiveProductProileResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ActiveProductProfileData' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.ActiveProductProfileResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ActiveProductProfileData' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.LOARequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.LOAData' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='startDate' assignable='true' index='0'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='endDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='statusCode' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='statusReason' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='statusType' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='loaCode' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='licNumber' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='name' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.LOAResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='loaData' assignable='true' index='0'>
+      <TypeName>List&lt;com.ipm.LOAData&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PartyStatusRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyId' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.ipm.PartyStatusReason' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Result' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusReason' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <Import schemaName='com.partyinformation.PartyInformation'/>
+</DomainSchema>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:Problems>
+    <run:DatasourceWarnings>
+      <run:Exception component="DCMFlatFileDataSource" message="Basedir C:\mcc2013 does not exist" stackTrace="com.pantero.runtime.PanteroRuntimeException: Basedir C:\mcc2013 does not exist
+  caused by: org.apache.tools.ant.BuildException: Basedir C:\mcc2013 does not exist
+    at dcm.DCMFlatFileDataSourceImpl.returnAlert(DCMFlatFileDataSourceImpl.java:233)
+    at dcm.DCMFlatFileDataSourceImpl.InsertUser(DCMFlatFileDataSourceImpl.java:78)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+    at java.lang.reflect.Method.invoke(Method.java:597)
+    at com.pantero.runtime.metamodel.methods.JavaInvoker.invoke(JavaInvoker.java:72)
+    at com.pantero.runtime.datasource.DataSourceSession.executeOperation(DataSourceSession.java:498)
+    at com.pantero.runtime.datasource.DataSourceSession.executeOperations(DataSourceSession.java:469)
+    at com.pantero.runtime.datasource.DataSourceSession.doOnInsert(DataSourceSession.java:462)
+    at com.pantero.runtime.datasource.DataSourceSession.callOnInsert(DataSourceSession.java:559)
+    at com.pantero.runtime.datasource.DataSourceSession.insert(DataSourceSession.java:378)
+    at com.pantero.runtime.datasource.DataSourceSession.insertLocal(DataSourceSession.java:360)
+    at com.pantero.runtime.datasource.DataSourceSession.insert(DataSourceSession.java:201)
+    at com.pantero.runtime.mapping.MappingSession.insertMappedEntities(MappingSession.java:703)
+    at com.pantero.runtime.mapping.MappingSession.doInsert(MappingSession.java:649)
+    at com.pantero.runtime.mapping.MappingSession.insert(MappingSession.java:574)
+    at com.pantero.runtime.mapping.CompositeMappingSession.insert(CompositeMappingSession.java:180)
+    at com.pantero.runtime.domain.DomainSession.syncWithSourceSession(DomainSession.java:77)
+    at com.pantero.runtime.domain.DomainSession.syncWithSourceSession(DomainSession.java:62)
+    at com.pantero.runtime.dataservice.DataServiceSession.syncWithSourceSession(DataServiceSession.java:261)
+    at com.pantero.runtime.dataservice.DataService.syncWithSource(DataService.java:996)
+    at com.pantero.runtime.dataservice.DataService.insert(DataService.java:299)
+    at com.pantero.runtime.dataservice.DataService.insert(DataService.java:258)
+    at com.pantero.runtime.dataservice.DataService.insert(DataService.java:236)
+    at com.xmlinfo.XMLInformationImpl.Insert(XMLInformationImpl.java:63)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+    at java.lang.reflect.Method.invoke(Method.java:597)
+    at com.pantero.util.ReflectionUtils.invoke(ReflectionUtils.java:110)
+    at com.pantero.runtime.debug.Debugger.invokeOperation(Debugger.java:331)
+    at com.pantero.runtime.debug.Debugger.debugOperation(Debugger.java:246)
+    at com.pantero.runtime.RuntimeEnvironment.doDebugTestCase(RuntimeEnvironment.java:1182)
+    at com.progress.dataxtend.si.designer.tester.views.RuntimeDebugger.runTestCase(RuntimeDebugger.java:603)
+    at com.progress.dataxtend.si.designer.tester.views.RuntimeDebugger.access$15(RuntimeDebugger.java:597)
+    at com.progress.dataxtend.si.designer.tester.views.RuntimeDebugger$13.run(RuntimeDebugger.java:571)
+    at com.progress.dataxtend.si.designer.tester.views.RuntimeDebugger$16$2.evaluate(RuntimeDebugger.java:938)
+    at com.pantero.runtime.debug.RuntimeThreadInvoker$1.run(RuntimeThreadInvoker.java:46)
+    at com.pantero.runtime.util.DataXTendThread.run(DataXTendThread.java:41)
+Caused by: Basedir C:\mcc2013 does not exist
+    at org.apache.tools.ant.Project.setBaseDir(Project.java:702)
+    at org.apache.tools.ant.Project.setBasedir(Project.java:687)
+    at com.aurea.dcm.loader.DCMLoader.executeAntTask(DCMLoader.java:74)
+    at com.aurea.dcm.loader.DCMLoader.invokeDCMLoader(DCMLoader.java:147)
+    at com.aurea.dcm.loader.DCMLoader.loadDCM(DCMLoader.java:204)
+    at dcm.DCMFlatFileDataSourceImpl.returnAlert(DCMFlatFileDataSourceImpl.java:228)
+    ... 39 more
+"/>
+    </run:DatasourceWarnings>
+  </run:Problems>
+</run:RuntimeReport>

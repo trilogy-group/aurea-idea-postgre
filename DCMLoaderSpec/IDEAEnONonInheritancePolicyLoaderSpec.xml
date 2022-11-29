@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loader:loader_spec xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:loader="http://dms.trilogy.com/Loader/Spec" xmlns="http://dms.trilogy.com/Loader/Spec" xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd" name="Loading non-inheriting FSEOPolicy  objects">
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+		<!--property name="numThreads" value="4"/-->
+	</strategy>
+	<object name="errors_omissions1" class="FSEOPolicyValidator"/>
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="headerRows" value="1"/>
+		<!--property name="footerRows" value="1"/-->
+		<property name="quote_chars" value="&quot;"/>
+		<indexed_field index="0" name="tax id"/>
+		<indexed_field index="1" name="policy type" translator="policy_type_translator"/>
+		<indexed_field index="2" name="carrier" />
+		<indexed_field index="3" name="policy number"/>
+		<indexed_field index="4" name="status code" translator="status_code_translator"/>
+		<indexed_field index="5" name="status reason" translator="status_reason_translator"/>
+		<indexed_field index="6" name="start date" translator="date_translator"/>
+		<indexed_field index="7" name="end date" translator="date_translator"/>
+		<indexed_field index="8" name="comment"/>
+		<indexed_field index="9" name="eo provider tax id"/>
+		<indexed_field index="10" name="grant status" translator="boolean_translator"/>
+		<indexed_field index="11" name="claim limit"/>
+		<indexed_field index="12" name="policy limit"/>
+		<indexed_field index="13" name="Certificate Number"/>
+		<indexed_field index="14" name="party id"/>
+	</source>
+	<translator name="policy_type_translator" class="enum_translator">
+		<property name="enumName" value="EOPolicy.PolicyType"/>
+		<property name="throwException" value="true"/>
+		<property name="useDefaultValue" value="false"/> 
+	</translator>
+	<translator name="status_code_translator" class="enum_translator">
+		<property name="enumName" value="EOPolicy.Status"/>
+		<property name="throwException" value="true"/>
+		<property name="useDefaultValue" value="false"/> 
+	</translator>
+	<translator name="status_reason_translator" class="enum_translator">
+		<property name="enumName" value="EOPolicy.Status.Reason"/>
+		<property name="throwException" value="true"/>
+		<property name="useDefaultValue" value="false"/> 
+	</translator>
+	<translator name="date_translator" class="com.aviva.fs.dms.tools.loader.translate.AVDateFormatTranslator">
+        <property name="formatString" value="MM/dd/yyyy"/>
+    </translator>
+	<translator name="boolean_translator" class="boolean_translator">
+		<property name="true" value="1"/>
+		<property name="false" value="0"/>
+		<property name="defaultValue" value="0"/>
+	</translator>
+	<translator name="create_action" class="action_translator">
+		<property name="" value="update or insert"/>
+	</translator>
+	<resolver name="distributordata_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value = "SELECT dd.GID gid, party.UNID unid FROM FSRole role, FSParty party, FSDistributorData dd 
+						WHERE dd.GID = role.RoleData AND role.Party = party.GID"/>
+        <property name="gidAlias" value="gid"/>
+        <property name="keys" value="unid"/>
+    </resolver>
+
+	<resolver name="policydata_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value="SELECT policy.GID gid, party.UNID unid, policy.PolicyType polType, policy.Carrier carr, policy.PolicyNumber polNum FROM FSEOPolicy policy, FSRole role, FSParty party WHERE policy.DistributorData=role.RoleData AND role.Party = party.GID"/>
+		<property name="keys" value="unid,polType,carr,polNum"/>
+		<property name="gidAlias" value="gid"/>
+	</resolver>
+	<map object="errors_omissions1">
+		<map_action translator="create_action" default="nothing" resolver="policydata_resolver">
+			<actionfield name="eo provider tax id"/>
+			<field name="party id"/>
+			<field name="policy type"/>
+			<field name="carrier"/>
+			<field name="policy number"/>
+		</map_action>
+		<!--  		<map_object property="DISTRIBUTORDATA_CONTEXT" resolver="distributordata_resolver" tag="validator">
+			<field name="tax id"/>
+		</map_object>  -->
+		<map_object property="DistributorData" resolver="distributordata_resolver" tag="validator">
+			<field name="party id"/>
+		</map_object>
+		<map_simple property="PolicyType" field="policy type" tag="validator"/>
+		<map_simple property="Carrier" field="carrier"/>
+		<map_simple property="PolicyNumber" field="policy number"/>
+		<map_simple property="NewStatus.StatusCode" field="status code" tag="validator"/>
+		<map_simple property="NewStatus.StatusReason" field="status reason" tag="validator"/>
+		<map_simple property="NewStatus.StartDate" field="start date" tag="validator"/>
+		<map_simple property="NewStatus.EndDate" field="end date" tag="validator"/>
+		<map_simple property="Comment" field="comment"/>
+		<!--map_simple property="EOGrant" field="grant status"/-->
+		<map_simple property="ClaimLimit" field="claim limit"/>
+		<map_simple property="PolicyLimit" field="policy limit"/>
+		<map_simple property="CertificateNumber" field="Certificate Number"/>
+	</map>
+</loader:loader_spec>

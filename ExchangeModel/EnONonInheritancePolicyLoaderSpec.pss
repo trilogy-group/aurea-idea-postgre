@@ -1,0 +1,417 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<EncodedSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSchema' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.FlatFileSchemaSubclass' name='enononinheritancepolicyloaderspec.EnONonInheritancePolicyLoaderSpec' preserveWhitespaces='false'>
+  <ExtensionProperty name='xmlc.dialect'>
+    <Value>GENERIC</Value>
+  </ExtensionProperty>
+  <ExtensionProperty name='xmlc.version'>
+    <Value>FLATFILE</Value>
+  </ExtensionProperty>
+  <ExtensionProperty name='xmlc.message'>
+    <Value>ROOT</Value>
+  </ExtensionProperty>
+  <ExtensionProperty name='xmlc.newline'>
+    <Value>PLATFORM</Value>
+  </ExtensionProperty>
+  <ExtensionProperty name='xmlc.setup'>
+    <Value>true</Value>
+  </ExtensionProperty>
+  <ExtensionProperty name='dxsi.nd'>
+    <Value>true</Value>
+  </ExtensionProperty>
+  <ExtensionProperty name='xmlc.segment'>
+    <Value>CR</Value>
+  </ExtensionProperty>
+  <ExtensionProperty name='xmlc.element'>
+    <Value>,</Value>
+  </ExtensionProperty>
+  <Package isSynthetic='false' name='enononinheritancepolicyloaderspec' javaPackage='enononinheritancepolicyloaderspec'>
+  </Package>
+  <EntityType isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileRoot' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.RootEntityTypeSubclass' name='enononinheritancepolicyloaderspec.ROOT' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='RECORD' originalName='RECORD' assignable='true' index='0' required='true' cardinality='One2Many' containment='true' collectionType='List'>
+      <TypeName>enononinheritancepolicyloaderspec.RECORD</TypeName>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSegment' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SegmentEntityTypeSubclass' name='enononinheritancepolicyloaderspec.RECORD' isAbstract='false'>
+    <Description>RECORD Segment Type</Description>
+    <ExtensionProperty name='dxsi.layout'>
+      <Value>Delimited</Value>
+    </ExtensionProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='taxid' assignable='true' index='0'>
+      <Description>taxid</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>1</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='policytype' assignable='true' index='1'>
+      <Description>policytype</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>2</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='carrier' assignable='true' index='2'>
+      <Description>carrier</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>3</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='policynumber' assignable='true' index='3'>
+      <Description>policynumber</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>4</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='statuscode' assignable='true' defaultLiteral='Active' index='4'>
+      <Description>statuscode</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>5</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='statusreason' assignable='true' defaultLiteral='N/A' index='5'>
+      <Description>statusreason</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>6</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='startdate' assignable='true' index='6'>
+      <Description>startdate</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>7</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='enddate' assignable='true' index='7'>
+      <Description>enddate</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>8</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='comment' assignable='true' index='8'>
+      <Description>comment</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>9</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='eoprovidertaxid' assignable='true' index='9'>
+      <Description>eoprovidertaxid</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>10</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='grantstatus' assignable='true' defaultLiteral='1' index='10'>
+      <Description>grantstatus</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>11</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='claimlimit' assignable='true' index='11'>
+      <Description>claimlimit</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>12</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='policylimit' assignable='true' index='12'>
+      <Description>policylimit</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>13</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='CertificateNumber' assignable='true' index='13'>
+      <Description>CertificateNumber</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>14</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileSimpleAttribute' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.SimpleElementAttributeSubclass' name='partyid' assignable='true' index='14'>
+      <Description>partyid</Description>
+      <ExtensionProperty name='dxsi.position'>
+        <Value>15</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.datatype'>
+        <Value>STRING</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='dxsi.modifier'>
+        <Value>Unchanged</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='esc'>
+        <Value>NONE</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='ent'>
+        <Value>Named Entity</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='norm'>
+        <Value>Space</Value>
+      </ExtensionProperty>
+      <ExtensionProperty name='q'>
+        <Value>"'</Value>
+      </ExtensionProperty>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <ImportConfiguration>DCMLoaderSpec/IDEAEnONonInheritancePolicyLoaderSpec.xml</ImportConfiguration>
+  <SchemaRootType>enononinheritancepolicyloaderspec.ROOT</SchemaRootType>
+</EncodedSchema>

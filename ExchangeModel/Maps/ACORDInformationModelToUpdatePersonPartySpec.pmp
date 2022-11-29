@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToUpdatePersonPartySpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='updatepersonpartyspec.UpdatePersonPartySpec'>
+  <ClassMap isSynthetic='false' name='IPMContextToROOT' sourceTypeName='org.acord.IPMContext' targetTypeName='updatepersonpartyspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForIPMContextToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='Person'>
+          </PathExpression>
+        </MethodExpression>
+        <MethodExpression isSynthetic='false' infix='true'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='or'>
+          </MethodReference>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.MiscLibrary' methodName='isCurrentDataServiceOperation'>
+            </MethodReference>
+            <GenericModelObjectArgument isSynthetic='false' targetName='IPMDataService/Update' modelObjectClass='com.pantero.metamodel.operations.DataServiceOperation'>
+            </GenericModelObjectArgument>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.MiscLibrary' methodName='isCurrentDataServiceOperation'>
+            </MethodReference>
+            <GenericModelObjectArgument isSynthetic='false' targetName='IPMDataService/ValidateForUpdate' modelObjectClass='com.pantero.metamodel.operations.DataServiceOperation'>
+            </GenericModelObjectArgument>
+          </MethodExpression>
+        </MethodExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Person'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='PersonToRECORD' sourceTypeName='org.acord.aim.Party.Person' targetTypeName='updatepersonpartyspec.RECORD' autoReverse='false'>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Role/description'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='role'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonOwnsPersonName/givenName'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='firstname'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonOwnsPersonName/surname'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='lastname'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='taxid'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='birthDate/DateType'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='dateofbirth'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='NationalProducerNumber'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='npn'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Email/url'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='email'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonOwnsPersonName/middleName'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='middlename'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonOwnsPersonName/suffix'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='profdesignation'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='genderCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='gender'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonBornAtPostalAddress/PostalAddressOnCountry/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='nationalorigin'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='maritalStatusCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='maritalstatus'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Spouse/PartyRoleOnPartyName/asPersonName/givenName'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='spousefirstname'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Spouse/PartyRoleOnPartyName/asPersonName/surname'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='spouselastname'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonOwnsPersonName/prefixTitleCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='title'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Fax/FaxContactOnTelephoneNumber/fullNumber'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='fax'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Telephone/TelephoneContactOnTelephoneNumber/fullNumber'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='phone1'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='statuscode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusReason'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='statusreason'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='syncWithPDB'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='syncwithPDB'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='statusDate/year'>
+            </PathExpression>
+          </MethodExpression>
+          <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/month'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/day'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/year'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='0000'>
+              </Literal>
+            </MethodExpression>
+          </CollectionExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='statusstartdate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='statusEndDate/year'>
+            </PathExpression>
+          </MethodExpression>
+          <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/month'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/day'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/year'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='0000'>
+              </Literal>
+            </MethodExpression>
+          </CollectionExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='statusenddate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/BeneficiaryInfoOnFile'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='BeneficiaryInfoOnFile'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/InitialContractDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='InitialContractDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/dtccid'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='dtccid'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/crdnumber'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='crdnumber'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonOwnsPersonName/salutation'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='salutation'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonOwnsPersonName/alternatelastname'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='alternatelastname'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonOwnsPersonName/preferredname'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='preferredname'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/LOPExemptUntil'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='LOPExemptUntilDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/LOPExemptReqLastName'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/LOPExemptReqLastName'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='LOPExemptReqLastName'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/LOPExemptReason'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='LOPExemptReason'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/DBA'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/DBA'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='dba'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/Designation'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/Designation'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='designation'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/AVIPCEffectiveDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVIPCEffectiveDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/AVIPCOnFile'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVIPCOnFile'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/AVIPCVersion'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVIPCVersion'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='ContextToROOT' sourceTypeName='org.acord.Context' targetTypeName='updatepersonpartyspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForContextToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='false'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Person'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Person'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

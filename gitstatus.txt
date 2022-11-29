@@ -1,0 +1,34 @@
+On branch AISAUC-335
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ExchangeModel/ExchangeModel.ppr
+	modified:   ExchangeModel/ExchangeModel.pxm
+	modified:   ExchangeModel/IPMSchema.pss
+	modified:   ExchangeModel/ImportConfigurations.pic
+	modified:   ExchangeModel/InsertAgreementParticipantSpec.pss
+	modified:   ExchangeModel/Maps/ACORDInformationModelToUpdateAgreementParticipantSpec.pmp
+	modified:   ExchangeModel/Maps/PartyInformationToACORDInformationModel.pmp
+	modified:   ExchangeModel/PartyInformation.pss
+	modified:   ExchangeModel/config.properties
+	deleted:    ExchangeModelControls/DCMUtilsDataSource/GetPartyContactPointEmailList.java
+	modified:   ExchangeModelControls/dcm/DCMFlatFileDataSourceImpl.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	DCMLoaderSpec/IDEAAgreementParticipantStatusSpec.xml
+	DCMLoaderSpec/IDEACompensationHierarchyPositionHolderSpec.xsd
+	DCMLoaderSpec/IDEAUpdateOrgPartySpec_dcm2011.xsd
+	ExchangeModel/DataSources/DCMdbO - Copy.psd.backup
+	ExchangeModel/IDEAUpdateAgreementParticipantStatusLoaderSpec.pss
+	ExchangeModel/Schemas/
+	ExchangeModel/null.xml
+	ExchangeModelControls/com/big/BIGDataService.java
+	ExchangeModelControls/com/ds/IPMDataService.java
+	ExchangeModelControls/com/niprdataservice/NIPRDataService.java
+	gitstatus.txt
+	lib/ojdbc6.jar
+
+no changes added to commit (use "git add" and/or "git commit -a")

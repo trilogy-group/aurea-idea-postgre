@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:RuleResults>
+    <run:Category name="XMLInformationSchemaValidation">
+      <run:Result name="requiredForZipCodeOnAddress" subjectType="xmlinformation.com.xmlInformation.xmlInformation.Address" message="ZipCode in Address is required" category="XMLInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 2/36)"/>
+        <run:Detail value="false" message="ZipCode null hasValue is false"/>
+      </run:Result>
+    </run:Category>
+  </run:RuleResults>
+</run:RuntimeReport>

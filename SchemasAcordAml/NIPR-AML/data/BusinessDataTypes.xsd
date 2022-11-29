@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+   ====================================================================== 
+    ===== Business Data Type Schema Module ===== 
+   NON NORMATIVE EXAMPLE PROVIDED FOR ACORD NDR ILLUSTRATION 
+    ====================================================================== 
+   
+      Standard Organization: ACORD
+       Version: Draft 18pla01 
+      Generated on: 25 March 2011
+    
+     COPYRIGHT NOTICE:
+     
+(c) 2011 ACORD. All Rights Reserved.
+
+Use of this Schema and its documentation are covered by the terms and conditions file that was included in the distribution file that you found this Schema.http://www.ACORD.org
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:acord-doc="http://www.acord.org/schema/documentation/draft/Annotations/1" xmlns="http://www.acord.org/schema/data/draft/ReusableDataComponents/1" targetNamespace="http://www.acord.org/schema/data/draft/ReusableDataComponents/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+   <xsd:annotation>
+      <xsd:appinfo>
+         <acord-doc:GenerationDateTime>3/25/2011</acord-doc:GenerationDateTime>
+      </xsd:appinfo>
+   </xsd:annotation>
+   <xsd:include schemaLocation="../codelists/ACORD_CodeLists.xsd"/>
+<!--
+*******************************************************************************
+            Business Data Types
+*******************************************************************************
+-->
+
+   <xsd:complexType name="ACORDClosedCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ACORDCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ACORDCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ACORDCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ACORDStandardVersionCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ACORDStandardVersionCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ActionCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ActionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="Amount_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="AmountContent_Type">
+            <xsd:attribute name="currencyCode" type="CurrencyCodeContent_Type"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="AnswerCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="AnswerCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="AttachmentTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="AttachmentTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="AuthorizingEntityContactRoleCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="AuthorizingEntityContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="BusinessActivityFinancialAmountItemTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="BusinessActivityFinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="BusinessActivityTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="BusinessActivityTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="Code_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="CodeContent_Type">
+            <xsd:attributeGroup ref="CodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CommunicationChannelCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="CommunicationChannelCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CommunicationProcessCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="CommunicationProcessCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ContactRoleCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CoreRoleCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="CoreRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="CorporateSharesIssuedTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="CorporateSharesIssuedTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="DomesticForeignCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="DomesticForeignCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EducationLevelCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="EducationLevelCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EmailTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="EmailTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EmployerCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="EmployerCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="EndPointActorContactRoleCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="EndPointActorContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExchangeTradedCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ExchangeTradedCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExtendedStatusCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ExtendedStatusCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ExternalIdentifierTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialAmountItemTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialPeriodCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialPeriodCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialStatementFinancialAmountItemTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialStatementFinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="FinancialStatementTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="FinancialStatementTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="GenderCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="GenderCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="HumanResourcesTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="HumanResourcesTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsuredExternalIdentifierTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="InsuredExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsurerContactRoleCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="InsurerContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="InsurerExternalIdentifierTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="InsurerExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="JobCategoryCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="JobCategoryCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LegalEntityCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="LegalEntityCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="LicenseStatusCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="LicenseStatusCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="MaritalStatusCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="MaritalStatusCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageDocumentResultStatusCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="MessageDocumentResultStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="MessageResultStatusCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="MessageResultStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="NameTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="NameTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OccupationClassCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="OccupationClassCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsFinancialAmountItemTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="OperationsFinancialAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsHumanResourcesTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="OperationsHumanResourcesTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OperationsTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="OperationsTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationExternalIdentifierTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="OrganizationExternalIdentifierTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="OrganizationNameTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="OrganizationNameTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PartyRoleTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="PartyRoleTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PaymentTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="PaymentTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonExternalIdentifierTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="PersonExternalIdentifierTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonNameTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="PersonNameTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="PersonTitlePrefixCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="PersonTitlePrefixCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerAppointmentTransactionAmountItemTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerAppointmentTransactionAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerAppointmentTransactionFunctionCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerAppointmentTransactionFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerContactRoleCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerContactRoleCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerExternalIdentifierTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerExternalIdentifierTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDClosedCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerLicenseApplicationQuestionCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerLicenseApplicationQuestionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerLicenseApplicationTransactionFunctionCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerLicenseApplicationTransactionFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerLicenseTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerLicenseTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ProducerTransactionStatusCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ProducerTransactionStatusCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="QuestionCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="QuestionCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ResultPendedCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ResultPendedCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ResultRejectCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ResultRejectCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="ResultSuccessCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="ResultSuccessCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TelephoneTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="TelephoneTypeCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TitleRelationshipCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="TitleRelationshipCodeContent_Type">
+            <xsd:attributeGroup ref="ACORDCodeAttribute_Sequence"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TransactionAmountItemTypeCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="TransactionAmountItemTypeCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="TransactionFunctionCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="TransactionFunctionCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:complexType name="WorkPerformedCode_Type">
+      <xsd:simpleContent>
+         <xsd:extension base="WorkPerformedCodeContent_Type"/>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:simpleType name="ACORDCodeContent_Type">
+      <xsd:restriction base="xsd:QName"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="AmountContent_Type">
+      <xsd:restriction base="xsd:decimal"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CodeContent_Type">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="CurrencyCodeContent_Type">
+      <xsd:restriction base="CodeContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="Identifier_Type">
+      <xsd:restriction base="IdentifierContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="IdentifierContent_Type">
+      <xsd:restriction base="xsd:token"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InfiniteText_Type">
+      <xsd:restriction base="InfiniteTextContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="InfiniteTextContent_Type">
+      <xsd:restriction base="TextContent_Type">
+         <xsd:minLength value="1"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="LongText_Type">
+      <xsd:restriction base="LongTextContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="LongTextContent_Type">
+      <xsd:restriction base="TextContent_Type">
+         <xsd:maxLength value="255"/>
+         <xsd:minLength value="1"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="Percent_Type">
+      <xsd:restriction base="xsd:decimal"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PhoneNumberText_Type">
+      <xsd:restriction base="PhoneNumberTextContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="PhoneNumberTextContent_Type">
+      <xsd:restriction base="TextContent_Type">
+         <xsd:maxLength value="32"/>
+         <xsd:minLength value="1"/>
+         <xsd:pattern value="\+\S+\-\S+\-\S+(\+\S+)?"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="SimpleIdentifier_Type">
+      <xsd:restriction base="SimpleIdentifierContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="SimpleIdentifierContent_Type">
+      <xsd:restriction base="IdentifierContent_Type">
+         <xsd:maxLength value="255"/>
+         <xsd:minLength value="1"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <xsd:simpleType name="TextContent_Type">
+      <xsd:restriction base="xsd:string"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UnsignedIntegerNumeric_Type">
+      <xsd:restriction base="xsd:unsignedInt"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UUIDIdentifier_Type">
+      <xsd:restriction base="UUIDIdentifierContent_Type"/>
+   </xsd:simpleType>
+   <xsd:simpleType name="UUIDIdentifierContent_Type">
+      <xsd:restriction base="IdentifierContent_Type">
+         <xsd:maxLength value="36"/>
+         <xsd:minLength value="36"/>
+         <xsd:pattern value="[0-9A-Fa-f]{8}(-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}"/>
+      </xsd:restriction>
+   </xsd:simpleType>
+   <!--
+      *******************************************************************************
+     AttributeGroup
+      *******************************************************************************
+   -->
+   <xsd:attributeGroup name="ACORDClosedCodeAttribute_Sequence">
+      <xsd:attribute name="name" type="LongText_Type"/>
+      <xsd:attribute name="lang" type="xsd:language"/>
+   </xsd:attributeGroup>
+   <xsd:attributeGroup name="ACORDCodeAttribute_Sequence">
+      <xsd:attribute name="name" type="LongText_Type"/>
+      <xsd:attribute name="lang" type="xsd:language"/>
+      <xsd:attribute name="codeListReference" type="SimpleIdentifier_Type"/>
+   </xsd:attributeGroup>
+   <xsd:attributeGroup name="CodeAttribute_Sequence">
+      <xsd:attribute name="name" type="LongText_Type"/>
+      <xsd:attribute name="lang" type="xsd:language"/>
+      <xsd:attribute name="codeListReference" type="SimpleIdentifier_Type"/>
+   </xsd:attributeGroup>
+   
+</xsd:schema>

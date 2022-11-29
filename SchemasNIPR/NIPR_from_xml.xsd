@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="HITLIST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TRANSACTION_TYPE" minOccurs="0"/>
+        <xs:choice>
+          <xs:element ref="ERROR" minOccurs="0"/>
+          <xs:element ref="INDIVIDUAL" minOccurs="0"/>
+          <xs:element ref="FIRM" minOccurs="0"/>
+         </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="PDB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TRANSACTION_TYPE" minOccurs="0"/>
+        <xs:element name="PRODUCER" minOccurs="0">
+          <xs:complexType>
+            <xs:choice>
+              <xs:element ref="ERROR" minOccurs="0"/>
+              <xs:element ref="INDIVIDUAL" minOccurs="0"/>
+              <xs:element ref="FIRM" minOccurs="0"/>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+   <xs:element name="ERROR">
+    <xs:complexType>
+      <xs:sequence>
+    	<xs:element name="DESCRIPTION" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+   <xs:element name="ADDRESSES">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="STATE" maxOccurs="unbounded" minOccurs="0">
+	  <xs:complexType>
+	    <xs:sequence>
+	      <xs:element name="ADDRESS" maxOccurs="unbounded" minOccurs="0">
+		<xs:complexType>
+		  <xs:sequence>
+		    <xs:element type="xs:string" name="DATE_UPDATED" minOccurs="0"/>
+		    <xs:element type="xs:byte" name="ADDRESS_TYPE_CODE" minOccurs="0"/>
+		    <xs:element type="xs:string" name="ADDR_TYPE" minOccurs="0"/>
+		    <xs:element type="xs:string" name="ADDR_LINE_1" minOccurs="0"/>
+		    <xs:element type="xs:string" name="ADDR_LINE_2" minOccurs="0"/>
+		    <xs:element type="xs:string" name="ADDR_LINE_3" minOccurs="0"/>
+		    <xs:element type="xs:string" name="NAME_CITY" minOccurs="0"/>
+		    <xs:element type="xs:string" name="NAME_STATE" minOccurs="0"/>
+		    <xs:element type="xs:string" name="ZIP" minOccurs="0"/>
+		    <xs:element type="xs:string" name="COUNTRY" minOccurs="0"/>
+		  </xs:sequence>
+		</xs:complexType>
+	      </xs:element>
+	    </xs:sequence>
+	    <xs:attribute type="xs:string" name="name" use="optional"/>
+	  </xs:complexType>
+	</xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="PRODUCER_LICENSING">
+      <xs:complexType>
+	<xs:sequence>
+	  <xs:element ref="LICENSE_INFORMATION" minOccurs="0"/>
+	  <xs:element type="xs:string" name="CLEARANCE_CERTIFICATION_INFO" minOccurs="0"/>
+	  <xs:element ref="REGULATORY_ACTION" minOccurs="0"/>
+	  <xs:element ref="NASD_EXAM" minOccurs="0"/>
+	</xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  <xs:element name="LICENSE_INFORMATION">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="STATE" maxOccurs="unbounded" minOccurs="0">
+	  <xs:complexType>
+	    <xs:sequence>
+	      <xs:element ref="LICENSE" maxOccurs="unbounded" minOccurs="0"/>
+	      <xs:element ref="APPOINTMENT_INFORMATION" minOccurs="0"/>
+	    </xs:sequence>
+	    <xs:attribute type="xs:string" name="name" use="optional"/>
+	  </xs:complexType>
+	</xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+      <xs:element name="LICENSE">
+	<xs:complexType>
+	  <xs:sequence>
+	    <xs:element type="xs:string" name="LICENSE_NUM" minOccurs="0"/>
+	    <xs:element type="xs:string" name="DATE_UPDATED" minOccurs="0"/>
+	    <xs:element type="xs:string" name="DATE_ISSUE_LICENSE_ORIG" minOccurs="0"/>
+	    <xs:element type="xs:string" name="DATE_EXPIRE_LICENSE" minOccurs="0"/>
+	    <xs:element type="xs:string" name="LICENSE_CLASS" minOccurs="0"/>
+	    <xs:element type="xs:short" name="LICENSE_CLASS_CODE" minOccurs="0"/>
+	    <xs:element type="xs:string" name="RESIDENCY_STATUS" minOccurs="0"/>
+	    <xs:element type="xs:string" name="ACTIVE" minOccurs="0"/>
+	    <xs:element type="xs:string" name="ADHS" minOccurs="0"/>
+	    <xs:element ref="DETAILS"/>
+	  </xs:sequence>
+	</xs:complexType>
+      </xs:element>
+    <xs:element name="DETAILS">
+      <xs:complexType>
+	<xs:choice maxOccurs="unbounded" minOccurs="0">
+	  <xs:element name="DETAIL">
+	    <xs:complexType>
+	      <xs:sequence>
+		<xs:element type="xs:string" name="LOA" minOccurs="0"/>
+		<xs:element type="xs:short" name="LOA_CODE" minOccurs="0"/>
+		<xs:element type="xs:string" name="AUTHORITY_ISSUE_DATE" minOccurs="0"/>
+		<xs:element type="xs:string" name="STATUS" minOccurs="0"/>
+		<xs:element type="xs:string" name="STATUS_REASON" minOccurs="0"/>
+		<xs:element type="xs:string" name="STATUS_REASON_DATE" minOccurs="0"/>
+		<xs:element type="xs:string" name="CE_COMPLIANCE" minOccurs="0"/>
+		<xs:element type="xs:string" name="CE_RENEWAL_DATE" minOccurs="0"/>
+		<xs:element type="xs:byte" name="CE_CREDITS_NEEDED" minOccurs="0"/>
+	      </xs:sequence>
+	    </xs:complexType>
+	  </xs:element>
+	</xs:choice>
+      </xs:complexType>
+    </xs:element>
+      <xs:element name="APPOINTMENT_INFORMATION">
+	<xs:complexType>
+	  <xs:sequence>
+	    <xs:element name="APPOINTMENT" maxOccurs="unbounded" minOccurs="0">
+	      <xs:complexType>
+		<xs:sequence>
+		  <xs:element type="xs:string" name="COMPANY_NAME" minOccurs="0"/>
+		  <xs:element type="xs:string" name="FEIN" minOccurs="0"/>
+		  <xs:element type="xs:string" name="COCODE" minOccurs="0"/>
+		  <xs:element type="xs:string" name="LINE_OF_AUTHORITY" minOccurs="0"/>
+		  <xs:element type="xs:string" name="LOA_CODE" minOccurs="0"/>
+		  <xs:element type="xs:string" name="STATUS" minOccurs="0"/>
+		  <xs:element type="xs:string" name="TERMINATION_REASON" minOccurs="0"/>
+		  <xs:element type="xs:string" name="STATUS_REASON_DATE" minOccurs="0"/>
+		  <xs:element type="xs:string" name="APPONT_RENEWAL_DATE" minOccurs="0"/>
+		  <xs:element type="xs:string" name="COUNTY_CODE" minOccurs="0"/>
+		  <xs:element type="xs:string" name="Agency_Affiliations" minOccurs="0"/>
+		</xs:sequence>
+	      </xs:complexType>
+	    </xs:element>
+	  </xs:sequence>
+	</xs:complexType>
+      </xs:element>
+  <xs:element name="NASD_EXAM">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element type="xs:string" name="DETAILS" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="REGULATORY_ACTION">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="STATE">
+	  <xs:complexType>
+	    <xs:sequence>
+	      <xs:element type="xs:string" name="ACTION_ID" minOccurs="0"/>
+	      <xs:element type="xs:string" name="ORIGIN_OF_ACTION" minOccurs="0"/>
+	      <xs:element type="xs:string" name="REASON_FOR_ACTION" minOccurs="0"/>
+	      <xs:element type="xs:string" name="DISPOSITION" minOccurs="0"/>
+	      <xs:element type="xs:string" name="DATE_OF_ACTION" minOccurs="0"/>
+	      <xs:element type="xs:string" name="EFFECTIVE_DATE" minOccurs="0"/>
+	      <xs:element type="xs:string" name="ENTER_DATE" minOccurs="0"/>
+	      <xs:element type="xs:string" name="FILE_REF" minOccurs="0"/>
+	      <xs:element type="xs:string" name="PENALTY_FINE_FORFEITURE" minOccurs="0"/>
+	      <xs:element type="xs:string" name="LENGTH_OF_ORDER" minOccurs="0"/>
+	    </xs:sequence>
+	    <xs:attribute type="xs:string" name="name"/>
+	  </xs:complexType>
+	</xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TRANSACTION_TYPE">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element type="xs:string" name="TYPE" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+      <xs:element name="INDIVIDUAL">
+	<xs:complexType>
+	  <xs:sequence>
+	      <xs:element type="xs:string" name="NAME" minOccurs="0"/>
+	      <xs:element type="xs:int" name="ID_ENTITY" minOccurs="0"/>
+	      <xs:element type="xs:int" name="NPN" minOccurs="0"/>
+	      <xs:element type="xs:string" name="STATE_RESIDENT" minOccurs="0"/>
+	      <xs:element type="xs:string" name="DATE_BIRTH" minOccurs="0"/>
+	    <xs:element name="ENTITY_BIOGRAPHIC" minOccurs="0">
+	      <xs:complexType>
+		<xs:sequence>
+		  <xs:element name="BIOGRAPHIC" minOccurs="0">
+		    <xs:complexType>
+		      <xs:sequence>
+			<xs:element type="xs:string" name="ID_SSN" minOccurs="0"/>
+			<xs:element type="xs:string" name="NAME_LAST" minOccurs="0"/>
+			<xs:element type="xs:string" name="NAME_FIRST" minOccurs="0"/>
+			<xs:element type="xs:string" name="NAME_MIDDLE" minOccurs="0"/>
+			<xs:element type="xs:string" name="NAME_SUFFIX" minOccurs="0"/>
+			<xs:element type="xs:string" name="DATE_BIRTH" minOccurs="0"/>
+			<xs:element type="xs:int" name="NPN" minOccurs="0"/>
+			<xs:element name="OTHER_NAME">
+			  <xs:complexType>
+			    <xs:sequence>
+			      <xs:element name="STATE" maxOccurs="unbounded" minOccurs="0">
+				<xs:complexType>
+				  <xs:sequence>
+				    <xs:element name="NAME">
+				      <xs:complexType>
+					<xs:simpleContent>
+					  <xs:extension base="xs:string">
+					    <xs:attribute type="xs:string" name="type" use="optional"/>
+					  </xs:extension>
+					</xs:simpleContent>
+				      </xs:complexType>
+				    </xs:element>
+				  </xs:sequence>
+				  <xs:attribute type="xs:string" name="name" use="optional"/>
+				</xs:complexType>
+			      </xs:element>
+			    </xs:sequence>
+			  </xs:complexType>
+			</xs:element>
+		      </xs:sequence>
+		    </xs:complexType>
+		  </xs:element>
+		  <xs:element ref="ADDRESSES" minOccurs="0"/>
+		</xs:sequence>
+	      </xs:complexType>
+	    </xs:element>
+	    <xs:element ref="PRODUCER_LICENSING" minOccurs="0"/>
+	  </xs:sequence>
+	</xs:complexType>
+      </xs:element>
+
+      <xs:element name="FIRM">
+	<xs:complexType>
+	  <xs:sequence>
+	      <xs:element type="xs:string" name="NAME_COMPANY" minOccurs="0"/>
+	      <xs:element type="xs:int" name="ID_ENTITY" minOccurs="0"/>
+	      <xs:element type="xs:int" name="NPN" minOccurs="0"/>
+	      <xs:element type="xs:string" name="FEIN" minOccurs="0"/>
+	      <xs:element type="xs:string" name="STATE_BUSINESS" minOccurs="0"/>
+	    <xs:element name="ENTITY_BIOGRAPHIC" minOccurs="0">
+	      <xs:complexType>
+		<xs:sequence>
+		  <xs:element name="BIOGRAPHIC" minOccurs="0">
+		    <xs:complexType>
+		      <xs:sequence>
+			<xs:element type="xs:int" name="NPN" minOccurs="0"/>
+			<xs:element type="xs:string" name="ID_FEIN" minOccurs="0"/>
+			<xs:element type="xs:string" name="NAME_COMPANY" minOccurs="0"/>
+			<xs:element type="xs:string" name="STATE_DOMICILE" minOccurs="0"/>
+			<xs:element name="OTHER_NAME">
+			  <xs:complexType>
+			    <xs:sequence>
+			      <xs:element name="STATE" maxOccurs="unbounded" minOccurs="0">
+				<xs:complexType>
+				  <xs:sequence>
+				    <xs:element name="NAME" maxOccurs="unbounded" minOccurs="0">
+				      <xs:complexType>
+					<xs:simpleContent>
+					  <xs:extension base="xs:string">
+					    <xs:attribute type="xs:string" name="type" use="optional"/>
+					  </xs:extension>
+					</xs:simpleContent>
+				      </xs:complexType>
+				    </xs:element>
+				  </xs:sequence>
+				  <xs:attribute type="xs:string" name="name" use="optional"/>
+				</xs:complexType>
+			      </xs:element>
+			    </xs:sequence>
+			  </xs:complexType>
+			</xs:element>
+		      </xs:sequence>
+		    </xs:complexType>
+		  </xs:element>
+		  <xs:element ref="ADDRESSES"/>
+		</xs:sequence>
+	      </xs:complexType>
+	    </xs:element>
+	    <xs:element ref="PRODUCER_LICENSING" minOccurs="0"/>
+	  </xs:sequence>
+	</xs:complexType>
+      </xs:element>
+
+</xs:schema>

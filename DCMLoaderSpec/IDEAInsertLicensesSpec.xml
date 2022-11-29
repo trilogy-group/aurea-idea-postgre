@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+This spec helps to insert/update License and its corresponding status/status history info for Person/Organization party into DCM, the License page is available under Party (Tab) - Person/Organization - Licenses (sub-tab)
+
+Prerequisite:
+1) Create person party and mention TaxId in the data file.
+
+Data File Format:
+TaxId,Doing business As,licenseId,Jurisdiction,License Category,License Class,License Type,Effective Date,Expiry Date,Status,Reason,Resident Indicator,UseSRM EndDate
+
+Sample Data:
+102149,David,da_lic4,CA,Insurance,Individual,LIFE ONLY,10/10/2013,02/02/2014,Active,No Revenue,Y,N
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}/InsertUpdateLicensesSpec.xml -DDATA_FILE={File-Location}/InsertUpdateLicensesSpecData.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=100
+
+-->
+
+<loader:loader_spec
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+    xmlns="http://dms.trilogy.com/Loader/Spec"
+    xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+
+    name="Insert License Loader Spec"
+    >
+
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+    
+	<strategy name="strategy" class="${STRATEGY}">
+        <property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+    </strategy>
+
+    <object name="license" class="LicenseCredentialValidator"/>
+
+    <source name="load_file" class="delimited_file_parser">
+        <property name="filename" value="${FILENAME}"/>
+        <property name="delimiters" value=","/>
+        <property name="headerRows" value="1"/>
+		<property name="quote_chars" value="&quot;" />
+		
+        <indexed_field name="taxid" index="0"/>
+        <indexed_field name="doing_business_as" index="1"/>
+        <indexed_field name="license_id" index="2"/>
+        <indexed_field name="jurisdiction" index="3" translator="jurisdiction_translator" />
+        <indexed_field name="license_category" index="4" translator="license_category_translator" />
+        <indexed_field name="license_class" index="5"/>
+        <indexed_field name="license_type" index="6" translator="license_type_translator" />
+        <indexed_field name="effective_date" index="7"/>
+        <indexed_field name="expiry_date" index="8"/>
+        <indexed_field name="status" index="9" translator="license_status_translator" />
+        <indexed_field name="reason" index="10" translator="license_status_reason_translator" />
+		<indexed_field name="resident_indicator" index="11"/>
+		<indexed_field name="useSRM_EndDate" index="12" translator="bool_translator" />
+    </source>
+
+	<translator name="bool_translator" class="com.trilogy.fs.dms.tools.loader.translate.BooleanTranslator">
+		<property name="true" value="Y"/>
+		<property name="false" value="N"/>
+		<property name="defaultValue" value="Y"/>
+	</translator>
+	
+	<translator name="boolean_translator" class="com.trilogy.fs.dms.tools.loader.translate.BooleanTranslator">
+		<property name="true" value="Y"/>
+		<property name="false" value="N"/>
+		<property name="defaultValue" value="null"/>
+	</translator>
+  
+    <translator name="jurisdiction_translator" class="enum_translator">
+        <property name="enumName" value="Jurisdiction"/>
+    </translator>
+    
+    <translator name="license_category_translator" class="enum_translator">
+        <property name="enumName" value="License.LicenseCategory"/>
+    </translator>
+
+    <translator name="license_class_translator" class="enum_translator">
+        <property name="enumName" value="License.LicenseClass"/>
+    </translator>
+
+    <translator name="license_type_translator" class="enum_translator">
+        <property name="enumName" value="License.Type"/>
+    </translator>
+
+    <translator name="license_status_translator" class="enum_translator">
+        <property name="enumName" value="License.Status"/>
+    </translator>
+
+    <translator name="license_status_reason_translator" class="enum_translator">
+        <property name="enumName" value="License.Status.Reason"/>
+    </translator>
+
+	<constant name="invokedByUI" class="java_static_field">
+		<property name="className" value="java.lang.Boolean"/>
+		<property name="fieldName" value="FALSE"/>
+	</constant>
+	
+	
+    <!-- translator name="boolean_translator" class="boolean_translator">
+      <property name="true" value="true"/>
+      <property name="false" value="true"/>
+    </translator -->
+
+	<!--resolver name="license_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[SELECT license FROM FSCredential license
+				WHERE (license.Holder.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {0})
+					OR license.Holder.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {0}))
+				AND license.LicenseCategory = {1}
+				AND license.LicenseType = {2}
+				AND license.ExternalID = {3}
+				AND license.Jurisdiction ={4}
+			]]>
+		</property>
+		<property name="keys" value="string taxid, int license_category, int license_type, string license_id, int jurisdiction " />
+	</resolver-->
+	
+	<resolver name="license_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query"
+			value="SELECT license.GID gid, ([SCPerson]license.Holder.Party).TaxID taxid, license.LicenseCategory licCat, license.LicenseType licType, license.ExternalID extID, license.Jurisdiction jur from FSCredential license 
+			UNION 
+			SELECT license.GID gid, ([SCOrganization]license.Holder.Party).TaxID taxid, license.LicenseCategory licCat, license.LicenseType licType, license.ExternalID extID, license.Jurisdiction jur from FSCredential license" />
+		<property name="keys" value="taxid,licCat,licType,extID,jur" />
+		<property name="gidAlias" value="gid" />
+	</resolver>
+	
+    <!--resolver name="party_resolver" class="batch_query_resolver">
+        <property name="query">
+            <![CDATA[
+                SELECT party
+                FROM FSParty party
+                WHERE 	(party.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {0})
+			OR party.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {0}))
+
+            ]]>
+        </property>
+        <property name="keys" value="taxid"/>
+    </resolver-->
+
+	<resolver name="party_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query"
+			value="SELECT party.GID gid, ([SCPerson]party.Party).TaxID taxid FROM FSParty party
+				UNION 
+				SELECT party.GID gid,([SCOrganization]party.Party).TaxID taxid FROM FSParty party" />
+		<property name="keys" value="taxid" />
+		<property name="gidAlias" value="gid" />
+	</resolver>
+	
+    <!--resolver name="dd_resolver" class="batch_query_resolver">
+        <property name="query">
+		<![CDATA[
+			SELECT dd.GID FROM FSDistributorData dd, FSRole role
+				WHERE dd.GID=role.RoleData AND
+					(role.Party.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {0})
+					OR role.Party.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {0}))
+				]]>
+        </property>
+        <property name="keys" value="taxid"/>
+    </resolver-->
+
+	<resolver name="dd_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value = "SELECT dd.GID gid, ([SCPerson]party.Party).TaxID taxid FROM FSRole role, FSParty party, FSDistributorData dd WHERE dd.GID = role.RoleData AND role.Party = party.GID
+		UNION
+		SELECT dd.GID gid, ([SCOrganization]party.Party).TaxID taxid FROM FSRole role, FSParty party, FSDistributorData dd WHERE dd.GID = role.RoleData AND role.Party = party.GID"/>
+        <property name="gidAlias" value="gid"/>
+        <property name="keys" value="taxid"/>
+    </resolver>
+	
+    <translator name="standard_date_translator" class="date_format_translator">
+        <property name="formatString" value="yyyyMMdd"/>
+    </translator>
+    
+    <map object="license">
+		<action name="update or insert" resolver="license_resolver">
+			<field name="taxid" />
+			<field name="license_category" />
+			<field name="license_type" />
+			<field name="license_id" />
+			<field name="jurisdiction" />
+		</action>
+        
+		<map_object property="PARTY_PARAM" key="PARTY_PARAM" tag="state" resolver="party_resolver" >
+				<field name="taxid"/>
+		</map_object>
+		<map_object property="DistributorData" resolver="dd_resolver" >
+				<field name="taxid"/>
+		</map_object>
+        <map_simple property="CurrentDetails.DBAName" field="doing_business_as"/>
+        <map_simple property="ExternalID" field="license_id"/>
+        <map_simple property="Jurisdiction" field="jurisdiction" />
+        <map_simple property="LicenseCategory" field="license_category" />
+        <map_simple property="LicenseClass" field="license_class" translator="license_class_translator"/>
+        <map_simple property="LicenseType" field="license_type" />
+		<map_simple property="ResidentStatus" field="resident_indicator" translator="boolean_translator"/>
+		
+		<map_simple property="Status.StartDate" field="effective_date"/>
+        <map_simple property="Status.EndDate" field="expiry_date"/>
+		<map_simple property="Status.StatusCode" field="status"/>
+        <map_simple property="Status.StatusReason" field="reason"/>
+		
+		<map_constant property="InvokedByUI" constant="invokedByUI" tag="validator"/>
+		
+		<map_simple property="UseSRMEndDate" field="useSRM_EndDate" tag="validator"/>
+		
+    </map>
+
+</loader:loader_spec>

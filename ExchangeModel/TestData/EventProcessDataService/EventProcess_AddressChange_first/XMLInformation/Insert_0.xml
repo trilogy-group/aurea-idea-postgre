@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:Insert xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:Person>
+        <ns2:PersonName>
+            <ns2:GivenName>Olaf</ns2:GivenName>
+            <ns2:Surname>Albertson</ns2:Surname>
+        </ns2:PersonName>
+        <ns2:Address>
+            <ns2:AddressType>HOME</ns2:AddressType>
+            <ns2:Street1>321 Willard Way - Test</ns2:Street1>
+            <ns2:City>Adel</ns2:City>
+            <ns2:State>OR</ns2:State>
+            <ns2:Country>US</ns2:Country>
+        </ns2:Address>
+        <ns2:Cell Number="2271111111"/>
+        <ns2:Phone Number="8981212121"/>
+        <ns2:Email>Ondine@gmail.com</ns2:Email>
+    </ns2:Person>
+</ns2:Insert>

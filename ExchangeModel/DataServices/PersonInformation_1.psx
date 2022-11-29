@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XmlSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='true' name='personinformation.PersonInformation' upgradeCreatedFileInfo='false'>
+  <Package isSynthetic='true' name='personinformation' javaPackage='personinformation'>
+  </Package>
+  <Package isSynthetic='true' name='personInformation' javaPackage='personinformation.com.personInformation.personInformation' owningPackage='personinformation'>
+  </Package>
+  <XmlEntityType isSynthetic='true' name='personinformation.com.personInformation.personInformation.Person' originalName='Person' isAbstract='false' xmlBeanDocClassName='com.personInformation.personInformation.PersonDocument' xmlBeanClassName='com.personInformation.personInformation.PersonDocument$Person' isRootElement='true' isAnonymousType='true' isQualified='true'>
+    <XmlRelationshipProperty isSynthetic='true' name='PersonID' originalName='PersonID' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.PersonID</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PersonForPersonID' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PersonName' originalName='PersonName' assignable='true' index='1' required='true' cardinality='One2One' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.PersonName</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PersonForPersonName' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PersonRelationship' originalName='PersonRelationship' assignable='true' index='2' collectionType='List' cardinality='One2Many' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.PersonRelationship</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PersonForPersonRelationship' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='Address' originalName='Address' assignable='true' index='3' collectionType='List' cardinality='One2Many' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.Address</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PersonForAddress' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DeathIndicator' originalName='deathIndicator' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='BloodTypeCode' originalName='bloodTypeCode' assignable='true' index='9' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='GenderCode' originalName='genderCode' assignable='true' index='10' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='MissingIndicator' originalName='missingIndicator' assignable='true' index='12' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='MaritalStatusCode' originalName='maritalStatusCode' assignable='true' index='13' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Role' originalName='role' assignable='true' index='16' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='Fax' originalName='Fax' assignable='true' index='4' cardinality='One2One' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.TelephoneNumber</TypeName>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='Cell' originalName='Cell' assignable='true' index='5' cardinality='One2One' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.TelephoneNumber</TypeName>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='Phone' originalName='Phone' assignable='true' index='6' cardinality='One2One' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.TelephoneNumber</TypeName>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='Pager' originalName='Pager' assignable='true' index='7' cardinality='One2One' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.TelephoneNumber</TypeName>
+    </XmlRelationshipProperty>
+    <CustomProperty isSynthetic='false' name='SSN' assignable='false' typeInferred='false'>
+      <TypeName>personinformation.com.personInformation.personInformation.PersonID</TypeName>
+      <GetterMethod isSynthetic='false' name='getSSN' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <SelectExpression isSynthetic='false' variableName='element'>
+          <MethodExpression isSynthetic='false' infix='true'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='PersonID'>
+            </PathExpression>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isNotEqualTo'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='IDType'>
+              <VariablePathRoot isSynthetic='false' variableName='element'>
+              </VariablePathRoot>
+            </PathExpression>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='SSN'>
+            </Literal>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='.'>
+            <VariablePathRoot isSynthetic='false' variableName='element'>
+            </VariablePathRoot>
+          </PathExpression>
+        </SelectExpression>
+      </GetterMethod>
+    </CustomProperty>
+    <CustomProperty isSynthetic='false' name='License' assignable='false' typeInferred='false'>
+      <TypeName>personinformation.com.personInformation.personInformation.PersonID</TypeName>
+      <GetterMethod isSynthetic='false' name='getLicense' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <SelectExpression isSynthetic='false' variableName='element'>
+          <MethodExpression isSynthetic='false' infix='true'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='PersonID'>
+            </PathExpression>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isNotEqualTo'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='IDType'>
+              <VariablePathRoot isSynthetic='false' variableName='element'>
+              </VariablePathRoot>
+            </PathExpression>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='License'>
+            </Literal>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='.'>
+            <VariablePathRoot isSynthetic='false' variableName='element'>
+            </VariablePathRoot>
+          </PathExpression>
+        </SelectExpression>
+      </GetterMethod>
+    </CustomProperty>
+    <CustomProperty isSynthetic='false' name='Spouse' assignable='true' typeInferred='false'>
+      <TypeName>personinformation.com.personInformation.personInformation.PersonRelationship</TypeName>
+      <GetterMethod isSynthetic='false' name='getSpouse' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <SelectExpression isSynthetic='false' variableName='element'>
+          <MethodExpression isSynthetic='false' infix='true'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='PersonRelationship'>
+            </PathExpression>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isEqualTo'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='RelationshipType'>
+              <VariablePathRoot isSynthetic='false' variableName='element'>
+              </VariablePathRoot>
+            </PathExpression>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='Spouse'>
+            </Literal>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='.'>
+            <VariablePathRoot isSynthetic='false' variableName='element'>
+            </VariablePathRoot>
+          </PathExpression>
+        </SelectExpression>
+      </GetterMethod>
+    </CustomProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Nationality' originalName='nationality' assignable='true' index='11' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Email' originalName='email' assignable='true' index='14' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='BirthDate' originalName='birthDate' assignable='true' index='15' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='PersonID'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PersonName'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='PersonRelationship'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='Address'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Fax'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Cell'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Phone'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Pager'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DeathIndicator'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BloodTypeCode'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='GenderCode'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Nationality'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='MissingIndicator'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='MaritalStatusCode'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Email'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BirthDate'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='personinformation.com.personInformation.personInformation.PersonID' originalName='PersonID' isAbstract='false' xmlBeanClassName='com.personInformation.personInformation.PersonID' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='IDType' originalName='IDType' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='IDNumber' originalName='IDNumber' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='IDType'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='IDNumber'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='personinformation.com.personInformation.personInformation.PersonName' originalName='PersonName' isAbstract='false' xmlBeanClassName='com.personInformation.personInformation.PersonName' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='FullName' originalName='fullName' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PrefixTitleCode' originalName='prefixTitleCode' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='GivenName' originalName='givenName' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='MiddleName' originalName='middleName' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Surname' originalName='surname' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Suffix' originalName='suffix' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FullName'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PrefixTitleCode'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='GivenName'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='MiddleName'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='Surname'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Suffix'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='personinformation.com.personInformation.personInformation.PersonRelationship' originalName='PersonRelationship' isAbstract='false' xmlBeanClassName='com.personInformation.personInformation.PersonRelationship' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='RelationshipType' originalName='RelationshipType' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PersonID' originalName='PersonID' assignable='true' index='1' collectionType='List' cardinality='One2Many' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.PersonID</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PersonRelationshipForPersonID' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PersonName' originalName='PersonName' assignable='true' index='2' required='true' cardinality='One2One' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.PersonName</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PersonRelationshipForPersonName' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='RelationshipType'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='PersonID'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PersonName'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='personinformation.com.personInformation.personInformation.Address' originalName='Address' isAbstract='false' xmlBeanClassName='com.personInformation.personInformation.Address' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='AddressType' originalName='AddressType' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Street1' originalName='Street1' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Street2' originalName='Street2' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Street3' originalName='Street3' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='City' originalName='City' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='County' originalName='County' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Country' originalName='Country' assignable='true' index='7' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ZipCode' originalName='ZipCode' assignable='true' index='8' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='POBox' originalName='POBox' assignable='true' index='9' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='State' originalName='State' assignable='true' index='5' required='true' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='AddressType'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='Street1'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Street2'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Street3'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='City'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='State'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='County'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='Country'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ZipCode'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='POBox'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='personinformation.com.personInformation.personInformation.TelephoneNumber' originalName='TelephoneNumber' isAbstract='false' xmlBeanClassName='com.personInformation.personInformation.TelephoneNumber' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='_value' assignable='true' index='0' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Extention' originalName='extention' assignable='true' index='2' xsdType='byte' isElement='false' isNillable='false'>
+      <TypeName>java.lang.Byte</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Number' originalName='number' assignable='true' index='1' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='personinformation.com.personInformation.personInformation.MigratePersons' originalName='MigratePersons' isAbstract='false' xmlBeanDocClassName='com.personInformation.personInformation.MigratePersonsDocument' xmlBeanClassName='com.personInformation.personInformation.MigratePersonsDocument$MigratePersons' isRootElement='true' isAnonymousType='true' isQualified='true'>
+    <XmlAttributeProperty isSynthetic='true' name='PersonID' originalName='PersonID' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>Array&lt;java.lang.String&gt;</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='PersonID'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='personinformation.com.personInformation.personInformation.Root' originalName='Root' isAbstract='false' xmlBeanDocClassName='com.personInformation.personInformation.RootDocument' xmlBeanClassName='com.personInformation.personInformation.RootDocument$Root' isRootElement='true' isAnonymousType='true' isQualified='true'>
+    <XmlRelationshipProperty isSynthetic='true' name='Person' originalName='Person' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false' fileInformationName='PersonInformation.xsd'>
+      <TypeName>personinformation.com.personInformation.personInformation.Person</TypeName>
+      <RelationshipProperty isSynthetic='true' name='RootForPerson' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='Person'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <ImportConfiguration>Schemas/PersonInformation.xsd</ImportConfiguration>
+  <XmlFileInformation isSynthetic='true' name='PersonInformation.xsd' qualifiedAttributeForm='false' qualifiedElementForm='true' namespacePrefix='' namespace='http://www.PersonInformation.com/PersonInformation.xsd' root='true' sourceFile='../Schemas/PersonInformation.xsd'>
+    <PackageObjectName>personInformation</PackageObjectName>
+  </XmlFileInformation>
+</XmlSchema>

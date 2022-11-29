@@ -1,0 +1,1689 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XmlSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='true' name='com.nipr.NIPRGateway' upgradeCreatedFileInfo='false'>
+  <Package isSynthetic='true' name='nipr' javaPackage='com.nipr'>
+  </Package>
+  <XmlEntityType isSynthetic='true' name='com.nipr.NIPR' originalName='NIPR' isAbstract='false' xmlBeanDocClassName='noNamespace.NIPRDocument' xmlBeanClassName='noNamespace.NIPR' isRootElement='true' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='ERROR' originalName='ERROR' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.ErrorType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NIPRForERROR' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='TRANSACTION' originalName='TRANSACTION' assignable='true' index='1' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.NiprTransType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NIPRForTRANSACTION' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='ERROR'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='TRANSACTION'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.NiprTransType' originalName='nipr_trans_type' isAbstract='false' xmlBeanClassName='noNamespace.NiprTransType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='AMENDED' originalName='AMENDED' assignable='true' index='0' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.AmendedType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForAMENDED' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='APPLICANT' originalName='APPLICANT' assignable='true' index='1' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.ApplicantType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForAPPLICANT' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='APPOINTER' originalName='APPOINTER' assignable='true' index='2' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.AppointerType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForAPPOINTER' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='AUTHORIZATION' originalName='AUTHORIZATION' assignable='true' index='3' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.AuthorizationType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForAUTHORIZATION' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='CONTACT' originalName='CONTACT' assignable='true' index='4' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.ContactType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForCONTACT' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CUSTOMER' originalName='CUSTOMER' assignable='true' index='5' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CUSTBATCH' originalName='CUST_BATCH' assignable='true' index='6' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CUSTTRANS' originalName='CUST_TRANS' assignable='true' index='7' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen20Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ENTITY' originalName='ENTITY' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='LICENSE' originalName='LICENSE' assignable='true' index='9' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.LicenseType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForLICENSE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NIPRTRANS' originalName='NIPR_TRANS' assignable='true' index='10' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='NONUNIFORM' originalName='NON_UNIFORM' assignable='true' index='11' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.NonUniformType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForNONUNIFORM' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PAYMENT' originalName='PAYMENT' assignable='true' index='12' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.PaymentType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForPAYMENT' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PROCESSFEE' originalName='PROCESS_FEE' assignable='true' index='13' xsdType='decimal' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.MonetaryLen8Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='false' name='STATEFEE' originalName='STATE_FEE' assignable='true' defaultLiteral='10' index='14' xsdType='decimal' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.MonetaryLen8Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TRANSFEE' originalName='TRANS_FEE' assignable='true' index='15' xsdType='decimal' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.MonetaryLen8Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='TRANSHEAD' originalName='TRANS_HEAD' assignable='true' index='16' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.TransHeadType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='NiprTransTypeForTRANSHEAD' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TRANSSTATUS' originalName='TRANS_STATUS' assignable='true' index='17' lengthEqualTo='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TransStatusType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='VALID' originalName='VALID' assignable='true' index='18' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.PfType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='AMENDED'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='APPLICANT'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='APPOINTER'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='AUTHORIZATION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CONTACT'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CUSTOMER'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CUSTBATCH'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CUSTTRANS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ENTITY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='LICENSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NIPRTRANS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='NONUNIFORM'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PAYMENT'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PROCESSFEE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATEFEE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TRANSFEE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TRANSHEAD'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TRANSSTATUS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='VALID'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.TransHeadType' originalName='trans_head_type' isAbstract='false' xmlBeanClassName='noNamespace.TransHeadType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='COMMENTS' originalName='COMMENTS' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATESTAMP' originalName='DATE_STAMP' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATECODE' originalName='STATE_CODE' assignable='true' index='2' required='true' maxLength='3' minLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StateCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TIMESTAMP' originalName='TIME_STAMP' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TimeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TRANSACTIONTYPE' originalName='TRANSACTION_TYPE' assignable='true' index='4' required='true' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TransactionType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COMMENTS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DATESTAMP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='STATECODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TIMESTAMP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TRANSACTIONTYPE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.ApplicantType' originalName='applicant_type' isAbstract='false' xmlBeanClassName='noNamespace.ApplicantType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.AddressType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForADDRESS' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='AFFILIATION' originalName='AFFILIATION' assignable='true' index='1' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.AffiliationType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForAFFILIATION' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ATTESTATION' originalName='ATTESTATION' assignable='true' index='2' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='BACKGROUND' originalName='BACKGROUND' assignable='true' index='3' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.BackgroundType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForBACKGROUND' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='BANKAFFILIATE' originalName='BANK_AFFILIATE' assignable='true' index='4' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='BIRTHDATE' originalName='BIRTH_DATE' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COUNTRYCODE' originalName='COUNTRY_CODE' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.CountryCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEINCORPORATED' originalName='DATE_INCORPORATED' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='EMAIL' originalName='EMAIL' assignable='true' index='8' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.EmailType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForEMAIL' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='EMPLOYMENTHISTORY' originalName='EMPLOYMENT_HISTORY' assignable='true' index='9' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.EmploymentType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForEMPLOYMENTHISTORY' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FIRMTYPE' originalName='FIRM_TYPE' assignable='true' index='10' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.FirmType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='GENDER' originalName='GENDER' assignable='true' index='11' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.GenderType</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='LICENSEKEY' originalName='LICENSE_KEY' assignable='true' index='12' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.LicenseKeyType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForLICENSEKEY' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='13' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.NameType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForNAME' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NASDCRD' originalName='NASD_CRD' assignable='true' index='14' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen7Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='15' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='OWNER' originalName='OWNER' assignable='true' index='16' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.OwnerType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForOWNER' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PHONE' originalName='PHONE' assignable='true' index='17' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.PhoneType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForPHONE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='RESPPRODUCER' originalName='RESP_PRODUCER' assignable='true' index='18' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.RespProducerType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ApplicantTypeForRESPPRODUCER' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATECOMPANYID' originalName='STATE_COMPANY_ID' assignable='true' index='19' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TAXNUM' originalName='TAX_NUM' assignable='true' index='20' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TaxNumType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TYPE' originalName='TYPE' assignable='true' index='21' required='true' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TypeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='WEBSITE' originalName='WEBSITE' assignable='true' index='22' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen50Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FINGERPRINTS' originalName='FINGERPRINTS' assignable='true' index='23' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NONRESINCOME' originalName='NONRES_INCOME' assignable='true' index='24' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='AFFILIATION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ATTESTATION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='BACKGROUND'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BANKAFFILIATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BIRTHDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COUNTRYCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEINCORPORATED'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='EMAIL'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='EMPLOYMENTHISTORY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRMTYPE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='GENDER'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSEKEY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NASDCRD'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='OWNER'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PHONE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RESPPRODUCER'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATECOMPANYID'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TAXNUM'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TYPE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='WEBSITE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FINGERPRINTS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NONRESINCOME'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.LicenseKeyType' originalName='license_key_type' isAbstract='false' xmlBeanClassName='noNamespace.LicenseKeyType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='LICENSECLASS' originalName='LICENSE_CLASS' assignable='true' index='0' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen5Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LICENSEID' originalName='LICENSE_ID' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RESLICENSECLASS' originalName='RES_LICENSE_CLASS' assignable='true' index='2' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen5Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RESLICENSEID' originalName='RES_LICENSE_ID' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RESSTATE' originalName='RES_STATE' assignable='true' index='4' maxLength='3' minLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StateCodeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSECLASS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSEID'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RESLICENSECLASS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RESLICENSEID'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RESSTATE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.NameType' originalName='name_type' isAbstract='false' xmlBeanClassName='noNamespace.NameType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='FIRMORLASTNAME' originalName='FIRM_OR_LAST_NAME' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FIRSTNAME' originalName='FIRST_NAME' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='MIDDLENAME' originalName='MIDDLE_NAME' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='false' name='NAMECODE' originalName='NAME_CODE' assignable='true' defaultLiteral='_1' index='3' required='true' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NameCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PREFIX' originalName='PREFIX' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SUFFIXNAME' originalName='SUFFIX_NAME' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TYPE' originalName='TYPE' assignable='true' index='6' required='true' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TypeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='FIRMORLASTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRSTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='MIDDLENAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='NAMECODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PREFIX'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SUFFIXNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TYPE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.AddressType' originalName='address_type' isAbstract='false' xmlBeanClassName='noNamespace.AddressType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRESSCODE' originalName='ADDRESS_CODE' assignable='true' index='0' required='true' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.AddressCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRLINE1' originalName='ADDR_LINE_1' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen50Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRLINE2' originalName='ADDR_LINE_2' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen50Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRLINE3' originalName='ADDR_LINE_3' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen50Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CITY' originalName='CITY' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen35Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COUNTRYCODE' originalName='COUNTRY_CODE' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.CountryCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PROVINCE' originalName='PROVINCE' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen20Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATECODE' originalName='STATE_CODE' assignable='true' index='7' maxLength='3' minLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StateCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ZIPCODE' originalName='ZIP_CODE' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ADDRESSCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRLINE1'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRLINE2'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRLINE3'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CITY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COUNTRYCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PROVINCE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATECODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ZIPCODE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.EmailType' originalName='email_type' isAbstract='false' xmlBeanClassName='noNamespace.EmailType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='EMAILADDRESS' originalName='EMAIL_ADDRESS' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen75Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='false' name='EMAILCODE' originalName='EMAIL_CODE' assignable='true' defaultLiteral='_0' index='1' required='true' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.EmailCodeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='EMAILADDRESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='EMAILCODE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.PhoneType' originalName='phone_type' isAbstract='false' xmlBeanClassName='noNamespace.PhoneType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='COUNTRYPHONECODE' originalName='COUNTRY_PHONE_CODE' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.CountryPhoneCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='false' name='PHONECODE' originalName='PHONE_CODE' assignable='true' defaultLiteral='_0' index='1' required='true' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.PhoneCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PHONEEXTENSION' originalName='PHONE_EXTENSION' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PHONENUMBER' originalName='PHONE_NUMBER' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen20Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COUNTRYPHONECODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PHONECODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PHONEEXTENSION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PHONENUMBER'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.BackgroundType' originalName='background_type' isAbstract='false' xmlBeanClassName='noNamespace.BackgroundType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='COMMENTS' originalName='COMMENTS' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen500Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='QUESNUMBER' originalName='QUES_NUMBER' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.QuestionType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='QUESRESPONSE' originalName='QUES_RESPONSE' assignable='true' index='2' required='true' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COMMENTS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='QUESNUMBER'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='QUESRESPONSE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.AffiliationType' originalName='affiliation_type' isAbstract='false' xmlBeanClassName='noNamespace.AffiliationType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='ENTITYNAME' originalName='ENTITY_NAME' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FEIN' originalName='FEIN' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.FeinType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FIRMTYPE' originalName='FIRM_TYPE' assignable='true' index='2' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.FirmType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='3' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ENTITYNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FEIN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRMTYPE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.EmploymentType' originalName='employment_type' isAbstract='false' xmlBeanClassName='noNamespace.EmploymentType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='CITY' originalName='CITY' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen35Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEFROM' originalName='DATE_FROM' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateMmyyyyType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATETO' originalName='DATE_TO' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateMmyyyyType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='EMPLOYERNAME' originalName='EMPLOYER_NAME' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='POSITION' originalName='POSITION' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATECODE' originalName='STATE_CODE' assignable='true' index='5' required='true' maxLength='3' minLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StateCodeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CITY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DATEFROM'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATETO'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='EMPLOYERNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='POSITION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='STATECODE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.RespProducerType' originalName='resp_producer_type' isAbstract='false' xmlBeanClassName='noNamespace.RespProducerType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='FIRSTNAME' originalName='FIRST_NAME' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LASTNAME' originalName='LAST_NAME' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='MIDDLENAME' originalName='MIDDLE_NAME' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='3' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SSN' originalName='SSN' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TaxNumType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SUFFIXNAME' originalName='SUFFIX_NAME' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRSTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LASTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='MIDDLENAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SSN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SUFFIXNAME'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.OwnerType' originalName='owner_type' isAbstract='false' xmlBeanClassName='noNamespace.OwnerType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='FIRMORLASTNAME' originalName='FIRM_OR_LAST_NAME' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FIRMTYPE' originalName='FIRM_TYPE' assignable='true' index='1' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.FirmType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FIRSTNAME' originalName='FIRST_NAME' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='MIDDLENAME' originalName='MIDDLE_NAME' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='4' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='OWNERSHIP' originalName='OWNERSHIP' assignable='true' index='5' required='true' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SUFFIXNAME' originalName='SUFFIX_NAME' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TAXNUM' originalName='TAX_NUM' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TaxNumType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TITLE' originalName='TITLE' assignable='true' index='8' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TYPE' originalName='TYPE' assignable='true' index='9' required='true' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TypeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='FIRMORLASTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRMTYPE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRSTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='MIDDLENAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='OWNERSHIP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SUFFIXNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TAXNUM'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TITLE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TYPE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.AppointerType' originalName='appointer_type' isAbstract='false' xmlBeanClassName='noNamespace.AppointerType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.AddressType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='AppointerTypeForADDRESS' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COCODE' originalName='COCODE' assignable='true' index='1' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen5Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='LICENSEKEY' originalName='LICENSE_KEY' assignable='true' index='2' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.LicenseKeyType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='AppointerTypeForLICENSEKEY' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='3' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.NameType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='AppointerTypeForNAME' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='4' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PHONE' originalName='PHONE' assignable='true' index='5' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.PhoneType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='AppointerTypeForPHONE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATECOMPANYID' originalName='STATE_COMPANY_ID' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TAXNUM' originalName='TAX_NUM' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TaxNumType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TYPE' originalName='TYPE' assignable='true' index='8' required='true' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TypeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSEKEY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='NAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='PHONE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATECOMPANYID'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TAXNUM'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TYPE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.AmendedType' originalName='amended_type' isAbstract='false' xmlBeanClassName='noNamespace.AmendedType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='CUSTOMER' originalName='CUSTOMER' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CUSTBATCH' originalName='CUST_BATCH' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CUSTTRANS' originalName='CUST_TRANS' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen20Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATESTAMP' originalName='DATE_STAMP' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NIPRTRANS' originalName='NIPR_TRANS' assignable='true' index='4' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CUSTOMER'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CUSTBATCH'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CUSTTRANS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DATESTAMP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NIPRTRANS'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.AuthorizationType' originalName='authorization_type' isAbstract='false' xmlBeanClassName='noNamespace.AuthorizationType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.AddressType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='AuthorizationTypeForADDRESS' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='AUTHFIRMNAME' originalName='AUTH_FIRM_NAME' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COMPLIANCEOFFICER' originalName='COMPLIANCE_OFFICER' assignable='true' index='2' required='true' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='EMAIL' originalName='EMAIL' assignable='true' index='3' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.EmailType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='AuthorizationTypeForEMAIL' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FIRSTNAME' originalName='FIRST_NAME' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LASTNAME' originalName='LAST_NAME' assignable='true' index='5' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PHONE' originalName='PHONE' assignable='true' index='6' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.PhoneType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='AuthorizationTypeForPHONE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PREPARERCODE' originalName='PREPARER_CODE' assignable='true' index='7' required='true' maxLength='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.PreparerCodeType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TITLE' originalName='TITLE' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='AUTHFIRMNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='COMPLIANCEOFFICER'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='EMAIL'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRSTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LASTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='PHONE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PREPARERCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TITLE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.ContactType' originalName='contact_type' isAbstract='false' xmlBeanClassName='noNamespace.ContactType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.AddressType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ContactTypeForADDRESS' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COMPANYNAME' originalName='COMPANY_NAME' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='EMAIL' originalName='EMAIL' assignable='true' index='2' required='true' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.EmailType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ContactTypeForEMAIL' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FIRSTNAME' originalName='FIRST_NAME' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen25Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LASTNAME' originalName='LAST_NAME' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ORIGINCODE' originalName='ORIGIN_CODE' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PHONE' originalName='PHONE' assignable='true' index='6' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.PhoneType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ContactTypeForPHONE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='USERID' originalName='USER_ID' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COMPANYNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' elementPropertyName='EMAIL'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRSTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LASTNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ORIGINCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='PHONE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='USERID'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.PaymentType' originalName='payment_type' isAbstract='false' xmlBeanClassName='noNamespace.PaymentType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='ACCOUNTID' originalName='ACCOUNT_ID' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen15Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CREDITCARDEXP' originalName='CREDIT_CARD_EXP' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateMmyyType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CREDITCARDNAME' originalName='CREDIT_CARD_NAME' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CREDITCARDNUM' originalName='CREDIT_CARD_NUM' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen16Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CREDITCARDTYPE' originalName='CREDIT_CARD_TYPE' assignable='true' index='4' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.CreditCardType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CREDITCARDZIP' originalName='CREDIT_CARD_ZIP' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen10Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PAYMENTTYPE' originalName='PAYMENT_TYPE' assignable='true' index='6' required='true' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen2Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ACCOUNTID'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CREDITCARDEXP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CREDITCARDNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CREDITCARDNUM'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CREDITCARDTYPE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CREDITCARDZIP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PAYMENTTYPE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.NonUniformType' originalName='non_uniform_type' isAbstract='false' xmlBeanClassName='noNamespace.NonUniformType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='KEYVALUE' originalName='KEY_VALUE' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen3Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='VALUE' originalName='VALUE' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='KEYVALUE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='VALUE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.LicenseType' originalName='license_type' isAbstract='false' xmlBeanClassName='noNamespace.LicenseType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='COUNTYCODE' originalName='COUNTY_CODE' assignable='true' index='0' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>Array&lt;com.nipr.FloridaCountyCodeType&gt;</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEEFFECTIVE' originalName='DATE_EFFECTIVE' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='INTRESPONSE' originalName='INT_RESPONSE' assignable='true' index='2' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.IntResponseType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='LicenseTypeForINTRESPONSE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LICENSECLASS' originalName='LICENSE_CLASS' assignable='true' index='3' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen5Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='LOA' originalName='LOA' assignable='true' index='4' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.LoaType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='LicenseTypeForLOA' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='RESPONSE' originalName='RESPONSE' assignable='true' index='5' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.ResponseType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='LicenseTypeForRESPONSE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SPECIALLICTYPE' originalName='SPECIAL_LIC_TYPE' assignable='true' index='6' maxLength='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.SpecialLicenseType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TERMINATIONREASON' originalName='TERMINATION_REASON' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TerminationReasonType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='COUNTYCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEEFFECTIVE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='INTRESPONSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSECLASS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='LOA'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RESPONSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SPECIALLICTYPE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TERMINATIONREASON'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.LoaType' originalName='loa_type' isAbstract='false' xmlBeanClassName='noNamespace.LoaType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='COUNTYCODE' originalName='COUNTY_CODE' assignable='true' index='0' maxLength='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>Array&lt;com.nipr.FloridaCountyCodeType&gt;</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEEFFECTIVE' originalName='DATE_EFFECTIVE' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='INTRESPONSE' originalName='INT_RESPONSE' assignable='true' index='2' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.IntResponseType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='LoaTypeForINTRESPONSE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LOACODE' originalName='LOA_CODE' assignable='true' index='3' required='true' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen5Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='RESPONSE' originalName='RESPONSE' assignable='true' index='4' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.ResponseType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='LoaTypeForRESPONSE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TERMINATIONREASON' originalName='TERMINATION_REASON' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TerminationReasonType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='COUNTYCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEEFFECTIVE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='INTRESPONSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LOACODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RESPONSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TERMINATIONREASON'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.IntResponseType' originalName='int_response_type' isAbstract='false' xmlBeanClassName='noNamespace.IntResponseType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='DATESTAMP' originalName='DATE_STAMP' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='RESPMESSAGE' originalName='RESP_MESSAGE' assignable='true' index='1' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.RespMessageType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='IntResponseTypeForRESPMESSAGE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TIMESTAMP' originalName='TIME_STAMP' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TimeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DATESTAMP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='RESPMESSAGE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TIMESTAMP'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.ResponseType' originalName='response_type' isAbstract='false' xmlBeanClassName='noNamespace.ResponseType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='APPROVED' originalName='APPROVED' assignable='true' index='0' required='true' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEEFFECTIVE' originalName='DATE_EFFECTIVE' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATESTAMP' originalName='DATE_STAMP' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RENEWALDATE' originalName='RENEWAL_DATE' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='RESPMESSAGE' originalName='RESP_MESSAGE' assignable='true' index='4' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.RespMessageType</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ResponseTypeForRESPMESSAGE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TIMESTAMP' originalName='TIME_STAMP' assignable='true' index='5' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TimeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='APPROVED'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEEFFECTIVE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DATESTAMP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RENEWALDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='RESPMESSAGE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TIMESTAMP'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.RespMessageType' originalName='resp_message_type' isAbstract='false' xmlBeanClassName='noNamespace.RespMessageType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='ACTIONREQD' originalName='ACTION_REQD' assignable='true' index='0' lengthEqualTo='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.YnType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COMMENTS' originalName='COMMENTS' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen500Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COMMENTCODE' originalName='COMMENT_CODE' assignable='true' index='2' required='true' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen5Type</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ACTIONREQD'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COMMENTS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='COMMENTCODE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.ErrorType' originalName='error_type' isAbstract='false' xmlBeanClassName='noNamespace.ErrorType' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='FILENAME' originalName='FILE_NAME' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen100Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ERRORCODE' originalName='ERROR_CODE' assignable='true' index='1' required='true' xsdType='positiveInteger' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.NumericLen5Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DESCRIPTION' originalName='DESCRIPTION' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.StringLen500Type</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATESTAMP' originalName='DATE_STAMP' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TIMESTAMP' originalName='TIME_STAMP' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.nipr.TimeType</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FILENAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ERRORCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DESCRIPTION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DATESTAMP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='TIMESTAMP'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.TransactionType' originalName='transaction_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_3' generator='3'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_03' generator='03'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_4' generator='4'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_04' generator='04'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_5' generator='5'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_05' generator='05'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_6' generator='6'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_06' generator='06'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.StateCodeType' originalName='state_code_type' restricts='java.lang.String' maxLength='3' minLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='AA' generator='AA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='AE' generator='AE'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='AK' generator='AK'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='AL' generator='AL'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='AP' generator='AP'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='AR' generator='AR'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='AS' generator='AS'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='AZ' generator='AZ'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='CA' generator='CA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='CN' generator='CN'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='CO' generator='CO'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='CT' generator='CT'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='DC' generator='DC'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='DE' generator='DE'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='FL' generator='FL'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='GA' generator='GA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='GU' generator='GU'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='HI' generator='HI'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='IA' generator='IA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='ID' generator='ID'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='IL' generator='IL'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='IN' generator='IN'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='KS' generator='KS'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='KY' generator='KY'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='LA' generator='LA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='MA' generator='MA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='MD' generator='MD'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='ME' generator='ME'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='MI' generator='MI'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='MN' generator='MN'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='MO' generator='MO'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='MS' generator='MS'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='MT' generator='MT'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NA' generator='NA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NC' generator='NC'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='ND' generator='ND'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NE' generator='NE'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NH' generator='NH'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NJ' generator='NJ'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NM' generator='NM'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NV' generator='NV'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NY' generator='NY'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='OH' generator='OH'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='OK' generator='OK'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='OR' generator='OR'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='PA' generator='PA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='PR' generator='PR'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='RI' generator='RI'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='SC' generator='SC'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='SD' generator='SD'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='TN' generator='TN'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='TX' generator='TX'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='UT' generator='UT'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='VA' generator='VA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='VI' generator='VI'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='VT' generator='VT'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='WA' generator='WA'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='WI' generator='WI'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='WV' generator='WV'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='WY' generator='WY'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.CanadianProvinceType' originalName='canadian_province_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='AB' generator='AB'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='BC' generator='BC'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='MB' generator='MB'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NB' generator='NB'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NF' generator='NF'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NS' generator='NS'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NU' generator='NU'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='NT' generator='NT'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='ON' generator='ON'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='PE' generator='PE'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='QC' generator='QC'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='SK' generator='SK'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='YT' generator='YT'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.FloridaCountyCodeType' originalName='florida_county_code_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_0' generator='0'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_3' generator='3'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_03' generator='03'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_4' generator='4'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_04' generator='04'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_5' generator='5'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_05' generator='05'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_6' generator='6'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_06' generator='06'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_7' generator='7'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_07' generator='07'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_8' generator='8'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_08' generator='08'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_9' generator='9'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_09' generator='09'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_10' generator='10'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_11' generator='11'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_12' generator='12'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_13' generator='13'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_14' generator='14'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_15' generator='15'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_16' generator='16'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_17' generator='17'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_18' generator='18'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_19' generator='19'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_20' generator='20'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_21' generator='21'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_22' generator='22'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_23' generator='23'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_24' generator='24'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_25' generator='25'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_26' generator='26'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_27' generator='27'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_28' generator='28'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_29' generator='29'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_30' generator='30'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_31' generator='31'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_32' generator='32'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_33' generator='33'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_34' generator='34'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_35' generator='35'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_36' generator='36'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_37' generator='37'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_38' generator='38'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_39' generator='39'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_40' generator='40'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_41' generator='41'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_42' generator='42'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_43' generator='43'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_44' generator='44'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_45' generator='45'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_46' generator='46'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_47' generator='47'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_48' generator='48'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_49' generator='49'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_50' generator='50'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_51' generator='51'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_52' generator='52'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_53' generator='53'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_54' generator='54'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_55' generator='55'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_56' generator='56'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_57' generator='57'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_58' generator='58'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_59' generator='59'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_60' generator='60'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_61' generator='61'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_62' generator='62'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_63' generator='63'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_64' generator='64'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_65' generator='65'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_66' generator='66'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_67' generator='67'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.PhoneCodeType' originalName='phone_code_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_0' generator='0'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_3' generator='3'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_03' generator='03'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_4' generator='4'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_04' generator='04'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_5' generator='5'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_05' generator='05'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_6' generator='6'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_06' generator='06'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_9' generator='9'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_09' generator='09'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.PaymentCodeType' originalName='payment_code_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_0' generator='0'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.NameCodeType' originalName='name_code_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_3' generator='3'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_03' generator='03'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_4' generator='4'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_04' generator='04'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.FirmType' originalName='firm_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_0' generator='0'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_3' generator='3'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_03' generator='03'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_4' generator='4'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_04' generator='04'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_5' generator='5'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_05' generator='05'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_6' generator='6'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_06' generator='06'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_7' generator='7'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_07' generator='07'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_8' generator='8'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_08' generator='08'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_9' generator='9'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_09' generator='09'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_10' generator='10'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_99' generator='99'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.AddressCodeType' originalName='address_code_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_3' generator='3'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_03' generator='03'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.EmailCodeType' originalName='email_code_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_0' generator='0'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.CreditCardType' originalName='credit_card_type' restricts='java.lang.String' maxLength='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='_0' generator='0'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_1' generator='1'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_01' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_2' generator='2'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_02' generator='02'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_3' generator='3'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='_03' generator='03'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.PreparerCodeType' originalName='preparer_code_type' restricts='java.lang.String' maxLength='1' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='P' generator='P'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='S' generator='S'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.SpecialLicenseType' originalName='special_license_type' restricts='java.lang.String' maxLength='1' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='A' generator='A'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='R' generator='R'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.DateMmyyyyType' originalName='date_mmyyyy_type' restricts='java.lang.String' lengthEqualTo='6' pattern='(01[1-2][0-9][0-9][0-9]|02[1-2][0-9][0-9][0-9]|03[1-2][0-9][0-9][0-9]|04[1-2][0-9][0-9][0-9]|05[1-2][0-9][0-9][0-9]|06[1-2][0-9][0-9][0-9]|07[1-2][0-9][0-9][0-9]|08[1-2][0-9][0-9][0-9]|09[1-2][0-9][0-9][0-9]|10[1-2][0-9][0-9][0-9]|11[1-2][0-9][0-9][0-9]|12[1-2][0-9][0-9][0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.DateMmyyType' originalName='date_mmyy_type' restricts='java.lang.String' lengthEqualTo='4' pattern='(01[0-9][0-9]|02[0-9][0-9]|03[0-9][0-9]|04[0-9][0-9]|05[0-9][0-9]|06[0-9][0-9]|07[0-9][0-9]|08[0-9][0-9]|09[0-9][0-9]|10[0-9][0-9]|11[0-9][0-9]|12[0-9][0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.TimeType' originalName='time_type' restricts='java.lang.String' lengthEqualTo='9' pattern='([0-2][0-9][0-5][0-9][0-5][0-9][0-9][0-9][0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.TaxNumType' originalName='tax_num_type' restricts='java.lang.String' lengthEqualTo='9' pattern='([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.CountryCodeType' originalName='country_code_type' restricts='java.lang.String' maxLength='3' pattern='(([0-9])?([0-9])?[0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.CountryPhoneCodeType' originalName='country_phone_code_type' restricts='java.lang.String' maxLength='3' pattern='(([0-9])?([0-9])?[0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.QuestionType' originalName='question_type' restricts='java.lang.String' maxLength='3' pattern='(([0-9])?([0-9])?[0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.TerminationReasonType' originalName='termination_reason_type' restricts='java.lang.String' maxLength='3' pattern='(([0-9])?([0-9])?[0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.FeinType' originalName='fein_type' restricts='java.lang.String' maxLength='9' pattern='([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.TypeType' originalName='type_type' restricts='java.lang.String' lengthEqualTo='1' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='I' generator='I'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='F' generator='F'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.GenderType' originalName='gender_type' restricts='java.lang.String' lengthEqualTo='1' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='M' generator='M'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='F' generator='F'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.YnType' originalName='yn_type' restricts='java.lang.String' lengthEqualTo='1' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='Y' generator='Y'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='N' generator='N'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.PfType' originalName='pf_type' restricts='java.lang.String' lengthEqualTo='1' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='P' generator='P'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='F' generator='F'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlEnumerationType isSynthetic='true' name='com.nipr.TransStatusType' originalName='trans_status_type' restricts='java.lang.String' lengthEqualTo='2' xmlBeanPackage='noNamespace' xsdType='string'>
+    <Enumerand isSynthetic='true' name='AV' generator='AV'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='SR' generator='SR'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='HT' generator='HT'>
+    </Enumerand>
+    <Enumerand isSynthetic='true' name='PC' generator='PC'>
+    </Enumerand>
+  </XmlEnumerationType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.MonetaryLen8Type' originalName='monetary_len_8_type' restricts='java.math.BigDecimal' lessThanOrEqualTo='99999.99' greaterThanOrEqualTo='0.00' fractionDigitCount='2' xsdType='decimal'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.NumericLen5Type' originalName='numeric_len_5_type' restricts='java.math.BigInteger' lessThanOrEqualTo='99999' greaterThanOrEqualTo='1' xsdType='positiveInteger'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.NumericLen2Type' originalName='numeric_len_2_type' restricts='java.math.BigInteger' lessThanOrEqualTo='99' greaterThanOrEqualTo='1' xsdType='positiveInteger'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.NumericLen7Type' originalName='numeric_len_7_type' restricts='java.math.BigInteger' lessThanOrEqualTo='9999999' greaterThanOrEqualTo='1' xsdType='positiveInteger'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.NumericLen10Type' originalName='numeric_len_10_type' restricts='java.math.BigInteger' lessThanOrEqualTo='9999999999' greaterThanOrEqualTo='1' xsdType='positiveInteger'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen3Type' originalName='string_len_3_type' restricts='java.lang.String' maxLength='3' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen10Type' originalName='string_len_10_type' restricts='java.lang.String' maxLength='10' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen15Type' originalName='string_len_15_type' restricts='java.lang.String' maxLength='15' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen16Type' originalName='string_len_16_type' restricts='java.lang.String' maxLength='16' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen20Type' originalName='string_len_20_type' restricts='java.lang.String' maxLength='20' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen25Type' originalName='string_len_25_type' restricts='java.lang.String' maxLength='25' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen35Type' originalName='string_len_35_type' restricts='java.lang.String' maxLength='35' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen50Type' originalName='string_len_50_type' restricts='java.lang.String' maxLength='50' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen75Type' originalName='string_len_75_type' restricts='java.lang.String' maxLength='75' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen100Type' originalName='string_len_100_type' restricts='java.lang.String' maxLength='100' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.StringLen500Type' originalName='string_len_500_type' restricts='java.lang.String' maxLength='500' xsdType='string'>
+  </XmlSimpleType>
+  <MessageType isSynthetic='false' name='com.nipr.NIPR_Message' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='TransportHeader' assignable='true' cardinality='One2One' containment='true'>
+      <TypeName>messaging.TransportHeader</TypeName>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Payload' assignable='true' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.NIPR</TypeName>
+      <RelationshipProperty isSynthetic='false' name='Message' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </MessageType>
+  <EntityType isSynthetic='false' name='com.nipr.NIPRConnectionInfo' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='User' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Password' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.NIPRConnectionInformation' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='User' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Password' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='NIPR' assignable='true' index='2' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.NIPR</TypeName>
+      <RelationshipProperty isSynthetic='false' name='NIPRConnectionInformationForNIPR' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <XmlSimpleType isSynthetic='true' name='com.nipr.DateType' originalName='date_type' restricts='java.lang.String' lengthEqualTo='8' pattern='([1-2][0-9][0-9][0-9](01|02|03|04|05|06|07|08|09|10|11|12)(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31))' xsdType='string'>
+  </XmlSimpleType>
+  <Import schemaName='messaging.Messaging'/>
+  <ImportConfiguration>SchemasNIPR/nipr_gateway_00_00.xsd</ImportConfiguration>
+  <XmlFileInformation isSynthetic='true' name='nipr_gateway_00_00.xsd' qualifiedAttributeForm='false' qualifiedElementForm='false' namespace='' root='true' sourceFile='../SchemasNIPR/nipr_gateway_00_00.xsd'>
+    <PackageObjectName>nipr</PackageObjectName>
+  </XmlFileInformation>
+</XmlSchema>

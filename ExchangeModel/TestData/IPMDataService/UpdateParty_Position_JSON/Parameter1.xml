@@ -1,0 +1,15 @@
+{
+  "dxsi:type": "com.partyinformation.UpdateParty",
+  "PartyID": "9",
+  "AgreementParticipation": [{
+    "AgreementID": "AG1",
+    "AgreementName": "AgreementName"
+  }],
+  "PositionInformation": [{
+    "PositionType": "Producer",
+    "ParentPositionType": "BGA",
+    "PositionName": "Producer1",
+    "ParentPositionName": "BGA1",
+    "HierachyName": "Hierarchy for kit The Contract Kit"
+  }],
+}

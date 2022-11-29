@@ -1,0 +1,1217 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ParameterDescriptors xmlns='http://www.pantero.com/metamodel2' isSynthetic='true'>
+  <LocationType type='JdbcSourceLocation'>
+    <SourceLocationParameter name='enrich.query.batch.chunksize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryAttempts' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryDelay' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquire_increment' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.autoCommitOnClose' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.automaticTestTable' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.breakAfterAcquireFailure' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.checkoutTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.idle_test_period' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.initialPoolSize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxConnectionAge' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxIdleTimeExcessConnections' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxStatementsPerConnection' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_statements' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.min_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.numHelperThreads' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='hibernate.c3p0.preferredTestQuery' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckin' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckout' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.unreturnedConnectionTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.user' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.usesTraditionalReflectiveProxies' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.query_cache_factory' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.region_prefix' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.use_minimal_puts' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.use_query_cache' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cglib.use_reflection_optimizer' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.connection.isolation' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.connection.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.default_schema' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.hbm2ddl.auto' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_versioned_data' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.fetch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.query_timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.use_get_generated_keys' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_scrollable_resultset' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_streams_for_binary' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.max_fetch_depth' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.query.substitutions' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.session_factory_name' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.transaction.manager_lookup_class' type='java.lang.String'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='jta.UserTransaction' type='java.lang.String'/>
+    <Property name='@dbTypeClassName' type='com.pantero.extensions.DatabaseTypeExtension' partner='dbTypeId'>
+      <Value>com.aurea.database.postgre.PostgreSQLDatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXDB29DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXMicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXOracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXSybaseASE15DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MySQL5DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata13DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.TimesTen11DatabaseType</Value>
+    </Property>
+    <Property name='CatalogName' type='java.lang.String' nullable='yes'/>
+    <Property name='SchemaName' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+  </LocationType>
+  <LocationType type='JdbcSourceLocation'>
+    <SourceLocationParameter name='enrich.query.batch.chunksize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryAttempts' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryDelay' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquire_increment' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.autoCommitOnClose' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.automaticTestTable' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.breakAfterAcquireFailure' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.checkoutTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.idle_test_period' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.initialPoolSize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxConnectionAge' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxIdleTimeExcessConnections' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxStatementsPerConnection' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_statements' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.min_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.numHelperThreads' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='hibernate.c3p0.preferredTestQuery' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckin' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckout' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.unreturnedConnectionTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.user' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.usesTraditionalReflectiveProxies' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.query_cache_factory' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.region_prefix' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.use_minimal_puts' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.use_query_cache' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cglib.use_reflection_optimizer' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.connection.isolation' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.connection.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.default_schema' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.hbm2ddl.auto' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_versioned_data' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.fetch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.query_timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.use_get_generated_keys' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_scrollable_resultset' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_streams_for_binary' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.max_fetch_depth' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.query.substitutions' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.session_factory_name' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.transaction.manager_lookup_class' type='java.lang.String'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='jta.UserTransaction' type='java.lang.String'/>
+    <Property name='@dbTypeClassName' type='com.pantero.extensions.DatabaseTypeExtension' partner='dbTypeId'>
+      <Value>com.aurea.database.postgre.PostgreSQLDatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXDB29DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXMicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXOracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXSybaseASE15DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MySQL5DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata13DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.TimesTen11DatabaseType</Value>
+    </Property>
+    <Property name='CatalogName' type='java.lang.String' nullable='yes'/>
+    <Property name='SchemaName' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+  </LocationType>
+  <LocationType type='JdbcSourceLocation'>
+    <SourceLocationParameter name='enrich.query.batch.chunksize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryAttempts' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryDelay' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquire_increment' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.autoCommitOnClose' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.automaticTestTable' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.breakAfterAcquireFailure' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.checkoutTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.idle_test_period' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.initialPoolSize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxConnectionAge' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxIdleTimeExcessConnections' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxStatementsPerConnection' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_statements' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.min_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.numHelperThreads' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='hibernate.c3p0.preferredTestQuery' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckin' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckout' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.unreturnedConnectionTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.user' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.usesTraditionalReflectiveProxies' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.query_cache_factory' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.region_prefix' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.use_minimal_puts' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.use_query_cache' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cglib.use_reflection_optimizer' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.connection.isolation' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.connection.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.default_schema' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.hbm2ddl.auto' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_versioned_data' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.fetch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.query_timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.use_get_generated_keys' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_scrollable_resultset' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_streams_for_binary' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.max_fetch_depth' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.query.substitutions' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.session_factory_name' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.transaction.manager_lookup_class' type='java.lang.String'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='jta.UserTransaction' type='java.lang.String'/>
+    <Property name='@dbTypeClassName' type='com.pantero.extensions.DatabaseTypeExtension' partner='dbTypeId'>
+      <Value>com.aurea.database.postgre.PostgreSQLDatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXDB29DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXMicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXOracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXSybaseASE15DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MySQL5DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata13DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.TimesTen11DatabaseType</Value>
+    </Property>
+    <Property name='CatalogName' type='java.lang.String' nullable='yes'/>
+    <Property name='SchemaName' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+  </LocationType>
+  <LocationType type='JdbcSourceLocation'>
+    <SourceLocationParameter name='enrich.query.batch.chunksize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryAttempts' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryDelay' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquire_increment' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.autoCommitOnClose' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.automaticTestTable' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.breakAfterAcquireFailure' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.checkoutTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.idle_test_period' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.initialPoolSize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxConnectionAge' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxIdleTimeExcessConnections' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxStatementsPerConnection' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_statements' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.min_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.numHelperThreads' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='hibernate.c3p0.preferredTestQuery' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckin' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckout' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.unreturnedConnectionTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.user' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.usesTraditionalReflectiveProxies' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.query_cache_factory' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.region_prefix' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.use_minimal_puts' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.use_query_cache' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cglib.use_reflection_optimizer' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.connection.isolation' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.connection.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.default_schema' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.hbm2ddl.auto' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_versioned_data' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.fetch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.query_timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.use_get_generated_keys' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_scrollable_resultset' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_streams_for_binary' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.max_fetch_depth' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.query.substitutions' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.session_factory_name' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.transaction.manager_lookup_class' type='java.lang.String'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='jta.UserTransaction' type='java.lang.String'/>
+    <Property name='@dbTypeClassName' type='com.pantero.extensions.DatabaseTypeExtension' partner='dbTypeId'>
+      <Value>com.aurea.database.postgre.PostgreSQLDatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXDB29DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXMicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXOracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXSybaseASE15DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MySQL5DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata13DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.TimesTen11DatabaseType</Value>
+    </Property>
+    <Property name='CatalogName' type='java.lang.String' nullable='yes'/>
+    <Property name='SchemaName' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+  </LocationType>
+  <LocationType type='JdbcSourceLocation'>
+    <SourceLocationParameter name='enrich.query.batch.chunksize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryAttempts' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryDelay' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquire_increment' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.autoCommitOnClose' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.automaticTestTable' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.breakAfterAcquireFailure' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.checkoutTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.idle_test_period' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.initialPoolSize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxConnectionAge' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxIdleTimeExcessConnections' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxStatementsPerConnection' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_statements' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.min_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.numHelperThreads' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='hibernate.c3p0.preferredTestQuery' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckin' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckout' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.unreturnedConnectionTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.user' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.usesTraditionalReflectiveProxies' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.query_cache_factory' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.region_prefix' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.use_minimal_puts' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.use_query_cache' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cglib.use_reflection_optimizer' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.connection.isolation' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.connection.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.default_schema' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.hbm2ddl.auto' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_versioned_data' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.fetch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.query_timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.use_get_generated_keys' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_scrollable_resultset' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_streams_for_binary' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.max_fetch_depth' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.query.substitutions' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.session_factory_name' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.transaction.manager_lookup_class' type='java.lang.String'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='jta.UserTransaction' type='java.lang.String'/>
+    <Property name='@dbTypeClassName' type='com.pantero.extensions.DatabaseTypeExtension' partner='dbTypeId'>
+      <Value>com.aurea.database.postgre.PostgreSQLDatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXDB29DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXMicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXOracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXSybaseASE15DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MySQL5DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata13DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.TimesTen11DatabaseType</Value>
+    </Property>
+    <Property name='CatalogName' type='java.lang.String' nullable='yes'/>
+    <Property name='SchemaName' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+  </LocationType>
+  <LocationType type='JdbcSourceLocation'>
+    <SourceLocationParameter name='enrich.query.batch.chunksize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryAttempts' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryDelay' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquire_increment' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.autoCommitOnClose' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.automaticTestTable' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.breakAfterAcquireFailure' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.checkoutTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.idle_test_period' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.initialPoolSize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxConnectionAge' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxIdleTimeExcessConnections' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxStatementsPerConnection' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_statements' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.min_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.numHelperThreads' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='hibernate.c3p0.preferredTestQuery' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckin' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckout' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.unreturnedConnectionTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.user' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.usesTraditionalReflectiveProxies' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.query_cache_factory' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.region_prefix' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.use_minimal_puts' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.use_query_cache' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cglib.use_reflection_optimizer' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.connection.isolation' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.connection.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.default_schema' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.hbm2ddl.auto' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_versioned_data' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.fetch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.query_timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.use_get_generated_keys' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_scrollable_resultset' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_streams_for_binary' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.max_fetch_depth' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.query.substitutions' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.session_factory_name' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.transaction.manager_lookup_class' type='java.lang.String'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='jta.UserTransaction' type='java.lang.String'/>
+    <Property name='@dbTypeClassName' type='com.pantero.extensions.DatabaseTypeExtension' partner='dbTypeId'>
+      <Value>com.aurea.database.postgre.PostgreSQLDatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXDB29DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXMicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXOracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXSybaseASE15DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MySQL5DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata13DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.TimesTen11DatabaseType</Value>
+    </Property>
+    <Property name='CatalogName' type='java.lang.String' nullable='yes'/>
+    <Property name='SchemaName' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+  </LocationType>
+  <LocationType type='HTTPSourceLocation'>
+    <SourceLocationParameter name='http.authentication.preemptive' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.connection-manager.max-total' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.connection-manager.timeout' type='java.lang.Long'/>
+    <SourceLocationParameter name='http.connection.stalecheck' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.connection.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.cookie.maintain.global' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.cookie.maintain.local' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.method.multipart.boundary' type='java.lang.String'/>
+    <SourceLocationParameter name='http.method.response.buffer.warnlimit' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.prefix.ip' type='java.lang.String'/>
+    <SourceLocationParameter name='http.prefix.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='http.prefix.port' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.prefix.realm' type='java.lang.String'/>
+    <SourceLocationParameter name='http.prefix.username' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.allow-circular-redirects' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.content-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.cookie-policy' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.credential-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.element-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.expect-continue' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.head-body-timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.max-redirects' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.reject-head-body' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.reject-relative-redirect' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.single-cookie-header' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.status-line-garbage-limit' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.strict-transfer-encoding' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.unambiguous-statusline' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.warn-extra-input' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.socket.linger' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.receivebuffer' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.sendbuffer' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.tcp.nodelay' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.user.agent' type='java.lang.String'/>
+    <HeaderValue name='Accept' type='java.lang.String'/>
+    <HeaderValue name='Accept-Charset' type='java.lang.String'/>
+    <HeaderValue name='Accept-Encoding' type='java.lang.String'/>
+    <HeaderValue name='Accept-Language' type='java.lang.String'/>
+    <HeaderValue name='Authorization' type='java.lang.String'/>
+    <HeaderValue name='Act-Authorization' type='java.lang.String'/>
+    <HeaderValue name='Cache-Control' type='java.lang.String'/>
+    <HeaderValue name='Connection' type='java.lang.String'/>
+    <HeaderValue name='Cookie' type='java.lang.String'/>
+    <HeaderValue name='Content-Length' type='java.lang.Long'/>
+    <HeaderValue name='Content-Type' type='java.lang.String'/>
+    <HeaderValue name='Date' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='Expect' type='java.lang.String'/>
+    <HeaderValue name='From' type='java.lang.String'/>
+    <HeaderValue name='Host' type='java.lang.String'/>
+    <HeaderValue name='If-Match' type='java.lang.String'/>
+    <HeaderValue name='If-Modified-Since' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='If-None-Match' type='java.lang.String'/>
+    <HeaderValue name='If-Range' type='java.lang.String'/>
+    <HeaderValue name='If-Unmodified-Since' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='Max-Forwards' type='java.lang.Integer'/>
+    <HeaderValue name='Pragma' type='java.lang.String'/>
+    <HeaderValue name='Proxy-Authorization' type='java.lang.String'/>
+    <HeaderValue name='Range' type='java.lang.String'/>
+    <HeaderValue name='Referer' type='java.lang.String'/>
+    <HeaderValue name='TE' type='java.lang.String'/>
+    <HeaderValue name='Upgrade' type='java.lang.String'/>
+    <HeaderValue name='User-Agent' type='java.lang.String'/>
+    <HeaderValue name='Via' type='java.lang.String'/>
+    <HeaderValue name='Warning' type='java.lang.String'/>
+    <HeaderValue name='Propagate Service Headers' type='java.lang.Boolean'/>
+    <Property name='HttpMethod' type='com.pantero.metamodel.config.HTTPSourceLocation$HttpMethodEnum'>
+      <Value>DELETE</Value>
+      <Value>GET</Value>
+      <Value>POST</Value>
+      <Value>PUT</Value>
+    </Property>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='ServiceName' type='java.lang.String'/>
+    <Property name='ServiceNamespace' type='java.lang.String'/>
+    <Property name='ServiceNamespacePrefix' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+    <Property name='@wrappedWithSoap' type='com.pantero.metamodel.deployment.TransportBindingEnum'>
+      <Value>NO WRAP</Value>
+      <Value>SOAP 1.1</Value>
+      <Value>SOAP 1.2</Value>
+    </Property>
+  </LocationType>
+  <LocationType type='HTTPSourceLocation'>
+    <SourceLocationParameter name='http.authentication.preemptive' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.connection-manager.max-total' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.connection-manager.timeout' type='java.lang.Long'/>
+    <SourceLocationParameter name='http.connection.stalecheck' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.connection.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.cookie.maintain.global' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.cookie.maintain.local' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.method.multipart.boundary' type='java.lang.String'/>
+    <SourceLocationParameter name='http.method.response.buffer.warnlimit' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.prefix.ip' type='java.lang.String'/>
+    <SourceLocationParameter name='http.prefix.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='http.prefix.port' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.prefix.realm' type='java.lang.String'/>
+    <SourceLocationParameter name='http.prefix.username' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.allow-circular-redirects' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.content-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.cookie-policy' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.credential-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.element-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.expect-continue' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.head-body-timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.max-redirects' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.reject-head-body' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.reject-relative-redirect' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.single-cookie-header' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.status-line-garbage-limit' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.strict-transfer-encoding' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.unambiguous-statusline' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.warn-extra-input' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.socket.linger' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.receivebuffer' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.sendbuffer' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.tcp.nodelay' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.user.agent' type='java.lang.String'/>
+    <HeaderValue name='Accept' type='java.lang.String'/>
+    <HeaderValue name='Accept-Charset' type='java.lang.String'/>
+    <HeaderValue name='Accept-Encoding' type='java.lang.String'/>
+    <HeaderValue name='Accept-Language' type='java.lang.String'/>
+    <HeaderValue name='Authorization' type='java.lang.String'/>
+    <HeaderValue name='Act-Authorization' type='java.lang.String'/>
+    <HeaderValue name='Cache-Control' type='java.lang.String'/>
+    <HeaderValue name='Connection' type='java.lang.String'/>
+    <HeaderValue name='Cookie' type='java.lang.String'/>
+    <HeaderValue name='Content-Length' type='java.lang.Long'/>
+    <HeaderValue name='Content-Type' type='java.lang.String'/>
+    <HeaderValue name='Date' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='Expect' type='java.lang.String'/>
+    <HeaderValue name='From' type='java.lang.String'/>
+    <HeaderValue name='Host' type='java.lang.String'/>
+    <HeaderValue name='If-Match' type='java.lang.String'/>
+    <HeaderValue name='If-Modified-Since' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='If-None-Match' type='java.lang.String'/>
+    <HeaderValue name='If-Range' type='java.lang.String'/>
+    <HeaderValue name='If-Unmodified-Since' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='Max-Forwards' type='java.lang.Integer'/>
+    <HeaderValue name='Pragma' type='java.lang.String'/>
+    <HeaderValue name='Proxy-Authorization' type='java.lang.String'/>
+    <HeaderValue name='Range' type='java.lang.String'/>
+    <HeaderValue name='Referer' type='java.lang.String'/>
+    <HeaderValue name='TE' type='java.lang.String'/>
+    <HeaderValue name='Upgrade' type='java.lang.String'/>
+    <HeaderValue name='User-Agent' type='java.lang.String'/>
+    <HeaderValue name='Via' type='java.lang.String'/>
+    <HeaderValue name='Warning' type='java.lang.String'/>
+    <HeaderValue name='Propagate Service Headers' type='java.lang.Boolean'/>
+    <Property name='HttpMethod' type='com.pantero.metamodel.config.HTTPSourceLocation$HttpMethodEnum'>
+      <Value>DELETE</Value>
+      <Value>GET</Value>
+      <Value>POST</Value>
+      <Value>PUT</Value>
+    </Property>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='ServiceName' type='java.lang.String'/>
+    <Property name='ServiceNamespace' type='java.lang.String'/>
+    <Property name='ServiceNamespacePrefix' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+    <Property name='@wrappedWithSoap' type='com.pantero.metamodel.deployment.TransportBindingEnum'>
+      <Value>NO WRAP</Value>
+      <Value>SOAP 1.1</Value>
+      <Value>SOAP 1.2</Value>
+    </Property>
+  </LocationType>
+  <LocationType type='HTTPSourceLocation'>
+    <SourceLocationParameter name='http.authentication.preemptive' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.connection-manager.max-total' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.connection-manager.timeout' type='java.lang.Long'/>
+    <SourceLocationParameter name='http.connection.stalecheck' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.connection.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.cookie.maintain.global' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.cookie.maintain.local' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.method.multipart.boundary' type='java.lang.String'/>
+    <SourceLocationParameter name='http.method.response.buffer.warnlimit' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.prefix.ip' type='java.lang.String'/>
+    <SourceLocationParameter name='http.prefix.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='http.prefix.port' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.prefix.realm' type='java.lang.String'/>
+    <SourceLocationParameter name='http.prefix.username' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.allow-circular-redirects' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.content-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.cookie-policy' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.credential-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.element-charset' type='java.lang.String'/>
+    <SourceLocationParameter name='http.protocol.expect-continue' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.head-body-timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.max-redirects' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.reject-head-body' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.reject-relative-redirect' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.single-cookie-header' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.status-line-garbage-limit' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.protocol.strict-transfer-encoding' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.unambiguous-statusline' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.protocol.warn-extra-input' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.socket.linger' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.receivebuffer' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.sendbuffer' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='http.tcp.nodelay' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='http.user.agent' type='java.lang.String'/>
+    <HeaderValue name='Accept' type='java.lang.String'/>
+    <HeaderValue name='Accept-Charset' type='java.lang.String'/>
+    <HeaderValue name='Accept-Encoding' type='java.lang.String'/>
+    <HeaderValue name='Accept-Language' type='java.lang.String'/>
+    <HeaderValue name='Authorization' type='java.lang.String'/>
+    <HeaderValue name='Act-Authorization' type='java.lang.String'/>
+    <HeaderValue name='Cache-Control' type='java.lang.String'/>
+    <HeaderValue name='Connection' type='java.lang.String'/>
+    <HeaderValue name='Cookie' type='java.lang.String'/>
+    <HeaderValue name='Content-Length' type='java.lang.Long'/>
+    <HeaderValue name='Content-Type' type='java.lang.String'/>
+    <HeaderValue name='Date' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='Expect' type='java.lang.String'/>
+    <HeaderValue name='From' type='java.lang.String'/>
+    <HeaderValue name='Host' type='java.lang.String'/>
+    <HeaderValue name='If-Match' type='java.lang.String'/>
+    <HeaderValue name='If-Modified-Since' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='If-None-Match' type='java.lang.String'/>
+    <HeaderValue name='If-Range' type='java.lang.String'/>
+    <HeaderValue name='If-Unmodified-Since' type='com.progress.dataxtend.si.util.DateTime'/>
+    <HeaderValue name='Max-Forwards' type='java.lang.Integer'/>
+    <HeaderValue name='Pragma' type='java.lang.String'/>
+    <HeaderValue name='Proxy-Authorization' type='java.lang.String'/>
+    <HeaderValue name='Range' type='java.lang.String'/>
+    <HeaderValue name='Referer' type='java.lang.String'/>
+    <HeaderValue name='TE' type='java.lang.String'/>
+    <HeaderValue name='Upgrade' type='java.lang.String'/>
+    <HeaderValue name='User-Agent' type='java.lang.String'/>
+    <HeaderValue name='Via' type='java.lang.String'/>
+    <HeaderValue name='Warning' type='java.lang.String'/>
+    <HeaderValue name='Propagate Service Headers' type='java.lang.Boolean'/>
+    <Property name='HttpMethod' type='com.pantero.metamodel.config.HTTPSourceLocation$HttpMethodEnum'>
+      <Value>DELETE</Value>
+      <Value>GET</Value>
+      <Value>POST</Value>
+      <Value>PUT</Value>
+    </Property>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='ServiceName' type='java.lang.String'/>
+    <Property name='ServiceNamespace' type='java.lang.String'/>
+    <Property name='ServiceNamespacePrefix' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+    <Property name='@wrappedWithSoap' type='com.pantero.metamodel.deployment.TransportBindingEnum'>
+      <Value>NO WRAP</Value>
+      <Value>SOAP 1.1</Value>
+      <Value>SOAP 1.2</Value>
+    </Property>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='SourceLocation'>
+    <Property name='xmlFolder' type='com.pantero.common.ProjectFile' nullable='yes'/>
+  </LocationType>
+  <LocationType type='JdbcSourceLocation'>
+    <SourceLocationParameter name='enrich.query.batch.chunksize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryAttempts' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquireRetryDelay' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.acquire_increment' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.autoCommitOnClose' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.automaticTestTable' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.breakAfterAcquireFailure' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.checkoutTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.idle_test_period' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.initialPoolSize' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxConnectionAge' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxIdleTimeExcessConnections' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.maxStatementsPerConnection' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.max_statements' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.min_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.numHelperThreads' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.password' type='java.lang.String' secret='yes'/>
+    <SourceLocationParameter name='hibernate.c3p0.preferredTestQuery' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckin' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.testConnectionOnCheckout' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.c3p0.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.unreturnedConnectionTimeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.c3p0.user' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.c3p0.usesTraditionalReflectiveProxies' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.query_cache_factory' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.region_prefix' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.cache.use_minimal_puts' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cache.use_query_cache' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.cglib.use_reflection_optimizer' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.connection.isolation' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.connection.provider_class' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.default_schema' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.hbm2ddl.auto' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.batch_versioned_data' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.fetch_size' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.query_timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.jdbc.use_get_generated_keys' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_scrollable_resultset' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.jdbc.use_streams_for_binary' type='java.lang.Boolean'>
+      <Value>false</Value>
+      <Value>true</Value>
+    </SourceLocationParameter>
+    <SourceLocationParameter name='hibernate.max_fetch_depth' type='java.lang.Integer'/>
+    <SourceLocationParameter name='hibernate.query.substitutions' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.session_factory_name' type='java.lang.String'/>
+    <SourceLocationParameter name='hibernate.transaction.manager_lookup_class' type='java.lang.String'/>
+    <SourceLocationParameter name='http.socket.timeout' type='java.lang.Integer'/>
+    <SourceLocationParameter name='jta.UserTransaction' type='java.lang.String'/>
+    <Property name='@dbTypeClassName' type='com.pantero.extensions.DatabaseTypeExtension' partner='dbTypeId'>
+      <Value>com.aurea.database.postgre.PostgreSQLDatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXDB29DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXMicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXOracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.DXSybaseASE15DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MicrosoftSQL2008DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.MySQL5DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle11DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Oracle12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata12DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.Teradata13DatabaseType</Value>
+      <Value>com.pantero.metamodel.datasources.database.TimesTen11DatabaseType</Value>
+    </Property>
+    <Property name='CatalogName' type='java.lang.String' nullable='yes'/>
+    <Property name='SchemaName' type='java.lang.String' nullable='yes'/>
+    <Property name='URL' type='java.lang.String' nullable='yes'/>
+    <Property name='Password' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='Username' type='java.lang.String' nullable='yes'/>
+  </LocationType>
+  <SSLConfig>
+    <Property name='@KeyAlias' type='java.lang.String' nullable='yes'/>
+    <Property name='@KeyPassword' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='@KeyStorePassword' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='@KeyStoreType' type='java.lang.String' nullable='yes'/>
+    <Property name='@KeyStoreURL' type='java.lang.String' nullable='yes'/>
+    <Property name='@Provider' type='java.lang.String' nullable='yes'/>
+    <Property name='@TrustStorePassword' type='java.lang.String' nullable='yes' secret='yes'/>
+    <Property name='@TrustStoreType' type='java.lang.String' nullable='yes'/>
+    <Property name='@TrustStoreURL' type='java.lang.String' nullable='yes'/>
+    <CipherSuite name='SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DHE_DSS_WITH_DES_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DHE_RSA_WITH_DES_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DH_anon_EXPORT_WITH_RC4_40_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DH_anon_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DH_anon_WITH_DES_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_DH_anon_WITH_RC4_128_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_RSA_EXPORT_WITH_DES40_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_RSA_EXPORT_WITH_RC4_40_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_RSA_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_RSA_WITH_DES_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_RSA_WITH_NULL_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_RSA_WITH_NULL_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_RSA_WITH_RC4_128_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='SSL_RSA_WITH_RC4_128_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_DHE_DSS_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_DHE_DSS_WITH_AES_128_CBC_SHA256' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_DHE_RSA_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_DHE_RSA_WITH_AES_128_CBC_SHA256' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_DH_anon_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_DH_anon_WITH_AES_128_CBC_SHA256' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_ECDSA_WITH_NULL_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_ECDSA_WITH_RC4_128_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_RSA_WITH_NULL_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDHE_RSA_WITH_RC4_128_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_ECDSA_WITH_NULL_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_ECDSA_WITH_RC4_128_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_RSA_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_RSA_WITH_NULL_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_RSA_WITH_RC4_128_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_anon_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_anon_WITH_NULL_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_ECDH_anon_WITH_RC4_128_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_EMPTY_RENEGOTIATION_INFO_SCSV' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_EXPORT_WITH_DES_CBC_40_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_EXPORT_WITH_DES_CBC_40_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_EXPORT_WITH_RC4_40_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_EXPORT_WITH_RC4_40_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_WITH_3DES_EDE_CBC_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_WITH_3DES_EDE_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_WITH_DES_CBC_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_WITH_DES_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_WITH_RC4_128_MD5' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_KRB5_WITH_RC4_128_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_RSA_WITH_AES_128_CBC_SHA' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_RSA_WITH_AES_128_CBC_SHA256' type='java.lang.Boolean'/>
+    <CipherSuite name='TLS_RSA_WITH_NULL_SHA256' type='java.lang.Boolean'/>
+  </SSLConfig>
+</ParameterDescriptors>

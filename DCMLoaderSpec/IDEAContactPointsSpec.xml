@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ *      Copyright (C) Unpublished Versata Inc. All riths reserved.
+ *      Versata, Inc., Confidential and Proprietary.
+ *      This software is subject to copyright protection
+ *      under the laws of the United States and other countires.
+ *      Unless otherwise explicitly stated, this software is provided
+ *      by Versata "AS IS".
+ */
+ -->
+<loader:loader_spec xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:loader="http://dms.trilogy.com/Loader/Spec" xmlns="http://dms.trilogy.com/Loader/Spec" xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd" name="Stock ContactPoint Loader Spec">
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+		<!--property name="numThreads" value="4"/-->
+	</strategy>
+	<object name="contact_point" class="ContactPointValidator"/>
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="headerRows" value="1"/>
+		<!--property name="footerRows" value="1"/-->
+		<property name="quote_chars" value="&quot;"/>
+		<indexed_field name="tax id" index="0"/>
+		<indexed_field name="contact type" index="1" translator="contact_type_translator"/>
+		<indexed_field name="communication mode" index="2" translator="communication_mode_translator"/>
+		<indexed_field name="street1" index="3"/>
+		<indexed_field name="street2" index="4"/>
+		<indexed_field name="street3" index="5"/>
+		<indexed_field name="city" index="6"/>
+		<indexed_field name="state" index="7"/>
+		<indexed_field name="country" index="8" translator="country_translator"/>
+		<indexed_field name="zip code" index="9"/>
+		<indexed_field name="email address" index="10"/>
+		<indexed_field name="phone number" index="11"/>
+		<indexed_field name="fax number" index="12"/>
+		<indexed_field name="pager" index="13"/>
+		<indexed_field name="cell phone" index="14"/>
+		<indexed_field name="AVContactName" index="15"/>
+		<indexed_field name="party id" index="16"/>
+		<indexed_field name="GID" index="17"/>
+	</source>
+	<translator name="contact_type_translator" class="enum_translator">
+		<property name="enumName" value="CONTACT_TYPE"/>
+	</translator>
+	<translator name="communication_mode_translator" class="enum_translator">
+		<property name="enumName" value="CONTACT.COMM_MODE"/>
+	</translator>
+	<translator name="country_translator" class="enum_translator">
+		<property name="enumName" value="COUNTRY"/>
+		<property name="throwException" value="true"/>
+        <property name="useDefaultValue" value="false"/>		
+	</translator>
+	<translator name="country_retranslator" class="enum_translator">
+		<property name="enumName" value="COUNTRY"/>
+		<property name="valueToName" value="true"/>
+		<property name="throwException" value="true"/>
+        <property name="useDefaultValue" value="false"/>		
+	</translator>
+	<resolver name="party_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+				SELECT party.GID g FROM FSParty party WHERE 
+					party.UNID={0}
+			]]></property>
+		<property name="keys" value="string PartyID"/>
+	</resolver>
+	<resolver name="contact_point_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+				SELECT contactpoint.GID  FROM FSContactPoint contactpoint WHERE 
+				(contactpoint.GID={0})
+			]]></property>
+		<property name="keys" value="string GID"/>
+	</resolver>
+	<map object="contact_point">
+		<action name="update or insert" resolver="contact_point_resolver">
+			<field name="GID"/>
+		</action>
+		<map_object property="Party" resolver="party_resolver" tag="state">
+			<field name="party id"/>
+		</map_object>
+		<map_simple property="ContactType" field="contact type"/>
+		<map_simple property="CommMode" field="communication mode"/>
+		<map_simple property="Address.Street1" field="street1"/>
+		<map_simple property="Address.Street2" field="street2"/>
+		<map_simple property="Address.Street3" field="street3"/>
+		<map_simple property="Address.City" field="city"/>
+		<map_simple property="Address.State" field="state"/>
+		<map_simple property="Address.Country" field="country" translator="country_retranslator"/>
+		<map_simple property="Address.ZipCode" field="zip code"/>
+		<map_simple property="Address.Email" field="email address"/>
+		<map_simple property="Address.Phone" field="phone number"/>
+		<map_simple property="Address.Fax" field="fax number"/>
+		<map_simple property="Address.Pager" field="pager"/>
+		<map_simple property="Address.CellPhone" field="cell phone"/>
+		<map_simple property="AVContactName" field="AVContactName"/>
+	</map>
+</loader:loader_spec>

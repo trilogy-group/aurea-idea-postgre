@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:UpdateParty xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:PartyID>98</ns2:PartyID>
+    <ns2:Status>Active</ns2:Status>
+    <ns2:Course>
+        <ns2:CourseName>PC</ns2:CourseName>
+        <ns2:StartDate>01/10/2012</ns2:StartDate>
+        <ns2:EndDate>10/10/2012</ns2:EndDate>
+    </ns2:Course>
+</ns2:UpdateParty>

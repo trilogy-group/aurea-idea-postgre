@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Person xmlns="http://www.PersonInformation.com/PersonInformation.xsd" role="EMPLOYEE">
+    <PersonID>
+        <IDType>SSN</IDType>
+        <IDNumber>332-45-5575</IDNumber>
+    </PersonID>
+    <PersonID>
+        <IDType>license</IDType>
+        <IDNumber>665578943</IDNumber>
+    </PersonID>
+    <PersonName>
+        <fullName>Zack H. Smith</fullName>
+        <prefixTitleCode>Mr</prefixTitleCode>
+        <givenName>Zack</givenName>
+        <middleName>H.</middleName>
+        <surname>Smith</surname>
+        <suffix>N/A</suffix>
+    </PersonName>
+    <Address>
+        <AddressType>Home</AddressType>
+        <Street1>564 3rd Ave.</Street1>
+        <Street2/>
+        <Street3/>
+        <City>New York</City>
+        <State>NY</State>
+        <County>Middlesex</County>
+        <Country>US</Country>
+        <ZipCode>10011</ZipCode>
+        <POBox/>
+    </Address>
+    <Fax number="201-555-3333" extention="123"/>
+    <Cell number="201-555-3334"/>
+    <Phone number="201-555-3335" extention=""/>
+    <Pager number="201-555-3336" extention=""/>
+    <deathIndicator>false</deathIndicator>
+    <bloodTypeCode>O Plus</bloodTypeCode>
+    <genderCode>Male</genderCode>
+    <nationality>Italy</nationality>
+    <missingIndicator>false</missingIndicator>
+    <maritalStatusCode>Single</maritalStatusCode>
+    <email>abc.cba@something.com</email>
+    <birthDate>09/12/1978</birthDate>
+</Person>

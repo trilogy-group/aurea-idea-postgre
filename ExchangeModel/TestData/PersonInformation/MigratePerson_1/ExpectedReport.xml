@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:RuleResults>
+    <run:Category name="PersonInformationSchemaValidation">
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/470)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/462)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/454)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/448)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/442)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/434)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/426)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/418)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/412)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForCountyOnAddress" subjectType="personinformation.com.personInformation.personInformation.Address" message="County in Address is required" category="PersonInformationSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="Address(session/id = 1/404)"/>
+        <run:Detail value="false" message="County null hasValue is false"/>
+      </run:Result>
+    </run:Category>
+  </run:RuleResults>
+</run:RuntimeReport>

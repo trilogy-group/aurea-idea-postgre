@@ -1,0 +1,9 @@
+{  
+  "dxsi:type": "com.partyinformation.UpdateParty",
+  "PartyID": "8",
+   "Course": [{
+    "CourseName": "101 Continuing Education General Program",
+    "StartDate": "01/02/2000",
+    "EndDate": "01/03/2000"
+  }]
+}

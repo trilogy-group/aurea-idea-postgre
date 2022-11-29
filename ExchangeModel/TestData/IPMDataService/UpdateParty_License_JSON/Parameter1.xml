@@ -1,0 +1,34 @@
+{
+  "dxsi:type": "com.partyinformation.UpdateParty",
+  "PartyID": "8",
+  "Status": "Active",
+  "License": [{
+    "Status": "Active",
+    "LicenseNumber": "123456789",
+    "Resident": "Y",
+    "ClassCode": "Agent",
+    "StatusDate": "09/23/2013",
+    "EndDate": "10/10/2020",
+    "StartDate": "01/10/2000",
+    "StateID": "MA",
+    "LOA": [{
+      "Code": "Life",
+      "Name": "LOA name",
+      "IssueDate": "10/10/2013",
+      "StatusReason": "N/A",
+      "Status": "Active",
+      "StatusDate": "01/01/2013",
+      "CECreditsNeeded": "True",
+      "CECompliance": "CECompliance",
+    }],
+    "Appointment": [{
+      "FEIN": "FEIN",
+      "Status": "Active",
+      "StatusDate": "01/01/2013",
+      "LOACode": "Life",
+      "CompanyTaxID": "789456145",
+      "SendToNIPR": "false",
+      "Terminate": "false"
+    }],
+  }],
+}

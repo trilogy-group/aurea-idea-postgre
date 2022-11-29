@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:Insert xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:Organization role="string">
+        <ns2:OrganizationID>
+            <ns2:IDType>TaxID</ns2:IDType>
+            <ns2:IDNumber>org-s4</ns2:IDNumber>
+        </ns2:OrganizationID>
+        <ns2:Name>Full organization name</ns2:Name>
+        <ns2:Address>
+            <ns2:AddressType>MAIN OFFICE</ns2:AddressType>
+            <ns2:Street1>300 First Ave.</ns2:Street1>
+            <ns2:Street2>2nd Floor</ns2:Street2>
+            <ns2:Street3>string</ns2:Street3>
+            <ns2:City>New York</ns2:City>
+            <ns2:State>NY</ns2:State>
+            <ns2:County>Somewhere</ns2:County>
+            <ns2:Country>US</ns2:Country>
+            <ns2:ZipCode>01001</ns2:ZipCode>
+            <ns2:POBox>string</ns2:POBox>
+        </ns2:Address>
+        <ns2:Fax Number="9999999" Extention="2">string</ns2:Fax>
+        <ns2:Cell Number="9999998" Extention="2">string</ns2:Cell>
+        <ns2:Phone Number="9999988" Extention="2">string</ns2:Phone>
+        <ns2:Pager Number="9999888" Extention="2">string</ns2:Pager>
+        <ns2:Email>abcd@email.com</ns2:Email>
+        <ns2:WebSite>www.abcd.com</ns2:WebSite>
+    </ns2:Organization>
+</ns2:Insert>

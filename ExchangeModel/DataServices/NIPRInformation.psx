@@ -1,0 +1,815 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XmlSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='true' name='com.nipr.info.NIPRInformation' upgradeCreatedFileInfo='false'>
+  <Package isSynthetic='true' name='info' javaPackage='com.nipr.info'>
+  </Package>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.PDB' originalName='PDB' isAbstract='false' xmlBeanDocClassName='noNamespace.PDBDocument' xmlBeanClassName='noNamespace.PDBDocument$PDB' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='TRANSACTIONTYPE' originalName='TRANSACTION_TYPE' assignable='true' index='0' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.TRANSACTIONTYPE</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PDBForTRANSACTIONTYPE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PRODUCER' originalName='PRODUCER' assignable='true' index='1' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.PRODUCER</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PDBForPRODUCER' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TRANSACTIONTYPE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PRODUCER'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.TRANSACTIONTYPE' originalName='TRANSACTION_TYPE' isAbstract='false' xmlBeanDocClassName='noNamespace.TRANSACTIONTYPEDocument' xmlBeanClassName='noNamespace.TRANSACTIONTYPEDocument$TRANSACTIONTYPE' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='TYPE' originalName='TYPE' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TYPE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.PRODUCER' originalName='PRODUCER' isAbstract='false' xmlBeanClassName='noNamespace.PDBDocument$PDB$PRODUCER' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='FIRM' originalName='FIRM' assignable='true' index='2' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.FIRM</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PRODUCERForFIRM' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='INDIVIDUAL' originalName='INDIVIDUAL' assignable='true' index='1' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.INDIVIDUAL</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PRODUCERForINDIVIDUAL' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ERROR' originalName='ERROR' assignable='true' index='0' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.ERROR</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PRODUCERForERROR' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <Rule isSynthetic='true' name='contentIsValidForPRODUCER' category='NIPRInformationSchemaParticleValidation' connective='Any' reportAtTop='true'>
+      <TrueAction>
+        <IgnoreRuleAction/>
+      </TrueAction>
+      <FalseAction>
+        <ReportRuleAction>&lt;Details of content validation&gt;</ReportRuleAction>
+      </FalseAction>
+      <MethodExpression isSynthetic='true' infix='true'>
+        <MethodReference isSynthetic='true' className='com.pantero.runtime.metamodel.expressions.library.XSDLibrary' methodName='validateParticle'>
+        </MethodReference>
+        <PathExpression isSynthetic='true' pathString='.'>
+        </PathExpression>
+      </MethodExpression>
+    </Rule>
+    <ChoiceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ERROR'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='INDIVIDUAL'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRM'>
+      </ElementParticle>
+    </ChoiceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.FIRM' originalName='FIRM' isAbstract='false' xmlBeanDocClassName='noNamespace.FIRMDocument' xmlBeanClassName='noNamespace.FIRMDocument$FIRM' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='ENTITYBIOGRAPHIC' originalName='ENTITY_BIOGRAPHIC' assignable='true' index='5' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.ENTITYBIOGRAPHIC1</TypeName>
+      <RelationshipProperty isSynthetic='true' name='FIRMForENTITYBIOGRAPHIC' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PRODUCERLICENSING' originalName='PRODUCER_LICENSING' assignable='true' index='6' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.PRODUCERLICENSING</TypeName>
+      <RelationshipProperty isSynthetic='true' name='FIRMForPRODUCERLICENSING' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAMECOMPANY' originalName='NAME_COMPANY' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='IDENTITY' originalName='ID_ENTITY' assignable='true' index='1' xsdType='int' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Integer</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='2' xsdType='int' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Integer</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FEIN' originalName='FEIN' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATEBUSINESS' originalName='STATE_BUSINESS' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAMECOMPANY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='IDENTITY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FEIN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATEBUSINESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ENTITYBIOGRAPHIC'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PRODUCERLICENSING'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.ENTITYBIOGRAPHIC' originalName='ENTITY_BIOGRAPHIC' isAbstract='false' xmlBeanClassName='noNamespace.INDIVIDUALDocument$INDIVIDUAL$ENTITYBIOGRAPHIC' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='BIOGRAPHIC' originalName='BIOGRAPHIC' assignable='true' index='0' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.BIOGRAPHIC</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ENTITYBIOGRAPHICForBIOGRAPHIC' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESSES' originalName='ADDRESSES' assignable='true' index='1' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.ADDRESSES</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ENTITYBIOGRAPHICForADDRESSES' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BIOGRAPHIC'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRESSES'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.BIOGRAPHIC' originalName='BIOGRAPHIC' isAbstract='false' xmlBeanClassName='noNamespace.INDIVIDUALDocument$INDIVIDUAL$ENTITYBIOGRAPHIC$BIOGRAPHIC' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='6' xsdType='int' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Integer</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='OTHERNAME' originalName='OTHER_NAME' assignable='true' index='7' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.OTHERNAME</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIOGRAPHICForOTHERNAME' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='IDSSN' originalName='ID_SSN' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAMELAST' originalName='NAME_LAST' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAMEFIRST' originalName='NAME_FIRST' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAMEMIDDLE' originalName='NAME_MIDDLE' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAMESUFFIX' originalName='NAME_SUFFIX' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEBIRTH' originalName='DATE_BIRTH' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='IDSSN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAMELAST'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAMEFIRST'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAMEMIDDLE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAMESUFFIX'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEBIRTH'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='OTHERNAME'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.OTHERNAME' originalName='OTHER_NAME' isAbstract='false' xmlBeanClassName='noNamespace.INDIVIDUALDocument$INDIVIDUAL$ENTITYBIOGRAPHIC$BIOGRAPHIC$OTHERNAME' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='STATE' originalName='STATE' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.STATE3</TypeName>
+      <RelationshipProperty isSynthetic='true' name='OTHERNAMEForSTATE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='STATE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.STATE' originalName='STATE' isAbstract='false' xmlBeanClassName='noNamespace.ADDRESSESDocument$ADDRESSES$STATE' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='Name' originalName='name' assignable='true' index='1' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.ADDRESS</TypeName>
+      <RelationshipProperty isSynthetic='true' name='STATEForADDRESS' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.NAME' originalName='NAME' isAbstract='false' xmlBeanClassName='noNamespace.INDIVIDUALDocument$INDIVIDUAL$ENTITYBIOGRAPHIC$BIOGRAPHIC$OTHERNAME$STATE$NAME' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='_value' assignable='true' index='0' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Type' originalName='type' assignable='true' index='1' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.ADDRESSES' originalName='ADDRESSES' isAbstract='false' xmlBeanDocClassName='noNamespace.ADDRESSESDocument' xmlBeanClassName='noNamespace.ADDRESSESDocument$ADDRESSES' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='STATE' originalName='STATE' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.STATE</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ADDRESSESForSTATE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='STATE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.STATE1' originalName='STATE' isAbstract='false' xmlBeanClassName='noNamespace.LICENSEINFORMATIONDocument$LICENSEINFORMATION$STATE' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='Name' originalName='name' assignable='true' index='2' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='LICENSE' originalName='LICENSE' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.LICENSE</TypeName>
+      <RelationshipProperty isSynthetic='true' name='STATE1ForLICENSE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='APPOINTMENTINFORMATION' originalName='APPOINTMENT_INFORMATION' assignable='true' index='1' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.APPOINTMENTINFORMATION</TypeName>
+      <RelationshipProperty isSynthetic='true' name='STATE1ForAPPOINTMENTINFORMATION' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='LICENSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='APPOINTMENTINFORMATION'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.ADDRESS' originalName='ADDRESS' isAbstract='false' xmlBeanClassName='noNamespace.ADDRESSESDocument$ADDRESSES$STATE$ADDRESS' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='DATEUPDATED' originalName='DATE_UPDATED' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRESSTYPECODE' originalName='ADDRESS_TYPE_CODE' assignable='true' index='1' xsdType='byte' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Byte</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRTYPE' originalName='ADDR_TYPE' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRLINE1' originalName='ADDR_LINE_1' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRLINE2' originalName='ADDR_LINE_2' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADDRLINE3' originalName='ADDR_LINE_3' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAMECITY' originalName='NAME_CITY' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAMESTATE' originalName='NAME_STATE' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ZIP' originalName='ZIP' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COUNTRY' originalName='COUNTRY' assignable='true' index='9' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEUPDATED'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRESSTYPECODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRTYPE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRLINE1'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRLINE2'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRLINE3'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAMECITY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAMESTATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ZIP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COUNTRY'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.PRODUCERLICENSING' originalName='PRODUCER_LICENSING' isAbstract='false' xmlBeanDocClassName='noNamespace.PRODUCERLICENSINGDocument' xmlBeanClassName='noNamespace.PRODUCERLICENSINGDocument$PRODUCERLICENSING' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='LICENSEINFORMATION' originalName='LICENSE_INFORMATION' assignable='true' index='0' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.LICENSEINFORMATION</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PRODUCERLICENSINGForLICENSEINFORMATION' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CLEARANCECERTIFICATIONINFO' originalName='CLEARANCE_CERTIFICATION_INFO' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='REGULATORYACTION' originalName='REGULATORY_ACTION' assignable='true' index='2' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.REGULATORYACTION</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PRODUCERLICENSINGForREGULATORYACTION' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='NASDEXAM' originalName='NASD_EXAM' assignable='true' index='3' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.NASDEXAM</TypeName>
+      <RelationshipProperty isSynthetic='true' name='PRODUCERLICENSINGForNASDEXAM' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSEINFORMATION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CLEARANCECERTIFICATIONINFO'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='REGULATORYACTION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NASDEXAM'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.LICENSEINFORMATION' originalName='LICENSE_INFORMATION' isAbstract='false' xmlBeanDocClassName='noNamespace.LICENSEINFORMATIONDocument' xmlBeanClassName='noNamespace.LICENSEINFORMATIONDocument$LICENSEINFORMATION' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='STATE' originalName='STATE' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.STATE1</TypeName>
+      <RelationshipProperty isSynthetic='true' name='LICENSEINFORMATIONForSTATE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='STATE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.STATE2' originalName='STATE' isAbstract='false' xmlBeanClassName='noNamespace.REGULATORYACTIONDocument$REGULATORYACTION$STATE' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='Name' originalName='name' assignable='true' index='10' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ACTIONID' originalName='ACTION_ID' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ORIGINOFACTION' originalName='ORIGIN_OF_ACTION' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='REASONFORACTION' originalName='REASON_FOR_ACTION' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DISPOSITION' originalName='DISPOSITION' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEOFACTION' originalName='DATE_OF_ACTION' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='EFFECTIVEDATE' originalName='EFFECTIVE_DATE' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ENTERDATE' originalName='ENTER_DATE' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FILEREF' originalName='FILE_REF' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PENALTYFINEFORFEITURE' originalName='PENALTY_FINE_FORFEITURE' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LENGTHOFORDER' originalName='LENGTH_OF_ORDER' assignable='true' index='9' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ACTIONID'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ORIGINOFACTION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='REASONFORACTION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DISPOSITION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEOFACTION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='EFFECTIVEDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ENTERDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FILEREF'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PENALTYFINEFORFEITURE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LENGTHOFORDER'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.LICENSE' originalName='LICENSE' isAbstract='false' xmlBeanDocClassName='noNamespace.LICENSEDocument' xmlBeanClassName='noNamespace.LICENSEDocument$LICENSE' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='LICENSENUM' originalName='LICENSE_NUM' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEUPDATED' originalName='DATE_UPDATED' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEISSUELICENSEORIG' originalName='DATE_ISSUE_LICENSE_ORIG' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DATEEXPIRELICENSE' originalName='DATE_EXPIRE_LICENSE' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LICENSECLASS' originalName='LICENSE_CLASS' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LICENSECLASSCODE' originalName='LICENSE_CLASS_CODE' assignable='true' index='5' xsdType='short' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Short</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RESIDENCYSTATUS' originalName='RESIDENCY_STATUS' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ACTIVE' originalName='ACTIVE' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ADHS' originalName='ADHS' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='DETAILS' originalName='DETAILS' assignable='true' index='9' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.DETAILS</TypeName>
+      <RelationshipProperty isSynthetic='true' name='LICENSEForDETAILS' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSENUM'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEUPDATED'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEISSUELICENSEORIG'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEEXPIRELICENSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSECLASS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LICENSECLASSCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RESIDENCYSTATUS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ACTIVE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADHS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DETAILS'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.DETAILS' originalName='DETAILS' isAbstract='false' xmlBeanDocClassName='noNamespace.DETAILSDocument' xmlBeanClassName='noNamespace.DETAILSDocument$DETAILS' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='DETAIL' originalName='DETAIL' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.DETAIL</TypeName>
+      <RelationshipProperty isSynthetic='true' name='DETAILSForDETAIL' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <Rule isSynthetic='true' name='contentIsValidForDETAILS' category='NIPRInformationSchemaParticleValidation' connective='Any' reportAtTop='true'>
+      <TrueAction>
+        <IgnoreRuleAction/>
+      </TrueAction>
+      <FalseAction>
+        <ReportRuleAction>&lt;Details of content validation&gt;</ReportRuleAction>
+      </FalseAction>
+      <MethodExpression isSynthetic='true' infix='true'>
+        <MethodReference isSynthetic='true' className='com.pantero.runtime.metamodel.expressions.library.XSDLibrary' methodName='validateParticle'>
+        </MethodReference>
+        <PathExpression isSynthetic='true' pathString='.'>
+        </PathExpression>
+      </MethodExpression>
+    </Rule>
+    <ChoiceParticle isSynthetic='true' minOccurs='0'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DETAIL'>
+      </ElementParticle>
+    </ChoiceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.DETAIL' originalName='DETAIL' isAbstract='false' xmlBeanClassName='noNamespace.DETAILSDocument$DETAILS$DETAIL' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='LOA' originalName='LOA' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LOACODE' originalName='LOA_CODE' assignable='true' index='1' xsdType='short' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Short</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='AUTHORITYISSUEDATE' originalName='AUTHORITY_ISSUE_DATE' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATUS' originalName='STATUS' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATUSREASON' originalName='STATUS_REASON' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATUSREASONDATE' originalName='STATUS_REASON_DATE' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CECOMPLIANCE' originalName='CE_COMPLIANCE' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CERENEWALDATE' originalName='CE_RENEWAL_DATE' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CECREDITSNEEDED' originalName='CE_CREDITS_NEEDED' assignable='true' index='8' xsdType='byte' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Byte</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LOA'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LOACODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='AUTHORITYISSUEDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATUS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATUSREASON'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATUSREASONDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CECOMPLIANCE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CERENEWALDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CECREDITSNEEDED'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.APPOINTMENTINFORMATION' originalName='APPOINTMENT_INFORMATION' isAbstract='false' xmlBeanDocClassName='noNamespace.APPOINTMENTINFORMATIONDocument' xmlBeanClassName='noNamespace.APPOINTMENTINFORMATIONDocument$APPOINTMENTINFORMATION' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='APPOINTMENT' originalName='APPOINTMENT' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.APPOINTMENT</TypeName>
+      <RelationshipProperty isSynthetic='true' name='APPOINTMENTINFORMATIONForAPPOINTMENT' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='APPOINTMENT'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.APPOINTMENT' originalName='APPOINTMENT' isAbstract='false' xmlBeanClassName='noNamespace.APPOINTMENTINFORMATIONDocument$APPOINTMENTINFORMATION$APPOINTMENT' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='COMPANYNAME' originalName='COMPANY_NAME' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FEIN' originalName='FEIN' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COCODE' originalName='COCODE' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LINEOFAUTHORITY' originalName='LINE_OF_AUTHORITY' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LOACODE' originalName='LOA_CODE' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATUS' originalName='STATUS' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='TERMINATIONREASON' originalName='TERMINATION_REASON' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATUSREASONDATE' originalName='STATUS_REASON_DATE' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='APPONTRENEWALDATE' originalName='APPONT_RENEWAL_DATE' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='AgencyAffiliations' originalName='Agency_Affiliations' assignable='true' index='10' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='COUNTYCODE' originalName='COUNTY_CODE' assignable='true' index='9' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COMPANYNAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FEIN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LINEOFAUTHORITY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LOACODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATUS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TERMINATIONREASON'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATUSREASONDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='APPONTRENEWALDATE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COUNTYCODE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='AgencyAffiliations'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.REGULATORYACTION' originalName='REGULATORY_ACTION' isAbstract='false' xmlBeanDocClassName='noNamespace.REGULATORYACTIONDocument' xmlBeanClassName='noNamespace.REGULATORYACTIONDocument$REGULATORYACTION' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='STATE' originalName='STATE' assignable='true' index='0' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.STATE2</TypeName>
+      <RelationshipProperty isSynthetic='true' name='REGULATORYACTIONForSTATE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='STATE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.STATE3' originalName='STATE' isAbstract='false' xmlBeanClassName='noNamespace.INDIVIDUALDocument$INDIVIDUAL$ENTITYBIOGRAPHIC$BIOGRAPHIC$OTHERNAME$STATE' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='Name' originalName='name' assignable='true' index='1' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='0' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.NAME</TypeName>
+      <RelationshipProperty isSynthetic='false' name='STATE3ForNAME' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='NAME'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.NASDEXAM' originalName='NASD_EXAM' isAbstract='false' xmlBeanDocClassName='noNamespace.NASDEXAMDocument' xmlBeanClassName='noNamespace.NASDEXAMDocument$NASDEXAM' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='DETAILS' originalName='DETAILS' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DETAILS'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.HITLIST' originalName='HITLIST' isAbstract='false' xmlBeanDocClassName='noNamespace.HITLISTDocument' xmlBeanClassName='noNamespace.HITLISTDocument$HITLIST' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='FIRM' originalName='FIRM' assignable='true' index='3' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.FIRM</TypeName>
+      <RelationshipProperty isSynthetic='true' name='HITLISTForFIRM' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='TRANSACTIONTYPE' originalName='TRANSACTION_TYPE' assignable='true' index='0' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.TRANSACTIONTYPE</TypeName>
+      <RelationshipProperty isSynthetic='true' name='HITLISTForTRANSACTIONTYPE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='INDIVIDUAL' originalName='INDIVIDUAL' assignable='true' index='2' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.INDIVIDUAL</TypeName>
+      <RelationshipProperty isSynthetic='true' name='HITLISTForINDIVIDUAL' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ERROR' originalName='ERROR' assignable='true' index='1' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.ERROR</TypeName>
+      <RelationshipProperty isSynthetic='true' name='HITLISTForERROR' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <Rule isSynthetic='true' name='contentIsValidForHITLIST' category='NIPRInformationSchemaParticleValidation' connective='Any' reportAtTop='true'>
+      <TrueAction>
+        <IgnoreRuleAction/>
+      </TrueAction>
+      <FalseAction>
+        <ReportRuleAction>&lt;Details of content validation&gt;</ReportRuleAction>
+      </FalseAction>
+      <MethodExpression isSynthetic='true' infix='true'>
+        <MethodReference isSynthetic='true' className='com.pantero.runtime.metamodel.expressions.library.XSDLibrary' methodName='validateParticle'>
+        </MethodReference>
+        <PathExpression isSynthetic='true' pathString='.'>
+        </PathExpression>
+      </MethodExpression>
+    </Rule>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='TRANSACTIONTYPE'>
+      </ElementParticle>
+      <ChoiceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+        <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ERROR'>
+        </ElementParticle>
+        <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='INDIVIDUAL'>
+        </ElementParticle>
+        <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FIRM'>
+        </ElementParticle>
+      </ChoiceParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.INDIVIDUAL' originalName='INDIVIDUAL' isAbstract='false' xmlBeanDocClassName='noNamespace.INDIVIDUALDocument' xmlBeanClassName='noNamespace.INDIVIDUALDocument$INDIVIDUAL' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='DATEBIRTH' originalName='DATE_BIRTH' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='IDENTITY' originalName='ID_ENTITY' assignable='true' index='1' xsdType='int' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Integer</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='2' xsdType='int' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Integer</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATERESIDENT' originalName='STATE_RESIDENT' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ENTITYBIOGRAPHIC' originalName='ENTITY_BIOGRAPHIC' assignable='true' index='5' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.ENTITYBIOGRAPHIC</TypeName>
+      <RelationshipProperty isSynthetic='true' name='INDIVIDUALForENTITYBIOGRAPHIC' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PRODUCERLICENSING' originalName='PRODUCER_LICENSING' assignable='true' index='6' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.PRODUCERLICENSING</TypeName>
+      <RelationshipProperty isSynthetic='true' name='INDIVIDUALForPRODUCERLICENSING' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='IDENTITY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATERESIDENT'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DATEBIRTH'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ENTITYBIOGRAPHIC'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PRODUCERLICENSING'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.ENTITYBIOGRAPHIC1' originalName='ENTITY_BIOGRAPHIC' isAbstract='false' xmlBeanClassName='noNamespace.FIRMDocument$FIRM$ENTITYBIOGRAPHIC' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESSES' originalName='ADDRESSES' assignable='true' index='1' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.ADDRESSES</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ENTITYBIOGRAPHIC1ForADDRESSES' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='BIOGRAPHIC' originalName='BIOGRAPHIC' assignable='true' index='0' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.BIOGRAPHIC1</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ENTITYBIOGRAPHIC1ForBIOGRAPHIC' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BIOGRAPHIC'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ADDRESSES'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.BIOGRAPHIC1' originalName='BIOGRAPHIC' isAbstract='false' xmlBeanClassName='noNamespace.FIRMDocument$FIRM$ENTITYBIOGRAPHIC$BIOGRAPHIC' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='IDFEIN' originalName='ID_FEIN' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NAMECOMPANY' originalName='NAME_COMPANY' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='NPN' originalName='NPN' assignable='true' index='0' xsdType='int' isElement='true' isNillable='false'>
+      <TypeName>java.lang.Integer</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='STATEDOMICILE' originalName='STATE_DOMICILE' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='OTHERNAME' originalName='OTHER_NAME' assignable='true' index='4' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.OTHERNAME1</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIOGRAPHIC1ForOTHERNAME' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='IDFEIN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NAMECOMPANY'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATEDOMICILE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='OTHERNAME'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.OTHERNAME1' originalName='OTHER_NAME' isAbstract='false' xmlBeanClassName='noNamespace.FIRMDocument$FIRM$ENTITYBIOGRAPHIC$BIOGRAPHIC$OTHERNAME' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='STATE' originalName='STATE' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.STATE4</TypeName>
+      <RelationshipProperty isSynthetic='true' name='OTHERNAME1ForSTATE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='STATE'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.STATE4' originalName='STATE' isAbstract='false' xmlBeanClassName='noNamespace.FIRMDocument$FIRM$ENTITYBIOGRAPHIC$BIOGRAPHIC$OTHERNAME$STATE' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.nipr.info.NAME1</TypeName>
+      <RelationshipProperty isSynthetic='false' name='STATE4ForNAME' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Name' originalName='name' assignable='true' index='1' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='NAME'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.NAME1' originalName='NAME' isAbstract='false' xmlBeanClassName='noNamespace.FIRMDocument$FIRM$ENTITYBIOGRAPHIC$BIOGRAPHIC$OTHERNAME$STATE$NAME' isRootElement='false' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='_value' assignable='true' index='0' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Type' originalName='type' assignable='true' index='1' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>java.lang.String</TypeName>
+    </XmlAttributeProperty>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.nipr.info.ERROR' originalName='ERROR' isAbstract='false' xmlBeanDocClassName='noNamespace.ERRORDocument' xmlBeanClassName='noNamespace.ERRORDocument$ERROR' isRootElement='true' isAnonymousType='true' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='DESCRIPTION' originalName='DESCRIPTION' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>Array&lt;java.lang.String&gt;</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='DESCRIPTION'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <ImportConfiguration>SchemasNIPR/NIPR_from_xml.xsd</ImportConfiguration>
+  <XmlFileInformation isSynthetic='true' name='NIPR_from_xml.xsd' qualifiedAttributeForm='false' qualifiedElementForm='true' namespace='' root='true' sourceFile='../SchemasNIPR/NIPR_from_xml.xsd'>
+    <PackageObjectName>info</PackageObjectName>
+  </XmlFileInformation>
+</XmlSchema>

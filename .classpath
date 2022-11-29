@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin/ExchangeModel" path="ExchangeModelGenerated"/>
+	<classpathentry kind="src" output="bin/ExchangeModel" path="ExchangeModelUserDefined"/>
+	<classpathentry kind="src" output="bin/ExchangeModelControls" path="ExchangeModelControls"/>
+	<classpathentry kind="src" output="bin/ExchangeModelBusinessObjects" path="ExchangeModelBusinessObjects"/>
+	<classpathentry kind="con" path="com.progress.dataxtend.si.DATAXTEND_CONTAINER"/>
+	<classpathentry kind="con" path="com.progress.dataxtend.si.EXTENSIONS_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/dxpostgresql.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql.jdbc3.jar"/>
+	<classpathentry kind="lib" path="lib/ant-launcher.jar"/>
+	<classpathentry kind="lib" path="lib/ant.jar"/>
+	<classpathentry kind="output" path="bin/ExchangeModel"/>
+</classpath>

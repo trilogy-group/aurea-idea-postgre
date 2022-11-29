@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:UpdateParty xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:PartyID>29</ns2:PartyID>
+    <ns2:Status>Active</ns2:Status>
+    <ns2:AgreementParticipation>
+        <ns2:AgreementID>AG4</ns2:AgreementID>
+        <ns2:AgreementName>AG4</ns2:AgreementName>
+    </ns2:AgreementParticipation>
+    <ns2:PositionInformation>
+        <ns2:PositionType>AcctMgr</ns2:PositionType>
+        <ns2:PositionName>AccMgrProperHier21</ns2:PositionName>
+        <ns2:ParentPositionType>AcctMgr</ns2:ParentPositionType>
+        <ns2:ParentPositionName>AccMgrProperHier21</ns2:ParentPositionName>
+        <ns2:HierarchyName>CH4-CK4</ns2:HierarchyName>
+    </ns2:PositionInformation>
+</ns2:UpdateParty>

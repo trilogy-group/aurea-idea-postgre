@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XmlSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='com.nipr.NIPRWrapperSchema' upgradeCreatedFileInfo='false'>
+  <Package isSynthetic='false' name='NIPR' javaPackage='com.nipr'>
+  </Package>
+  <EnumerationType isSynthetic='false' name='com.nipr.ProducerType' restricts='java.lang.String'>
+    <Enumerand isSynthetic='false' name='Person' generator='Person'>
+    </Enumerand>
+    <Enumerand isSynthetic='false' name='Organization' generator='Organization'>
+    </Enumerand>
+  </EnumerationType>
+  <OperationEntityType isSynthetic='false' name='com.nipr.ProducerInfo' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='customer_number' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='id_entity' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='pin_number' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='report_type' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Type' assignable='true' index='3'>
+      <TypeName>com.nipr.ProducerType</TypeName>
+    </AttributeProperty>
+  </OperationEntityType>
+  <OperationEntityType isSynthetic='false' name='com.nipr.Producer' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='customer_number' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='id_entity' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='id_fein' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='name_company' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='name_last' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NameFirst' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NameMiddle' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='pin_number' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='report_type' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ssn' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </OperationEntityType>
+  <Import schemaName='com.nipr.info.NIPRInformation'/>
+</XmlSchema>

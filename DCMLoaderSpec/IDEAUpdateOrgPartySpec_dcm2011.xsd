@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dms.trilogy.com/Loader/Spec" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="loader_spec">
+    <xs:annotation>
+      <xs:documentation>This spec is used to update organization party into DCM, organization party page available under Party (Tab) - Search for Organization
+
+Data File Format:
+Tax ID,Name,Agency Formation Date,Role,Description,DBA,Organization Type,CRD Number,DTCCID,NPN,Party Role,Party Type,Renewal Fee Payee,Status Code,Status Start Date,Status End Date,User
+
+Sample Data:
+SA_123,Savvion_Aurea_Accolite_India Pvt Ltd,1/1/1950,APPOINTINGCOMPANY,Description,DBA 2,OrgType,SA_CRD_123,SA22,124578,Selling Agent,Compensation only,Distributor,Recontractable,1/1/2000,1/1/2020,sa
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}/InsertPersonPartySpec.xml -DDATA_FILE={File-Location}/InsertPersonPartyData.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=100</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="error_handlers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="handler">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="property">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="name"/>
+                            <xs:attribute type="xs:string" name="value"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="class"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="strategy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="property" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="value" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name"/>
+            <xs:attribute type="xs:string" name="class"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="object">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name"/>
+                <xs:attribute type="xs:string" name="class"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="source">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="property" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="value" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="indexed_field" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:byte" name="index" use="optional"/>
+                      <xs:attribute type="xs:string" name="translator" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name"/>
+            <xs:attribute type="xs:string" name="class"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="translator" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType mixed="true">
+            <xs:sequence>
+              <xs:element name="property" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="value" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="optional"/>
+            <xs:attribute type="xs:string" name="class" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="resolver" maxOccurs="unbounded" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>constant name="false constant" class="value">
+		&lt;property name="value" value="false"/>
+	&lt;/constant</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="property" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="name" use="optional"/>
+                      <xs:attribute type="xs:string" name="value" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="optional"/>
+            <xs:attribute type="xs:string" name="class" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="map">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+              <xs:element name="action">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="field">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="name"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="name"/>
+                  <xs:attribute type="xs:string" name="resolver"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="map_simple" maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>map_simple property="Org.npn" field="npn"/</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="property" use="optional"/>
+                      <xs:attribute type="xs:string" name="field" use="optional"/>
+                      <xs:attribute type="xs:string" name="tag" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="map_merge">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="field" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="name" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="property" use="optional"/>
+                  <xs:attribute type="xs:string" name="tag" use="optional"/>
+                  <xs:attribute type="xs:string" name="translator" use="optional"/>
+                  <xs:attribute type="xs:string" name="field" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="map_object">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="field">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="name"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="property"/>
+                  <xs:attribute type="xs:string" name="resolver"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+            <xs:attribute type="xs:string" name="object"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="name"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

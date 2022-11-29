@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToUpdatePartyStatusSpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='updatepartystatusspec.UpdatePartyStatusSpec'>
+  <ClassMap isSynthetic='false' name='PersonToROOT' sourceTypeName='org.acord.aim.Party.Person' targetTypeName='updatepartystatusspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForPersonToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForPerson/ContextExtension/hasPartyStatus'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/status'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusReason'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/statusReason'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='statusDate/year'>
+            </PathExpression>
+          </MethodExpression>
+          <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/month'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/day'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/year'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='0000'>
+              </Literal>
+            </MethodExpression>
+          </CollectionExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/startDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='statusEndDate/year'>
+            </PathExpression>
+          </MethodExpression>
+          <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/month'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/day'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/year'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='0000'>
+              </Literal>
+            </MethodExpression>
+          </CollectionExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/endDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/partyid'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrganizationToROOT' sourceTypeName='org.acord.aim.Party.Organization' targetTypeName='updatepartystatusspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForOrganizationToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForOrganization/ContextExtension/hasPartyStatus'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/status'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusReason'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/statusReason'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='statusEndDate/year'>
+            </PathExpression>
+          </MethodExpression>
+          <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/month'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/day'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusEndDate/year'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='0000'>
+              </Literal>
+            </MethodExpression>
+          </CollectionExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/endDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='statusDate/year'>
+            </PathExpression>
+          </MethodExpression>
+          <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/month'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/day'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='00/'>
+              </Literal>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatNumber'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='statusDate/year'>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='0000'>
+              </Literal>
+            </MethodExpression>
+          </CollectionExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/startDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD/partyid'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /*	 Copyright (C) Unpublished Versata Inc. All riths reserved.
+ *	  Versata, Inc., Confidential and Proprietary.
+ *	  This software is subject to copyright protection
+ *	  under the laws of the United States and other countires.
+ *	  Unless otherwise explicitly stated, this software is provided
+ *	  by Versata "AS IS".
+ *  This loader currently works only for insert operation.
+ */
+  -->
+<loader:loader_spec
+	xmlns:xs = "http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:loader = "http://dms.trilogy.com/Loader/Spec"
+	xmlns = "http://dms.trilogy.com/Loader/Spec"
+	xsi:schemaLocation = "http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+	name = "loading Appointment">
+
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+	</strategy>
+
+	<object name="Appointment" class="FSNIPRAppointmentLoaderValidator" />
+
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}" />
+		<property name="delimiters" value="," />
+		<property name="headerRows" value="1" />
+		<property name="quote_chars" value="&quot;" />
+		
+		<indexed_field name="loACode" index="0" translator="license_line_translator" />
+		<indexed_field name="companyTaxID" index="1" />
+		<indexed_field name="holderID" index="2" />
+		<indexed_field name="licenseID" index="3" />
+		<indexed_field name="licenseCategory" index="4" translator="license_category_translator" />
+		<indexed_field name="licenseClass" index="5" translator="license_class_translator" />
+		<indexed_field name="licenseType" index="6" translator="license_type_translator" />
+		<indexed_field name="jurisdiction" index="7" translator="jurisdiction_translator" />
+		<indexed_field name="subJurisdiction" index="8" translator="subjurisdiction_translator" />
+		<indexed_field name="dateStatusEffective" index="9" translator="date_xlator" />
+		<indexed_field name="StatusCode" index="10" translator="status_code_translator" />
+		<indexed_field name="StatusReason" index="11" translator="status_reason_translator" />
+		<indexed_field name="bs_parent" index="12" />
+		<indexed_field name="syncPDB" index="13" translator="boolean_translator" />
+		<indexed_field name="BlanketStatusGrant" index="14" translator="boolean_translator" />
+		<indexed_field name="residentStatus" index="15" translator="boolean_translator" />
+		<indexed_field name="sendToNIPR" index="16" translator="boolean_translator" />
+		<indexed_field name="Terminate" index="17" translator="boolean_translator"/>
+	</source>
+
+	<translator name="jurisdiction_translator" class="enum_translator">
+		<property name="enumName" value="Jurisdiction" />
+	</translator>
+
+	<translator name="subjurisdiction_translator" class="com.aviva.fs.dms.tools.loader.translate.AVSubJurisdictionEnumTranslator">
+		<!--property name="enumName" value="SubJurisdiction.FL" /-->
+	</translator>
+
+	<translator name="license_category_translator" class="enum_translator">
+		<property name="enumName" value="License.LicenseCategory" />
+	</translator>
+	
+	<translator name="license_class_translator" class="enum_translator">
+		<property name="enumName" value="License.LicenseClass" />
+	</translator>
+	
+	<translator name="license_type_translator" class="enum_translator">
+		<property name="enumName" value="License.Type" />
+	</translator>
+	
+	<translator name="status_code_translator" class="enum_translator">
+		<property name="enumName" value="Appointment.Status" />
+	</translator>
+	
+	<translator name="status_reason_translator" class="enum_translator">
+		<property name="enumName" value="Appointment.Status.Reason" />
+	</translator>
+	
+	<translator name="date_xlator" class="date_format_translator">
+		<property name="formatString" value="MM/dd/yyyy" />
+		<property name="treatEmptyAsNull" value="false" />
+		<property name="startDate" value="false" />
+	</translator>
+	
+	<translator name="license_line_translator" class="enum_translator">
+		<property name="enumName" value="CredentialLine.LineOfAuthority" />
+	</translator>
+	
+	<translator name="boolean_translator" class="boolean_translator">
+		<property name="true" value="true" />
+		<property name="false" value="false" />
+	</translator>
+		
+	<!--resolver name="license_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[SELECT license FROM FSCredential license
+				WHERE (license.Holder.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {0})
+					OR license.Holder.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {0}))
+				AND license.LicenseCategory = {1}
+				AND license.LicenseType = {2}
+				AND license.ExternalID = {3}
+				AND license.Jurisdiction ={4}
+			]]>
+		</property>
+		<property name="keys" value="string TaxID, int LicenseCategory, int LicenseType, string ExternalID, int Jurisdiction " />
+	</resolver-->
+	
+	<resolver name="license_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query"
+			value="SELECT license.GID gid, ([SCPerson]license.Holder.Party).TaxID taxid, license.LicenseCategory licCat, license.LicenseType licType, license.ExternalID extID, license.Jurisdiction jur from FSCredential license" />
+		<property name="keys" value="taxid,licCat,licType,extID,jur" />
+		<property name="gidAlias" value="gid" />
+	</resolver>
+	
+	<!--resolver name="appointment_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[SELECT o FROM FSAppointment o
+				WHERE o.Jurisdiction={0}
+				AND o.SubJurisdiction={1}
+				AND o.CurrentDetails.AppointmentLine ={2}
+				AND ([SCOrganization]o.Company.Party).TaxID= {3}
+				AND (o.Holder.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {4})
+					OR o.Holder.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {4}))
+			]]>
+		</property>
+		<property name="keys" value="int Jurisdiction,int SubJurisdiction,int ApptLine,string CompanyTaxID,string TaxID" />
+	</resolver-->
+	
+	<resolver name="appointment_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query"
+			value="SELECT o.GID gid, o.Jurisdiction jur, o.SubJurisdiction subjur, o.CurrentDetails.AppointmentLine loa, ([SCOrganization]o.Company.Party).TaxID company, ([SCPerson]o.Holder.Party).TaxID taxid from FSAppointment o" />
+		<property name="keys" value="jur,subjur,loa,company,taxid" />
+		<property name="gidAlias" value="gid" />
+	</resolver>
+
+	<resolver name="parent_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query"
+			value="SELECT party.GID g, ([SCPerson]party.Party).TaxID t FROM FSParty party UNION SELECT party.GID g,([SCOrganization]party.Party).TaxID t FROM FSParty party" />
+		<property name="keys" value="t" />
+		<property name="gidAlias" value="g" />
+	</resolver>
+	
+	<!--resolver name="company_resolver" class="batch_query_resolver">
+		<property name="queryType" value="OQL" />
+		<property name="query">
+			<![CDATA[SELECT party FROM FSParty party
+				WHERE party.([SCOrganization] Party).TaxID = {0}
+			]]>
+		</property>
+		<property name="keys" value="string company" />
+	</resolver-->
+	
+	<resolver name="company_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value ="SELECT party.GID gid, ([SCOrganization]party.Party).TaxID taxid FROM FSParty party"/>
+		<property name="keys" value="taxid"/>
+		<property name="gidAlias" value="gid"/>
+	</resolver>
+	
+	<resolver name="scuser_resolver" class="singleton_resolver">
+		<property name="className" value="SCUser" />
+		<property name="key" value="LoginName" />
+		<property name="value" value="sa" />
+	</resolver>
+	
+	<!--resolver name="party_resolver" class="batch_query_resolver">
+		<property name="queryType" value="OQL" />
+		<property name="query">
+			<![CDATA[
+				SELECT party FROM FSParty party WHERE 
+					(party.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {0})
+					OR party.Party IN (SELECT org FROM SCOrganization org WHERE org.TaxID = {0}))
+			]]>
+		</property>
+		<property name="keys" value="string TaxID"/>
+	</resolver-->
+	
+	<resolver name="party_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value ="SELECT party.GID gid, ([SCPerson]party.Party).TaxID taxid FROM FSParty party"/>
+		<property name="keys" value="taxid"/>
+		<property name="gidAlias" value="gid"/>
+	</resolver>
+	
+	<constant name="invokedByUI" class="java_static_field">
+		<property name="className" value="java.lang.Boolean" />
+		<property name="fieldName" value="TRUE" />
+	</constant>
+
+	<map object="Appointment">
+		<action name="update or insert" resolver="appointment_resolver">
+			<field name="jurisdiction" />
+			<field name="subJurisdiction" />
+			<field name="loACode" />
+			<field name="companyTaxID" />
+			<field name="holderID" />
+		</action>
+
+		<map_object property="company" resolver="company_resolver">
+			<field name="companyTaxID" />
+		</map_object>
+
+		<map_object property="License" resolver="license_resolver" skipIfNull="false">
+			<field name="holderID" />
+			<field name="licenseCategory" />
+			<field name="licenseType" />
+			<field name="licenseID" />
+			<field name="jurisdiction" />
+		</map_object>
+
+		<map_simple property="BlanketStatusGrant" field="BlanketStatusGrant"/>
+		<map_simple property="CurrentDetails.AppointmentLine" field="loACode" />		
+		<map_simple property="Jurisdiction" field="jurisdiction" />
+		<map_object property="Holder" resolver="party_resolver">
+			<field name="holderID" />
+		</map_object>
+		<map_simple property="SyncPDB" field="syncPDB" />
+		<map_simple property="ResidentStatus" field="residentStatus" tag="validator" />
+		<map_simple property="SubJurisdiction" field="subJurisdiction" />
+		<map_simple property="NewStatus.StartDate" field="dateStatusEffective" tag="validator" />
+		<map_simple property="NewStatus.StatusCode" field="StatusCode" tag="validator" />
+		<map_simple property="NewStatus.StatusReason" field="StatusReason" tag="validator" />
+		<map_simple property="CurrentDetails.StartDate" field="dateStatusEffective" />
+		<map_object property="User" resolver="scuser_resolver" tag="validator"></map_object>
+		<map_constant property="InvokedByUI" constant="invokedByUI" tag="validator" />
+		<map_simple property="Chechbox" field="sendToNIPR" tag="validator"/>
+		<map_simple property ="Terminate" field="Terminate" tag="precreate"/>
+	</map>
+</loader:loader_spec>

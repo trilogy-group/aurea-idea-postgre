@@ -1,0 +1,141 @@
+<?xml version="1.0"?> 
+<BI_REQUEST FormatVersion="VERSION 1.0">     
+	<REQUEST_INFO>         
+		<RequestId>123456</RequestId>         
+		<UserNm>rsmith</UserNm>         
+		<UserPwd>password</UserPwd>         
+		<!-- Not needed in pop up model -->
+		<Requester>email address of the user logged into vendorsystem</Requester>         
+		<!-- Not needed in pop up model -->
+		<DupOverrideCd>N</DupOverrideCd>         
+		<RequestDt>07/28/2010</RequestDt>         
+		<Client>999-SomeClient</Client>         
+		<ClientLevel>Manager Package</ClientLevel>         
+		<ClientBillingCodeNum></ClientBillingCodeNum>  
+		<ClientBillingCodeNum2></ClientBillingCodeNum2>
+		<ClientBillingCodeNum3></ClientBillingCodeNum3>
+		<ClientBillingCodeNum4></ClientBillingCodeNum4>
+		<Notes></Notes>       
+		<SubjectWantsCopyInd>N</SubjectWantsCopyInd>	
+	</REQUEST_INFO>     
+	<SUBJECT_INFO>         
+		<ApplicantTypeCd>INDIVIDUAL</ApplicantTypeCd>         
+		<SSNTaxIdNum>XXX-XX-XXXX</SSNTaxIdNum>         
+		<BirthDt>02/06/XXXX</BirthDt>         
+		<NAME>             
+			<FirstNm>Mary</FirstNm>             
+			<MiddleNm>Jane</MiddleNm>             
+			<LastNm>Smith</LastNm>             
+		</NAME>         
+		<ADDRESS>             
+			<Address1>10 Main Street</Address1>             
+			<CityNm>Philadelphia</CityNm>             
+			<StateCd>PA</StateCd>             
+			<ZipCode>19148</ZipCode>             
+			<CountryCd>USA</CountryCd>         
+		</ADDRESS>  
+		<OTHER_NAMES>   
+			<NAME>             
+				<FirstNm>Mary</FirstNm>             
+				<MiddleNm>Jane</MiddleNm>             
+				<LastNm>Williams</LastNm>             
+			</NAME>         
+		</OTHER_NAMES>
+		<OTHER_ADDRESSES>   
+			<ADDRESS>             
+				<Address1>2310 Will Place</Address1>             
+				<CityNm>Monroe</CityNm>             
+				<StateCd>LA</StateCd>             
+				<ZipCode>71201</ZipCode>             
+				<CountryCd>USA</CountryCd>         
+			</ADDRESS>     
+		</OTHER_ADDRESSES>   
+		<APPLICANTPHONE>             
+			<ApplicantPhoneType>Cell / Mobile</ApplicantPhoneType>             
+			<ApplicantPhoneNum>1111111111</ApplicantPhoneNum>         
+		</APPLICANTPHONE>         
+		<ApplicantEmail>j@j.com</ApplicantEmail>        
+	</SUBJECT_INFO>     
+	<SERVICES>         
+		<EDUCATION>             
+			<SchoolNm>ABC School</SchoolNm>             
+			<LocationNm>Wilsonville, NJ</LocationNm>             
+			<ToPresentCd>N</ToPresentCd>             
+			<DegreeNm>Bachelors</DegreeNm>             
+			<MajorNm>Accounting</MajorNm>             
+			<PhoneNum>111-111-1111</PhoneNum>  
+			<Comments></Comments>           
+			<GraduatedInd>Y</GraduatedInd>                 
+			<AttendedFromDate>01/1980</AttendedFromDate>
+			<AttendedToDate>01/1984</AttendedToDate>                                  
+			<GraduatedDate>01/1984</GraduatedDate>                 
+		</EDUCATION>         
+		<EMPLOYMENT>             
+			<EmployerNm>ABC Corp</EmployerNm>             
+			<ApplicantJobTitleNm>teacher</ApplicantJobTitleNm>             
+			<FromEmployedDt>12/2008</FromEmployedDt>             
+			<ToEmployedDt>07/2009</ToEmployedDt>
+			<CurrentEmployerInd>N</CurrentEmployerInd>                          
+			<ReasonForLeaving>Better Opportunity</ReasonForLeaving>
+			<LevelSalary>10K per year</LevelSalary>
+			<CONTACT>
+				<NAME>             
+					<FirstNm>Jane</FirstNm>             
+					<MiddleNm>C</MiddleNm>             
+					<LastNm>manager</LastNm>             
+				</NAME>         
+			</CONTACT>                                  
+			<PhoneNum>123-456-7890</PhoneNum>                               
+			<ADDRESS>                 
+				<Address1>100 Harrison Street</Address1>                 
+				<CityNm>Monroe</CityNm>                 
+				<StateCd>LA</StateCd>                 
+				<ZipCode>19826</ZipCode>                 
+				<CountryCd>USA</CountryCd>             
+			</ADDRESS>             
+			<Comments></Comments>
+			<ContactEmployerInd>Y</ContactEmployerInd>         
+		</EMPLOYMENT>         
+		<MVR>             
+			<StateCd>PA</StateCd>             
+			<LicenseNum>12-034-495</LicenseNum>
+			<CDLLicenseInd>N</CDLLicenseInd>                          
+		</MVR> 
+		<DESIGNATION>
+			<DesignationNm>CPA</DesignationNm>
+			<YearsAssociated>10</YearsAssociated>
+			<IssuingOrganization>University</IssuingOrganization>
+			<IssueLocation>Philadelphia, PA</IssueLocation>
+			<LicenseId></LicenseId>
+			<Notes></Notes>
+		</DESIGNATION>
+		<PROFLICENSE>
+			<LicenseName>Registered Nurse</LicenseName>
+			<IssuingOrganization>Jefferson University</IssuingOrganization>
+			<LicenseId>12345</LicenseId>
+			<EffectiveDate>01/01/2000</EffectiveDate>
+			<ExpirationDate>01/01/2010</ExpirationDate>
+			<Notes></Notes>
+		</PROFLICENSE>
+		<REFERENCE>
+			<NAME>      
+				<Title></Title>       
+				<FirstNm>Jane</FirstNm>             
+				<MiddleNm>C</MiddleNm>             
+				<LastNm>manager</LastNm>             
+			</NAME>
+			<PhoneNum>215-555-1212</PhoneNum>
+			<Company>Verizon</Company>
+			<Fax></Fax>
+			<EmailAddress></EmailAddress>
+			<ADDRESS>                 
+				<Address1>100 Harrison Street</Address1>                 
+				<CityNm>Monroe</CityNm>                 
+				<StateCd>LA</StateCd>                 
+				<ZipCode>19826</ZipCode>                 
+				<CountryCd>USA</CountryCd>             
+			</ADDRESS>
+			<LengthKnown></LengthKnown>
+		</REFERENCE>
+	</SERVICES> 
+</BI_REQUEST>

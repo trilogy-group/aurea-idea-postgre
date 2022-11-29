@@ -1,0 +1,1 @@
+MCCFORMULA_CLASSPATH=C:/apache6.0.28/webapps/DMS/WEB-INF/classes;C:/apache6.0.28/webapps/DMS/WEB-INF/lib/*;C:/apache6.0.28/webapps/DMS/WEB-INF/lib/plugins/com.trilogy.reporting.oda.oqlconnector/*;C:/apache6.0.28/webapps/DMS/WEB-INF/lib/plugins/com.trilogy.reporting.oda.oqlconnector.ui/*;C:/Oradriver/oraclejdbc.jar

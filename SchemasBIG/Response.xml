@@ -1,0 +1,10 @@
+<?xml version="1.0"?> 
+<BI_RESPONSE>     
+	<UserNm>VendorToProvideToBIG</UserNm>
+	<UserPwd>VendorToProvideToBIG</UserPwd>
+	<RequestId>requestidpassedinrequest</RequestId>
+	<ClientCaseId>100000</ClientCaseId>
+	<StatusCd>Background Complete</StatusCd>
+	<PassReviewStatusCd>Pass</PassReviewStatusCd>
+	<RedirectLink>https://www.mybig.net/casedetails.jsp?id=10000</RedirectLink>
+</BI_RESPONSE>

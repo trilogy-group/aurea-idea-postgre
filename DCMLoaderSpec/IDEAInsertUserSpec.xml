@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loader:loader_spec
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+    xmlns="http://dms.trilogy.com/Loader/Spec"
+    xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+    name="Insert User Loader Spec"
+    >
+	
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+	</strategy>
+
+    <object name="user" class="UserLoaderValidator"/>
+
+    <source name="load_file" class="delimited_file_parser">
+        <property name="filename" value="${FILENAME}"/>
+        <property name="delimiters" value=","/>
+        <property name="headerRows" value="1"/>
+
+        <indexed_field name="LoginName" index="0"/>
+		<indexed_field name="Email" index="1"/>
+        <indexed_field name="PartyId" index="2"/>
+		<indexed_field name="GroupNames" index="3" />
+		 
+    </source>
+	
+	<resolver name="party_resolver" class="single_key_resolver">
+		<property name="className" value="FSParty"/>
+		<property name="key" value="Unid"/>
+		<property name="preCacheTables" value="false"/>
+	</resolver>
+	
+	<resolver name="user_resolver" class="single_key_resolver">
+		<property name="className" value="SCUser"/>
+		<property name="key" value="LoginName"/>
+		<property name="preCacheTables" value="false"/>
+	</resolver>
+
+	<!-- The group seperator needs to give as similar mentioned in the data file --> 
+	<constant name="group_seperator" class="value">
+  		<property name="value" value=";"/>
+  	</constant>
+	
+	<!-- This constant will append to login name to form password-->
+	<constant name="password_suffix" class="value">
+  		<property name="value" value="@123"/>
+  	</constant>
+	
+    <map object="user">
+		<action name="update or insert" resolver="user_resolver">
+		  <field name="LoginName"/>
+		</action>
+		<map_simple property="LoginName" field="LoginName"/>
+		<map_simple property="EmailAddress" field="Email"/>
+		<map_object property="Party" resolver="party_resolver" tag="precreate" >
+            <field name="PartyId"/>
+        </map_object>
+		<map_simple property="Groups" field="GroupNames" tag="precreate" />
+		
+		<map_constant property="GroupSeperator" constant="group_seperator" tag="validator"/>
+		<map_constant property="PasswordSuffix" constant="password_suffix" tag="validator"/>
+		
+    </map>
+
+</loader:loader_spec>

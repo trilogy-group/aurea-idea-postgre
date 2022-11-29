@@ -1,0 +1,1 @@
+MCCFORMULA_CLASSPATH=C:/installs/Tomcat7/webapps/DMS11/WEB-INF/classes;C:/installs/Tomcat7/webapps/DMS11/WEB-INF/lib/*;C:/dcmHM/tomcatPatch/com.trilogy.reporting.oda.oqlconnector/*;C:/installs/pg74.216.jdbc3.jar

@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='CommonRuntimeReportSchemaToIPMSchema' sourceSchemaName='runtimereport.CommonRuntimeReportSchema' targetSchemaName='com.ipm.IPMSchema'>
+</SchemaMap>

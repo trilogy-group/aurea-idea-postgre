@@ -1,0 +1,10 @@
+<BIG>
+<BI_ACKNOWLEDGEMENT>
+<UserNm>USER1</UserNm>
+<UserPwd>pass</UserPwd>
+<RequestId>Ascde546tf4678uhn</RequestId>
+<StatusCd>Processed</StatusCd>
+<Description>Description</Description>
+<RedirectLink>http://ec2-23-20-219-86.compute-1.amazonaws.com:18793/sbm/cxfws/BIGResponseReceiver/postBCResponse</RedirectLink>
+</BI_ACKNOWLEDGEMENT>
+</BIG>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WSDL definition for the AWSP standard messages-->
+<wsdl:definitions name="AWSPMessages_Definitions"
+	targetNamespace="http://www.acord.org/schema/ws-messages/awsp/2/draft"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:awsp="http://www.acord.org/schema/data/awsp/2"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.xmlsoap.org/wsdl/
+	..\..\schemas\wsdl-2004-08-24.xsd">
+	<wsdl:types>
+		<xs:schema>
+			<xs:import namespace="http://www.w3.org/2003/05/soap-envelope"
+				schemaLocation="..\..\crossindustryschemas\soap12-envelope.xsd"/>
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.acord.org/schema/data/awsp/2"
+				schemaLocation="..\messages\WebServicesProfile_2-0-0.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="SOAPFault">
+		<wsdl:part name="SOAPFault_Part" element="soap:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="Acknowledgement">
+		<wsdl:part name="Acknowledgement_Part" element="awsp:Acknowledgement"/>
+	</wsdl:message>
+	<wsdl:message name="Retrieve">
+		<wsdl:part name="Retrieve_Part" element="awsp:Retrieve"/>
+	</wsdl:message>
+	<wsdl:message name="RetrieveResponse">
+		<wsdl:part name="RetrieveResponse_Part" type="awsp:RetrieveResponse_Type"/>
+	</wsdl:message>
+</wsdl:definitions>

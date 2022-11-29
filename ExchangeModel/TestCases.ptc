@@ -1,0 +1,821 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TestCaseManager xmlns='http://www.pantero.com/metamodel2' isSynthetic='true'>
+  <OperationTestCase isSynthetic='false' name='GetOrganization_NPN' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetOrganizations' configuration='default' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetOrganization_NPN/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetOrganization_NPN/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetOrganization_Name' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetOrganizations' configuration='DCM_PostgreSQL' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetOrganization_Name/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetOrganization_Name/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetOrganization_TaxID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetOrganizations' configuration='default' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetOrganization_TaxID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetOrganization_TaxID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPartyInformation_Organization' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPartyInformation' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPartyInformation_Organization/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPartyInformation_Organization/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPartyInformation_Person' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPartyInformation' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPartyInformation_Person/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPartyInformation_Person/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPaymentAccount_Date' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPaymentAccountUpdates' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPaymentAccount_Date/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPaymentAccount_Date/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPaymentAccount_PartyID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPaymentAccountUpdates' configuration='default' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPaymentAccount_PartyID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPaymentAccount_PartyID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPerson_NameAndNPN' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPerson_NameAndNPN/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPerson_NameAndNPN/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPersons_NPN' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPersons_NPN/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPersons_NPN/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPersons_NPNandTaxID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPersons_NPNandTaxID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPersons_NPNandTaxID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPersons_Name' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPersons_Name/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPersons_Name/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPersons_PartyID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPersons_PartyID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPersons_PartyID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetTransaction_DateandProduct' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetTransactions' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetTransaction_DateandProduct/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetTransaction_DateandProduct/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetTransaction_ContractKit' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetTransactions' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetTransaction_ContractKit/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetTransaction_ContractKit/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetTransaction_PartyID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetTransactions' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetTransaction_PartyID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetTransaction_PartyID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetTransaction_Date' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetTransactions' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetTransaction_Date/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetTransaction_Date/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPartyInformation_TaxID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPartyInformation' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetPartyInformation_TaxID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPartyInformation_TaxID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetUserInformation_PartyID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetUserInformation' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/GetUserInformation_PartyID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetUserInformation_PartyID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_ContactPoint_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL2011' runtimeEnvironment='Localhost2011'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_ContactPoint_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_ContactPoint_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Insert_Person_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='Insert' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Insert_Person_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/Insert_Person_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+    <ExpectedDataSourceValue isSynthetic='false' isFile='true' dataSourceName='DCMFlatFileDataSource' valueTypeName='dcm.insertpersonpartyspec.ROOT' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Insert_Person_JSON/DCMFlatFileDataSource/ROOT_0.xml</Value>
+    </ExpectedDataSourceValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Insert_Organization_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='Insert' configuration='Insert' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Insert_Organization_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/Insert_Organization_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+    <ExpectedDataSourceValue isSynthetic='false' isFile='true' dataSourceName='DCMFlatFileDataSource' valueTypeName='dcm.insertorgpartyspec.ROOT' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Insert_Organization_JSON/DCMFlatFileDataSource/ROOT_0.xml</Value>
+    </ExpectedDataSourceValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Insert_User_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='Insert' configuration='Insert' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Insert_User_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/Insert_User_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+    <ExpectedDataSourceValue isSynthetic='false' isFile='true' dataSourceName='DCMFlatFileDataSource' valueTypeName='insertuserspec.ROOT' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Insert_User_JSON/DCMFlatFileDataSource/ROOT_0.xml</Value>
+    </ExpectedDataSourceValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='BIG_PostServiceRequest' exceptionExpected='false' snapshottingLevel='All' dataServiceName='BIGDataService' operationName='PostServiceRequest' configuration='BIG' runtimeEnvironment='BIG'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/BIGDataService/BIG_PostServiceRequest/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/BIGDataService/BIG_PostServiceRequest/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_License_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL2011' runtimeEnvironment='Localhost2011'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_License_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_License_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='NIPR_GetNPN_Organization' exceptionExpected='false' snapshottingLevel='All' dataServiceName='NIPRDataService' operationName='GetNPN' configuration='default' runtimeEnvironment='NIPR'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/NIPRDataService/NIPR_GetNPN_Organization/Parameter1.xml</Value>
+    </ParameterValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='BIG_Convert' exceptionExpected='false' snapshottingLevel='All' dataServiceName='BIGDataService' operationName='Convert' configuration='BIG' runtimeEnvironment='BIG'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/BIGDataService/BIG_Convert/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/BIGDataService/BIG_Convert/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPositions_Person_LastName' exceptionExpected='false' snapshottingLevel='Final' dataServiceName='IPMDataService' operationName='GetPositions' configuration='DCM_Oracle' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='request'>
+      <Value>TestData/IPMDataService/GetPositions_Person_LastName/request.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPositions_Person_LastName/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/GetPositions_Person/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPositions_Org_Name' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPositions' configuration='DCM_PostgreSQL' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='request'>
+      <Value>TestData/IPMDataService/GetPositions_Org_Name/request.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPositions_Org_Name/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='NIPR_GetInformation_Person' exceptionExpected='false' snapshottingLevel='All' dataServiceName='NIPRDataService' operationName='GetInformation' configuration='default' runtimeEnvironment='NIPR'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/NIPRDataService/NIPR_GetInformation_Person/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/NIPRDataService/NIPR_GetInformation_Person/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='NIPR_GetInformation_Org' exceptionExpected='false' snapshottingLevel='All' dataServiceName='NIPRDataService' operationName='GetInformation' configuration='default' runtimeEnvironment='NIPR'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/NIPRDataService/NIPR_GetInformation_Org/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/NIPRDataService/NIPR_GetInformation_Org/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='NIPR_gateway_moreDetails' exceptionExpected='false' snapshottingLevel='All' dataServiceName='NIPRDataService' operationName='UpdateAppointment' configuration='NIPRGateway' runtimeEnvironment='NIPRGateway'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/NIPRDataService/NIPR_gateway_moreDetails/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/NIPRDataService/NIPR_gateway_moreDetails/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='NIPR_gateway_lessDetails' exceptionExpected='false' snapshottingLevel='All' dataServiceName='NIPRDataService' operationName='UpdateAppointment' configuration='NIPRGateway' runtimeEnvironment='NIPRGateway'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/NIPRDataService/NIPR_gateway_lessDetails/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/NIPRDataService/NIPR_gateway_lessDetails/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='NIPR_gateway_manyTransactions' exceptionExpected='false' snapshottingLevel='All' dataServiceName='NIPRDataService' operationName='UpdateAppointment' configuration='NIPRGateway' runtimeEnvironment='NIPRGateway'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/NIPRDataService/NIPR_gateway_manyTransactions/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/NIPRDataService/NIPR_gateway_manyTransactions/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Insert_Person_lessInfo_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='Insert' configuration='Insert' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Insert_Person_lessInfo_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Insert_Person_lessInfo_JSON/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/Insert_Person_lessInfo_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+    <ExpectedDataSourceValue isSynthetic='false' isFile='true' dataSourceName='DCMFlatFileDataSource' valueTypeName='dcm.insertpersonpartyspec.ROOT' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Insert_Person_lessInfo_JSON/DCMFlatFileDataSource/ROOT_0.xml</Value>
+    </ExpectedDataSourceValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Insert_Organization_lessInfo_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='Insert' configuration='Insert' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Insert_Organization_lessInfo_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Insert_Organization_lessInfo_JSON/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/Insert_Organization_lessInfo_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+    <ExpectedDataSourceValue isSynthetic='false' isFile='true' dataSourceName='DCMFlatFileDataSource' valueTypeName='dcm.insertorgpartyspec.ROOT' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Insert_Organization_lessInfo_JSON/DCMFlatFileDataSource/ROOT_0.xml</Value>
+    </ExpectedDataSourceValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_Position_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL2011' runtimeEnvironment='Localhost2011'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_Position_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_Position_JSON/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_Position_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='BIG_PostServiceRequest_file' exceptionExpected='false' snapshottingLevel='All' dataServiceName='BIGDataService' operationName='PostServiceRequest' configuration='BIG' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/BIGDataService/BIG_PostServiceRequest_file/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/BIGDataService/BIG_PostServiceRequest_file/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Update_Organization_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='Update' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Update_Organization_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Update_Person_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='Update' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Update_Person_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetOrganization_Name' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetOrganizations' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetOrganization_Name/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetOrganization_Name/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetOrganization_TaxID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetOrganizations' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetOrganization_TaxID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetOrganization_TaxID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_AgreementP_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_AgreementP_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_AgreementP_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_ContactPoint_Training_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_ContactPoint_Training_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_ContactPoint_Training_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_ErrAndOmm_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL2011' runtimeEnvironment='Localhost2011'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_ErrAndOmm_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_ErrAndOmm_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_PaymentAccount_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_PaymentAccount_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_PaymentAccount_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_Training_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL2011' runtimeEnvironment='Localhost2011'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_Training_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_Training_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetOrganization_NPN' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetOrganizations' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetOrganization_NPN/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetOrganization_NPN/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPartyInformation_Organization' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPartyInformation' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPartyInformation_Organization/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPartyInformation_Organization/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/Mock_GetPartyInformation_Organization/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPartyInformation_Person' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPartyInformation' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPartyInformation_Person/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPartyInformation_Person/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPartyInformation_TaxID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPartyInformation' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPartyInformation_TaxID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPartyInformation_TaxID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPaymentAccount_Date' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPaymentAccountUpdates' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPaymentAccount_Date/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPaymentAccount_Date/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPaymentAccount_PartyID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPaymentAccountUpdates' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPaymentAccount_PartyID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPaymentAccount_PartyID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPerson_NameAndNPN' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPerson_NameAndNPN/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPerson_NameAndNPN/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPersons_NPN' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPersons_NPN/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPersons_NPN/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPersons_NPNandTaxID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPersons_NPNandTaxID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPersons_NPNandTaxID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPersons_Name' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPersons_Name/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPersons_Name/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPersons_PartyID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPersons' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetPersons_PartyID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPersons_PartyID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPositions_Org_Name' exceptionExpected='false' snapshottingLevel='Final' dataServiceName='IPMDataService' operationName='GetPositions' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='request'>
+      <Value>TestData/IPMDataService/Mock_GetPositions_Org_Name/request.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPositions_Org_Name/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetPositions_Person_LastName' exceptionExpected='false' snapshottingLevel='Final' dataServiceName='IPMDataService' operationName='GetPositions' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='request'>
+      <Value>TestData/IPMDataService/Mock_GetPositions_Person_LastName/request.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetPositions_Person_LastName/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/Mock_GetPositions_Person_LastName/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetTransaction_ContractKit' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetTransactions' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetTransaction_ContractKit/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetTransaction_ContractKit/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetTransaction_Date' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetTransactions' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetTransaction_Date/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetTransaction_Date/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetTransaction_DateandProduct' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetTransactions' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetTransaction_DateandProduct/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetTransaction_DateandProduct/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetTransaction_PartyID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetTransactions' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetTransaction_PartyID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetTransaction_PartyID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Mock_GetUserInformation_PartyID' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetUserInformation' configuration='DCM_PostgreSQL' runtimeEnvironment='Mock'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Mock_GetUserInformation_PartyID/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/Mock_GetUserInformation_PartyID/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_JSON' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_JSON/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_JSON/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_AgreementP_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_AgreementP_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_AgreementP_JSON_Many/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_ContactPoint_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_ContactPoint_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_ContactPoint_JSON_Many/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_ContactPoint_JSON_Many/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_ErrAndOmm_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_ErrAndOmm_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_ErrAndOmm_JSON_Many/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_License_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_License_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_License_JSON_Many/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_License_JSON_Many/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_PaymentAccount_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_PaymentAccount_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_PaymentAccount_JSON_Many/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_Position_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_Position_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_Position_JSON_Many/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_Training_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_Training_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_Training_JSON_Many/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_Training_JSON_Many/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='NIPR_GetNPN_Person' exceptionExpected='false' snapshottingLevel='All' dataServiceName='NIPRDataService' operationName='GetNPN' configuration='NIPR' runtimeEnvironment='NIPR'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/NIPRDataService/NIPR_GetNPN_Person/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/NIPRDataService/NIPR_GetNPN_Person/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_EAO_AP_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_EAO_AP_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/UpdateParty_EAO_AP_JSON_Many/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/EmptyReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='UpdateParty_JSON_Many' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL' runtimeEnvironment='Localhost'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/UpdateParty_JSON_Many/Parameter1.xml</Value>
+    </ParameterValue>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/UpdateParty_JSON_Many/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPositions_Person_PositionType' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPositions' configuration='DCM_PostgreSQL' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='request'>
+      <Value>TestData/IPMDataService/GetPositions_Person_PositionType/request.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPositions_Person_PositionType/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/GetPositions_Person_PositionType/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='GetPositions_Org_PositionName' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='GetPositions' configuration='DCM_PostgreSQL' runtimeEnvironment='default'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='request'>
+      <Value>TestData/IPMDataService/GetPositions_Org_PositionName/request.xml</Value>
+    </ParameterValue>
+    <ExpectedResult isSynthetic='false' isFile='true' usesEnvelope='false'>
+      <Value>TestData/IPMDataService/GetPositions_Org_PositionName/ExpectedResult.xml</Value>
+    </ExpectedResult>
+    <ExpectedRuntimeReport isSynthetic='false' isFile='true'>
+      <Value>TestData/IPMDataService/GetPositions_Org_PositionName/ExpectedReport.xml</Value>
+    </ExpectedRuntimeReport>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Recorded_OrgContactPoint' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL2011' runtimeEnvironment='Recorded'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Recorded_OrgContactPoint/Parameter1.xml</Value>
+    </ParameterValue>
+  </OperationTestCase>
+  <OperationTestCase isSynthetic='false' name='Recorded_PersonContactPoint' exceptionExpected='false' snapshottingLevel='All' dataServiceName='IPMDataService' operationName='UpdateParty' configuration='DCM_PostgreSQL2011' runtimeEnvironment='Recorded'>
+    <ParameterValue isSynthetic='false' isFile='true' parameterName='Parameter1'>
+      <Value>TestData/IPMDataService/Recorded_PersonContactPoint/Parameter1.xml</Value>
+    </ParameterValue>
+  </OperationTestCase>
+</TestCaseManager>

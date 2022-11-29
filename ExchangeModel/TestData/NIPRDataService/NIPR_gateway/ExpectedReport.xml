@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:RuleResults>
+    <run:Category name="NIPRGatewaySchemaValidation">
+      <run:Result name="requiredForNIPROnNIPR" subjectType="com.nipr.NIPR" message="NIPR in NIPR is required" category="NIPRGatewaySchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="NIPR(session/id = 1/70)"/>
+        <run:Detail value="false" message="NIPR null hasValue is false"/>
+      </run:Result>
+    </run:Category>
+  </run:RuleResults>
+</run:RuntimeReport>

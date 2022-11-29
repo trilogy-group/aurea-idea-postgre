@@ -1,0 +1,13 @@
+{
+ "dxsi:type": "com.partyinformation.UpdateParty",
+  "PartyID": "8",
+  "ErrorAndOmission": [{
+    "ClaimLimit": "100000",
+    "Comments": "Test for comments",
+    "Carrier": "Carrier0",
+    "CertificateNumber": "ARZ98XD",
+    "PolicytNumber": "abcd1234",
+    "PolicyLimit": "500000",
+    "PolicyType": "General Liability Insurance"
+  }]
+}

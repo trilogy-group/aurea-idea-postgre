@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:RuleResults>
+    <run:Category name="ACORDInformationModelSchemaValidation">
+      <run:Result name="requiredForClientOnBIGContextExtension" subjectType="org.acord.BIGContextExtension" message="Client in BIGContextExtension is required" category="ACORDInformationModelSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="BIGContextExtension(session/id = 0/7)"/>
+        <run:Detail value="false" message="Client null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForRequestDateOnBIGContextExtension" subjectType="org.acord.BIGContextExtension" message="RequestDate in BIGContextExtension is required" category="ACORDInformationModelSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="BIGContextExtension(session/id = 0/7)"/>
+        <run:Detail value="false" message="RequestDate null hasValue is false"/>
+      </run:Result>
+      <run:Result name="requiredForRequesterOnBIGContextExtension" subjectType="org.acord.BIGContextExtension" message="Requester in BIGContextExtension is required" category="ACORDInformationModelSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="BIGContextExtension(session/id = 0/7)"/>
+        <run:Detail value="false" message="Requester null hasValue is false"/>
+      </run:Result>
+    </run:Category>
+  </run:RuleResults>
+</run:RuntimeReport>

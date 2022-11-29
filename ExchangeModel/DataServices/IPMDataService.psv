@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DataServiceModel xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='com.ds.IPMDataService' schemaName='com.ipm.IPMSchema'>
+  <ModelMap isSynthetic='false'>
+  </ModelMap>
+  <Operation isSynthetic='false' name='Insert' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='Insert' returnTypeName='com.ipm.Error' language='JAVA' returnTypeElementName='InsertReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.partyinformation.Insert' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='UpdateParty' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='UpdateParty' returnTypeName='com.ipm.Error' language='JAVA' returnTypeElementName='UpdatePartyReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.partyinformation.UpdateParty' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetOrganizations' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetOrganizations' returnTypeName='com.ipm.OrganizationResponse' language='JAVA' returnTypeElementName='getOrganizationPartyReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.PartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetPartyInformation' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetPartyInformation' returnTypeName='com.ipm.PartyResponse' language='JAVA' returnTypeElementName='GetPatyInformationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.PartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetPaymentAccountUpdates' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetPaymentAccountUpdates' returnTypeName='com.ipm.PaymentAccountResponse' language='JAVA' returnTypeElementName='getPaymentAccountReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.PaymentAccountRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetPersons' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetPersons' returnTypeName='com.ipm.PersonResponse' language='JAVA' returnTypeElementName='getPersonPartyReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.PartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetPositions' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetPositions' returnTypeName='com.ipm.PositionResponse' language='JAVA' returnTypeElementName='getPositionsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='request' typeName='com.ipm.PositionRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetTransactions' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetTransactions' returnTypeName='com.ipm.TransactionResponse' language='JAVA' returnTypeElementName='getTransactionReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.TransactionRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetUserInformation' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetUserInformation' returnTypeName='com.ipm.UserResponse' language='JAVA' returnTypeElementName='GetUserInformationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.PartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='Update' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='Update' returnTypeName='com.ipm.Error' language='JAVA' returnTypeElementName='UpdateReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.partyinformation.Update' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='ValidateForInsert' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='ValidateForInsert' returnTypeName='com.ipm.Error' language='JAVA' returnTypeElementName='InsertReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.partyinformation.Insert' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='ValidateForUpdate' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='ValidateForUpdate' returnTypeName='com.ipm.Error' language='JAVA' returnTypeElementName='UpdateReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.partyinformation.Update' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='ValidateForUpdateParty' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='ValidateForUpdateParty' returnTypeName='com.ipm.Error' language='JAVA' returnTypeElementName='UpdatePartyReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.partyinformation.UpdateParty' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetAgencyEmailsForAgent' runtimeConfig='Insert' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetAgencyEmailsForAgent' returnTypeName='com.ipm.EmailResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.EmailRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetAgreementParticipants' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetAgreementParticipants' returnTypeName='com.ipm.AgreementParticipantResponse' language='JAVA' returnTypeElementName='GetAgreementParticipantsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.AgreementParticipantRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetAgentEmailsForAgency' runtimeConfig='Insert' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetAgentEmailsForAgency' returnTypeName='com.ipm.EmailResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.EmailRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetAppointments' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetAppointments' returnTypeName='com.ipm.AppointmentResponse' language='JAVA' returnTypeElementName='GetAppointmentsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.AppointmentRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetNPNFromNIPR' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetNPNFromNIPR' returnTypeName='com.ipm.NPNResponse' language='JAVA' returnTypeElementName='GetNPNFromNIPRReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.NPNRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='DownloadUpdateFromPDB' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='DownloadUpdateFromPDB' returnTypeName='com.ipm.DownloadUpdateFromPDBResponse' language='JAVA' returnTypeElementName='DownloadUpdateFromPDBReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.DownloadUpdateFromPDBRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetContactPoints' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetContactPoints' returnTypeName='com.ipm.ContactPointResponse' language='JAVA' returnTypeElementName='GetContactPointsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.ContactPointRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetPartyEmails' runtimeConfig='default' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetPartyEmails' returnTypeName='com.ipm.EmailResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.EmailRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetLicenses' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetLicenses' returnTypeName='com.ipm.LicenseResponse' language='JAVA' returnTypeElementName='GetAppointmentsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.LicenseRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetContactPointUsages' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetContactPointUsages' returnTypeName='com.ipm.ContactPointUsageResponse' language='JAVA' returnTypeElementName='GetContactPointUsagesReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.ContactPointUsageRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetRegulatoryAction' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetRegulatoryAction' returnTypeName='com.ipm.RegulatoryActionResponse' language='JAVA' returnTypeElementName='GetContactPointUsagesReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.RegulatoryActionRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetCorrespondenceEmails' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetCorrespondenceEmails' returnTypeName='com.ipm.EmailResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.CorrespondenceEmailRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetNIPRDetailsForAppointment' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetNIPRDetailsForAppointment' returnTypeName='com.ipm.NIPRDetailsForAppointmentResponse' language='JAVA' returnTypeElementName='GetContactPointUsagesReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.NIPRDetailsForAppointmentRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='CheckPartyRecontractability' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='CheckPartyRecontractability' returnTypeName='com.ipm.checkPartyRecontractabilityResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.checkPartyRecontractabilityRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='CheckCancelledin90days' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='CheckCancelledin90days' returnTypeName='com.ipm.Cancelledin90daysResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.Cancelledin90daysRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='checkEOAndBCWaived' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='checkEOAndBCWaived' returnTypeName='com.ipm.EOAndBCWaivedResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.EOAndBCWaivedRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetOtherCompanyAppointments' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetOtherCompanyAppointments' returnTypeName='com.ipm.OtherCompanyAppointmentsResponse' language='JAVA' returnTypeElementName='GetContactPointUsagesReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.OtherCompanyAppointmentsRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetAPIDForCase' runtimeConfig='Insert' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetAPIDForCase' returnTypeName='com.ipm.APIDForCaseResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.APIDForCaseRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetChildPositionTypes' runtimeConfig='Insert' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetChildPositionTypes' returnTypeName='com.ipm.ChildPositionTypeResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.ChildPositionTypeRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetErrorAndOmission' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetErrorAndOmission' returnTypeName='com.ipm.ErrorAndOmissionResponse' language='JAVA' returnTypeElementName='GetAgreementParticipantsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.ErrorAndOmissionRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetPaymentAccounts' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetPaymentAccounts' returnTypeName='com.ipm.PaymentAccountsResponse' language='JAVA' returnTypeElementName='GetAgreementParticipantsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.PaymentAccountsRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='SubmitBackgroundCheckRequest' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='SubmitBackgroundCheckRequest' returnTypeName='com.ipm.SubmitBackgroundCheckResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.SubmitBackgroundCheckRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetBackgroundCheckResponse' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetBackgroundCheckResponse' returnTypeName='com.ipm.BackgroundCheckResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.BackgroundCheckResponseRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='setupDCMData' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='setupDCMData' returnTypeName='com.ipm.setupDCMDataResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.setupDCMDataRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetHierarchyPositionForWelcomeLetter' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetHierarchyPositionForWelcomeLetter' returnTypeName='com.ipm.HierarchyPositionResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.HierarchyPositionRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetPositionsDetailed' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetPositionsDetailed' returnTypeName='com.ipm.PositionDetailedResponse' language='JAVA' returnTypeElementName='getPositionsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='request' typeName='com.ipm.PositionDetailedRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetFIAgreements' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetFIAgreements' returnTypeName='com.ipm.FIAgreementsResponse' language='JAVA' returnTypeElementName='GetContactPointUsagesReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.FIAgreementsRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetUplineParty' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetUplineParty' returnTypeName='com.ipm.UplinePartyResponse' language='JAVA' returnTypeElementName='GetUplinePartyNameReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.UplinePartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='CheckPartyChannelEligibility' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='CheckPartyChannelEligibility' returnTypeName='com.ipm.ChannelEligibilityResponse' language='JAVA' returnTypeElementName='GetAgencyEmailsForAgentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.PartyChannelEligibilityRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetActiveProductProfiles' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetActiveProductProfiles' returnTypeName='com.ipm.ActiveProductProfileResponse' language='JAVA' returnTypeElementName='GetContactPointUsagesReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.ActiveProductProfileRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetLoaData' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetLoaData' returnTypeName='com.ipm.LOAResponse' language='JAVA' returnTypeElementName='GetLoaDataReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.LOARequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetLastStatusReason' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetLastStatusReason' returnTypeName='com.ipm.PartyStatusReason' language='JAVA' returnTypeElementName='GetLastStatusReasonReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.PartyStatusRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+</DataServiceModel>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Person xmlns="http://www.PersonInformation.com/PersonInformation.xsd" role="EMPLOYEE">
+    <PersonID>
+        <IDType>SSN</IDType>
+        <IDNumber>456-45-0000</IDNumber>
+    </PersonID>
+    <PersonID>
+        <IDType>license</IDType>
+        <IDNumber>994568000</IDNumber>
+    </PersonID>
+    <PersonName>
+        <fullName>Karen D. Smith</fullName>
+        <prefixTitleCode>Mrs</prefixTitleCode>
+        <givenName>Karen</givenName>
+        <middleName>D.</middleName>
+        <surname>Smith</surname>
+        <suffix>.</suffix>
+    </PersonName>
+    <Address>
+        <AddressType>Home</AddressType>
+        <Street1>5 Dan Circle</Street1>
+        <Street2/>
+        <Street3/>
+        <City>Boston</City>
+        <State>MA</State>
+        <County>Middlesex</County>
+        <Country>US</Country>
+        <ZipCode>08897</ZipCode>
+        <POBox/>
+    </Address>
+    <Fax number="781-666-3333" extention="123"/>
+    <Cell number="781-666-3334"/>
+    <Phone number="781-666-3335" extention=""/>
+    <Pager number="781-666-3336" extention=""/>
+    <deathIndicator>false</deathIndicator>
+    <bloodTypeCode>A Plus</bloodTypeCode>
+    <genderCode>Female</genderCode>
+    <nationality>US</nationality>
+    <missingIndicator>false</missingIndicator>
+    <maritalStatusCode>Single</maritalStatusCode>
+    <email>abc.test@abemail.com</email>
+    <birthDate>12/03/1995</birthDate>
+</Person>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ *      Copyright (C) Unpublished Versata Inc. All riths reserved.
+ *      Versata, Inc., Confidential and Proprietary.
+ *      This software is subject to copyright protection
+ *      under the laws of the United States and other countires.
+ *      Unless otherwise explicitly stated, this software is provided
+ *      by Versata "AS IS".
+ */
+ 
+This spec helps to create/update CE course to the person party or organization party. In DCM portal, the continuing education page is available under Party or Organization (Tab) - Continuing Education (Sub-tab).
+
+Pre-requisite:
+1) Create person party and need to mention party tax id in the data file.
+2) Need to create course using DCM portal (DCM Admin - Supporting Data - Search for Course - New Course) and same course name should be mentioned in the data file for two columns namely Course and training.
+
+Data File Format:
+Tax ID,training,Element,Source,Start Date,Status,jurisdiction,CE Credit Provider Tax ID,grant status
+
+Sample Data:
+123990,101 Continuing Education General Program,101 Continuing Education General Program,Firm,Internal,1/5/2013,DEVELOPED_NEED,CA,,1
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}/CECreditsSpec.xml -DDATA_FILE={File-Location}/CECreditsData.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=100
+ -->
+<loader:loader_spec
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+    xmlns="http://dms.trilogy.com/Loader/Spec"
+    xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+
+    name="Continuous Education Credits Loader Spec"
+    >
+
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+		<!--property name="numThreads" value="4"/-->
+	</strategy>
+
+	<object name="cecredit" class="FSCECredit"/>
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="headerRows" value="1"/>
+		<!--property name="footerRows" value="1"/-->
+		<property name="quote_chars" value="&quot;"/>
+
+		<indexed_field name="tax id" index="0" />
+		<!-- indexed_field name="course" index="1" translator="course_translator"/ -->
+		<indexed_field name="training" index="1"/>
+		<indexed_field name="element" index="2" translator="element_translator"/>
+		<indexed_field name="source" index="3" translator="source_translator"/>
+		<indexed_field name="start date" index="4" translator="date_translator"/>
+		<indexed_field name="expiry date" index="5" translator="exp_date_translator"/>
+		<indexed_field name="status" index="6" translator="status_translator"/>
+		<indexed_field name="ce credit provider tax id" index="7"/>
+		<indexed_field  name="grant status" index="8" translator="boolean_translator"/>	
+
+	</source>
+
+	<translator name="course_translator" class="enum_translator">
+		<property name="enumName" value="CECredit.Course"/>
+	</translator>
+	<translator name="element_translator" class="enum_translator">
+		<property name="enumName" value="CECredit.Element"/>
+	</translator>
+	<translator name="source_translator" class="enum_translator">
+		<property name="enumName" value="CECredit.Source"/>
+	</translator>
+	<translator name="exp_date_translator" class="date_format_translator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="treatEmptyAsNull" value="true"/>
+	</translator>
+	<translator name="date_translator" class="date_format_translator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+	</translator>
+	<translator name="status_translator" class="enum_translator">
+		<property name="enumName" value="CECredit.Status"/>
+	</translator>
+	<translator name="jurisdiction_translator" class="enum_translator">
+		<property name="enumName" value="CECredit.Jurisdiction"/>
+	</translator>
+	<translator name="boolean_translator" class="boolean_translator">
+		<property name="true" value="1"/>
+		<property name="false" value="0"/>
+		<property name="defaultValue" value="1"/>
+	</translator>
+	<translator name="create_action" class="action_translator">
+		<property name="" value="update or insert"/>
+	</translator>
+	<!--resolver name="distributordata_resolver" class="oql_resolver">
+		<property name="query">
+			<![CDATA[
+				SELECT dd.GID g, ([SCPerson]party.Party).taxid TID FROM FSRole role, FSParty party, FSDistributorData dd 
+					WHERE dd.GID=role.RoleData AND role.Party = party.GID 
+				UNION 
+				SELECT dd1.GID g, ([SCOrganization]party1.Party).taxid TID FROM FSRole role1, FSParty party1, FSDistributorData dd1 
+					WHERE dd1.GID=role1.RoleData AND role1.Party = party1.GID
+			]]>
+		<property name="gidAlias" value="g"/>
+		<property name="keys" value="TID"/>
+	</resolver-->
+	<resolver name="training_resolver" class="single_key_resolver">
+		<property name="className" value="FSCourse"/>
+		<property name="key" value="Name"/>
+		<property name="preCacheTables" value="false"/>
+	</resolver>	
+	
+	<resolver name="distributordata_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[
+				SELECT dd.GID g FROM FSRole role, FSParty party, FSDistributorData dd 
+						WHERE dd.GID = role.RoleData AND role.Party = party.GID AND 
+							(party.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {0}) 
+							   OR party.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {0}))
+			]]>
+		</property>
+		<property name="keys" value="string TaxID"/>
+	</resolver>
+	<resolver name="cecredits_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[
+				SELECT credit.GID g1 FROM FSCECredit credit WHERE 
+				(credit.DistributorData IN (SELECT dd.GID g FROM FSRole role, FSParty party, FSDistributorData dd 
+						WHERE dd.GID = role.RoleData AND role.Party = party.GID AND 
+							(party.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {0}) 
+							   OR party.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {0}))))
+							   AND credit.Training.Name={2} AND credit.StartDate={1}
+			]]>
+		</property>
+		<property name="keys" value="string TaxID,date StartDate,string training"/>
+	</resolver>
+	<map object="cecredit">		
+		<map_action translator="create_action" default="update or insert" resolver="cecredits_resolver">
+			<actionfield name="ce credit provider tax id"/>
+			<field name="tax id"/>
+			<field name="start date"/>
+			<field name="training"/>
+		</map_action>
+	
+		<map_object property="DISTRIBUTORDATA_CONTEXT" resolver="distributordata_resolver" tag="state">
+			<field name="tax id"/>
+		</map_object>
+		<map_simple property="Element" field="element"/>
+		<map_simple property="Source" field="source"/>
+		<map_simple property="StartDate" field="start date" />
+		<map_simple property="ExpiryDate" field="expiry date" />
+		<map_simple property="Status" field="status"/>
+		<map_object property="Training" resolver="training_resolver" tag="validator" skipIfNull="true">
+			<field name="training"/>
+		</map_object>
+		<map_simple property="CEGrant" field="grant status"/>			
+	</map>
+</loader:loader_spec>

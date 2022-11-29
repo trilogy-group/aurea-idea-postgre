@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+This spec helps to insert new position holder to the respective position to an existing compensation hierarchy in DCM.
+
+Prerequisite:
+=============
+1) Compensation hierachy should exist with proper positions in DCM.
+
+Testcases:
+==========
+1) Add new positions holder to the position in compensation hierarchy.
+
+Data File Format:
+==================
+PartyID,AGID,StartDate,EndDate,PositionType,PositionName,RootHierachyName
+
+Sample Data:
+=============
+118,AG3,01/01/2008,01/01/2023,AcctMgr,AccMgrProperHier25,ProperHier25
+90,AG3,01/01/2009,01/01/2024,BGA,BGAPosProperHier25,ProperHier25
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}\IDEACompensationHierarchyPositionHolderSpec.xml -DDATA_FILE={File-Location}\IDEACompensationHierarchyPositionHolderSpec.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=1
+Note: Batch size should be "1" to avoid Lock exception.
+
+ -->
+
+<loader:loader_spec
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	
+    xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+    xmlns="http://dms.trilogy.com/Loader/Spec"
+    xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+    name="Compensation Hierarchy Position holder Loader Spec"
+    >
+	
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	
+	<strategy name="strategy" class="${STRATEGY}">
+        <property name="memory.batch_size" value="1"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+    </strategy>  
+	
+	<object name="positionholder" class="AgrHierarchyPositionHolderCreatorValidator"/>
+
+    <source name="load_file" class="delimited_file_parser">
+        <property name="filename" value="${FILENAME}"/>
+        <property name="delimiters" value=","/>
+        <property name="headerRows" value="1"/>
+		<property name="quote_chars" value="&quot;"/>
+
+        <indexed_field name="partyId" index="0"/>
+		<indexed_field name="agrId" index="1"/>
+		<indexed_field name="startDate" index="2" translator="date_translator" />
+        <indexed_field name="endDate" index="3" translator="date_translator" />
+		<indexed_field name="positionType" index="4" translator="hier_type_translator" />
+		<indexed_field name="positionName" index="5"/>
+		<indexed_field name="rootHierachyName" index="6"/>
+    </source>
+    
+	<resolver name="agrpart_resolver" class="batch_query_resolver">
+        <property name="query">
+            <![CDATA[
+				SELECT participant.GID FROM FSAgreementParticipant participant WHERE participant.Party=(SELECT party from FSParty party WHERE party.Unid={0}) AND participant.Agreement.Unid={1}
+            ]]>
+        </property>
+		<property name="keys" value="string partyId,string agrId"/>
+    </resolver>
+	
+    <resolver name="position_resolver" class="batch_query_resolver">
+        <property name="query">
+            <![CDATA[
+				Select pos From FSEPosition pos Where pos.PositionType={0} AND pos.Name={1} AND pos.Root.Name={2}
+            ]]>
+        </property>
+		<property name="keys" value="integer positionType,string positionName, string rootHierachyName"/>
+    </resolver>
+	
+	<resolver name="positionholder_resolver" class="batch_query_resolver">
+        <property name="query">
+            <![CDATA[
+				Select posHolder From ELink link, FSEPosition pos, FSEPositionHolder posHolder, FSParty party
+				Where link.Child=posHolder AND link.Parent=pos AND pos.PositionType={0} 
+				AND posHolder.Party=(SELECT participant.party FROM FSAgreementParticipant participant WHERE participant.Party=(SELECT agrparty from FSParty agrparty WHERE agrparty.Unid={6}) AND participant.Agreement.Unid={3}) AND link.StartDate={1} AND link.EndDate={2} AND pos.Name={4} AND pos.Root.Name={5} AND posHolder.Root.Name={5}
+            ]]>
+        </property>
+		<property name="keys" value="integer positionType, date startDate, date endDate, string agrId, string positionName, string rootHierachyName,string partyId"/>
+    </resolver>
+	
+    <translator name="hier_type_translator" class="enum_translator">
+        <property name="enumName" value="RELATIONSHIP"/>
+		<property name="useDefaultValue" value="false"/>
+		<property name="throwException" value="true"/>
+    </translator>
+
+    <translator name="date_translator" class="date_format_translator">
+        <property name="formatString" value="MM/dd/yyyy"/>
+    </translator>
+
+    <map object="positionholder">
+        <action name="update or insert" resolver="positionholder_resolver">
+        	<field name="positionType"/>
+        	<field name="startDate"/>
+        	<field name="endDate"/>
+        	<field name="agrId"/>
+			<field name="positionName"/>
+			<field name="rootHierachyName"/>
+			<field name="partyId"/>
+        </action>        
+        <map_object property="Position" resolver="position_resolver" tag="precreate">
+			<field name="positionType"/>
+			<field name="positionName"/>
+			<field name="rootHierachyName"/>
+        </map_object>
+        <map_simple property="StartDate" field="startDate" tag="validator" />
+        <map_simple property="EndDate" field="endDate" tag="validator" />
+		<map_object property="AgreementParticipant" resolver="agrpart_resolver">
+			<field name="partyId"/>
+			<field name="agrId"/>
+        </map_object>
+    </map>
+
+</loader:loader_spec>

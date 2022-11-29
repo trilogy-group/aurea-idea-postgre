@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToNIPR' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='com.nipr.NIPRGetway'>
+  <ClassMap isSynthetic='false' name='NIPRContextToNIPR' sourceTypeName='org.acord.NIPRContext' targetTypeName='com.nipr.NIPR' autoReverse='false'>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='PostalContactToAddressType' sourceTypeName='org.acord.aim.ContactandPlace.ContactPointSubtypes.PostalContact' targetTypeName='com.nipr.AddressType' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='elementAtPosition'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='PostalContactOnPostalAddress/AddressLineCollection'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.Integer' literalString='0'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='ADDRLINE1'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='elementAtPosition'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='PostalContactOnPostalAddress/AddressLineCollection'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.Integer' literalString='1'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='ADDRLINE2'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='elementAtPosition'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='PostalContactOnPostalAddress/AddressLineCollection'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.Integer' literalString='2'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='ADDRLINE3'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PostalContactOnPostalAddress/City/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='CITY'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PostalContactOnPostalAddress/County/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PROVINCE'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PostalContactOnPostalAddress/PostalAddressOnCountry/abbreviation'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='COUNTRYCODE'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PostalContactOnPostalAddress/State/abbreviation'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='STATECODE'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PostalContactOnPostalAddress/postalBarcode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='ZIPCODE'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

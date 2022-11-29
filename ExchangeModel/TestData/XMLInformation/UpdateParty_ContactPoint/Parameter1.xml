@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:UpdateParty xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:PartyID>6</ns2:PartyID>
+    <ns2:Status>Active</ns2:Status>
+    <ns2:ContactPoint>
+        <ns2:ContactPointType>HOME</ns2:ContactPointType>
+        <ns2:ContactPointUsage>STATEMENTS</ns2:ContactPointUsage>
+        <ns2:Address>
+            <ns2:Street1>Street 111</ns2:Street1>
+            <ns2:Street2>second floar</ns2:Street2>
+            <ns2:Street3>appartment 17</ns2:Street3>
+            <ns2:City>Wayland</ns2:City>
+            <ns2:State>MA</ns2:State>
+            <ns2:County>Middlesex</ns2:County>
+            <ns2:Country>US</ns2:Country>
+            <ns2:ZipCode>01778</ns2:ZipCode>
+            <ns2:POBox></ns2:POBox>
+        </ns2:Address>
+        <ns2:Fax Number="123456789" Extention="2">string</ns2:Fax>
+        <ns2:Cell Number="234567890" Extention="2">string</ns2:Cell>
+        <ns2:Phone Number="345678901" Extention="2">string</ns2:Phone>
+        <ns2:Pager Number="456789012" Extention="2">string</ns2:Pager>
+        <ns2:Email>email@test.com</ns2:Email>
+        <ns2:WebSite>www.tests.com</ns2:WebSite>
+    </ns2:ContactPoint>
+</ns2:UpdateParty>
