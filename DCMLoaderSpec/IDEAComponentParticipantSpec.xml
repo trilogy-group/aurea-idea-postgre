@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loader:loader_spec xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:loader="http://dms.trilogy.com/Loader/Spec" xmlns="http://dms.trilogy.com/Loader/Spec" xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd" name="Insert Component Participation Loader Spec">
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+	</strategy>
+	<object name="component_participant" class="FSComponentParticipationLoaderValidator"/>
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="headerRows" value="1"/>
+		<indexed_field name="agr_part_id" index="0"/>
+		<indexed_field name="agr_name" index="1"/>
+		<indexed_field name="component_name" index="2"/>
+		<indexed_field name="startDate" index="3"/>
+		<indexed_field name="endDate" index="4"/>
+	</source>
+	<resolver name="ap_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+				Select ap From FSAgreementParticipant ap Where ap.Unid={0} AND ap.Agreement.Name={1}
+			]]></property>
+		<property name="keys" value="string agr_part_id, string agr_name"/>
+	</resolver>
+	<resolver name="agreement_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+				SELECT agreement
+                FROM FSAgreement agreement
+                WHERE agreement.name = {0}
+            ]]></property>
+		<property name="keys" value="string agr_name"/>
+	</resolver>
+	<resolver name="component_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+                SELECT comp
+                FROM FSCompensationComponent comp
+                WHERE comp.Name = {0} 
+            ]]></property>
+		<property name="keys" value="string component_name"/>
+	</resolver>
+	<resolver name="ComponentParticipant_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+                select pp from SCCMPlanParticipationSegment pp,FSAgreementParticipant ap,SCCMPlan p,FSCompensationComponent cc where pp.Participant=ap and ap.Unid={0} and ap.Agreement.Name={1} and  pp.StartDate={2} and pp.EndDate={3} and pp.Plan=p and p=cc.Plan and cc.Name={4}
+            ]]></property>
+		<property name="keys" value="string unid,string agrname,date startdate,date enddate,string compname"/>
+	</resolver>
+	<map object="component_participant">
+		<action name="update or insert" resolver="ComponentParticipant_resolver">
+			<field name="agr_part_id"/>
+			<field name="agr_name"/>
+			<field name="startDate"/>
+			<field name="endDate"/>
+			<field name="component_name"/>
+		</action>
+		<map_object property="Agreement" resolver="agreement_resolver" tag="precreate">
+			<field name="agr_name"/>
+		</map_object>
+		<map_object property="LoaderAgreementParticipant" resolver="ap_resolver" tag="precreate">
+			<field name="agr_part_id"/>
+			<field name="agr_name"/>
+		</map_object>
+		<map_object property="LoaderComponent" resolver="component_resolver" tag="precreate">
+			<field name="component_name"/>
+		</map_object>
+		<map_simple property="StartDate" field="startDate" tag="validator"/>
+		<map_simple property="EndDate" field="endDate" tag="validator"/>
+	</map>
+</loader:loader_spec>

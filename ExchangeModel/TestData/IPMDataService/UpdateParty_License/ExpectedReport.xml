@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:Problems>
+    <run:MappingFailures>
+      <run:ClassMapFailure classMap="LicenseToPartyRegistration" sourceType="com.partyinformation.License" targetType="org.acord.aim.Registration.PartyRegistration" message="One or more transformations failed.">
+        <run:SourceKey name="toString" value="License(session/id = 0/4)"/>
+        <run:TargetKey name="identifier" value="123456789"/>
+        <run:TransformationFailure category="CoercionFailure" sourceXPath="Resident" targetXPath="registrationAuthorityTypeCode" sourceType="java.lang.String" targetType="java.lang.Object" message="Cannot convert value 'Resident' (java.lang.String) to type org.acord.aim.Registration.RegistrationCodeLists.OrganizationRegistrationAuthorityTypeCodeList" value="Resident"/>
+      </run:ClassMapFailure>
+      <run:ClassMapFailure classMap="LicenseToPartyRegistration" sourceType="com.partyinformation.License" targetType="org.acord.aim.Registration.PartyRegistration" message="One or more transformations failed.">
+        <run:SourceKey name="toString" value="License(session/id = 0/4)"/>
+        <run:TargetKey name="identifier" value="123456789"/>
+        <run:TransformationFailure category="CoercionFailure" sourceXPath="Resident" targetXPath="registrationAuthorityTypeCode" sourceType="java.lang.String" targetType="java.lang.Object" message="Cannot convert value 'Resident' (java.lang.String) to type org.acord.aim.Registration.RegistrationCodeLists.ProducerRegistrationAuthorityTypeCodeList" value="Resident"/>
+      </run:ClassMapFailure>
+      <run:ClassMapFailure classMap="ProducerLicenseComponentToRECORD" sourceType="org.acord.aim.Registration.PartyRegistrationSubtypes.ProducerLicenseComponent" targetType="insertappointmentspec.RECORD" message="One or more transformations failed.">
+        <run:SourceKey name="toString" value="ProducerLicenseComponent(session/id = 0/26)"/>
+        <run:TargetKey name="toString" value="RECORD(session/id = 2/580)"/>
+        <run:TransformationFailure category="CoercionFailure" sourceXPath="LOACode" targetXPath="loACode" sourceType="java.lang.String" targetType="insertappointmentspec.CredentialLineLineOfAuthority" message="Cannot convert value 'LOACode' (java.lang.String) to type insertappointmentspec.CredentialLineLineOfAuthority" value="LOACode"/>
+        <run:TransformationFailure category="CoercionFailure" sourceXPath="ProducerLicenseForProducerLicenseComponent/typeName" targetXPath="licenseClass" sourceType="java.lang.String" targetType="insertappointmentspec.LicenseLicenseClass" message="Cannot convert value 'MA' (java.lang.String) to type insertappointmentspec.LicenseLicenseClass" value="MA"/>
+      </run:ClassMapFailure>
+    </run:MappingFailures>
+  </run:Problems>
+</run:RuntimeReport>

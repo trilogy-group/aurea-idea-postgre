@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:RuleResults>
+    <run:Category name="CompHierarchyPositionHolderSpecSchemaValidation">
+      <run:Result name="requiredForRECORDOnROOT" subjectType="com.comphierarchypositionholderspec.ROOT" message="RECORD in ROOT is required" category="CompHierarchyPositionHolderSpecSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="ROOT(session/id = 2/485)"/>
+        <run:Detail value="false" message="RECORD null hasValue is false"/>
+      </run:Result>
+    </run:Category>
+    <run:Category name="CompHierarchyPositionSpecSchemaValidation">
+      <run:Result name="requiredForRECORDOnROOT" subjectType="com.comphierarchypositionspec.ROOT" message="RECORD in ROOT is required" category="CompHierarchyPositionSpecSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="ROOT(session/id = 2/484)"/>
+        <run:Detail value="false" message="RECORD null hasValue is false"/>
+      </run:Result>
+    </run:Category>
+  </run:RuleResults>
+</run:RuntimeReport>

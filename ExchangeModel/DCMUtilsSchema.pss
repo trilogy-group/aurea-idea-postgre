@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DomainSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='dcm.utils.DCMUtilsSchema' preserveWhitespaces='false'>
+  <Package isSynthetic='false' name='dcm.utils' javaPackage='dcm.utils'>
+  </Package>
+  <EntityType isSynthetic='false' name='dcm.utils.PartyInput' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CoverLetterEmailAddress' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='4'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.EmailResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Emails' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.NPNRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyType' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TaxID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.Error' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Description' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.NPNResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Errors' assignable='true' index='1'>
+      <TypeName>Set&lt;dcm.utils.Error&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.DownloadUpdateFromPDBRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.DownloadUpdateFromPDBResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Success' assignable='true' index='0'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Alerts' assignable='true' index='1'>
+      <TypeName>Set&lt;dcm.utils.Error&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.GenericResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ResultParam1' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ResultParam2' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ResultParam3' assignable='true' index='2'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ResultParam4' assignable='true' index='3'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.GenericRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectivedate' assignable='true' index='2'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.ChildPositionTypeRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='HierarchyType' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.ChildPositionTypeResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.BIGBackgroundCheckRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CaseID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.BIGBackgroundCheckResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='RequestID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusCode' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Errors' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ClientCaseId' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PassReviewStatusCode' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CreditCheckResultCode' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CriminalBackgroundCheckResultCode' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OFACBackgroundCheckResultCode' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RedirectLink' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.setupDCMDataRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ActivityType' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='isBackgroundcheckRequired' assignable='true' index='2'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LegalQuestionD' assignable='true' index='3'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LegalQuestionH' assignable='true' index='4'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='5'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ParentPositionGID' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CaseID' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AgreementName' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ProductProfileName' assignable='true' index='12'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AMLTrainingDate' assignable='true' index='13'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='IAIndexTrainingDate' assignable='true' index='14'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ModelLawTrainingDate' assignable='true' index='15'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='HasRegulatoryAction' assignable='true' index='16'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FourHRIntTrainingDate' assignable='true' index='17'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OneHRIntTrainingDate' assignable='true' index='18'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NYREGTrainingDate' assignable='true' index='19'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ServicingOnly' assignable='true' index='20'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+	<AttributeProperty isSynthetic='false' name='ProductPrefPreset' assignable='true' index='20'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+	<AttributeProperty isSynthetic='false' name='ProductGroup' assignable='true' index='22'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>	
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.setupDCMDataResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Errors' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.HierarchyPositionRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.HierarchyPositionResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PositionName' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Error' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.PositionDetailedRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyType' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionName' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.PositionDetailedResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='PositionData' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='List'>
+      <TypeName>dcm.utils.PositionData</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PositionDetailedResponseForPositionData' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.PositionData' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='PositionHolderData' assignable='true' index='3' cardinality='One2Many' containment='false' collectionType='List'>
+      <TypeName>dcm.utils.PositionHolderData</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PositionDataForPositionHolderData' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.PositionHolderData' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyName' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='APStatus' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PosHolderStartDate' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PosHolderEndDate' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ServicingOnly' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.UplinePartyRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='APID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.UplinePartyResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Error' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyName' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVBusinessType' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVAccToWeb' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+	<AttributeProperty isSynthetic='false' name='AVProductGroup' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.PartyChannelEligibilityResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='EligibilityResult' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.PartyChannelEligibilityInputs' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyGID' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PositionGID' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='3'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.ActiveProductProfileResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ActiveProductProfile' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.ActiveProductProfileRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.LOARequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='partyId' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='contractEffectiveDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.LOAData' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='startDate' assignable='true' index='0'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='endDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='statusCode' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='statusReason' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='statusType' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='loaCode' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='licNumber' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='name' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.LOAResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='loaData' assignable='true' index='0'>
+      <TypeName>List&lt;dcm.utils.LOAData&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.PartyStatusRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='PartyId' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='1'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.PartyStatusResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Result' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusReason' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+</DomainSchema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:Insert xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:User>
+        <ns2:PartyID>98</ns2:PartyID>
+        <ns2:LoginName>user.name</ns2:LoginName>
+        <ns2:Email>user@email.com</ns2:Email>
+        <ns2:GroupName>WORLD</ns2:GroupName>
+        <ns2:GroupName>ADMIN</ns2:GroupName>
+    </ns2:User>
+</ns2:Insert>

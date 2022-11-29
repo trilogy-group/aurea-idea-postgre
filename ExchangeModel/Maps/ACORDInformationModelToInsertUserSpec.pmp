@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToInsertUserSpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='insertuserspec.InsertUserSpec'>
+  <ClassMap isSynthetic='false' name='ContextToROOT' sourceTypeName='org.acord.Context' targetTypeName='insertuserspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForContextToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='or'>
+        </MethodReference>
+        <MethodExpression isSynthetic='false' infix='true'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+          </MethodReference>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='User'>
+            </PathExpression>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.MiscLibrary' methodName='isCurrentDataServiceOperation'>
+            </MethodReference>
+            <GenericModelObjectArgument isSynthetic='false' targetName='IPMDataService/Insert' modelObjectClass='com.pantero.metamodel.operations.DataServiceOperation'>
+            </GenericModelObjectArgument>
+          </MethodExpression>
+        </MethodExpression>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.MiscLibrary' methodName='isCurrentDataServiceOperation'>
+          </MethodReference>
+          <GenericModelObjectArgument isSynthetic='false' targetName='IPMDataService/ValidateForInsert' modelObjectClass='com.pantero.metamodel.operations.DataServiceOperation'>
+          </GenericModelObjectArgument>
+        </MethodExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='User'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='UserToRECORD' sourceTypeName='org.acord.User' targetTypeName='insertuserspec.RECORD' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='email'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='Email'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PartyId'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.CollectionLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='SecurityGroup'>
+            </PathExpression>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='joinStrings'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='SecurityGroup'>
+            </PathExpression>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString=';'>
+            </Literal>
+          </MethodExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='GroupNames'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='LoginName'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='LoginName'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='IPMContextToROOT' sourceTypeName='org.acord.IPMContext' targetTypeName='insertuserspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForContextToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='User'>
+          </PathExpression>
+        </MethodExpression>
+        <MethodExpression isSynthetic='false' infix='true'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='or'>
+          </MethodReference>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.MiscLibrary' methodName='isCurrentDataServiceOperation'>
+            </MethodReference>
+            <GenericModelObjectArgument isSynthetic='false' targetName='IPMDataService/Insert' modelObjectClass='com.pantero.metamodel.operations.DataServiceOperation'>
+            </GenericModelObjectArgument>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.MiscLibrary' methodName='isCurrentDataServiceOperation'>
+            </MethodReference>
+            <GenericModelObjectArgument isSynthetic='false' targetName='IPMDataService/ValidateForInsert' modelObjectClass='com.pantero.metamodel.operations.DataServiceOperation'>
+            </GenericModelObjectArgument>
+          </MethodExpression>
+        </MethodExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='User'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

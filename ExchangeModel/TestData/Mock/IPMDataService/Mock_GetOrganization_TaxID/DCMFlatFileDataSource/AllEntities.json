@@ -1,0 +1,17 @@
+[
+  {
+    "dxsi:type": "dcm.Alerts",
+    "dxsi:id": "c73ce4bf-91d7-4da1-8274-4f2f4d36617e",
+    "MessageAlert": null
+  },
+  {
+    "dxsi:type": "dcm.Alerts",
+    "dxsi:id": "ece5179e-c8c3-4a1c-a811-d8bc5270b92a",
+    "MessageAlert": null
+  },
+  {
+    "dxsi:type": "dcm.Alerts",
+    "dxsi:id": "46251036-e20c-42d8-a0a8-f4db69b2acc0",
+    "MessageAlert": null
+  }
+]

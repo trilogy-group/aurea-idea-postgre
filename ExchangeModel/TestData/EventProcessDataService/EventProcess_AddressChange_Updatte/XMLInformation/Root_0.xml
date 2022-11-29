@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:Root xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:Person>
+        <ns2:PersonName>
+            <ns2:givenName>Olaf</ns2:givenName>
+            <ns2:surname>Albertson</ns2:surname>
+        </ns2:PersonName>
+        <ns2:Address>
+            <ns2:AddressType>HOME</ns2:AddressType>
+            <ns2:Street1>321 New road - Test</ns2:Street1>
+            <ns2:Street2>in the back</ns2:Street2>
+            <ns2:City>Adel</ns2:City>
+            <ns2:State>OR</ns2:State>
+            <ns2:Country>US</ns2:Country>
+        </ns2:Address>
+        <ns2:Cell number="2271111111"/>
+        <ns2:Phone number="8981212121"/>
+        <ns2:email>Ondine@gmail.com</ns2:email>
+    </ns2:Person>
+</ns2:Root>

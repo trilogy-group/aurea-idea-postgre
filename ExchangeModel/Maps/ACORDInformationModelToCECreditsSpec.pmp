@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToCECreditsSpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='cecreditsspec.CECreditsSpec'>
+  <EnumerationMap isSynthetic='false' name='EnumerationMap1' sourceTypeName='org.acord.aim.Activity.ActivityCodeLists.BusinessActivityStatusCodeList' targetTypeName='cecreditsspec.CECreditStatus'>
+    <ValuePair isSynthetic='false' sourceGenerator='Active' targetGenerator='Ordered'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Cancelled' targetGenerator='Completed'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Complete' targetGenerator='Completed'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='History' targetGenerator='Completed'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Other' targetGenerator='Completed'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Pending' targetGenerator='Ordered'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Suspended' targetGenerator='Completed'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Unknown' targetGenerator='Completed'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Void' targetGenerator='Completed'>
+    </ValuePair>
+  </EnumerationMap>
+  <ClassMap isSynthetic='false' name='ActivityToRECORD' sourceTypeName='org.acord.aim.Activity.Activity' targetTypeName='cecreditsspec.RECORD' autoReverse='false'>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asTraining/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='training'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='asTraining/plannedPeriod/startDateTime/date/DateType'>
+            </PathExpression>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='asTraining/plannedPeriod/startDateTime/date/DateType'>
+            </PathExpression>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+            </Literal>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='asTraining/plannedPeriod/endDateTime/date/DateType'>
+            </PathExpression>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+            </Literal>
+          </MethodExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='startdate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' enumerationMapName='EnumerationMap1'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asTraining/statusCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='status'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='asTraining/plannedPeriod/endDateTime/date/DateType'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='expirydate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='ActivityIdentifiedAssigneePartyRole/PartyRoleOnParty/TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='taxid'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrganizationToROOT' sourceTypeName='org.acord.aim.Party.Organization' targetTypeName='cecreditsspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForOrganizationToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForOrganization/ContextExtension/hasCourse'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Activities'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='PersonToROOT' sourceTypeName='org.acord.aim.Party.Person' targetTypeName='cecreditsspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForPersonToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForPerson/ContextExtension/hasCourse'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Activities'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

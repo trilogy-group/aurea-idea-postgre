@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" 
+	targetNamespace="http://www.XMLInformation.com/XMLInformation.xsd"
+	xmlns="http://www.XMLInformation.com/XMLInformation.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="IDInformation">
+    <xs:sequence>
+      <xs:element type="xs:string" name="IDType" minOccurs="0"/>
+      <xs:element type="xs:string" name="IDNumber"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonName">
+    <xs:sequence>
+      <xs:element type="xs:string" name="FullName" minOccurs="0"/>
+      <xs:element type="xs:string" name="PrefixTitleCode" minOccurs="0"/>
+      <xs:element type="xs:string" name="GivenName"/>
+      <xs:element type="xs:string" name="MiddleName" minOccurs="0"/>
+      <xs:element type="xs:string" name="Surname"/>
+      <xs:element type="xs:string" name="Suffix" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonRelationship">
+    <xs:sequence>
+      <xs:element type="xs:string" name="RelationshipType"/>
+      <xs:element name="PersonID" type="IDInformation" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="PersonName" type="PersonName"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element type="xs:string" name="AddressType" minOccurs="0"/>
+      <xs:element type="xs:string" name="Street1"/>
+      <xs:element type="xs:string" name="Street2" minOccurs="0"/>
+      <xs:element type="xs:string" name="Street3" minOccurs="0"/>
+      <xs:element type="xs:string" name="City"/>
+      <xs:element type="xs:string" name="State"/>
+      <xs:element type="xs:string" name="County" minOccurs="0"/>
+      <xs:element type="xs:string" name="Country"/>
+      <xs:element type="xs:string" name="ZipCode"  minOccurs="0"/>
+      <xs:element type="xs:string" name="POBox" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TelephoneNumber">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Number"/>
+        <xs:attribute type="xs:byte" name="Extention"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="User">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PartyID" type="xs:string"/>
+        <xs:element name="LoginName" type="xs:string"/>
+        <xs:element name="Email" type="xs:string"/>
+        <xs:element name="GroupName"  type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PersonID" type="IDInformation" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element name="PersonName" type="PersonName"/>
+        <xs:element name="PersonRelationship" type="PersonRelationship" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element name="Address" type="Address" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element name="Fax" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Cell" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Phone" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Pager" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element type="xs:string" name="DeathIndicator" minOccurs="0"/>
+        <xs:element type="xs:string" name="BloodTypeCode" minOccurs="0"/>
+        <xs:element type="xs:string" name="GenderCode" minOccurs="0"/>
+        <xs:element type="xs:string" name="Nationality" minOccurs="0"/>
+        <xs:element type="xs:string" name="MissingIndicator" minOccurs="0"/>
+        <xs:element type="xs:string" name="MaritalStatusCode" minOccurs="0"/>
+        <xs:element type="xs:string" name="Email" minOccurs="0"/>
+        <xs:element type="xs:string" name="BirthDate" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="Role"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Organization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="OrganizationID" type="IDInformation" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element name="Name" type="xs:string"/>
+        <xs:element name="Address" type="Address" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element name="Fax" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Cell" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Phone" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Pager" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element type="xs:string" name="Email" minOccurs="0"/>
+        <xs:element type="xs:string" name="WebSite" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="Role"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContactPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ContactPointType">
+        	<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="HOME"/>
+						<xs:enumeration value="WORK"/>
+						<xs:enumeration value="SUMMER HOME"/>
+						<xs:enumeration value="LOCPHYSICAL"/>
+						<xs:enumeration value="LOCMAILING"/>
+					</xs:restriction>
+        	</xs:simpleType>
+        </xs:element>
+        <xs:element name="ContactPointUsage">
+        	<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="PRIMARY"/>
+						<xs:enumeration value="RETIRED PRIMARY"/>
+						<xs:enumeration value="STATEMENTS"/>
+						<xs:enumeration value="MARKETING INFO"/>
+						<xs:enumeration value="LICENSING INFO"/>
+						<xs:enumeration value="MAILING"/>
+					</xs:restriction>
+        	</xs:simpleType>
+        </xs:element>
+        <xs:element name="Address" type="Address" minOccurs="0"/>
+        <xs:element name="Fax" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Cell" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Phone" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element name="Pager" type="TelephoneNumber" minOccurs="0"/>
+        <xs:element type="xs:string" name="Email" minOccurs="0"/>
+        <xs:element type="xs:string" name="WebSite" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaymentAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AccountType" type="xs:string" minOccurs="0"/>
+        <xs:element name="AccountNumber" type="xs:string" minOccurs="0"/>
+        <xs:element name="PaymentType" minOccurs="0">
+        	<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="W2"/>
+						<xs:enumeration value="1099"/>
+						<xs:enumeration value="1099 Non-Prop"/>
+					</xs:restriction>
+        	</xs:simpleType>
+        </xs:element>
+        <xs:element name="AccountHolderName" type="PersonName" minOccurs="0"/>
+        <xs:element name="BankName" type="xs:string" minOccurs="0"/>
+        <xs:element name="RoutingNumber" type="xs:string" minOccurs="0"/>
+        <xs:element name="StartDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="EndDate" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Course">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CourseName" type="xs:string" minOccurs="0"/>
+        <xs:element name="StartDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="EndDate" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgreementParticipation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AgreementID" type="xs:string" minOccurs="0"/>
+        <xs:element name="AgreementName" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PositionType" minOccurs="0">
+        	<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Region"/>
+						<xs:enumeration value="Agent"/>
+						<xs:enumeration value="Select Agency"/>
+						<xs:enumeration value="Preferred Agency"/>
+					</xs:restriction>
+        	</xs:simpleType>
+        </xs:element>
+        <xs:element name="PositionID" type="xs:string" minOccurs="0"/>
+        <xs:element name="PositionName" type="xs:string" minOccurs="0"/>
+        <xs:element name="ParentPositionType" minOccurs="0">
+        	<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Region"/>
+						<xs:enumeration value="Agent"/>
+						<xs:enumeration value="Select Agency"/>
+						<xs:enumeration value="Preferred Agency"/>
+					</xs:restriction>
+        	</xs:simpleType>
+        </xs:element>
+        <xs:element name="ParentPositionID" type="xs:string" minOccurs="0"/>
+        <xs:element name="ParentPositionName" type="xs:string" minOccurs="0"/>
+        <xs:element name="HierarchyName" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ErrorAndOmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PolicyType" minOccurs="0">
+        	<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="General Liability Insurance"/>
+						<xs:enumeration value="Bond"/>
+						<xs:enumeration value="Self Insurance"/>
+						<xs:enumeration value="Errors and Omissions Policy"/>
+					</xs:restriction>
+        	</xs:simpleType>
+        </xs:element>
+        <xs:element name="Carrier" type="xs:string" minOccurs="0"/>
+        <xs:element name="PolicytNumber" type="xs:string" minOccurs="0"/>
+        <xs:element name="ClaimLimit" type="xs:string" minOccurs="0"/>
+        <xs:element name="PolicyLimit" type="xs:string" minOccurs="0"/>
+        <xs:element name="CertificateNumber" type="xs:string" minOccurs="0"/>
+        <xs:element name="Comments" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Appointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LOA_Code" type="xs:string" minOccurs="0"/>
+        <xs:element name="FEIN" type="xs:string" minOccurs="0"/>
+        <xs:element name="CompanyTaxID" type="xs:string" minOccurs="0"/>
+        <xs:element name="Status" type="xs:string" minOccurs="0"/>
+        <xs:element name="StatusDate" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LOA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Code" type="xs:string" minOccurs="0"/>
+        <xs:element name="Name" type="xs:string" minOccurs="0"/>
+        <xs:element name="CECreditsNeeded" type="xs:string" minOccurs="0"/>
+        <xs:element name="CECompliance" type="xs:string" minOccurs="0"/>
+        <xs:element name="Status" type="xs:string" minOccurs="0"/>
+        <xs:element name="StatusReason" type="xs:string" minOccurs="0"/>
+        <xs:element name="StatusDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="IssueDate" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="License">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LicenseNumber" type="xs:string" minOccurs="0"/>
+        <xs:element name="StateID" type="xs:string" minOccurs="0"/>
+        <xs:element name="ClassCode" type="xs:string" minOccurs="0"/>
+        <xs:element name="Resident" type="xs:string" minOccurs="0"/>
+        <xs:element name="StartDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="EndDate" type="xs:string" minOccurs="0"/>
+        <xs:element name="Status" type="xs:string" minOccurs="0"/>
+        <xs:element name="StatusDate" type="xs:string" minOccurs="0"/>
+        <xs:element ref="Appointment" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="LOA" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MigratePersons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PersonID" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Person" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="Organization" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="User" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateParty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PartyID" type="xs:string"/>
+        <xs:element name="Status" type="xs:string" minOccurs="0"/>
+        <xs:element ref="ContactPoint" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="PaymentAccount" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="Course" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="ErrorAndOmission" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="AgreementParticipation" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="PositionInformation" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="License" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>  
+   <xs:element name="Update">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="Person" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="Organization" minOccurs="0" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>  
+</xs:schema>

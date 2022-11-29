@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:UpdateParty xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:PartyID>26</ns2:PartyID>
+    <ns2:Status>Active</ns2:Status>
+    <ns2:ErrorAndOmission>
+        <ns2:PolicyType>General Liability Insurance</ns2:PolicyType>
+        <ns2:Carrier>Carrier0</ns2:Carrier>
+        <ns2:PolicytNumber>abcd1234</ns2:PolicytNumber>
+        <ns2:ClaimLimit>100000</ns2:ClaimLimit>
+        <ns2:PolicyLimit>500000</ns2:PolicyLimit>
+        <ns2:CertificateNumber>ARZ98XD</ns2:CertificateNumber>
+        <ns2:Comments>Test for comments</ns2:Comments>
+    </ns2:ErrorAndOmission>
+</ns2:UpdateParty>

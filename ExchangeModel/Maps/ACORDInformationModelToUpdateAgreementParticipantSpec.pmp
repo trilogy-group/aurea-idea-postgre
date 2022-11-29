@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToUpdateAgreementParticipantSpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='insertagreementparticipantrspec.InsertAgreementParticipantSpec'>
+  <ClassMap isSynthetic='false' name='ProducerAgreementToRECORD' sourceTypeName='org.acord.aim.Agreement.ProducerAgreement' targetTypeName='insertagreementparticipantrspec.RECORD' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForProducerAgreementToRECORD' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isEqualTo'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='reserveaccountagreement/typeName'>
+        </PathExpression>
+        <Literal isSynthetic='false' typeName='java.lang.String' literalString='AP'>
+        </Literal>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <PathExpression isSynthetic='false' pathString='PartyForProducerAgreement/asOrganization/Enriched'>
+          </PathExpression>
+          <PathExpression isSynthetic='false' pathString='PartyForProducerAgreement/asOrganization/PartyID'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='partyId'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <PathExpression isSynthetic='false' pathString='PartyForProducerAgreement/asPerson/Enriched'>
+          </PathExpression>
+          <PathExpression isSynthetic='false' pathString='PartyForProducerAgreement/asPerson/PartyID'>
+          </PathExpression>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='partyId'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='agrId'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='typeName'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='apid'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Enddate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='endDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='StartDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='startDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='GenerateNewAPID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='generateNewAPID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyForProducerAgreement/asOrganization/CaseID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVCaseID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyForProducerAgreement/asPerson/CaseID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVCaseID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='statusCode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='statusReasonCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='statusReasonCode'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='ClassMap2' sourceTypeName='org.acord.aim.Party.Person' targetTypeName='insertagreementparticipantrspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForClassMap2' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <MethodExpression isSynthetic='false' infix='true'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='Enriched'>
+          </PathExpression>
+          <PathExpression isSynthetic='false' pathString='UpdatePartyContextForPerson/ContextExtension/hasAgreementParticipant'>
+          </PathExpression>
+        </MethodExpression>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+          </MethodReference>
+          <SelectExpression isSynthetic='false' variableName='element'>
+            <PathExpression isSynthetic='false' pathString='ProducerAgreement'>
+            </PathExpression>
+            <MethodExpression isSynthetic='false' infix='true'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isEqualTo'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='reserveaccountagreement/typeName'>
+                <VariablePathRoot isSynthetic='false' variableName='element'>
+                </VariablePathRoot>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='AP'>
+              </Literal>
+            </MethodExpression>
+            <PathExpression isSynthetic='false' pathString='.'>
+              <VariablePathRoot isSynthetic='false' variableName='element'>
+              </VariablePathRoot>
+            </PathExpression>
+          </SelectExpression>
+        </MethodExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='ProducerAgreement'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='ClassMap3' sourceTypeName='org.acord.aim.Party.Organization' targetTypeName='insertagreementparticipantrspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForClassMap3' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <MethodExpression isSynthetic='false' infix='true'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='Enriched'>
+          </PathExpression>
+          <PathExpression isSynthetic='false' pathString='UpdatePartyContextForOrganization/ContextExtension/hasAgreementParticipant'>
+          </PathExpression>
+        </MethodExpression>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+          </MethodReference>
+          <SelectExpression isSynthetic='false' variableName='element'>
+            <PathExpression isSynthetic='false' pathString='ProducerAgreement'>
+            </PathExpression>
+            <MethodExpression isSynthetic='false' infix='true'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='isEqualTo'>
+              </MethodReference>
+              <PathExpression isSynthetic='false' pathString='reserveaccountagreement/typeName'>
+                <VariablePathRoot isSynthetic='false' variableName='element'>
+                </VariablePathRoot>
+              </PathExpression>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='AP'>
+              </Literal>
+            </MethodExpression>
+            <PathExpression isSynthetic='false' pathString='.'>
+              <VariablePathRoot isSynthetic='false' variableName='element'>
+              </VariablePathRoot>
+            </PathExpression>
+          </SelectExpression>
+        </MethodExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='ProducerAgreement'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ExchangeModel xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='IDEA' toolVersion='10.0.1 (Patch01)'>
+  <Description>IDEA</Description>
+  <RuleCategory isSynthetic='true' name='Default'>
+    <Description>Default rule category</Description>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='Computed Attributes'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='Preconditions'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='Transformations'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='PersonPartySchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='AcordReportingSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='PersonInformationSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='DCMLoaderSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='EventProcessSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='XMLInformationSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='IPMSchemaSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='WAREHOUSE_DBSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='FlatFileWrapperSchemaSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertPersonPartySpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertOrgPartySpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='ContactPointsSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='CECreditsSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='EnONonInheritancePolicyLoaderSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='DCMdbSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='ACORDInformationModelSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='AcordAMLSchemaParticleValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='BIGSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='AcordAMLSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='PaymentAccountSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='UpdateAgreementParticipantSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertUserSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='BIGSchemaSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='PartyInformationSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertLicenseLineSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertLicensesSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertAppointmentSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='DCMdbPSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='DCMdbOSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='NIPRSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='NIPRSchemaSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='NIPRWrapperSchemaSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='NIPRInformationSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='NIPRGetwaySchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='NIPRInformationSchemaParticleValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='CommonRuntimeReportSchemaSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='NIPRGatewaySchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='MessagingSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='CompHierarchyPositionHolderSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='CompHierarchyPositionSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertAgreementParticipantSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='ContactPointUsageSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='UpdateOrgPartySpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='UpdatePersonPartySpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='DCMUtilsSchemaSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='DCMdbP2011SchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='DCMdbO2011SchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='ACORDInformationModelTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='AcordReportingTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='WAREHOUSE_DBTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='EventProcessTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='EventProcessSchemaParticleValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='XMLInformationTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='XMLInformationSchemaParticleValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertPersonPartySpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertOrgPartySpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='FlatFileWrapperSchemaTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='IPMSchemaTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='ContactPointsSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='CECreditsSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='EnONonInheritancePolicyLoaderSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='BIGTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='BIGSchemaParticleValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='AcordAMLTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='PaymentAccountSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='InsertUserSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='BIGSchemaTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='PartyInformationTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='InsertLicenseLineSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='InsertLicensesSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='InsertAppointmentSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='DCMdbPTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='DCMdbOTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='NIPRSchemaTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='NIPRInformationTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='NIPRWrapperSchemaTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='NIPRWrapperSchemaSchemaParticleValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='CommonRuntimeReportSchemaTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='MessagingTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='NIPRGatewayTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='NIPRGatewaySchemaParticleValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='CompHierarchyPositionHolderSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='CompHierarchyPositionSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertAgreementParticipantSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='ContactPointUsageSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='UpdateOrgPartySpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='UpdatePersonPartySpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='DCMUtilsSchemaTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='DCMdbO2011TypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='DCMdbP2011TypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='UpdatePartyStatusSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='UpdatePartyStatusSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertUpdateComponentParticipantSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertUpdateComponentParticipantSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='InsertFIAgreementsSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='InsertFIAgreementsSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='IDEAFIAgreementsSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='IDEAFIAgreementsSpecSchemaValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='DatabaseSchema1TypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='IDEAUpdateAgreementParticipantStatusLoaderSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='IDEAUpdateAgreementParticipantStatusLoaderSpecSchemaValidation'>
+  </RuleCategory>
+  <LibraryExtensionClass isSynthetic='false' className='com.utilities.Utils'>
+  </LibraryExtensionClass>
+  <LibraryExtensionClass isSynthetic='false' className='com.aurea.dcm.loader.DCMLoader'>
+  </LibraryExtensionClass>
+  <Include path='ACORDInformationModel.pss'/>
+  <Include path='InsertPersonPartySpec.pss'/>
+  <Include path='InsertOrgPartySpec.pss'/>
+  <Include path='FlatFileWrapperSchema.pss'/>
+  <Include path='IPMSchema.pss'/>
+  <Include path='ContactPointsSpec.pss'/>
+  <Include path='CECreditsSpec.pss'/>
+  <Include path='EnONonInheritancePolicyLoaderSpec.pss'/>
+  <Include path='DataServices/BIG.psx'/>
+  <Include path='PaymentAccountSpec.pss'/>
+  <Include path='InsertUserSpec.pss'/>
+  <Include path='BIGSchema.pss'/>
+  <Include path='PartyInformation.pss'/>
+  <Include path='InsertLicenseLineSpec.pss'/>
+  <Include path='InsertLicensesSpec.pss'/>
+  <Include path='InsertAppointmentSpec.pss'/>
+  <Include path='DataSources/DCMdbP.psd'/>
+  <Include path='DataSources/DCMdbO.psd'/>
+  <Include path='NIPRSchema.pss'/>
+  <Include path='DataServices/NIPRInformation.psx'/>
+  <Include path='DataServices/NIPRWrapperSchema.psx'/>
+  <Include path='CommonRuntimeReportSchema.pss'/>
+  <Include path='Messaging.pss'/>
+  <Include path='DataServices/NIPRGateway.psx'/>
+  <Include path='CompHierarchyPositionHolderSpec.pss'/>
+  <Include path='CompHierarchyPositionSpec.pss'/>
+  <Include path='InsertAgreementParticipantSpec.pss'/>
+  <Include path='ContactPointUsageSpec.pss'/>
+  <Include path='UpdateOrgPartySpec.pss'/>
+  <Include path='UpdatePersonPartySpec.pss'/>
+  <Include path='DCMUtilsSchema.pss'/>
+  <Include path='DataSources/DCMdbO2011.psd'/>
+  <Include path='DataSources/DCMdbP2011.psd'/>
+  <Include path='UpdatePartyStatusSpec.pss'/>
+  <Include path='InsertUpdateComponentParticipantSpec.pss'/>
+  <Include path='IDEAFIAgreementsSpec.pss'/>
+  <Include path='IDEAUpdateAgreementParticipantStatusLoaderSpec.pss'/>
+  <Include path='Maps/ACORDInformationModelToInsertPersonPartySpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToInsertOrgPartySpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToDisputeResolution.pmp'/>
+  <Include path='Maps/SchemaMap1.pmp'/>
+  <Include path='Maps/DisputeResolutionToACORDInformationModel.pmp'/>
+  <Include path='Maps/ACORDInformationModelToContactPointsSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToInsertUserSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToCECreditsSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToUpdateAgreementParticipantSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToEnONonInheritancePolicyLoaderSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToPaymentAccountSpec.pmp'/>
+  <Include path='Maps/BIGSchemaToACORDInformationModel.pmp'/>
+  <Include path='Maps/ACORDInformationModelToBIG.pmp'/>
+  <Include path='Maps/PartyInformationToACORDInformationModel.pmp'/>
+  <Include path='Maps/ACORDInformationModelToInsertLicenseLineSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToInsertLicensesSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToInsertAppointmentSpec.pmp'/>
+  <Include path='Maps/DCMdbPToACORDInformationModel.pmp'/>
+  <Include path='Maps/BIGToACORDInformationModel.pmp'/>
+  <Include path='Maps/ACORDInformationModelToBIGSchema.pmp'/>
+  <Include path='Maps/ACORDInformationModelToFlatFileWrapperSchema.pmp'/>
+  <Include path='Maps/NIPRInformationToACORDInformationModel.pmp'/>
+  <Include path='Maps/NIPRSchemaToACORDInformationModel.pmp'/>
+  <Include path='Maps/ACORDInformationModelToNIPRSchema.pmp'/>
+  <Include path='Maps/ACORDInformationModelToNIPRWrapperSchema.pmp'/>
+  <Include path='Maps/RuntimeReportSchemaToCommonRuntimeReportSchema.pmp'/>
+  <Include path='Maps/ACORDInformationModelToNIPRGateway.pmp'/>
+  <Include path='Maps/NIPRGatewayToACORDInformationModel.pmp'/>
+  <Include path='Maps/ACORDInformationModelToCompHierarchyPositionHolderSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToCompHierarchyPositionSpec.pmp'/>
+  <Include path='Maps/FlatFileWrapperSchemaToACORDInformationModel.pmp'/>
+  <Include path='Maps/ACORDInformationModelToContactPointUsageSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToUpdateOrgPartySpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToUpdatePersonPartySpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToDCMUtilsSchema.pmp'/>
+  <Include path='Maps/DCMUtilsSchemaToACORDInformationModel.pmp'/>
+  <Include path='Maps/DCMdbP2011ToACORDInformationModel.pmp'/>
+  <Include path='Maps/DCMdbO2011ToACORDInformationModel.pmp'/>
+  <Include path='Maps/ACORDInformationModelToUpdatePartyStatusSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToInsertUpdateComponentParticipantSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToIDEAFIAgreementsSpec.pmp'/>
+  <Include path='ACORDInformationModel.pcm'/>
+  <Include path='DataServices/IPMDataService.psv'/>
+  <Include path='DataServices/BIGDataService.psv'/>
+  <Include path='DataServices/NIPRDataService.psv'/>
+  <Include path='DataSources/DCMFlatFileDataSource.pds'/>
+  <Include path='DataSources/BIGXMLDataSource.pxd'/>
+  <Include path='DataSources/DCMdbPDatabase.pdb'/>
+  <Include path='DataSources/DCMdbODatabase.pdb'/>
+  <Include path='DataSources/NIPRXMLDataSource.pxd'/>
+  <Include path='DataSources/NIPRGatewayDataSource.pxd'/>
+  <Include path='DataSources/DCMUtilsDataSource.pds'/>
+  <Include path='DataSources/DCMdbP2011Database.pdb'/>
+  <Include path='DataSources/DCMdbO2011Database.pdb'/>
+  <Include path='TestCases.ptc'/>
+  <Include path='TestSuites.pts'/>
+</ExchangeModel>

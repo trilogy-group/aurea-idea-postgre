@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+This spec helps to insert position to an existing compensation hierarchy in DCM.
+
+Prerequisite:
+=============
+1) Create new compensation hierachy with hierarcy type as Compensation Hierarchy(no restrictions) in DCM.
+
+Testcases:
+==========
+1) Add new positions to the existing compensation hierarchy
+
+Data File Format:
+==================
+PositonType,PositionName,ParentPositionType,ParentPositionName,rootHierArchyName
+Note: For root position ParentPositionType,ParentPositionName field values same as the PositonType,PositionName values.
+
+Sample Data:
+=============
+AcctMgr,AccMgrProperHier14,AcctMgr,AccMgrProperHier14,ProperHier14
+BGA,BGAPosProperHier14,AcctMgr,AccMgrProperHier14,ProperHier14
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}\IdeaCompensationHierarchyPositionSpec.xml -DDATA_FILE={File-Location}\IdeaCompensationHierarchyPositionSpec.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=1
+Note: Batch size should be "1" to avoid Lock exception and create new positions properly
+
+ -->
+<loader:loader_spec
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	
+    xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+    xmlns="http://dms.trilogy.com/Loader/Spec"
+    xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+
+    name="Compensation Hierarchy Loader Spec"
+    >
+	    
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	
+	<strategy name="strategy" class="${STRATEGY}">
+        <property name="memory.batch_size" value="1"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+    </strategy>  
+	
+	<object name="position" class="FSEPositionLoaderValidator"/>
+	
+	<resolver name="position_resolver" class="batch_query_resolver">
+        <property name="query">
+            <![CDATA[
+				Select pos From FSEPosition pos Where pos.PositionType={0} AND pos.Name={1} AND pos.Root.Name={2}
+            ]]>
+        </property>
+		<property name="keys" value="integer positionType, string positionName, string rootHierachyName"/>
+    </resolver>
+
+    <source name="load_file" class="delimited_file_parser">
+        <property name="filename" value="${FILENAME}"/>
+        <property name="delimiters" value=","/>
+        <property name="headerRows" value="1"/>
+		<property name="quote_chars" value="&quot;"/>
+
+        <indexed_field name="positionType" index="0" translator="hier_type_translator" />
+		<indexed_field name="positionName" index="1"/>
+        <indexed_field name="parentPositionType" index="2" translator="hier_type_translator" />
+		<indexed_field name="parentPositionName" index="3"/>
+		<indexed_field name="rootHierachyName" index="4"/>
+    </source>
+    
+    <translator name="hier_type_translator" class="enum_translator">
+        <property name="enumName" value="RELATIONSHIP"/>
+		<property name="useDefaultValue" value="false"/>
+		<property name="throwException" value="true"/>
+    </translator>
+
+    <translator name="date_translator" class="date_format_translator">
+        <property name="formatString" value="MM/dd/yyyy"/>
+    </translator>
+
+    <map object="position">
+        <action name="update or insert" resolver="position_resolver">
+        	<field name="positionType"/>
+			<field name="positionName"/>
+			<field name="rootHierachyName"/>
+        </action>
+        
+        <map_simple property="PositionType" field="positionType" />
+        <map_simple property="Name" field="positionName"/>
+		<map_simple property="RootHierarchyName" field="rootHierachyName" tag="precreate" />
+		<map_object property="ParentObject" resolver="position_resolver" tag="precreate" skipIfNull="true">
+			<field name="parentPositionType"/>
+			<field name="parentPositionName"/>
+			<field name="rootHierachyName"/>
+        </map_object>
+    </map>
+
+</loader:loader_spec>

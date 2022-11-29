@@ -1,0 +1,11 @@
+{  
+   "PartyID": "8",
+  "AgreementParticipation": [{
+    "AgreementID": "AG1",
+    "AgreementName": "AgreementName"
+  },
+  {
+    "AgreementName": "Ag2-CH2",
+    "AgreementID": "AG1"
+  }]
+}

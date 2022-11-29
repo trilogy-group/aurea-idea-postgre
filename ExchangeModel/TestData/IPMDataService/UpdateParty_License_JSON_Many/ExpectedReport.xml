@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RuntimeReport xmlns="http://www.pantero.com/runtimereport" isEmpty="false">
+    <RuleResults>
+        <Category name="InsertAppointmentSpecSchemaValidation">
+            <Result category="InsertAppointmentSpecSchemaValidation" connective="All" message="RECORD in ROOT is required" name="requiredForRECORDOnROOT" subjectType="insertappointmentspec.ROOT" value="false">
+                <SubjectKey name="toString" value="ROOT(session/id = 1/600)"/>
+                <Detail message="RECORD null hasValue is false" value="false"/>
+            </Result>
+        </Category>
+        <Category name="InsertLicenseLineSpecSchemaValidation">
+            <Result category="InsertLicenseLineSpecSchemaValidation" connective="All" message="RECORD in ROOT is required" name="requiredForRECORDOnROOT" subjectType="insertlicenselinespec.ROOT" value="false">
+                <SubjectKey name="toString" value="ROOT(session/id = 1/601)"/>
+                <Detail message="RECORD null hasValue is false" value="false"/>
+            </Result>
+        </Category>
+        <Category name="InsertLicensesSpecSchemaValidation">
+            <Result category="InsertLicensesSpecSchemaValidation" connective="All" message="RECORD in ROOT is required" name="requiredForRECORDOnROOT" subjectType="insertlicensesspec.ROOT" value="false">
+                <SubjectKey name="toString" value="ROOT(session/id = 1/602)"/>
+                <Detail message="RECORD null hasValue is false" value="false"/>
+            </Result>
+        </Category>
+    </RuleResults>
+</RuntimeReport>

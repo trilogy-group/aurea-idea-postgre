@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+This spec helps to insert new agreement participant in DCM and update the status of existing agreement particpant.
+
+Prerequisite:
+=============
+1) Agreement and Party should exist in DCM system.
+
+Testcases:
+==========
+1) Add new Agreement Participant in DCM.
+
+Data File Format:
+==================
+AGID,PartyId,startdate,enddate
+
+Sample Data:
+=============
+AG4,1,10/18/2007,10/18/2017
+
+Note:
+1) If Agreement Participant does not exist in database for the given party id and agreement id, then this will add new entry for Agreement participant with default Status as 'Active' and Reason as 'N/A'.
+2) If agreement participant exists in database for the given party id and agreement id, then no new ageement particpant will be added. It will update the status of existing agreement particpant with new start and end dates.
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}\IDEAInsertUpdateAgreementParticipant.xml -DDATA_FILE={File-Location}\IDEAInsertUpdateAgreementParticipant.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=1
+Note: Batch size should be "1" to avoid Lock exception.
+
+ -->
+<loader:loader_spec xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:loader="http://dms.trilogy.com/Loader/Spec" xmlns="http://dms.trilogy.com/Loader/Spec" xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd" name="Agreement Participant Loader Spec">
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+	</strategy>
+	<object name="agreementparticipant" class="EditAgreementParticipantValidator"/>
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="headerRows" value="1"/>
+		<property name="quote_chars" value="&quot;"/>
+		<indexed_field name="agrId" index="0"/> <!--Using this as Agreement Name-->
+		<indexed_field name="partyId" index="1"/>
+		<indexed_field name="startDate" index="2" translator="date_translator"/>
+		<indexed_field name="endDate" index="3" translator="date_translator"/>
+		<indexed_field name="apid" index="4"/>
+		<indexed_field name="generateNewAPID" index="5" translator="boolean_translator"/>
+		<indexed_field name="AVCaseID" index="6"/>
+	</source>
+	<resolver name="agreement_resolver" class="single_key_resolver">
+		<property name="className" value="FSAgreement"/>
+		<property name="key" value="Name"/>
+		<property name="preCacheTables" value="false"/>
+	</resolver>
+	<resolver name="party_resolver" class="single_key_resolver">
+		<property name="className" value="FSParty"/>
+		<property name="key" value="Unid"/>
+		<property name="preCacheTables" value="false"/>
+	</resolver>
+	<resolver name="agreementpartcipant_resolver" class="multiple_keys_resolver">
+		<property name="className" value="FSAgreementParticipant"/>
+		<property name="keys" value="Agreement.Name,Party.Unid,UNID"/>
+		<property name="preCacheTables" value="false"/>
+	</resolver>
+	<!--resolver name="user_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[
+			SELECT usr FROM SCUser usr
+					WHERE usr.LoginName = "sa"
+			]]>
+		</property>
+		<property name="keys" value=""/>
+	</resolver-->
+	
+	<resolver name="user_resolver" class="singleton_resolver">
+		<property name="className" value="SCUser" />
+		<property name="key" value="LoginName" />
+		<property name="value" value="sa" />
+	</resolver>
+	<translator name="date_translator" class="date_format_translator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+	</translator>
+	<translator name="boolean_translator" class="boolean_translator">
+		<property name="true" value="true" />
+		<property name="false" value="false" />
+	</translator>
+	<translator name="status_code_translator" class="enum_translator">
+		<property name="enumName" value="AgreementParticipant.Status"/>
+		<property name="throwException" value="true"/>
+		<property name="useDefaultValue" value="false"/>		
+	</translator>
+	<translator name="status_reason_translator" class="enum_translator">
+		<property name="enumName" value="AgreementParticipant.Status.Reason"/>
+		<property name="throwException" value="true"/>
+		<property name="useDefaultValue" value="false"/>		
+	</translator>
+	<constant name="StatusCode" class="value">
+  		<property name="value" value="Active"/>
+  	</constant>
+	<constant name="StatusReason" class="value">
+  		<property name="value" value="Active"/>
+  	</constant>
+	<map object="agreementparticipant">
+		<action name="update" resolver="agreementpartcipant_resolver">
+			<field name="agrId"/>
+			<field name="partyId"/>
+			<field name="apid"/>
+		</action>
+		<map_simple property="NewStatus.StartDate" field="startDate" tag="validator"/>
+		<map_simple property="NewStatus.EndDate" field="endDate" tag="validator"/>
+		<map_constant property="NewStatus.StatusCode" constant="StatusCode" tag="validator" translator="status_code_translator"/>
+		<map_constant property="NewStatus.StatusReason" constant="StatusReason" tag="validator" translator="status_reason_translator"/>		
+		<map_simple property="AVNewAgrIDInd" field="generateNewAPID" tag="validator"/>
+		<map_object property="User" resolver="user_resolver" tag="precreate"/>
+		<map_simple property="AVIPMCaseID" field="AVCaseID"/>
+	</map>
+</loader:loader_spec>

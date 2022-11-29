@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This spec helps to insert/update License Lines and its corresponding status/status history info for Person/Organization party into DCM, the License Line page is available under Party (Tab) - Person/Organization - Licenses (sub-tab) - Lines
+
+Prerequisite:
+1) Create person party and mention the TaxId in the data file.
+2) Create License for the person party and mention the License Id, License Class, status, expiry date, Jurisdiction in the data file.
+
+Data File Format:
+TaxId,LicenseId,LicenseType,LicenseStatus,LicenseExpDate,Jurisdiction,CredentialLine,Status,IssueDate,StatusReason
+
+Sample Data:
+1001,john_license1,Adjuster,Active,01/01/2020,CA,Insurance Adjuster,Active,10/10/2017,N/A
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}/InsertUpdateLicenseLineSpec.xml -DDATA_FILE={File-Location}/InsertUpdateLicenseLineSpecData.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=100
+
+-->
+<loader:loader_spec
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+    xmlns="http://dms.trilogy.com/Loader/Spec"
+    xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+    name="Insert Update License Loader Spec"
+    >
+
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	
+    <strategy name="strategy" class="${STRATEGY}">
+        <property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+    </strategy>
+
+    <object name="licenseline" class="FSLicenseLineStatusLoaderValidator" />
+
+	<source name="load_file" class="delimited_file_parser">
+        <property name="filename" value="${FILENAME}"/>
+        <property name="delimiters" value=","/>
+        <property name="headerRows" value="1"/>
+		<property name="quote_chars" value="&quot;" />
+				
+		<indexed_field name="TaxId" index="0"/>
+		<indexed_field name="LicenseId" index="1"/>
+		<indexed_field name="LicenseType" index="2" translator="license_type_translator" />
+		<indexed_field name="LicenseStatus" index="3" translator="license_status_translator" />
+		<indexed_field name="LicenseExpDate" index="4" translator="date_translator" />
+		<indexed_field name="Jurisdiction" index="5" translator="state_code_translator" />
+		<indexed_field name="CredentialLine" index="6" translator="credential_line_translator"/>
+		<indexed_field name="Status" index="7" translator="status_translator" />
+		<indexed_field name="LOAIssueDate" index="8" translator="date_translator" />
+		<indexed_field name="StatusReason" index="9" translator="status_reason_translator" />
+		
+    </source>
+	
+	<!--resolver name="license_resolver" class="batch_query_resolver">
+    <property name="query">
+                 <![CDATA[
+						SELECT license
+						FROM   FSCredential license
+						WHERE  license.Jurisdiction = {0}
+						AND	(license.Holder.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {1})
+							OR license.Holder.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {1}))
+						AND	license.ExternalID = {2}
+						AND	license.LicenseType = {3}
+						AND	license.CredentialType = 0
+                 ]]>
+                </property>
+    <property name="keys" value="int Jurisdiction,string TaxId,string LicenseId,int LicenseType"/>
+  </resolver-->
+	
+	<resolver name="license_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query"
+			value="SELECT license.GID gid, license.Jurisdiction jur, ([SCPerson]license.Holder.Party).TaxID taxid, license.ExternalID extID,  license.LicenseType licType from FSCredential license WHERE license.CredentialType = 0 
+			UNION 
+			SELECT license.GID gid, license.Jurisdiction jur, ([SCOrganization]license.Holder.Party).TaxID taxid, license.ExternalID extID,  license.LicenseType licType from FSCredential license WHERE license.CredentialType = 0" />
+		<property name="keys" value="jur,taxid,extID,licType" />
+		<property name="gidAlias" value="gid" />
+	</resolver>
+  
+	<!--resolver name="license_line_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[
+			SELECT line
+			FROM   FSCredentialLine line
+			WHERE  line.Credential.Jurisdiction = {0}
+					AND (line.Credential.Holder.Party IN (SELECT person FROM SCPerson person WHERE person.TaxID = {1})
+					OR line.Credential.Holder.Party IN (SELECT org FROM SCOrganization org where org.TaxID = {1}))
+					AND	line.Credential.ExternalID = {2}
+					AND	line.Credential.LicenseType = {3}
+					AND	line.CredentialLine = {4}
+					AND	line.Credential.CredentialType = 0
+			]]>
+                </property>
+		<property name="keys" value="int Jurisdiction,string taxid,string LicenseId,int LicenseType,int CredentialLine"/>
+	</resolver-->
+
+	<resolver name="license_line_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query"
+			value="SELECT line.GID gid, line.Credential.Jurisdiction jur, ([SCPerson]line.Credential.Holder.Party).TaxID taxid, line.Credential.ExternalID extID, line.Credential.LicenseType licType, line.CredentialLine loa from FSCredentialLine line WHERE line.Credential.CredentialType = 0 
+			UNION 
+			SELECT line.GID gid, line.Credential.Jurisdiction jur, ([SCOrganization]line.Credential.Holder.Party).TaxID taxid, line.Credential.ExternalID extID, line.Credential.LicenseType licType, line.CredentialLine loa from FSCredentialLine line WHERE line.Credential.CredentialType = 0 " />
+		<property name="keys" value="jur,taxid,extID,licType,loa" />
+		<property name="gidAlias" value="gid" />
+	</resolver>
+
+	<!-- resolver name="status_resolver" class="batch_query_resolver">
+		<property name="query">
+                        <![CDATA[
+						SELECT 		status
+						FROM		FSCredentialLine line, FSStatus status
+						WHERE 		        line.Credential.Jurisdiction = {0}
+						        AND			line.Credential.Holder.([SCPerson] Party).TaxID = {1}
+						        AND			line.Credential.ExternalID = {2}
+						        AND			line.Credential.LicenseType = {3}
+						        AND			line.CredentialLine = {4}
+						        AND			line.Credential.CredentialType = 0
+								AND			status.Object = line
+								AND			status.StatusType = 105 
+                                ]]>
+		</property>
+		<property name="keys" value="int Jurisdiction,string taxid,string LicenseId,int LicenseType,int CredentialLine"/>
+	</resolver>
+
+	<resolver name="license_status_resolver" class="batch_query_resolver">
+		<property name="query">
+                        <![CDATA[
+						SELECT 		status
+						FROM		FSCredential license, FSStatus status
+						WHERE 		        license.Jurisdiction = {0}
+						        AND			license.Holder.([SCPerson] Party).NPN = {1}
+						        AND			license.ExternalID = {2}
+						        AND			license.LicenseType = {3}
+						        AND			license.CredentialType = 0
+								AND			status.Object = license
+								AND			status.StatusType = 104
+                                ]]>
+		</property>
+		<property name="keys" value="int Jurisdiction,string taxid,string LicenseId,int LicenseType"/>
+	</resolver-->
+  
+	<translator name="license_type_translator" class="enum_translator">
+		<property name="enumName" value="License.Type"/>
+	</translator>
+	
+	<translator name="credential_line_translator" class="enum_translator">
+        <property name="enumName" value="CredentialLine.LineOfAuthority"/>
+    </translator>
+	
+	<translator name="state_code_translator" class="enum_translator">
+        <property name="enumName" value="Jurisdiction"/>
+    </translator>
+	
+	<translator name="date_translator" class="com.trilogy.fs.dms.tools.loader.translate.DateFormatTranslator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="treatEmptyAsNull" value="true"/>
+	</translator>
+	
+	<translator name="status_reason_translator" class="enum_translator">
+        <property name="enumName" value="LicenseLine.Status.Reason"/>
+    </translator>
+	
+	<translator name="status_translator" class="enum_translator">
+        <property name="enumName" value="LicenseLine.Status"/>
+    </translator>
+	
+	<translator name="license_status_translator" class="enum_translator">
+        <property name="enumName" value="License.Status"/>
+    </translator>
+	
+	<translator name="Insert_Update_Nothing_Translator" class="com.trilogy.fs.dms.tools.loader.translate.LicenseClassFilterTranslator"/>
+	
+	<translator name="use_srm_translator" class="com.trilogy.fs.dms.tools.loader.translate.UseSRMTranslator">
+		<property name="statusActive" value="Y" />
+		<property name="statusCancelled" value="N" />
+	</translator>
+	
+	<constant name="status_change_reason" class="value">
+		<property name="value" value="2"/>
+	</constant>
+	<constant name="false constant" class="value">
+		<property name="value" value="false"/>
+	</constant>
+
+	
+  <map object="licenseline" >
+	<map_action translator="Insert_Update_Nothing_Translator" default="update or insert" resolver="license_line_resolver">
+      <actionfield name="Jurisdiction"/>
+	  <actionfield name="LicenseType"/>
+	  <field name="Jurisdiction"/>
+      <field name="TaxId"/>
+	  <field name="LicenseId"/>
+	  <field name="LicenseType"/>
+      <field name="CredentialLine"/>
+    </map_action>
+    
+    <map_object property="LICENSE_CONTEXT" resolver="license_resolver" tag="state">
+	  <field name="Jurisdiction"/>
+      <field name="TaxId"/>
+	  <field name="LicenseId"/>
+	  <field name="LicenseType"/>
+    </map_object>
+	
+    <!--map_object property="StatusHistoryProvider" resolver="status_resolver" tag="precreate">
+	  <field name="Jurisdiction"/>
+      <field name="TaxId"/>
+	  <field name="LicenseId"/>
+	  <field name="LicenseType"/>
+      <field name="CredentialLine"/>
+    </map_object-->
+	
+    <!--map_object property="LicenseStatusHistoryProvider" resolver="license_status_resolver" tag="precreate">
+	  <field name="Jurisdiction"/>
+      <field name="TaxId"/>
+	  <field name="LicenseId"/>
+	  <field name="LicenseType"/>
+    </map_object-->	
+	
+	<map_merge property="UseSRMEndDate" translator="use_srm_translator" tag="precreate">
+        <field name="LicenseStatus"/>
+        <field name="LicenseExpDate"/>
+    </map_merge>
+	<map_simple property="LicenseExpirationDate" field="LicenseExpDate" tag="validator"/>	
+    <map_simple property="CredentialLine" field="CredentialLine"/>
+    <map_simple property="NewStatus.StatusCode" field="Status" tag="validator"/>
+	<map_simple property="NewStatus.StatusReason" field="StatusReason" tag="validator"/>
+	<map_simple property="LOAIssueDate" field="LOAIssueDate" tag="validator"/>
+	<map_constant property="UpdatedByPDB" constant="false constant"/>
+  </map>
+
+</loader:loader_spec>

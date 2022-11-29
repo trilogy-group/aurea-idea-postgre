@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="BIG" type="BIGBackground"/>
+  <xs:complexType name="BIGBackground">
+    <xs:sequence>
+      <xs:element name="BI_REQUEST" type="BIGRequest" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BI_ACKNOWLEDGEMENT" type="BIGAcknowledgement" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BI_POLL_RESPONSE" type="BIGPollResponse" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BI_RESPONSE" type="BIGResponse" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BI_RESPONSE_ACKNOWLEDGEMENT" type="BIGResponseAcknowledgement" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>  
+  <xs:complexType name="BIGRequest">
+    <xs:sequence>
+      <xs:element name="REQUEST_INFO" type="request_info" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SUBJECT_INFO" type="subject_info" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SERVICES" type="services" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="FormatVersion" type="string_30"/>
+  </xs:complexType>
+  <xs:complexType name="request_info">
+    <xs:sequence>
+      <xs:element name="RequestId" type="string_100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="UserNm" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="UserPwd" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Requester" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DupOverrideCd" type="string_1" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RequestDt" type="date_type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Client" type="string_7" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ClientLevel" type="string_100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ClientBillingCodeNum" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ClientBillingCodeNum2" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ClientBillingCodeNum3" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ClientBillingCodeNum4" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ClientBillingCodeNum5" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ClientBillingCodeNum6" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Notes" type="string_1000" minOccurs="0" maxOccurs="1"/>
+	  <xs:element name="ResponseURL" type="string_1000" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SubjectWantsCopyInd" type="string_1" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subject_info">
+    <xs:sequence>
+      <xs:element name="ApplicantTypeCd" type="string_11" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SSNTaxIdNum" type="string_11" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SIN" type="string_11" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BirthDt" type="string_10" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="NAME" type="name" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ADDRESS" type="address" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="OTHER_NAMES" type="othernames" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OTHER_ADDRESSES" type="otherAddresses" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="APPLICANTPHONE" type="applicantphone" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ApplicantEmail" type="string_100" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="services">
+    <xs:sequence>
+      <xs:element name="EDUCATION" type="education" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="ACTIONSBASE" type="actionsbase" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EMPLOYMENT" type="employment" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="MVR" type="mvr" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="COURT" type="court" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DESIGNATION" type="designation" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="PROFLICENSE" type="proflicense" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="REFERENCE" type="reference" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="NCD" type="ncd" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SECURITIES" type="securities" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="STATEINSURANCE" type="stateinsurance" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DEA" type="dea" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CRISP" type="crisp" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SEXOFFENDERS" type="sexoffenders" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="NPD" type="npd" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="name">
+    <xs:sequence>
+      <xs:element name="Title" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="FirstNm" type="string_35" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MiddleNm" type="string_35" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LastNm" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SuffixNm" type="string_30" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="address">
+    <xs:sequence>
+      <xs:element name="Address1" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Address2" type="string_100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CityNm" type="string_35" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="StateCd" type="string_4" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ZipCode" type="string_10" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CountryCd" type="string_200" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="othernames">
+    <xs:sequence>
+      <xs:element name="NAME" type="name" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="otherAddresses">
+    <xs:sequence>
+      <xs:element name="ADDRESS" type="address" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="applicantphone">
+    <xs:sequence>
+      <xs:element name="ApplicantPhoneType" type="string_20" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ApplicantPhoneNum" type="string_20" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contact">
+    <xs:sequence>
+      <xs:element name="NAME" type="name" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="education">
+    <xs:sequence>
+      <xs:element name="SchoolNm" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="LocationNm" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatesAttended" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ToPresentCd" type="string_1" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DegreeNm" type="string_255" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="MajorNm" type="string_255" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PhoneNum" type="string_100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Comments" type="string_1000" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="GraduatedInd" type="string_1" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AttendedFromDate" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="AttendedToDate" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="GraduatedDate" type="string_30" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="employment">
+    <xs:sequence>
+      <xs:element name="EmployerNm" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ApplicantJobTitleNm" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="FromEmployedDt" type="string_10" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ToEmployedDt" type="string_10" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CurrentEmployerInd" type="string_1" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReasonForLeaving" type="string_255" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LevelSalary" type="string_30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CONTACT" type="contact" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PhoneNum" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ADDRESS" type="address" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Comments" type="string_1000" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ContactEmployerInd" type="string_1" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mvr">
+    <xs:sequence>
+      <xs:element name="StateCd" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="LicenseNum" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CDLLicenseInd" type="string_1" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="designation">
+    <xs:sequence>
+      <xs:element name="DesignationNm" type="string_255" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="YearsAssociated" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IssuingOrganization" type="string_150" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IssueLocation" type="string_150" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LicenseId" type="string_150" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Notes" type="string_255" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="proflicense">
+    <xs:sequence>
+      <xs:element name="LicenseName" type="string_255" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IssuingOrganization" type="string_150" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="LicenseId" type="string_150" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="EffectiveDate" type="string_150" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ExpirationDate" type="string_150" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Notes" type="string_255" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reference">
+    <xs:sequence>
+      <xs:element name="NAME" type="name" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="PhoneNum" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Company" type="string_100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Fax" type="string_100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EmailAddress" type="string_200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ADDRESS" type="address" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LengthKnown" type="string_100" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actionsbase">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="court">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ncd">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="securities">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="stateinsurance">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dea">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crisp">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sexoffenders">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="npd">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BIGAcknowledgement">
+    <xs:sequence>
+      <xs:element name="UserNm" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="UserPwd" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestId" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="StatusCd" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Description" type="string_1000" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RedirectLink" type="string_1000" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>  
+  <xs:complexType name="BIGPollResponse">
+    <xs:sequence>
+      <xs:element name="UserNm" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="UserPwd" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestId" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Client" type="string_7" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BIGResponse">
+    <xs:sequence>
+      <xs:element name="UserNm" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="UserPwd" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestId" type="string_100" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ClientCaseId" type="string_7" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="StatusCd" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="PassReviewStatusCd" type="string_10" minOccurs="1" maxOccurs="1"/>
+	  <xs:element name="CreditCheckResultCd" type="string_10" minOccurs="0" maxOccurs="1"/>
+	  <xs:element name="CriminalBackgroundCheckResultCd" type="string_10" minOccurs="0" maxOccurs="1"/>
+	  <xs:element name="OFACBackgroundCheckResultCd" type="string_10" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RedirectLink" type="string_1000" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BIGResponseAcknowledgement">
+    <xs:sequence>
+      <xs:element name="StatusCd" type="string_30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Description" type="string_1000" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="string_1">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_4">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_7">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_10">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_11">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="11"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_30">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_35">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="35"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_100">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_200">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_255">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_150">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="150"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="string_1000">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- date format mmddyyyy -->
+  <xs:simpleType name="date_type">
+    <xs:restriction base="xs:string">
+      <xs:length value="10"/>
+      <xs:pattern value="(01|02|03|04|05|06|07|08|09|10|11|12)/(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)/[1-2][0-9][0-9][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ *      Copyright (C) Unpublished Versata Inc. All riths reserved.
+ *      Versata, Inc., Confidential and Proprietary.
+ *      This software is subject to copyright protection
+ *      under the laws of the United States and other countires.
+ *      Unless otherwise explicitly stated, this software is provided
+ *      by Versata "AS IS".
+ */
+
+This spec is used to insert organization party into DCM, organization party page available under Party (Tab) - Search for Organization
+
+Data File Format:
+Tax ID,Name,Agency Formation Date,Role,Contact Type,Communication Mode,Street1,Street2,Street3,City,State,Country,Zip Code,Phone Number,Fax Number,Email Address,Pager,Cell Phone,Description,DBA,Organization Type,CRD Number,DTCCID,NPN,Party Role,Party Type,Renewal Fee Payee,Status Code,Status Start Date,Status End Date,User
+
+Sample Data:
+SA_123,Savvion Aurea Accolite India Pvt Ltd,1/1/2000,DISTRIBUTOR,HOME,MAILING,East Car street,RS Puram,Tatabad123,Coi,AB,CANADA,641012,2481478,1245789,info@aurea.com,NA,NA,NA,DBA,OrgType,SA_CRD_123,SA22,1245678,Selling Agent,Compensation only,Distributor,Recontractable,1/1/2000,1/1/2010,sa
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}/InsertOrgPartySpec.xml -DDATA_FILE={File-Location}/InsertOrgPartyData.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=100
+
+ -->
+<loader:loader_spec
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+    xmlns="http://dms.trilogy.com/Loader/Spec"
+    xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+
+    name="Organization Parties Loader Spec"
+    >
+
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+		<!--property name="numThreads" value="4"/-->
+	</strategy>
+
+	<object name="org_party" class="OrgPartyUIValidator"/>
+
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="headerRows" value="1"/>
+		<!--property name="footerRows" value="1"/-->
+		<property name="quote_chars" value="&quot;"/>
+
+		<indexed_field name="tax id" index="0"/>
+		<indexed_field name="name" index="1"/>
+        <indexed_field name="agency formation date" index="2" translator="date_translator"/>
+
+        <indexed_field name="role" index="3" translator="role_translator"/>
+
+        <indexed_field name="contact type" index="4" translator="contact_type_translator"/>
+        <indexed_field name="communication mode" index="5" translator="communication_mode_translator"/>
+	<indexed_field name="street1" index="6"/>
+	<indexed_field name="street2" index="7"/>
+	<indexed_field name="street3" index="8"/>
+	<indexed_field name="city" index="9"/>
+        <indexed_field name="state" index="10" />
+        <indexed_field name="country" index="11" />
+	<indexed_field name="zip code" index="12"/>
+	<indexed_field name="phone number" index="13"/>
+	<indexed_field name="fax number" index="14"/>
+	<indexed_field name="email address" index="15"/>
+	<indexed_field name="pager" index="16"/>
+	<indexed_field name="cell phone" index="17"/>
+
+	<indexed_field name="description" index="18"/>
+	<indexed_field name="dba" index="19"/>
+	<indexed_field name="organization type" index="20"/>
+
+	<indexed_field name="crd number" index="21"/>
+	<indexed_field name="dtcc id" index="22"/>
+	<indexed_field name="npn" index="23"/>
+        <indexed_field name="party role" index="24" translator="party_role_translator"/>
+        <indexed_field name="party type" index="25" translator="party_type_translator"/>
+
+        <indexed_field name="renewal fee payee" index="26" translator="renewal_fee_payee_translator"/>
+
+	<indexed_field name="status code" index="27" translator="status_code_translator"/>
+	<indexed_field name="status reason" index="28"/>
+        <indexed_field name="status start date" index="29" translator="date_translator"/>
+        <indexed_field name="status end date" index="30" translator="date_translator"/>
+	<indexed_field name="usr" index="31"/>
+	<indexed_field name="syncWithPDB" index="32" translator="boolean_translator"/>
+	</source>
+
+	<translator name="date_translator" class="date_format_translator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="treatEmptyAsNull" value="true"/>
+	</translator>
+	<translator name="role_translator" class="com.trilogy.fs.dms.tools.loader.translate.MultiRoleTranslator"/>
+	<translator name="contact_type_translator" class="enum_translator">
+		<property name="enumName" value="CONTACT_TYPE"/>
+	</translator>
+	<translator name="communication_mode_translator" class="enum_translator">
+		<property name="enumName" value="CONTACT.COMM_MODE"/>
+	</translator>
+	<translator name="party_role_translator" class="enum_translator">
+		<property name="enumName" value="PartyRole"/>
+	</translator>
+	<translator name="party_type_translator" class="enum_translator">
+		<property name="enumName" value="PartyType"/>
+	</translator>
+	<translator name="renewal_fee_payee_translator" class="enum_translator">
+		<property name="enumName" value="RenewalFeePayee"/>
+	</translator>
+	<translator name="status_code_translator" class="enum_translator">
+		<property name="enumName" value="Party.RecontractableStatus"/>
+	</translator>
+	<translator name="status_reason_translator" class="com.trilogy.fs.dms.tools.loader.translate.PartyStatusReasonTranslator">
+		<property name="statusReasonBaseEnumName" value="Party.RecontractableStatus.Reason"/>
+		<property name="statusEnumName" value="Party.RecontractableStatus"/>
+	</translator>
+	<translator name="boolean_translator" class="boolean_translator">
+		<property name="true" value="true" />
+		<property name="false" value="false" />
+	</translator>
+
+	<resolver name="user_resolver" class="batch_query_resolver">
+		<property name="query">
+			<![CDATA[
+			SELECT usr FROM SCUser usr
+					WHERE usr.LoginName = {0}
+			]]>
+		</property>
+		<property name="keys" value="string userid"/>
+	</resolver>
+
+	<!--constant name="false constant" class="value">
+		<property name="value" value="false"/>
+	</constant-->
+
+	<map object="org_party">
+	    <action name="insert"/>
+	    <map_simple property="Org.TaxID" field="tax id"/>
+		<map_simple property="Org.Name" field="name"/>
+		<map_simple property="Org.AgencyFormationDate" field="agency formation date"/>
+		<map_simple property="Roles" field="role" tag="validator"/>
+		<map_simple property="ContactPoint.ContactType" field="contact type" tag="validator"/>
+		<map_simple property="ContactPoint.CommMode" field="communication mode" tag="validator"/>
+	    <map_simple property="ContactPoint.Address.Street1" field="street1" tag="validator"/>
+	    <map_simple property="ContactPoint.Address.Street2" field="street2" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Street3" field="street3" tag="validator"/>
+		<map_simple property="ContactPoint.Address.City" field="city" tag="validator"/>
+		<map_simple property="ContactPoint.Address.State" field="state" tag="validator"/>
+        <map_simple property="ContactPoint.Address.Country" field="country" tag="validator"/>
+		<map_simple property="ContactPoint.Address.ZipCode" field="zip code" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Phone" field="phone number" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Fax" field="fax number" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Email" field="email address" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Pager" field="pager" tag="validator"/>
+		<map_simple property="ContactPoint.Address.CellPhone" field="cell phone" tag="validator"/>
+
+		<map_simple property="Org.Description" field="description"/>
+		<map_simple property="Org.DBA" field="dba"/>
+		<map_simple property="Org.OrganizationType" field="organization type"/>
+		<!--map_simple property="Org.NPN" field="npn"/-->
+
+		<map_simple property="CRDNumber" field="crd number"/>
+		<map_simple property="DTCCID" field="dtcc id"/>
+        <map_simple property="PartyRole" field="party role"/>
+        <map_simple property="PartyType" field="party type"/>
+
+		<map_simple property="RenewalFeePayee" field="renewal fee payee"/>
+		<map_simple property="SyncPDB" field="syncWithPDB"/>
+		
+        <map_simple property="NewStatus.StatusCode" field="status code" tag="validator"/>
+		<map_merge property="NewStatus.StatusReason" tag="validator" translator="status_reason_translator">
+			<field name="status code"/>
+			<field name="status reason"/>
+		</map_merge>
+        <map_simple property="NewStatus.StartDate" field="status start date" tag="validator"/>
+        <map_simple property="NewStatus.EndDate" field="status end date" tag="validator"/>
+
+		<map_object property="SCUser" resolver="user_resolver">
+			<field name="usr"/>
+		</map_object>
+	</map>
+</loader:loader_spec>

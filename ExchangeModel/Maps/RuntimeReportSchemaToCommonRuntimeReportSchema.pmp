@@ -1,0 +1,461 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='true' name='RuntimeReportSchemaToCommonRuntimeReportSchema' sourceSchemaName='com.pantero.runtime.reporting.entity.RuntimeReportSchema' targetSchemaName='runtimereport.CommonRuntimeReportSchema'>
+  <ClassMap isSynthetic='true' name='SubjectKeyToSubjectKey' sourceTypeName='com.pantero.runtime.reporting.entity.SubjectKey' targetTypeName='runtimereport.SubjectKey' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Name'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Value'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Value'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='ResultToResult' sourceTypeName='com.pantero.runtime.reporting.entity.Result' targetTypeName='runtimereport.Result' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Name'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='SubjectType'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='SubjectType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Message'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Message'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Category'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Category'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Value'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Value'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Connective'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Connective'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='SubjectKey'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='SubjectKey'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Detail'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Detail'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Debug'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Debug'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='ExprResultToExprResult' sourceTypeName='com.pantero.runtime.reporting.entity.ExprResult' targetTypeName='runtimereport.ExprResult' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Value'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Value'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Message'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Message'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Result'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Result'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='DetailToDetail' sourceTypeName='com.pantero.runtime.reporting.entity.Detail' targetTypeName='runtimereport.Detail' autoReverse='false'>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='DebugToDebug' sourceTypeName='com.pantero.runtime.reporting.entity.Debug' targetTypeName='runtimereport.Debug' autoReverse='false'>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='CategoryToCategory' sourceTypeName='com.pantero.runtime.reporting.entity.Category' targetTypeName='runtimereport.Category' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Name'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Result'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Result'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='RuleResultsToRuleResults' sourceTypeName='com.pantero.runtime.reporting.entity.RuleResults' targetTypeName='runtimereport.RuleResults' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Category'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Category'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='TransformationFailureToTransformationFailure' sourceTypeName='com.pantero.runtime.reporting.entity.TransformationFailure' targetTypeName='runtimereport.TransformationFailure' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Category'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Category'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='SourceXPath'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='SourceXPath'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='TargetXPath'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='TargetXPath'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='SourceType'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='SourceType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='TargetType'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='TargetType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='EnumerationMap'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='EnumerationMap'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Message'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Message'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Value'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Value'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='ClassMapFailureToClassMapFailure' sourceTypeName='com.pantero.runtime.reporting.entity.ClassMapFailure' targetTypeName='runtimereport.ClassMapFailure' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='ClassMap'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='ClassMap'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='SourceType'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='SourceType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='TargetType'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='TargetType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Message'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Message'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='SourceKey'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='SourceKey'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='TargetKey'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='TargetKey'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='TransformationFailure'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='TransformationFailure'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='MappingFailuresToMappingFailures' sourceTypeName='com.pantero.runtime.reporting.entity.MappingFailures' targetTypeName='runtimereport.MappingFailures' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='ClassMapFailure'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='ClassMapFailure'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='ExceptionToException' sourceTypeName='com.pantero.runtime.reporting.entity.Exception' targetTypeName='runtimereport.Exception' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Component'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Component'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Message'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Message'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='StackTrace'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='StackTrace'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='DatasourceWarningsToDatasourceWarnings' sourceTypeName='com.pantero.runtime.reporting.entity.DatasourceWarnings' targetTypeName='runtimereport.DatasourceWarnings' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Exception'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Exception'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='ProblemsToProblems' sourceTypeName='com.pantero.runtime.reporting.entity.Problems' targetTypeName='runtimereport.Problems' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='MappingFailures'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='MappingFailures'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='DatasourceWarnings'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='DatasourceWarnings'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Exception'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Exception'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='true' name='RuntimeReportToRuntimeReport' sourceTypeName='com.pantero.runtime.reporting.entity.RuntimeReport' targetTypeName='runtimereport.RuntimeReport' autoReverse='false'>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='IsEmpty'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='IsEmpty'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='RuleResults'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='RuleResults'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='true'>
+      <TransformationSource isSynthetic='true' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='true' pathString='Problems'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='true' pathString='Problems'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

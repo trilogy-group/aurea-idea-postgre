@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="./" default="Help" name="build">
+	<description>This file contains targets for IDEA</description>	
+	
+	<target name="Help">	
+		<echo message="Run ant -projecthelp for list of available targets"/>
+	</target>
+	
+	<target name="-SetCustomProperties">
+		<path id="custom.classpath">		
+			<pathelement path="${basedir}/DCMWar/classes"/>		
+			<pathelement location="${basedir}/DCMWar/customClasses/classes.jar"/>
+			<fileset dir="${basedir}/DCMWar/lib/patches">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${basedir}/DCMWar/lib">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${basedir}/DCMWar/lib/plugins">
+				<include name="**/*.jar"/>
+			</fileset>
+			<pathelement location="D:/WAS/Drivers/Oracle/ojdbc6.jar"/>
+		</path>
+	</target>
+
+	<target depends="-SetCustomProperties" name="LoadFile">
+		<echo message="Calling Loader, Specfile: ${SPEC_FILE}, Datafile: ${DATA_FILE}"/>
+		<property name="lockprops" value="${basedir}/DCMWar/classes/com/trilogy/fs/dms/core/lock/DMSLockAgentProps.properties"/>
+		<copy file="${lockprops}" overwrite="true" tofile="${lockprops}.temp"/>
+		<replace file="${lockprops}" summary="true" token="DMSDistributedLockAgent" value="SimpleLockAgent"/>
+		<!--property name="dcm.install.jvm.max.memory" value="${default.dcm.install.jvm.max.memory}"/-->
+		<!--java classname="com.trilogy.fs.dms.tools.DMSLoader" failonerror="yes" fork="true" maxmemory="${dcm.install.jvm.max.memory}"-->
+		<java classname="com.trilogy.fs.dms.tools.DMSLoader" failonerror="yes" fork="true">
+			<!--jvmarg value="-Xbootclasspath/p:${boot.classpath}"/-->
+			<classpath refid="custom.classpath"/>
+			<arg value="${basedir}/DCMWar/classes/mcc.properties"/>
+			<arg value="${SPEC_FILE}"/>
+			<arg value="${basedir}/DCMWar/classes/log4j.properties"/>
+			<arg value="-DFILENAME=${DATA_FILE}"/>
+			<arg value="-DBATCH_SIZE=${BATCH_SIZE}"/>
+			<arg value="-DOUTPUT_DIR=${OUTPUT_DIR}"/>
+			<arg value="-DSTRATEGY=${STRATEGY}"/>
+			<arg value="-DSANITY_CHECK=${SANITY_CHECK}"/>
+			<arg value="-DERROR_FILENAME=${ERROR_FILENAME}"/>			
+		</java>
+		<copy file="${lockprops}.temp" overwrite="true" tofile="${lockprops}"/>
+	</target>
+</project>

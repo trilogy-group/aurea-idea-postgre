@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:UpdateParty xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:PartyID>28</ns2:PartyID>
+    <ns2:Status>Active</ns2:Status>
+    <ns2:PaymentAccount>
+        <ns2:AccountType>DefaultPayment</ns2:AccountType>
+        <ns2:AccountNumber>12345</ns2:AccountNumber>
+        <ns2:PaymentType>W2</ns2:PaymentType>
+        <ns2:AccountHolderName>
+            <ns2:PrefixTitleCode>Mrs</ns2:PrefixTitleCode>
+            <ns2:GivenName>Maya</ns2:GivenName>
+            <ns2:MiddleName>A.</ns2:MiddleName>
+            <ns2:Surname>Dahan</ns2:Surname>
+            <ns2:Suffix>DR</ns2:Suffix>
+        </ns2:AccountHolderName>
+        <ns2:BankName>Bank of America</ns2:BankName>
+        <ns2:RoutingNumber>22334455</ns2:RoutingNumber>
+        <ns2:StartDate>01/10/2012</ns2:StartDate>
+        <ns2:EndDate>01/10/2015</ns2:EndDate>
+    </ns2:PaymentAccount>
+</ns2:UpdateParty>

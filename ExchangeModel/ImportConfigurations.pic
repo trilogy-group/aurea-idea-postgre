@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ImportConfigurationData xmlns='http://www.pantero.com/metamodel2' isSynthetic='false'>
+  <DbSourceLocationImportConfiguration isSynthetic='false' name='ACORD_DB' generateRules='false' generateMaps='false' baseName='AcordReporting' rootPackageName='acordreporting' packageGenerationOption='ByDatabaseSchema'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.MySQL5DatabaseType' dbTypeClassName='com.pantero.metamodel.datasources.database.MySQL5DatabaseType'>
+      <URL>jdbc:mysql://localhost:3306/ACORD_DB</URL>
+      <Username>root</Username>
+    </JdbcSourceLocation>
+  </DbSourceLocationImportConfiguration>
+  <DbSourceLocationImportConfiguration isSynthetic='false' name='WAREHOUSE_DB' generateRules='false' generateMaps='false' baseName='WAREHOUSE_DB' rootPackageName='warehouse_db' packageGenerationOption='ByDatabaseSchema'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.MySQL5DatabaseType' dbTypeClassName='com.pantero.metamodel.datasources.database.MySQL5DatabaseType'>
+      <URL>jdbc:mysql://localhost:3306/WAREHOUSE_DB</URL>
+      <Username>root</Username>
+    </JdbcSourceLocation>
+  </DbSourceLocationImportConfiguration>
+  <XMLFileImportConfiguration isSynthetic='false' name='Schemas/event.xml' generateRules='false' generateMaps='false' baseName='EventProcess' rootPackageName='eventProcess' filePath='../Schemas/event.xml' packageGenerationOption='ByNameSpace' useXSDRequiredRule='true'>
+  </XMLFileImportConfiguration>
+  <XMLFileImportConfiguration isSynthetic='false' name='Schemas/XMLInformation.xsd' generateRules='false' generateMaps='false' baseName='XMLInformation' rootPackageName='xmlinformation' filePath='../Schemas/XMLInformation.xsd' packageGenerationOption='ByNameSpace' useXSDRequiredRule='true'>
+  </XMLFileImportConfiguration>
+  <XMLFileImportConfiguration isSynthetic='false' name='SchemasBIG/big_integration.xsd' generateRules='false' generateMaps='false' baseName='BIG' rootPackageName='com.big' filePath='../SchemasBIG/big_integration.xsd' packageGenerationOption='ByNameSpace' useXSDRequiredRule='true'>
+  </XMLFileImportConfiguration>
+  <XMLFileImportConfiguration isSynthetic='false' name='SchemasAcordAml/NIPR-AML/messages/AMLMessages.xsd' generateRules='false' generateMaps='false' baseName='AcordAML' rootPackageName='com.acord.aml' filePath='../SchemasAcordAml/NIPR-AML/messages/AMLMessages.xsd' packageGenerationOption='ByNameSpace' useXSDRequiredRule='true'>
+  </XMLFileImportConfiguration>
+  <DbSourceLocationImportConfiguration isSynthetic='false' name='db' generateRules='false' generateMaps='false' baseName='DCMdbP' rootPackageName='dcmdbp' packageGenerationOption='ByDatabaseSchema'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.postgresql' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
+      <URL>jdbc:postgresql://localhost:5432/aviva</URL>
+      <Username>aviva</Username>
+      <Password>B64I:W0FAyKbr8B_CX0turR-0oA==</Password>
+    </JdbcSourceLocation>
+  </DbSourceLocationImportConfiguration>
+  <XMLFileImportConfiguration isSynthetic='false' name='SchemasNIPR/nipr_gateway_00_00.xsd' generateRules='false' generateMaps='false' baseName='NIPRGateway' rootPackageName='com.nipr' filePath='../SchemasNIPR/nipr_gateway_00_00.xsd' packageGenerationOption='ByNameSpace' useXSDRequiredRule='true'>
+  </XMLFileImportConfiguration>
+  <XMLFileImportConfiguration isSynthetic='false' name='SchemasNIPR/NIPR_from_xml.xsd' generateRules='false' generateMaps='false' baseName='NIPRInformation' rootPackageName='com.nipr.info' filePath='../SchemasNIPR/NIPR_from_xml.xsd' packageGenerationOption='ByNameSpace' useXSDRequiredRule='true'>
+  </XMLFileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEACECreditsSpec.xml' generateRules='false' generateMaps='false' baseName='CECreditsSpec' rootPackageName='cecreditsspec' filePath='../DCMLoaderSpec/IDEACECreditsSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAContactPointsSpec.xml' generateRules='false' generateMaps='false' baseName='ContactPointsSpec' rootPackageName='contactpointsspec' filePath='../DCMLoaderSpec/IDEAContactPointsSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAEnONonInheritancePolicyLoaderSpec.xml' generateRules='false' generateMaps='false' baseName='EnONonInheritancePolicyLoaderSpec' rootPackageName='enononinheritancepolicyloaderspec' filePath='../DCMLoaderSpec/IDEAEnONonInheritancePolicyLoaderSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAInsertAppointmentSpec.xml' generateRules='false' generateMaps='false' baseName='InsertAppointmentSpec' rootPackageName='insertappointmentspec' filePath='../DCMLoaderSpec/IDEAInsertAppointmentSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAInsertLicenseLineSpec.xml' generateRules='false' generateMaps='false' baseName='InsertLicenseLineSpec' rootPackageName='insertlicenselinespec' filePath='../DCMLoaderSpec/IDEAInsertLicenseLineSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAInsertLicensesSpec.xml' generateRules='false' generateMaps='false' baseName='InsertLicensesSpec' rootPackageName='insertlicensesspec' filePath='../DCMLoaderSpec/IDEAInsertLicensesSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAInsertOrgPartySpec.xml' generateRules='false' generateMaps='false' baseName='InsertOrgPartySpec' rootPackageName='dcm.insertorgpartyspec' filePath='../DCMLoaderSpec/IDEAInsertOrgPartySpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAInsertPersonPartySpec.xml' generateRules='false' generateMaps='false' baseName='InsertPersonPartySpec' rootPackageName='dcm.insertpersonpartyspec' filePath='../DCMLoaderSpec/IDEAInsertPersonPartySpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAInsertUserSpec.xml' generateRules='false' generateMaps='false' baseName='InsertUserSpec' rootPackageName='insertuserspec' filePath='../DCMLoaderSpec/IDEAInsertUserSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAPaymentAccountSpec.xml' generateRules='false' generateMaps='false' baseName='PaymentAccountSpec' rootPackageName='paymentaccountspec' filePath='../DCMLoaderSpec/IDEAPaymentAccountSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEACompensationHierarchyPositionHolderSpec.xml' generateRules='false' generateMaps='false' baseName='CompHierarchyPositionHolderSpec' rootPackageName='com.comphierarchypositionholderspec' filePath='../DCMLoaderSpec/IDEACompensationHierarchyPositionHolderSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEACompensationHierarchyPositionSpec.xml' generateRules='false' generateMaps='false' baseName='CompHierarchyPositionSpec' rootPackageName='com.comphierarchypositionspec' filePath='../DCMLoaderSpec/IDEACompensationHierarchyPositionSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAInsertUpdateAgreementParticipantSpec.xml' generateRules='false' generateMaps='false' baseName='InsertAgreementParticipantSpec' rootPackageName='insertagreementparticipantrspec' filePath='../DCMLoaderSpec/IDEAInsertUpdateAgreementParticipantSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAContactPointUsageSpec.xml' generateRules='false' generateMaps='false' baseName='ContactPointUsageSpec' rootPackageName='contactpointusagespec' filePath='../DCMLoaderSpec/IDEAContactPointUsageSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAUpdateOrgPartySpec.xml' generateRules='false' generateMaps='false' baseName='UpdateOrgPartySpec' rootPackageName='updateorgpartyspec' filePath='../DCMLoaderSpec/IDEAUpdateOrgPartySpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='DCMLoaderSpec/IDEAUpdatePersonPartySpec.xml' generateRules='false' generateMaps='false' baseName='UpdatePersonPartySpec' rootPackageName='updatepersonpartyspec' filePath='../DCMLoaderSpec/IDEAUpdatePersonPartySpec.xml'>
+  </FileImportConfiguration>
+  <DbSourceLocationImportConfiguration isSynthetic='false' name='dcm2011 2' generateRules='false' generateMaps='false' baseName='DCMdbO2011' rootPackageName='dcmdb_o2011' packageGenerationOption='ByDatabaseSchema'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.Oracle11DatabaseType' dbTypeClassName='com.pantero.metamodel.datasources.database.Oracle11DatabaseType'>
+      <URL>jdbc:oracle:thin:@ec2-107-20-114-59.compute-1.amazonaws.com:1521:dcm2011</URL>
+      <Username>dcm2011</Username>
+      <Password>B64I:kc8XpkXSTyU=</Password>
+    </JdbcSourceLocation>
+  </DbSourceLocationImportConfiguration>
+  <DbSourceLocationImportConfiguration isSynthetic='false' name='db p 2011' generateRules='false' generateMaps='false' baseName='DCMdbP2011' rootPackageName='com.DCMdbP2011' packageGenerationOption='ByDatabaseSchema'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.postgresql' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
+      <URL>jdbc:postgresql://localhost:5432/dcmHM</URL>
+      <Username>dcm13</Username>
+      <Password>B64I:porux0CtwBk=</Password>
+    </JdbcSourceLocation>
+  </DbSourceLocationImportConfiguration>
+  <DbSourceLocationImportConfiguration isSynthetic='false' name='dcm2011' generateRules='false' generateMaps='false' baseName='DCMdbO2011' rootPackageName='dcmdb_o2011' packageGenerationOption='ByDatabaseSchema'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.Oracle11DatabaseType' dbTypeClassName='com.pantero.metamodel.datasources.database.Oracle11DatabaseType'>
+      <URL>jdbc:oracle:thin:@ec2-107-20-114-59.compute-1.amazonaws.com:1521:dcm2011</URL>
+      <Username>dcm2011</Username>
+      <Password>B64I:kc8XpkXSTyU=</Password>
+    </JdbcSourceLocation>
+  </DbSourceLocationImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.importer.dcm.DcmSpecImportConfiguration' extensionClass='com.progress.dataxtend.si.importer.spec.DcmSpecImportConfigurationSubclass' name='../DCMLoaderSpec/IDEAUpdatePartyStatusSpec.xml' generateRules='false' generateMaps='false' baseName='UpdatePartyStatusSpec' rootPackageName='updatepartystatusspec' filePath='../DCMLoaderSpec/IDEAUpdatePartyStatusSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' name='DCMLoaderSpec/IDEAFIAgreementsSpec.xml' generateRules='false' generateMaps='false' baseName='FIAgreementsSpec' rootPackageName='fiagreementsspec' filePath='../DCMLoaderSpec/IDEAFIAgreementsSpec.xml'>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.EDIImportConfiguration' extensionClass='com.progress.dataxtend.si.flatfile.importer.EDIImportConfigurationSubclass' name='../DCMLoaderSpec/IDEAFIAgreementsSpec.xml' generateRules='false' generateMaps='false' baseName='IDEAFIAgreementsSpec' rootPackageName='ideafiagreementsspec' filePath='../DCMLoaderSpec/IDEAFIAgreementsSpec.xml'>
+    <ExtensionProperty name='xmlc.encoding'>
+      <Value>windows-1252</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.dialect'>
+      <Value>GENERIC</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.version'>
+      <Value>FLATFILE</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.message'>
+      <Value>ROOT: IDEAFIAgreementsSpec.xml</Value>
+    </ExtensionProperty>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.EDIImportConfiguration' extensionClass='com.progress.dataxtend.si.flatfile.importer.EDIImportConfigurationSubclass' name='../DCMLoaderSpec/IDEAFIAgreementsSpec.xml 2' generateRules='false' generateMaps='false' baseName='IDEAFIAgreementsSpec' rootPackageName='ideafiagreementsspec' filePath='../DCMLoaderSpec/IDEAFIAgreementsSpec.xml'>
+    <ExtensionProperty name='xmlc.encoding'>
+      <Value>windows-1252</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.dialect'>
+      <Value>GENERIC</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.version'>
+      <Value>FLATFILE</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.message'>
+      <Value>ROOT: IDEAFIAgreementsSpec.xml</Value>
+    </ExtensionProperty>
+  </FileImportConfiguration>
+  <DbSourceLocationImportConfiguration isSynthetic='false' name='orcl 2' generateRules='false' generateMaps='false' baseName='DCMdbO' rootPackageName='dcmdb' packageGenerationOption='ByDatabaseSchema'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.Oracle11DatabaseType' dbTypeClassName='com.pantero.metamodel.datasources.database.Oracle11DatabaseType'>
+      <URL>jdbc:oracle:thin:@localhost:1521:orcl</URL>
+      <Username>aviva</Username>
+      <Password>B64I:vrYGNkrVYkQ=</Password>
+      <DbSourceLocationSchemaParameter isSynthetic='true' databaseInformation='MCC' runtimeDatabaseSchema='MCC'/>
+    </JdbcSourceLocation>
+  </DbSourceLocationImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.EDIImportConfiguration' extensionClass='com.progress.dataxtend.si.flatfile.importer.EDIImportConfigurationSubclass' name='IDEAUpdateAgreementParticipantStatusLoaderSpec.xml' generateRules='false' generateMaps='false' baseName='IDEAUpdateAgreementParticipantStatusLoaderSpec' rootPackageName='ideaupdateagreementparticipantstatusloaderspec' filePath='../../IDEA/DCMLoaderSpec/IDEAUpdateAgreementParticipantStatusLoaderSpec.xml'>
+    <ExtensionProperty name='xmlc.encoding'>
+      <Value>windows-1252</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.dialect'>
+      <Value>GENERIC</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.version'>
+      <Value>FLATFILE</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.message'>
+      <Value>ROOT: IDEAUpdateAgreementParticipantStatusLoaderSpec.xml</Value>
+    </ExtensionProperty>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.EDIImportConfiguration' extensionClass='com.progress.dataxtend.si.flatfile.importer.EDIImportConfigurationSubclass' name='IDEAUpdateAgreementParticipantStatusLoaderSpec.xml 2' generateRules='false' generateMaps='false' baseName='IDEAUpdateAgreementParticipantStatusLoaderSpec' rootPackageName='ideaupdateagreementparticipantstatusloaderspec' filePath='../../IDEA/DCMLoaderSpec/IDEAUpdateAgreementParticipantStatusLoaderSpec.xml'>
+    <ExtensionProperty name='xmlc.encoding'>
+      <Value>windows-1252</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.dialect'>
+      <Value>GENERIC</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.version'>
+      <Value>FLATFILE</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.message'>
+      <Value>ROOT: IDEAUpdateAgreementParticipantStatusLoaderSpec.xml</Value>
+    </ExtensionProperty>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.EDIImportConfiguration' extensionClass='com.progress.dataxtend.si.flatfile.importer.EDIImportConfigurationSubclass' name='IDEAUpdateAgreementParticipantStatusLoaderSpec.xml 3' generateRules='false' generateMaps='false' baseName='IDEAUpdateAgreementParticipantStatusLoaderSpec' rootPackageName='ideaupdateagreementparticipantstatusloaderspec' filePath='../../IDEA/DCMLoaderSpec/IDEAUpdateAgreementParticipantStatusLoaderSpec.xml'>
+    <ExtensionProperty name='xmlc.encoding'>
+      <Value>windows-1252</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.dialect'>
+      <Value>GENERIC</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.version'>
+      <Value>FLATFILE</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.message'>
+      <Value>ROOT: IDEAUpdateAgreementParticipantStatusLoaderSpec.xml</Value>
+    </ExtensionProperty>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.EDIImportConfiguration' extensionClass='com.progress.dataxtend.si.flatfile.importer.EDIImportConfigurationSubclass' name='IDEAUpdateAgreementParticipantStatusLoaderSpec.xml 4' generateRules='false' generateMaps='false' baseName='IDEAUpdateAgreementParticipantStatusLoaderSpec' rootPackageName='ideaupdateagreementparticipantstatusloaderspec' filePath='../../IDEA/DCMLoaderSpec/IDEAUpdateAgreementParticipantStatusLoaderSpec.xml'>
+    <ExtensionProperty name='xmlc.encoding'>
+      <Value>windows-1252</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.dialect'>
+      <Value>GENERIC</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.version'>
+      <Value>FLATFILE</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.message'>
+      <Value>ROOT: IDEAUpdateAgreementParticipantStatusLoaderSpec.xml</Value>
+    </ExtensionProperty>
+  </FileImportConfiguration>
+</ImportConfigurationData>

@@ -1,0 +1,21 @@
+{  
+  "dxsi:type": "com.partyinformation.UpdateParty",
+  "PartyID": "8",
+  "PaymentAccount": [{
+    "PaymentType": "W2",
+    "EndDate": "01/10/2015",
+    "StartDate": "01/10/2012",
+    "RoutingNumber": "22334455",
+    "AccountNumber": "12345",
+    "BankName": "Bank of America",
+    "AccountHolderName": {
+      "MiddleName": "A.",
+      "PrefixTitleCode": "Mrs",
+      "Suffix": "DR",
+      "FullName": "FullName",
+      "GivenName": "Maya",
+      "Surname": "Dahan"
+    },
+    "AccountType": "DefaultPayment"
+  }]
+}

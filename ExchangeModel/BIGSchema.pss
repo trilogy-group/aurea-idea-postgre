@@ -1,0 +1,462 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DomainSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='com.bigschema.BIGSchema'>
+  <Package isSynthetic='false' name='bigschema' javaPackage='com.bigschema'>
+  </Package>
+  <SimpleType isSynthetic='true' name='com.bigschema.String30' restricts='java.lang.String' maxLength='30'>
+  </SimpleType>
+  <EntityType isSynthetic='false' name='com.bigschema.BIGRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='FormatVersion' assignable='true' index='3'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ApplicantEmail' assignable='true' index='9'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='SIN' assignable='true' index='2'>
+      <TypeName>com.bigschema.String11</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='SSNTaxIdNum' assignable='true' index='1'>
+      <TypeName>com.bigschema.String11</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Address1' assignable='true' index='8' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Address2' assignable='true' index='9'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ZipCode' assignable='true' index='13' required='true'>
+      <TypeName>com.bigschema.String10</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ApplicantPhoneNumber' assignable='true' index='14' required='true'>
+      <TypeName>com.bigschema.String20</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ApplicantPhoneType' assignable='true' index='15' required='true'>
+      <TypeName>com.bigschema.String20</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ApplicantTypeCode' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String11</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='BirthDate' assignable='true' index='3'>
+      <TypeName>com.bigschema.String10</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CityName' assignable='true' index='10' required='true'>
+      <TypeName>com.bigschema.String35</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CountryCode' assignable='true' index='11'>
+      <TypeName>com.bigschema.String200</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StateCode' assignable='true' index='12' required='true'>
+      <TypeName>com.bigschema.String4</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='16'>
+      <TypeName>com.bigschema.String35</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='17' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='MiddleName' assignable='true' index='18'>
+      <TypeName>com.bigschema.String35</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='SuffixName' assignable='true' index='19'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Title' assignable='true' index='20'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Education' assignable='true' index='21' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.bigschema.Education</TypeName>
+      <RelationshipProperty isSynthetic='false' name='BIGRequestForEducation' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='Services' assignable='true' index='22'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Employment' assignable='true' index='23' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.bigschema.Employment</TypeName>
+      <RelationshipProperty isSynthetic='false' name='BIGRequestForEmployment' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Mvr' assignable='true' index='24' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.bigschema.Mvr</TypeName>
+      <RelationshipProperty isSynthetic='false' name='BIGRequestForMvr' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Designation' assignable='true' index='25' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.bigschema.Designation</TypeName>
+      <RelationshipProperty isSynthetic='false' name='BIGRequestForDesignation' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Proflicense' assignable='true' index='26' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.bigschema.Proflicense</TypeName>
+      <RelationshipProperty isSynthetic='false' name='BIGRequestForProflicense' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Reference' assignable='true' index='27' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.bigschema.Reference</TypeName>
+      <RelationshipProperty isSynthetic='false' name='BIGRequestForReference' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='RequestInfo' assignable='true' index='0' required='true' cardinality='One2One' containment='true'>
+      <TypeName>com.bigschema.RequestInfo</TypeName>
+      <RelationshipProperty isSynthetic='false' name='BIGRequestForRequestInfo' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String100' restricts='java.lang.String' maxLength='100'>
+  </SimpleType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String1' restricts='java.lang.String' maxLength='1'>
+  </SimpleType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String7' restricts='java.lang.String' maxLength='7'>
+  </SimpleType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String1000' restricts='java.lang.String' maxLength='1000'>
+  </SimpleType>
+  <EntityType isSynthetic='true' name='com.bigschema.RequestInfo' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='RequestId' assignable='true' index='0'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Requester' assignable='true' index='3' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Client' assignable='true' index='6' required='true'>
+      <TypeName>com.bigschema.String7</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ClientLevel' assignable='true' index='7'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ClientBillingCodeNum' assignable='true' index='8'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ClientBillingCodeNum2' assignable='true' index='9'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ClientBillingCodeNum3' assignable='true' index='10'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ClientBillingCodeNum4' assignable='true' index='11'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ClientBillingCodeNum5' assignable='true' index='12'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ClientBillingCodeNum6' assignable='true' index='13'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Notes' assignable='true' index='14'>
+      <TypeName>com.bigschema.String1000</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ResponseURL' assignable='true' index='15' required='true'>
+      <TypeName>com.bigschema.String1000</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='SubjectWantsCopyInd' assignable='true' index='16'>
+      <TypeName>com.bigschema.String1</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UserName' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UserPassword' assignable='true' index='2' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RequestDate' assignable='true' index='5' required='true'>
+      <TypeName>com.bigschema.DateType</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='DupOverrideCode' assignable='true' index='4'>
+      <TypeName>com.bigschema.String1</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String11' restricts='java.lang.String' maxLength='11'>
+  </SimpleType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String10' restricts='java.lang.String' maxLength='10'>
+  </SimpleType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String35' restricts='java.lang.String' maxLength='35'>
+  </SimpleType>
+  <EntityType isSynthetic='true' name='com.bigschema.Name' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='Title' assignable='true' index='0'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='1'>
+      <TypeName>com.bigschema.String35</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='3' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='MiddleName' assignable='true' index='2'>
+      <TypeName>com.bigschema.String35</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='SuffixName' assignable='true' index='4'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FullName' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String4' restricts='java.lang.String' maxLength='4'>
+  </SimpleType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String200' restricts='java.lang.String' maxLength='200'>
+  </SimpleType>
+  <EntityType isSynthetic='true' name='com.bigschema.Address' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='Address1' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Address2' assignable='true' index='1'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ZipCode' assignable='true' index='4' required='true'>
+      <TypeName>com.bigschema.String10</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CityName' assignable='true' index='2' required='true'>
+      <TypeName>com.bigschema.String35</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CountryCode' assignable='true' index='5'>
+      <TypeName>com.bigschema.String200</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StateCode' assignable='true' index='3' required='true'>
+      <TypeName>com.bigschema.String4</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String20' restricts='java.lang.String' maxLength='20'>
+  </SimpleType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String255' restricts='java.lang.String' maxLength='255'>
+  </SimpleType>
+  <EntityType isSynthetic='false' name='com.bigschema.Education' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='Comments' assignable='true' index='7'>
+      <TypeName>com.bigschema.String1000</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='GraduatedInd' assignable='true' index='8'>
+      <TypeName>com.bigschema.String1</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='AttendedFromDate' assignable='true' index='9' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='AttendedToDate' assignable='true' index='10' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='GraduatedDate' assignable='true' index='11'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='DegreeName' assignable='true' index='4' required='true'>
+      <TypeName>com.bigschema.String255</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Location' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Major' assignable='true' index='5'>
+      <TypeName>com.bigschema.String255</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PhoneNumber' assignable='true' index='6'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='SchoolName' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.bigschema.Employment' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='CurrentEmployerInd' assignable='true' index='4' required='true'>
+      <TypeName>com.bigschema.String1</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ReasonForLeaving' assignable='true' index='5'>
+      <TypeName>com.bigschema.String255</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='LevelSalary' assignable='true' index='6'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Comments' assignable='true' index='10'>
+      <TypeName>com.bigschema.String1000</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ContactEmployerInd' assignable='true' index='11' required='true'>
+      <TypeName>com.bigschema.String1</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='EmployerName' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PhoneNumber' assignable='true' index='8' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='ContactName' assignable='true' index='12' cardinality='One2One' containment='false'>
+      <TypeName>com.bigschema.Name</TypeName>
+      <RelationshipProperty isSynthetic='false' name='EmploymentForContactName' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Address' assignable='true' index='9' required='true' cardinality='One2One' containment='true'>
+      <TypeName>com.bigschema.Address</TypeName>
+      <RelationshipProperty isSynthetic='false' name='EmploymentForAddress' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='ApplicantJobTitleName' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StartDate' assignable='true' index='12'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='EndDate' assignable='true' index='13'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.bigschema.Mvr' isAbstract='false'>
+    <Description>Motor Vehicle Records</Description>
+    <AttributeProperty isSynthetic='true' name='CDLLicenseInd' assignable='true' index='2' required='true'>
+      <TypeName>com.bigschema.String1</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LicenseNumber' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StateCode' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <SimpleType isSynthetic='true' name='com.bigschema.String150' restricts='java.lang.String' maxLength='150'>
+  </SimpleType>
+  <EntityType isSynthetic='true' name='com.bigschema.Designation' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='YearsAssociated' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='IssuingOrganization' assignable='true' index='2'>
+      <TypeName>com.bigschema.String150</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='IssueLocation' assignable='true' index='3'>
+      <TypeName>com.bigschema.String150</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='LicenseId' assignable='true' index='4'>
+      <TypeName>com.bigschema.String150</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Notes' assignable='true' index='5'>
+      <TypeName>com.bigschema.String255</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='DesignationName' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String255</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='com.bigschema.Proflicense' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='LicenseName' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String255</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='IssuingOrganization' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String150</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='LicenseId' assignable='true' index='2' required='true'>
+      <TypeName>com.bigschema.String150</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='EffectiveDate' assignable='true' index='3'>
+      <TypeName>com.bigschema.String150</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ExpirationDate' assignable='true' index='4'>
+      <TypeName>com.bigschema.String150</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Notes' assignable='true' index='5'>
+      <TypeName>com.bigschema.String255</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='com.bigschema.Reference' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='Company' assignable='true' index='2'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Fax' assignable='true' index='3'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='EmailAddress' assignable='true' index='4'>
+      <TypeName>com.bigschema.String200</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='LengthKnown' assignable='true' index='6'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PhoneNumber' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Address' assignable='true' index='5' cardinality='One2One' containment='true'>
+      <TypeName>com.bigschema.Address</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ReferenceForAddress' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Name' assignable='true' index='0' required='true' cardinality='One2One' containment='true'>
+      <TypeName>com.bigschema.Name</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ReferenceForName' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='com.bigschema.BIGAcknowledgement' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='RequestId' assignable='true' index='2' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Description' assignable='true' index='4'>
+      <TypeName>com.bigschema.String1000</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='RedirectLink' assignable='true' index='5'>
+      <TypeName>com.bigschema.String1000</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusCode' assignable='true' index='3' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UserName' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UserPassword' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Error' assignable='true' index='6' cardinality='One2One' containment='false'>
+      <TypeName>com.bigschema.Error</TypeName>
+      <RelationshipProperty isSynthetic='false' name='BIGAcknowledgementForError' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='com.bigschema.BIGPollResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='RequestId' assignable='true' index='2' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Client' assignable='true' index='3' required='true'>
+      <TypeName>com.bigschema.String7</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UserName' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UserPassword' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='com.bigschema.BIGResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='RequestId' assignable='true' index='2' required='true'>
+      <TypeName>com.bigschema.String100</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='ClientCaseId' assignable='true' index='3' required='true'>
+      <TypeName>com.bigschema.String7</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='RedirectLink' assignable='true' index='9'>
+      <TypeName>com.bigschema.String1000</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CreditCheckResultCode' assignable='true' index='6'>
+      <TypeName>com.bigschema.String10</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CriminalBackgroundCheckResultCode' assignable='true' index='7'>
+      <TypeName>com.bigschema.String10</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OFACBackgroundCheckResultCode' assignable='true' index='8'>
+      <TypeName>com.bigschema.String10</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PassReviewStatusCode' assignable='true' index='5' required='true'>
+      <TypeName>com.bigschema.String10</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusCode' assignable='true' index='4' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UserName' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UserPassword' assignable='true' index='1' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='com.bigschema.BIGResponseAcknowledgement' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='StatusCd' assignable='true' index='0' required='true'>
+      <TypeName>com.bigschema.String30</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Description' assignable='true' index='1'>
+      <TypeName>com.bigschema.String1000</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <SimpleType isSynthetic='false' name='com.bigschema.DateType' restricts='java.lang.String' maxLength='10' pattern='((01|02|03|04|05|06|07|08|09|10|11|12)/(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)/[1-2][0-9][0-9][0-9])'>
+  </SimpleType>
+  <EntityType isSynthetic='false' name='com.bigschema.Error' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Description' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <Import schemaName='com.big.BIG'/>
+  <ImportConfiguration>SchemasBIG/big_integration.xsd</ImportConfiguration>
+</DomainSchema>
