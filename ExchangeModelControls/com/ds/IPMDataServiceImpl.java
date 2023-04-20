@@ -34,6 +34,7 @@ import com.ipm.LicenseResponse;
 import com.ipm.LicenseRequest;
 import com.ipm.ContactPointUsageResponse;
 import com.ipm.ContactPointUsageRequest;
+import com.ipm.OrgPrincipalAlerts;
 import com.ipm.RegulatoryActionResponse;
 import com.ipm.RegulatoryActionRequest;
 import com.ipm.CorrespondenceEmailRequest;
@@ -77,6 +78,12 @@ import com.ipm.LOAResponse;
 import com.ipm.LOARequest;
 import com.ipm.PartyStatusReason;
 import com.ipm.PartyStatusRequest;
+import com.ipm.RootAPPartyResponse;
+import com.ipm.RootAPPartyRequest;
+import com.ipm.OrgPrincipalRelation;
+import com.ipm.OrgPrincipalResponse;
+import com.ipm.OrgPrincipalRequest;
+import com.ipm.OrgPrincipalCreateRequest;
 
 /*
  * Copyright (c) 2004-2014 by Aurea, Inc. All Rights Reserved.
@@ -967,6 +974,120 @@ public class IPMDataServiceImpl extends DataService {
 			//begin user defined code for operation
 			try {
 				PartyStatusReason _result = (PartyStatusReason)map(Parameter1, PartyStatusReason.class);
+				return _result;
+			} finally {
+				completeTransaction();
+			}
+			//end user defined code for operation
+		}
+
+	/**
+		 * CheckRootApParty custom method
+		 * Description: 
+		 * @param Parameter1 
+	 	 * @return RootAPPartyResponse 
+	 	 */
+		public RootAPPartyResponse CheckRootApParty(
+				RootAPPartyRequest Parameter1) {
+			incrementMetric("CheckRootApParty");
+			//begin user defined code for operation
+			try {
+				RootAPPartyResponse _result = (RootAPPartyResponse)map(Parameter1, RootAPPartyResponse.class);
+				return _result;
+			} finally {
+				completeTransaction();
+			}
+			//end user defined code for operation
+		}
+
+	/**
+		 * InsertOrgPrincipalRelation custom method
+		 * Description: 
+		 * @param Parameter1 
+	 	 * @return Error 
+	 	 */
+		public com.ipm.OrgPrincipalAlerts InsertOrgPrincipalRelation(
+				OrgPrincipalRelation Parameter1) {
+			incrementMetric("InsertOrgPrincipalRelation");
+			//begin user defined code for operation
+			try {
+				OrgPrincipalAlerts _result = (OrgPrincipalAlerts)map(Parameter1, OrgPrincipalAlerts.class);
+				return _result;				
+			} finally {
+				completeTransaction();
+			}
+			//end user defined code for operation
+		}
+
+	/**
+		 * getOrgPrinciplarelations custom method
+		 * Description: 
+		 * @param Parameter1 
+	 	 * @return OrgPrincipalResponse 
+	 	 */
+		public OrgPrincipalResponse getOrgPrinciplarelations(
+				OrgPrincipalRelation Parameter1) {
+			incrementMetric("getOrgPrinciplarelations");
+			//begin user defined code for operation
+			try {
+				OrgPrincipalResponse _result = (OrgPrincipalResponse)map(Parameter1, OrgPrincipalResponse.class);
+				return _result;
+			} finally {
+				completeTransaction();
+			}
+			//end user defined code for operation
+		}
+
+	/**
+		 * getOrgPrinciplarelations custom method
+		 * Description: 
+		 * @param Parameter1 
+	 	 * @return OrgPrincipalResponse 
+	 	 */
+		public OrgPrincipalResponse getOrgPrinciplarelations(
+				OrgPrincipalRequest Parameter1) {
+			incrementMetric("getOrgPrinciplarelations");
+			//begin user defined code for operation
+			try {
+				OrgPrincipalResponse _result = (OrgPrincipalResponse)map(Parameter1, OrgPrincipalResponse.class);
+				return _result;
+			} finally {
+				completeTransaction();
+			}
+			//end user defined code for operation
+		}
+
+	/**
+		 * InsertOrgPrincipalRelation custom method
+		 * Description: 
+		 * @param Parameter1 
+	 	 * @return OrgPrincipalAlerts 
+	 	 */
+		public OrgPrincipalAlerts InsertOrgPrincipalRelation(
+				OrgPrincipalCreateRequest Parameter1) {
+			incrementMetric("InsertOrgPrincipalRelation");
+			//begin user defined code for operation
+			try {
+				OrgPrincipalAlerts _result = (OrgPrincipalAlerts)map(Parameter1, OrgPrincipalAlerts.class);
+				return _result;
+			} finally {
+				completeTransaction();
+			}
+			//end user defined code for operation
+		}
+
+	/**
+		 * ValidateOrgPrincipalRelation custom method
+		 * Description: 
+		 * @param Parameter1 
+	 	 * @return OrgPrincipalAlerts 
+	 	 */
+		public OrgPrincipalAlerts ValidateOrgPrincipalRelation(
+				OrgPrincipalCreateRequest Parameter1) {
+			incrementMetric("ValidateOrgPrincipalRelation");
+			//begin user defined code for operation
+			try {
+				OrgPrincipalAlerts _result = (OrgPrincipalAlerts)map(Parameter1, OrgPrincipalAlerts.class);
 				return _result;
 			} finally {
 				completeTransaction();

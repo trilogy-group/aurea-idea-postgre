@@ -70,4 +70,118 @@
       </TransformationTarget>
     </Transformation>
   </ClassMap>
+  <ClassMap isSynthetic='false' name='OrgPrincipalAlertsToOrgPrincipalAlerts' sourceTypeName='dcm.OrgPrincipalAlerts' targetTypeName='org.acord.OrgPrincipalAlerts' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='MessageAlert'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='MessageAlert'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='MessageAlert/Message'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='MessageAlert/Message'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='MessageAlert/Operation'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='MessageAlert/Operation'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='MessageAlert/RowNumber'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='MessageAlert/RowNumber'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='MessageAlert/Severity'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='MessageAlert/Severity'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='MessageAlert/MessageAlertToDesc'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='MessageAlert/MessageAlertToDesc'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='MessageAlertToMessageAlert' sourceTypeName='dcm.MessageAlert' targetTypeName='org.acord.MessageAlert' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Message'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='Message'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='MessageAlertToDesc'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='MessageAlertToDesc'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Operation'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='Operation'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='RowNumber'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RowNumber'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Severity'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='Severity'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
 </SchemaMap>

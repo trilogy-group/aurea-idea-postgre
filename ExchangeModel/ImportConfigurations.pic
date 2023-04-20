@@ -21,7 +21,7 @@
   <XMLFileImportConfiguration isSynthetic='false' name='SchemasAcordAml/NIPR-AML/messages/AMLMessages.xsd' generateRules='false' generateMaps='false' baseName='AcordAML' rootPackageName='com.acord.aml' filePath='../SchemasAcordAml/NIPR-AML/messages/AMLMessages.xsd' packageGenerationOption='ByNameSpace' useXSDRequiredRule='true'>
   </XMLFileImportConfiguration>
   <DbSourceLocationImportConfiguration isSynthetic='false' name='db' generateRules='false' generateMaps='false' baseName='DCMdbP' rootPackageName='dcmdbp' packageGenerationOption='ByDatabaseSchema'>
-    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.postgresql' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.database.postgre.PostgreSQLDatabaseType' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
       <URL>jdbc:postgresql://localhost:5432/aviva</URL>
       <Username>aviva</Username>
       <Password>B64I:W0FAyKbr8B_CX0turR-0oA==</Password>
@@ -71,7 +71,7 @@
     </JdbcSourceLocation>
   </DbSourceLocationImportConfiguration>
   <DbSourceLocationImportConfiguration isSynthetic='false' name='db p 2011' generateRules='false' generateMaps='false' baseName='DCMdbP2011' rootPackageName='com.DCMdbP2011' packageGenerationOption='ByDatabaseSchema'>
-    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.postgresql' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
+    <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.database.postgre.PostgreSQLDatabaseType' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
       <URL>jdbc:postgresql://localhost:5432/dcmHM</URL>
       <Username>dcm13</Username>
       <Password>B64I:porux0CtwBk=</Password>
@@ -178,6 +178,20 @@
     </ExtensionProperty>
     <ExtensionProperty name='xmlc.message'>
       <Value>ROOT: IDEAUpdateAgreementParticipantStatusLoaderSpec.xml</Value>
+    </ExtensionProperty>
+  </FileImportConfiguration>
+  <FileImportConfiguration isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.EDIImportConfiguration' extensionClass='com.progress.dataxtend.si.flatfile.importer.EDIImportConfigurationSubclass' name='IDEAOrgPrincipalRelationshipLoaderSpec.xml' generateRules='false' generateMaps='false' baseName='IDEAOrgPrincipalRelationshipLoaderSpec' rootPackageName='ideaorgprincipalrelationshiploaderspec' filePath='../../IDEA/DCMLoaderSpec/IDEAOrgPrincipalRelationshipLoaderSpec.xml'>
+    <ExtensionProperty name='xmlc.encoding'>
+      <Value>windows-1252</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.dialect'>
+      <Value>GENERIC</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.version'>
+      <Value>FLATFILE</Value>
+    </ExtensionProperty>
+    <ExtensionProperty name='xmlc.message'>
+      <Value>ROOT: IDEAOrgPrincipalRelationshipLoaderSpec.xml</Value>
     </ExtensionProperty>
   </FileImportConfiguration>
 </ImportConfigurationData>

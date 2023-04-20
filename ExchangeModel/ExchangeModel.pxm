@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ExchangeModel xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='IDEA' toolVersion='10.0.1 (Patch01)'>
+<ExchangeModel xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='IDEA' toolVersion='10.0.1 (Patch02)'>
   <Description>IDEA</Description>
   <RuleCategory isSynthetic='true' name='Default'>
     <Description>Default rule category</Description>
@@ -212,6 +212,14 @@
   </RuleCategory>
   <RuleCategory isSynthetic='false' name='IDEAUpdateAgreementParticipantStatusLoaderSpecSchemaValidation'>
   </RuleCategory>
+  <RuleCategory isSynthetic='false' name='XMLSchema1TypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='XMLSchema1SchemaParticleValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='true' name='IDEAOrgPrincipalRelationshipLoaderSpecTypeSafetyValidation'>
+  </RuleCategory>
+  <RuleCategory isSynthetic='false' name='IDEAOrgPrincipalRelationshipLoaderSpecSchemaValidation'>
+  </RuleCategory>
   <LibraryExtensionClass isSynthetic='false' className='com.utilities.Utils'>
   </LibraryExtensionClass>
   <LibraryExtensionClass isSynthetic='false' className='com.aurea.dcm.loader.DCMLoader'>
@@ -253,6 +261,7 @@
   <Include path='InsertUpdateComponentParticipantSpec.pss'/>
   <Include path='IDEAFIAgreementsSpec.pss'/>
   <Include path='IDEAUpdateAgreementParticipantStatusLoaderSpec.pss'/>
+  <Include path='IDEAOrgPrincipalRelationshipLoaderSpec.pss'/>
   <Include path='Maps/ACORDInformationModelToInsertPersonPartySpec.pmp'/>
   <Include path='Maps/ACORDInformationModelToInsertOrgPartySpec.pmp'/>
   <Include path='Maps/ACORDInformationModelToDisputeResolution.pmp'/>
@@ -294,6 +303,7 @@
   <Include path='Maps/ACORDInformationModelToUpdatePartyStatusSpec.pmp'/>
   <Include path='Maps/ACORDInformationModelToInsertUpdateComponentParticipantSpec.pmp'/>
   <Include path='Maps/ACORDInformationModelToIDEAFIAgreementsSpec.pmp'/>
+  <Include path='Maps/ACORDInformationModelToIDEAOrgPrincipalRelationshipLoaderSpec.pmp'/>
   <Include path='ACORDInformationModel.pcm'/>
   <Include path='DataServices/IPMDataService.psv'/>
   <Include path='DataServices/BIGDataService.psv'/>
@@ -307,6 +317,7 @@
   <Include path='DataSources/DCMUtilsDataSource.pds'/>
   <Include path='DataSources/DCMdbP2011Database.pdb'/>
   <Include path='DataSources/DCMdbO2011Database.pdb'/>
+  <Include path='DataSources/IDEAOrgPrincipalRelationshipLoaderSpecDataSource.pds'/>
   <Include path='TestCases.ptc'/>
   <Include path='TestSuites.pts'/>
 </ExchangeModel>

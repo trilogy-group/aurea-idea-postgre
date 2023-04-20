@@ -119,6 +119,8 @@
       </RelationshipProperty>
     </RelationshipProperty>
   </EntityType>
+  <EntityType isSynthetic='false' name='dcm.OrgPrincipalAlerts' superclassName='dcm.Alerts' isAbstract='false'>
+  </EntityType>
   <Import schemaName='dcm.insertpersonpartyspec.InsertPersonPartySpec'/>
   <Import schemaName='dcm.insertorgpartyspec.InsertOrgPartySpec'/>
   <Import schemaName='contactpointsspec.ContactPointsSpec'/>
@@ -138,5 +140,6 @@
   <Import schemaName='updatepartystatusspec.UpdatePartyStatusSpec'/>
   <Import schemaName='insertupdatecomponentparticipantspec.InsertUpdateComponentParticipantSpec'/>
   <Import schemaName='ideafiagreementsspec.IDEAFIAgreementsSpec'/>
+  <Import schemaName='ideaorgprincipalrelationshiploaderspec.IDEAOrgPrincipalRelationshipLoaderSpec'/>
   <SchemaRootType>dcm.ExecutionHelper</SchemaRootType>
 </DomainSchema>

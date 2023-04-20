@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <DeploymentConfigurationData xmlns='http://www.pantero.com/metamodel2' isSynthetic='false'>
-  <DataServicesDeploymentPackage isSynthetic='false' extensionId='com.aurea.dataxtend.si.designer.core.packager.ZipDeploymentPackage' extensionClass='com.progress.dataxtend.si.designer.core.deployment.ZipDeploymentPackageSubclass' name='IPM_OnBoarding.zip' targetFileName='IPM_OnBoarding.zip' targetPlatform='Java EE 6' targetJVM='SUN 1.7' runtimeEnvironment='default' minimized='false' runtimePrimingAction='1' sharedRuntime='false' sharedUserJars='false'>
+  <DataServicesDeploymentPackage isSynthetic='false' extensionId='com.aurea.dataxtend.si.designer.core.packager.ZipDeploymentPackage' extensionClass='com.progress.dataxtend.si.designer.core.deployment.ZipDeploymentPackageSubclass' name='IPM_OnBoarding.zip' targetFileName='IPM_OnBoarding.zip' targetPlatform='Tomcat 7.0' targetJVM='SUN 1.7' runtimeEnvironment='default' minimized='false' runtimePrimingAction='1' sharedRuntime='false' sharedUserJars='false'>
     <DataServiceName>BIGDataService</DataServiceName>
     <DataServiceName>IPMDataService</DataServiceName>
     <DataServiceName>NIPRDataService</DataServiceName>

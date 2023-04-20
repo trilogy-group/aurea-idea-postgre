@@ -31,10 +31,12 @@ import org.apache.tools.ant.ProjectHelper;
 import com.aurea.dcm.DCMClassLoaderHelper;
 import com.pantero.metamodel.ExchangeModel;
 import com.pantero.runtime.PanteroRuntimeException;
+import com.pantero.runtime.entity.EntitySource;
 import com.pantero.util.io.FileUtils;
 import com.pantero.util.logging.Log;
 import com.pantero.util.logging.LogFactory;
 import com.progress.dataxtend.si.flatfile.runtime.FlatFileEntity.RootEntity;
+import com.progress.dataxtend.si.flatfile.runtime.FlatFileSource;
 
 public class DCMLoader {
 	protected static final Log logger = LogFactory.getLog(com.aurea.dcm.loader.DCMLoader.class);
@@ -397,7 +399,7 @@ public class DCMLoader {
 				addLogMsgAlert("0", "Error", "IOException: " + ex.getMessage(), dxsiOperationName);
 			}
 		}
-
+		
 		if(file.delete()){
 			logger.debug(file.getName() + " is deleted.");
 		}else{

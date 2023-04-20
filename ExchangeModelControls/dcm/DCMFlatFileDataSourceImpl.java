@@ -444,16 +444,17 @@ public class DCMFlatFileDataSourceImpl extends OperationDatasourceImpl {
 
 		private boolean isValidateOperation(RootEntity parameter) {
 			boolean result = false;
-			
+			logger.debug("Validate Check for Called.. ");
 			ExchangeModel exModel = parameter._getEntityType() == null ? null : parameter._getEntityType().getExchangeModel();
 			DataServiceModel dsm = exModel.getDataServiceModel("IPMDataService");
 	        DataServiceOperation validateForInsertOp = dsm.getOperation("ValidateForInsert");
 	        DataServiceOperation validateForUpdateOp = dsm.getOperation("ValidateForUpdate");
 	        DataServiceOperation validateForUpdatePartyOp = dsm.getOperation("ValidateForUpdateParty");
-	        
+	        DataServiceOperation validateForOrgPrincipalRelOp = dsm.getOperation("ValidateOrgPrincipalRelation");
 	        if(MiscLibrary.isCurrentDataServiceOperation(validateForInsertOp) ||
 	        		MiscLibrary.isCurrentDataServiceOperation(validateForUpdateOp) ||
-	        		MiscLibrary.isCurrentDataServiceOperation(validateForUpdatePartyOp)) {
+	        		MiscLibrary.isCurrentDataServiceOperation(validateForUpdatePartyOp) || 
+	        		MiscLibrary.isCurrentDataServiceOperation(validateForOrgPrincipalRelOp)) {
 	        	logger.debug("VALIDATE ONLY operation");
 	            result = true;
 	        }
@@ -706,8 +707,26 @@ public class DCMFlatFileDataSourceImpl extends OperationDatasourceImpl {
 				//begin user defined code for operation
 				java.lang.Object[] _args = new java.lang.Object[] { Parameter1};
 				execute("InsertUpdateFIAgreement", _args);
-				
 				return returnAlert(Parameter1, "InsertUpdateFIAgreements");
+				//end user defined code for operation
+			}
+
+		/**
+			 * InsertOrgPrincipalRelation custom method
+			 * Description: 
+			 * @param Parameter1 
+		 	 * @return Alerts 
+		 	 */
+			public dcm.OrgPrincipalAlerts InsertOrgPrincipalRelation(
+					ideaorgprincipalrelationshiploaderspec.ROOT Parameter1) {
+				//begin user defined code for operation				
+				java.lang.Object[] _args = new java.lang.Object[] { Parameter1};				
+				execute("InsertOrgPrincipalRelation", _args);
+				Alerts alerts = new Alerts();
+				alerts=returnAlert(Parameter1, "InsertOrgPrincipalRelation");				
+				OrgPrincipalAlerts orgAlrt=new OrgPrincipalAlerts();
+				orgAlrt.setMessageAlert(alerts.getMessageAlert());
+				return orgAlrt;
 				//end user defined code for operation
 			}
 }

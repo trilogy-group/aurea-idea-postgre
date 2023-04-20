@@ -200,12 +200,12 @@
     <AttributeProperty isSynthetic='false' name='ServicingOnly' assignable='true' index='20'>
       <TypeName>java.lang.Boolean</TypeName>
     </AttributeProperty>
-	<AttributeProperty isSynthetic='false' name='ProductPrefPreset' assignable='true' index='20'>
+    <AttributeProperty isSynthetic='false' name='ProductPrefPreset' assignable='true' index='20'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
-	<AttributeProperty isSynthetic='false' name='ProductGroup' assignable='true' index='22'>
+    <AttributeProperty isSynthetic='false' name='ProductGroup' assignable='true' index='22'>
       <TypeName>java.lang.String</TypeName>
-    </AttributeProperty>	
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' name='dcm.utils.setupDCMDataResponse' isAbstract='false'>
     <AttributeProperty isSynthetic='false' name='Errors' assignable='true' index='0'>
@@ -318,7 +318,7 @@
     <AttributeProperty isSynthetic='false' name='AVAccToWeb' assignable='true' index='3'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
-	<AttributeProperty isSynthetic='false' name='AVProductGroup' assignable='true' index='4'>
+    <AttributeProperty isSynthetic='false' name='AVProductGroup' assignable='true' index='4'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
   </EntityType>
@@ -403,6 +403,58 @@
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
     <AttributeProperty isSynthetic='false' name='StatusReason' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.RootAPPartyRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='apId' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='taxId' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ContractEffectiveDate' assignable='true' index='2'>
+      <TypeName>com.progress.dataxtend.si.util.Date</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.RootAPPartyResponse' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='found' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='apId' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.OrgPrincipalRelation' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='OrgTaxID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PersonSSN' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RelationshipType' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StartDate' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='EndDate' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyId' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.OrgPrincipalResponse' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='data' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='List'>
+      <TypeName>dcm.utils.OrgPrincipalRelation</TypeName>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.utils.OrgPrincipalRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='OrgTaxID' assignable='true' index='0'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
   </EntityType>

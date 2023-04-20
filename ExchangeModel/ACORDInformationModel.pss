@@ -25532,6 +25532,12 @@ e.g: KGK Car Repair Shop.</Description>
     <AttributeProperty isSynthetic='false' name='LastStatusResult' assignable='true' index='39'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='parentApOrg' assignable='true' index='40'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OrgPrincipalDatas' assignable='true' index='41'>
+      <TypeName>List&lt;org.acord.OrgPrincipalRelation&gt;</TypeName>
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' name='org.acord.User' isAbstract='false'>
     <AttributeProperty isSynthetic='false' name='SecurityGroup' assignable='true' index='1'>
@@ -26400,7 +26406,7 @@ e.g: KGK Car Repair Shop.</Description>
     <AttributeProperty isSynthetic='false' name='AVIPCOnFile' assignable='true' index='41'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
-	<AttributeProperty isSynthetic='false' name='AVProductGroup' assignable='true' index='42'>
+    <AttributeProperty isSynthetic='false' name='AVProductGroup' assignable='true' index='42'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
   </EntityType>
@@ -26657,12 +26663,12 @@ e.g: Broker agreement between Broker ABC and Acme Insurance Company.</Descriptio
     <AttributeProperty isSynthetic='false' name='ServicingOnly' assignable='true' index='19'>
       <TypeName>java.lang.Boolean</TypeName>
     </AttributeProperty>
-	<AttributeProperty isSynthetic='false' name='ProductPrefPreset' assignable='true' index='20'>
+    <AttributeProperty isSynthetic='false' name='ProductPrefPreset' assignable='true' index='20'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
-	<AttributeProperty isSynthetic='false' name='ProductGroup' assignable='true' index='22'>
+    <AttributeProperty isSynthetic='false' name='ProductGroup' assignable='true' index='22'>
       <TypeName>java.lang.String</TypeName>
-    </AttributeProperty>	
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' name='org.acord.PositionData' isAbstract='false'>
     <AttributeProperty isSynthetic='false' name='PositionType' assignable='true' index='1'>
@@ -26770,6 +26776,92 @@ e.g: Broker agreement between Broker ABC and Acme Insurance Company.</Descriptio
     <AttributeProperty isSynthetic='false' name='StatusReason' assignable='true' index='1'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='org.acord.OrgPrincipalRelationHelper' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='OrgTaxID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PersonSSN' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RelationshipType' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StartDate' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='EndDate' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='org.acord.MessageAlert' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Severity' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RowNumber' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Message' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Operation' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='MessageAlertToDesc' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AlertsForMessageAlert' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='org.acord.Alerts' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='MessageAlert' assignable='true' index='0' cardinality='Many2Many' containment='false' collectionType='List'>
+      <TypeName>org.acord.MessageAlert</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AlertsForRelationshipAttribute1' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='org.acord.OrgPrincipalAlerts' superclassName='org.acord.Alerts' isAbstract='false'>
+  </EntityType>
+  <EntityType isSynthetic='false' name='org.acord.OrgPrincipalRelation' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='OrgTaxID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PersonSSN' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RelationshipType' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StartDate' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='EndDate' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PartyId' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='org.acord.OrgPrincipalResponseHelper' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='data' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='List'>
+      <TypeName>org.acord.OrgPrincipalRelation</TypeName>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='org.acord.OrgPrincipalRequest' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='OrgTaxID' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='org.acord.OrgPrincipalCreateRequest' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='OrgPrincipalRelation' assignable='true' index='0' cardinality='One2Many' containment='true' collectionType='Set'>
+      <TypeName>org.acord.OrgPrincipalRelation</TypeName>
+      <RelationshipProperty isSynthetic='false' name='OrgPrincipalCreateRequestForOrgPrincipalRelation' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
   </EntityType>
   <Import schemaName='runtimereport.CommonRuntimeReportSchema'/>
 </DomainSchema>

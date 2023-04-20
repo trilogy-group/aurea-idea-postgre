@@ -362,4 +362,36 @@
       </Parameter>
     </OperationMethod>
   </Operation>
+  <Operation isSynthetic='false' name='CheckRootApParty' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='CheckRootApParty' returnTypeName='com.ipm.RootAPPartyResponse' language='JAVA' returnTypeElementName='CheckRootApPartyReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.RootAPPartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='InsertOrgPrincipalRelation' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='InsertOrgPrincipalRelation' returnTypeName='com.ipm.OrgPrincipalAlerts' language='JAVA' returnTypeElementName='InsertOrgPrincipalRelationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.OrgPrincipalCreateRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='getOrgPrinciplarelations' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='getOrgPrinciplarelations' returnTypeName='com.ipm.OrgPrincipalResponse' language='JAVA' returnTypeElementName='getOrgPrinciplarelationsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.OrgPrincipalRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='ValidateOrgPrincipalRelation' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='ValidateOrgPrincipalRelation' returnTypeName='com.ipm.OrgPrincipalAlerts' language='JAVA' returnTypeElementName='ValidateOrgPrincipalRelationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.ipm.OrgPrincipalCreateRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
 </DataServiceModel>

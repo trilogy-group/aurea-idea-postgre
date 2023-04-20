@@ -178,4 +178,12 @@
       </Parameter>
     </OperationMethod>
   </DatasourceOperation>
+  <DatasourceOperation isSynthetic='false' name='InsertOrgPrincipalRelation' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertOrgPrincipalRelation' returnTypeName='dcm.OrgPrincipalAlerts' language='JAVA' returnTypeElementName='InsertOrgPrincipalRelationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='ideaorgprincipalrelationshiploaderspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </DatasourceOperation>
 </DatasourceModel>

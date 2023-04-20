@@ -86,6 +86,12 @@ import com.ipm.LOAResponse;
 import com.ipm.LOARequest;
 import com.ipm.PartyStatusReason;
 import com.ipm.PartyStatusRequest;
+import com.ipm.RootAPPartyResponse;
+import com.ipm.RootAPPartyRequest;
+import com.ipm.OrgPrincipalAlerts;
+import com.ipm.OrgPrincipalCreateRequest;
+import com.ipm.OrgPrincipalResponse;
+import com.ipm.OrgPrincipalRequest;
 
 public class IPMDataService extends DataServiceEntityDelegate {
 
@@ -1260,6 +1266,110 @@ public class IPMDataService extends DataServiceEntityDelegate {
 			throw new RuntimeException(e);
 		} finally {
 		  shutdown(_dataservice, "GetLastStatusReason", _result, true);
+		}
+		return _result;
+	}
+
+	/*
+	 * Delegating method to CheckRootApParty on IPMDataService
+	 */
+	public RootAPPartyResponse CheckRootApParty(
+ 			final RootAPPartyRequest Parameter1) {
+		final IPMDataServiceImpl _dataservice = new IPMDataServiceImpl(getConfigurationName("CheckRootApParty"));
+		initialize(_dataservice);
+		RootAPPartyResponse _result = null;
+		try {
+			_result = (RootAPPartyResponse)new LockSupervisor() {
+				public Object execute() {
+					return _dataservice.CheckRootApParty(
+ 							Parameter1);
+				}
+			}.executeWithReadLock();
+		} catch (Throwable e) {
+			_dataservice.rollback();
+			if (e instanceof RuntimeException)
+				throw (RuntimeException)e;
+			throw new RuntimeException(e);
+		} finally {
+		  shutdown(_dataservice, "CheckRootApParty", _result, true);
+		}
+		return _result;
+	}
+
+	/*
+	 * Delegating method to InsertOrgPrincipalRelation on IPMDataService
+	 */
+	public OrgPrincipalAlerts InsertOrgPrincipalRelation(
+ 			final OrgPrincipalCreateRequest Parameter1) {
+		final IPMDataServiceImpl _dataservice = new IPMDataServiceImpl(getConfigurationName("InsertOrgPrincipalRelation"));
+		initialize(_dataservice);
+		OrgPrincipalAlerts _result = null;
+		try {
+			_result = (OrgPrincipalAlerts)new LockSupervisor() {
+				public Object execute() {
+					return _dataservice.InsertOrgPrincipalRelation(
+ 							Parameter1);
+				}
+			}.executeWithReadLock();
+		} catch (Throwable e) {
+			_dataservice.rollback();
+			if (e instanceof RuntimeException)
+				throw (RuntimeException)e;
+			throw new RuntimeException(e);
+		} finally {
+		  shutdown(_dataservice, "InsertOrgPrincipalRelation", _result, true);
+		}
+		return _result;
+	}
+
+	/*
+	 * Delegating method to getOrgPrinciplarelations on IPMDataService
+	 */
+	public OrgPrincipalResponse getOrgPrinciplarelations(
+ 			final OrgPrincipalRequest Parameter1) {
+		final IPMDataServiceImpl _dataservice = new IPMDataServiceImpl(getConfigurationName("getOrgPrinciplarelations"));
+		initialize(_dataservice);
+		OrgPrincipalResponse _result = null;
+		try {
+			_result = (OrgPrincipalResponse)new LockSupervisor() {
+				public Object execute() {
+					return _dataservice.getOrgPrinciplarelations(
+ 							Parameter1);
+				}
+			}.executeWithReadLock();
+		} catch (Throwable e) {
+			_dataservice.rollback();
+			if (e instanceof RuntimeException)
+				throw (RuntimeException)e;
+			throw new RuntimeException(e);
+		} finally {
+		  shutdown(_dataservice, "getOrgPrinciplarelations", _result, true);
+		}
+		return _result;
+	}
+
+	/*
+	 * Delegating method to ValidateOrgPrincipalRelation on IPMDataService
+	 */
+	public OrgPrincipalAlerts ValidateOrgPrincipalRelation(
+ 			final OrgPrincipalCreateRequest Parameter1) {
+		final IPMDataServiceImpl _dataservice = new IPMDataServiceImpl(getConfigurationName("ValidateOrgPrincipalRelation"));
+		initialize(_dataservice);
+		OrgPrincipalAlerts _result = null;
+		try {
+			_result = (OrgPrincipalAlerts)new LockSupervisor() {
+				public Object execute() {
+					return _dataservice.ValidateOrgPrincipalRelation(
+ 							Parameter1);
+				}
+			}.executeWithReadLock();
+		} catch (Throwable e) {
+			_dataservice.rollback();
+			if (e instanceof RuntimeException)
+				throw (RuntimeException)e;
+			throw new RuntimeException(e);
+		} finally {
+		  shutdown(_dataservice, "ValidateOrgPrincipalRelation", _result, true);
 		}
 		return _result;
 	}

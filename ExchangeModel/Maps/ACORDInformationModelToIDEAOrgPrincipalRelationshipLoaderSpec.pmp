@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToIDEAOrgPrincipalRelationshipLoaderSpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='ideaorgprincipalrelationshiploaderspec.IDEAOrgPrincipalRelationshipLoaderSpec'>
+  <ClassMap isSynthetic='false' name='OrgPrincipalCreateRequestToROOT' sourceTypeName='org.acord.OrgPrincipalCreateRequest' targetTypeName='ideaorgprincipalrelationshiploaderspec.ROOT' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrgPrincipalRelation'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrgPrincipalRelationToRECORD' sourceTypeName='org.acord.OrgPrincipalRelation' targetTypeName='ideaorgprincipalrelationshiploaderspec.RECORD' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='EndDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='EndDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrgTaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='OrgTaxID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='RelationshipType'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RelationshipType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonSSN'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PersonSSN'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='StartDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StartDate'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

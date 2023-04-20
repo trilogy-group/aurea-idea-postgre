@@ -61,6 +61,11 @@ import dcm.utils.LOAResponse;
 import dcm.utils.LOARequest;
 import dcm.utils.PartyStatusResponse;
 import dcm.utils.PartyStatusRequest;
+import dcm.utils.RootAPPartyResponse;
+import dcm.utils.RootAPPartyRequest;
+import dcm.utils.OrgPrincipalResponse;
+import dcm.utils.OrgPrincipalRelation;
+import dcm.utils.OrgPrincipalRequest;
 /*
  * Copyright (c) 2004-2014 by Aurea, Inc. All Rights Reserved.
  * All use, reproduction, transfer, publication or disclosure is prohibited
@@ -1103,7 +1108,7 @@ public class DCMUtilsDataSourceImpl extends OperationDatasourceImpl {
 					/*if(MiscLibrary.isCurrentDataServiceOperation("GetLastStatusReason")) {
 						return null;
 					}*/
-					System.out.println("GetLastStatusReason Called...!"+Parameter1.getPartyId());
+					
 					//begin user defined code for operation
 					java.lang.Object[] _args = new java.lang.Object[] { Parameter1};
 					DCMClassLoaderHelper dcmClassLoader = DCMClassLoaderHelper.getDCMClassLoader();
@@ -1142,5 +1147,111 @@ public class DCMUtilsDataSourceImpl extends OperationDatasourceImpl {
 					
 					//end user defined code for operation
 				}
+
+
+			/**
+				 * CheckRootApParty custom method
+				 * Description: 
+				 * @param Parameter1 
+			 	 * @return RootAPPartyResponse 
+			 	 */
+				public RootAPPartyResponse CheckRootApParty(
+						RootAPPartyRequest Parameter1) {
+					//begin user defined code for operation
+					java.lang.Object[] _args = new java.lang.Object[] { Parameter1};
+					
+					DCMClassLoaderHelper dcmClassLoader = DCMClassLoaderHelper.getDCMClassLoader();
+					ClassLoader oldClassLoader = Thread.currentThread().getContextClassLoader();
+					String error = null;
+					Object retVal = null;
+					try{
+						logger.debug("CheckRootApParty Called.....!!!");
+						logger.debug("TaxID:"+Parameter1.getTaxId()+" APID:"+Parameter1.getApId());
+						Thread.currentThread().setContextClassLoader(DCMClassLoaderHelper.s_dcmClassLoader);
+						Class clz = dcmClassLoader.loadClass("com.aviva.fs.DCMTZXIntegration.IMPDataRetriever");
+						Method method = clz.getMethod("checkRootAPTaxId", new Class[] {String.class,String.class,Date.class});
+						Object service = clz.newInstance();
+						retVal = method.invoke(service, new Object[] {Parameter1.getApId(),Parameter1.getTaxId(),Parameter1.getContractEffectiveDate()});
+						
+					}  catch (Exception e) {
+						error = e.getMessage();
+						Thread.currentThread().setContextClassLoader(oldClassLoader);
+						StringWriter sw = new StringWriter();
+						PrintWriter pw = new PrintWriter(sw);
+						e.printStackTrace(pw);
+						logger.debug("EXCEPTION IS - : " + sw.toString());
+					} finally {
+						Thread.currentThread().setContextClassLoader(oldClassLoader);
+					}
+					HashMap<String,String> data=(HashMap<String,String>)retVal;
+					RootAPPartyResponse response=new RootAPPartyResponse();
+					response.setFound(data.get("Found"));
+					logger.debug("CheckRootApParty Called...RetVal:"+response.getFound());
+					return response;					
+					//end user defined code for operation
+				}
+
+
+				
+				private void generateOrgPrincipalResponse(Vector<Map> loaDataList,OrgPrincipalResponse response) {
+					List<OrgPrincipalRelation> orgPriList=new ArrayList<OrgPrincipalRelation>();
+					for (Iterator iterator = loaDataList.iterator(); iterator.hasNext();) {
+						Map posDataMap = (Map) iterator.next();
+						OrgPrincipalRelation orgPriData = new OrgPrincipalRelation();	
+						orgPriData.setStartDate((String) posDataMap.get("startDate"));
+						orgPriData.setEndDate((String) posDataMap.get("endDate"));					
+						orgPriData.setRelationshipType((String)posDataMap.get("relationshipType"));
+						orgPriData.setPartyId((String)posDataMap.get("partyId"));
+						orgPriData.setName((String)posDataMap.get("name"));
+						orgPriList.add(orgPriData);
+					}					
+					response.setData(orgPriList);		
+				}
+
+
+				/**
+					 * GetOrgPrincipalRelation custom method
+					 * Description: 
+					 * @param Parameter1 
+				 	 * @return OrgPrincipalResponse 
+				 	 */
+					public OrgPrincipalResponse GetOrgPrincipalRelation(
+							OrgPrincipalRequest Parameter1) {
+						//begin user defined code for operation		
+						System.out.println("GetOrgPrincipalRelation Called...::"+Parameter1);
+						DCMClassLoaderHelper dcmClassLoader = DCMClassLoaderHelper.getDCMClassLoader();
+						ClassLoader oldClassLoader = Thread.currentThread().getContextClassLoader();
+						String error = null;
+						Object retVal = null;
+
+						try{
+							Thread.currentThread().setContextClassLoader(DCMClassLoaderHelper.s_dcmClassLoader);
+							Class clz = dcmClassLoader.loadClass("com.aviva.fs.DCMTZXIntegration.IMPDataRetriever");
+							Method method = clz.getMethod("getOrgPrincipalRelation", new Class[] {String.class});
+							Object service = clz.newInstance();
+							retVal = method.invoke(service, new Object[] {Parameter1.getOrgTaxID()});
+						}  catch (Exception e) {
+							error = e.getMessage();
+							Thread.currentThread().setContextClassLoader(oldClassLoader);
+							StringWriter sw = new StringWriter();
+							PrintWriter pw = new PrintWriter(sw);
+							e.printStackTrace(pw);
+							logger.debug("EXCEPTION IS - : " + sw.toString());
+						} finally {
+							Thread.currentThread().setContextClassLoader(oldClassLoader);
+						}
+
+						OrgPrincipalResponse response = new OrgPrincipalResponse();
+
+						if(error != null || retVal == null) {
+							logger.debug("Error or null results");
+							return response;
+						}
+
+						generateOrgPrincipalResponse((Vector<Map>) retVal, response);
+						return response;
+						
+						//end user defined code for operation
+					}
 }
 

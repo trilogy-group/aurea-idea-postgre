@@ -523,7 +523,7 @@
       <TransformationTarget isSynthetic='false' pathString='ServicingOnly'>
       </TransformationTarget>
     </Transformation>
-	<Transformation isSynthetic='false'>
+    <Transformation isSynthetic='false'>
       <TransformationSource isSynthetic='false' name='' language='EXPR'>
         <ReturnTypeDescription></ReturnTypeDescription>
         <Code></Code>
@@ -533,7 +533,7 @@
       <TransformationTarget isSynthetic='false' pathString='ProductPrefPreset'>
       </TransformationTarget>
     </Transformation>
-	<Transformation isSynthetic='false'>
+    <Transformation isSynthetic='false'>
       <TransformationSource isSynthetic='false' name='' language='EXPR'>
         <ReturnTypeDescription></ReturnTypeDescription>
         <Code></Code>
@@ -835,6 +835,112 @@
         </PathExpression>
       </TransformationSource>
       <TransformationTarget isSynthetic='false' pathString='ContractEffectiveDate'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='IPMContextToRootAPPartyRequest' sourceTypeName='org.acord.IPMContext' targetTypeName='dcm.utils.RootAPPartyRequest' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForIPMContextToRootAPPartyRequest' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='false'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.MiscLibrary' methodName='isCurrentDataServiceOperation'>
+        </MethodReference>
+        <GenericModelObjectArgument isSynthetic='false' targetName='IPMDataService/CheckRootApParty' modelObjectClass='com.pantero.metamodel.operations.DataServiceOperation'>
+        </GenericModelObjectArgument>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='APID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='apId'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='taxId'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='ContractEffectiveDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='ContractEffectiveDate'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrgPrincipalRelationHelperToOrgPrincipalRelation' sourceTypeName='org.acord.OrgPrincipalRelationHelper' targetTypeName='dcm.utils.OrgPrincipalRelation' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='EndDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='EndDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrgTaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='OrgTaxID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonSSN'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PersonSSN'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='RelationshipType'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RelationshipType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='StartDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StartDate'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrgPrincipalRequestToOrgPrincipalRequest' sourceTypeName='org.acord.OrgPrincipalRequest' targetTypeName='dcm.utils.OrgPrincipalRequest' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrgTaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='OrgTaxID'>
       </TransformationTarget>
     </Transformation>
   </ClassMap>

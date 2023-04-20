@@ -114,4 +114,20 @@
       </Parameter>
     </OperationMethod>
   </DatasourceOperation>
+  <DatasourceOperation isSynthetic='false' name='CheckRootApParty' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='CheckRootApParty' returnTypeName='dcm.utils.RootAPPartyResponse' language='JAVA' returnTypeElementName='CheckRootApPartyReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='dcm.utils.RootAPPartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </DatasourceOperation>
+  <DatasourceOperation isSynthetic='false' name='GetOrgPrincipalRelation' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='GetOrgPrincipalRelation' returnTypeName='dcm.utils.OrgPrincipalResponse' language='JAVA' returnTypeElementName='GetOrgPrincipalRelationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='dcm.utils.OrgPrincipalRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </DatasourceOperation>
 </DatasourceModel>

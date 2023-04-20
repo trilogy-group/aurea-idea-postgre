@@ -405,7 +405,7 @@
       <TransformationTarget isSynthetic='false' pathString='Organization/AtheneOrgCustomfields/BusinessType'>
       </TransformationTarget>
     </Transformation>
-	<Transformation isSynthetic='false'>
+    <Transformation isSynthetic='false'>
       <TransformationSource isSynthetic='false' name='' language='EXPR'>
         <ReturnTypeDescription></ReturnTypeDescription>
         <Code></Code>
@@ -553,6 +553,122 @@
         </PathExpression>
       </TransformationSource>
       <TransformationTarget isSynthetic='false' pathString='LastStatusReason'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='RootAPPartyResponseToIPMContext' sourceTypeName='dcm.utils.RootAPPartyResponse' targetTypeName='org.acord.IPMContext' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='found'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='Result'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='apId'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='parentApOrg'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrgPrincipalRelationToOrgPrincipalRelation' sourceTypeName='dcm.utils.OrgPrincipalRelation' targetTypeName='org.acord.OrgPrincipalRelation' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='EndDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='EndDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrgTaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='OrgTaxID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonSSN'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PersonSSN'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='RelationshipType'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RelationshipType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='StartDate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StartDate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='.'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='.'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='Name'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PartyId'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PartyId'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrgPrincipalResponseToIPMContext' sourceTypeName='dcm.utils.OrgPrincipalResponse' targetTypeName='org.acord.IPMContext' autoReverse='false'>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='data'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='OrgPrincipalDatas'>
       </TransformationTarget>
     </Transformation>
   </ClassMap>
