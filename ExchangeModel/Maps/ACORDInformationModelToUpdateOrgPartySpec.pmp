@@ -667,6 +667,16 @@
       <TransformationTarget isSynthetic='false' pathString='AVIPCVersion'>
       </TransformationTarget>
     </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AtheneOrgCustomfields/AVDistributorAssignedAgentID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVDistributorAssignedAgentID'>
+      </TransformationTarget>
+    </Transformation>
   </ClassMap>
   <ClassMap isSynthetic='false' name='ContextToROOT' sourceTypeName='org.acord.Context' targetTypeName='updateorgpartyspec.ROOT' autoReverse='false'>
     <Precondition isSynthetic='false' name='preconditionForContextToROOT' language='EXPR'>

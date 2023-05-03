@@ -543,6 +543,16 @@
       <TransformationTarget isSynthetic='false' pathString='ProductGroup'>
       </TransformationTarget>
     </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='setupDCMDataDetails/AVDistributorAssignedAgentID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVDistributorAssignedAgentID'>
+      </TransformationTarget>
+    </Transformation>
   </ClassMap>
   <ClassMap isSynthetic='false' name='IPMContextToHierarchyPositionRequest' sourceTypeName='org.acord.IPMContext' targetTypeName='dcm.utils.HierarchyPositionRequest' autoReverse='false'>
     <Precondition isSynthetic='false' name='preconditionForIPMContextToHierarchyPositionRequest' language='EXPR'>

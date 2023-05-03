@@ -758,7 +758,7 @@
     <AttributeProperty isSynthetic='false' name='DOLFIStatus' assignable='true' index='51'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
-	<AttributeProperty isSynthetic='false' name='AVAdvOnClientInitFunds' assignable='true' defaultLiteral='false' index='52'>
+    <AttributeProperty isSynthetic='false' name='AVAdvOnClientInitFunds' assignable='true' defaultLiteral='false' index='52'>
       <Description>AVAdvOnClientInitFunds</Description>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
@@ -774,7 +774,9 @@
       <Description>AVIPCVersion</Description>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
-  
+    <AttributeProperty isSynthetic='false' name='AVDistributorAssignedAgentID' assignable='true' index='56'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileRoot' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.RootEntityTypeSubclass' name='updateorgpartyspec.ROOT' isAbstract='false'>
     <RelationshipProperty isSynthetic='false' name='RECORD' originalName='RECORD' assignable='true' index='0' required='true' cardinality='One2Many' containment='true' collectionType='List'>

@@ -347,6 +347,16 @@
       <TransformationTarget isSynthetic='false' pathString='AthenePersonCustomfields/AVIPCEffectiveDate'>
       </TransformationTarget>
     </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='FsPartyForScPerson/avdistributorassignedagentid'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AthenePersonCustomfields/AVDistributorAssignedAgentID'>
+      </TransformationTarget>
+    </Transformation>
   </ClassMap>
   <ClassMap isSynthetic='false' name='ScOrganizationToOrganization' sourceTypeName='dcmdbp._public.ScOrganization' targetTypeName='org.acord.aim.Party.Organization' autoReverse='false'>
     <Transformation isSynthetic='false' nullHandling='Ignore Null'>
@@ -1141,6 +1151,16 @@
         </ConditionalExpression>
       </TransformationSource>
       <TransformationTarget isSynthetic='false' pathString='AtheneOrgCustomfields/AVAdvOnClientInitFunds'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='FsPartyForScOrganization/avdistributorassignedagentid'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AtheneOrgCustomfields/AVDistributorAssignedAgentID'>
       </TransformationTarget>
     </Transformation>
   </ClassMap>

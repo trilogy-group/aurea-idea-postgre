@@ -663,7 +663,7 @@ public class DCMUtilsDataSourceImpl extends OperationDatasourceImpl {
 			FileObject configFile = projectDirectory.getChild("config.properties");			
 			logger.debug("SERVICING ONLY IS - : " + Parameter1.getServicingOnly());
 			logger.debug("GetProfPrefPreset IS - : " + Parameter1.getProductPrefPreset());
-			logger.debug("GetProduct Group - : " + Parameter1.getProductGroup());			
+			logger.debug("GetProduct Group - : " + Parameter1.getProductGroup());		
 			Properties configProp = new Properties();
 			input = FileUtils.getInputStream(configFile);
 			configProp.load(input);			

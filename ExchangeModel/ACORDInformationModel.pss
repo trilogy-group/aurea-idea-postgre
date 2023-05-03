@@ -26409,6 +26409,9 @@ e.g: KGK Car Repair Shop.</Description>
     <AttributeProperty isSynthetic='false' name='AVProductGroup' assignable='true' index='42'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVDistributorAssignedAgentID' assignable='true' index='43'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' name='org.acord.AthenePersonCustomFields' isAbstract='false'>
     <AttributeProperty isSynthetic='false' name='InitialContractDate' assignable='true' index='0'>
@@ -26445,6 +26448,9 @@ e.g: KGK Car Repair Shop.</Description>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
     <AttributeProperty isSynthetic='false' name='AVIPCOnFile' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVDistributorAssignedAgentID' assignable='true' index='12'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
   </EntityType>
@@ -26667,6 +26673,9 @@ e.g: Broker agreement between Broker ABC and Acme Insurance Company.</Descriptio
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
     <AttributeProperty isSynthetic='false' name='ProductGroup' assignable='true' index='22'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVDistributorAssignedAgentID' assignable='true' index='22'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
   </EntityType>

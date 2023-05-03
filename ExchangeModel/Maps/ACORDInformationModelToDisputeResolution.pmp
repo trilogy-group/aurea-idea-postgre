@@ -2873,6 +2873,16 @@
       <TransformationTarget isSynthetic='false' pathString='AVIPCVersion'>
       </TransformationTarget>
     </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AVDistributorAssignedAgentID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVDistributorAssignedAgentID'>
+      </TransformationTarget>
+    </Transformation>
   </ClassMap>
   <ClassMap isSynthetic='false' name='AtheneOrgCustomFieldsToAtheneOrgCustomFields' sourceTypeName='org.acord.AtheneOrgCustomFields' targetTypeName='com.partyinformation.AtheneOrgCustomFields' autoReverse='false'>
     <Transformation isSynthetic='false' nullHandling='Ignore Null'>
@@ -3335,6 +3345,16 @@
         </PathExpression>
       </TransformationSource>
       <TransformationTarget isSynthetic='false' pathString='AVAdvOnClientInitFunds'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AVDistributorAssignedAgentID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='AVDistributorAssignedAgentID'>
       </TransformationTarget>
     </Transformation>
   </ClassMap>

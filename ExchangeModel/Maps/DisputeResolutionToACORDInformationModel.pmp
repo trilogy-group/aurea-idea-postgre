@@ -1055,6 +1055,16 @@
       <TransformationTarget isSynthetic='false' pathString='setupDCMDataDetails/ProductGroup'>
       </TransformationTarget>
     </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='AVDistributorAssignedAgentID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='setupDCMDataDetails/AVDistributorAssignedAgentID'>
+      </TransformationTarget>
+    </Transformation>
   </ClassMap>
   <ClassMap isSynthetic='false' name='HierarchyPositionRequestToIPMContext' sourceTypeName='com.ipm.HierarchyPositionRequest' targetTypeName='org.acord.IPMContext' autoReverse='false'>
     <Transformation isSynthetic='false'>

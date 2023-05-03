@@ -206,6 +206,9 @@
     <AttributeProperty isSynthetic='false' name='ProductGroup' assignable='true' index='22'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVDistributorAssignedAgentID' assignable='true' index='23'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' name='dcm.utils.setupDCMDataResponse' isAbstract='false'>
     <AttributeProperty isSynthetic='false' name='Errors' assignable='true' index='0'>

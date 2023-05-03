@@ -1054,6 +1054,9 @@
       </ExtensionProperty>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVDistributorAssignedAgentID' assignable='true' index='47'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileRoot' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.RootEntityTypeSubclass' name='updatepersonpartyspec.ROOT' isAbstract='false'>
     <RelationshipProperty isSynthetic='false' name='RECORD' originalName='RECORD' assignable='true' index='0' required='true' cardinality='One2Many' containment='true' collectionType='List'>

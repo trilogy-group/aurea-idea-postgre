@@ -1080,6 +1080,9 @@
     <AttributeProperty isSynthetic='false' name='AVIPCVersion' assignable='true' index='41'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVDistributorAssignedAgentID' assignable='true' index='42'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' name='com.partyinformation.AthenePersonCustomFields' isAbstract='false'>
     <AttributeProperty isSynthetic='false' name='InitialContractDate' assignable='true' index='0'>
@@ -1116,6 +1119,9 @@
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
     <AttributeProperty isSynthetic='false' name='AVIPCVersion' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='AVDistributorAssignedAgentID' assignable='true' index='12'>
       <TypeName>java.lang.String</TypeName>
     </AttributeProperty>
   </EntityType>

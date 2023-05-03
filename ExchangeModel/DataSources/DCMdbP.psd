@@ -2074,7 +2074,7 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='salesteam' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	 <DatabaseAttributeProperty isSynthetic='true' name='avadjledgertype' originalName='avadjledgertype' assignable='true' index='28' totalDigitCount='11' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avadjledgertype' originalName='avadjledgertype' assignable='true' index='28' totalDigitCount='11' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avadjustmentfactor' originalName='avadjustmentfactor' assignable='true' index='29' totalDigitCount='126' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='6'>
@@ -2490,7 +2490,7 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='fsAccount' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	<DatabaseAttributeProperty isSynthetic='true' name='avoriginator' originalName='avoriginator' assignable='true' index='16' maxLength='10' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avoriginator' originalName='avoriginator' assignable='true' index='16' maxLength='10' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
     <KeyDescriptor isSynthetic='true' name='DXPK_fs_actupdate' enrichment='true'>
@@ -2587,7 +2587,7 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='fsParty' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	<DatabaseAttributeProperty isSynthetic='true' name='avdgaindicator' originalName='avdgaindicator' assignable='true' index='6' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avdgaindicator' originalName='avdgaindicator' assignable='true' index='6' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
       <TypeName>java.lang.Byte</TypeName>
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avkdpindicator' originalName='avkdpindicator' assignable='true' index='7' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
@@ -3600,7 +3600,7 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='fsAddress' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	 <DatabaseAttributeProperty isSynthetic='true' name='avcontactname' originalName='avcontactname' assignable='true' index='14' maxLength='64' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avcontactname' originalName='avcontactname' assignable='true' index='14' maxLength='64' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avcontactptverfieddate' originalName='avcontactptverfieddate' assignable='true' index='13' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
@@ -3656,7 +3656,7 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='fsContactpoint' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	 <DatabaseAttributeProperty isSynthetic='true' name='avagreementparticipant' originalName='avagreementparticipant' assignable='true' index='11' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avagreementparticipant' originalName='avagreementparticipant' assignable='true' index='11' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avoverridedwnlncommpref' originalName='avoverridedwnlncommpref' assignable='true' index='12' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
@@ -4859,7 +4859,7 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='trilGid' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	<DatabaseAttributeProperty isSynthetic='true' name='avsalesdesignation' originalName='avsalesdesignation' assignable='true' index='4' totalDigitCount='11' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avsalesdesignation' originalName='avsalesdesignation' assignable='true' index='4' totalDigitCount='11' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
     <KeyDescriptor isSynthetic='true' name='DXPK_fs_eposition' enrichment='true'>
@@ -4944,7 +4944,7 @@
     <DatabaseAttributeProperty isSynthetic='true' name='type' originalName='type' assignable='true' index='11' totalDigitCount='10' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='4'>
       <TypeName>java.lang.Integer</TypeName>
     </DatabaseAttributeProperty>
-	<KeyRelationshipProperty isSynthetic='false' name='FsGwrequest' assignable='true' cardinality='Many2One' containment='false' collectionType='Set'>
+    <KeyRelationshipProperty isSynthetic='false' name='FsGwrequest' assignable='true' cardinality='Many2One' containment='false' collectionType='Set'>
       <TypeName>dcmdbp._public.FsGwrequest</TypeName>
       <RelationshipProperty isSynthetic='false' name='FsErrorForFsGwrequest' assignable='true'>
       </RelationshipProperty>
@@ -5102,7 +5102,7 @@
     <DatabaseAttributeProperty isSynthetic='true' name='gwUser' originalName='gw_user' assignable='true' index='9' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-	<KeyRelationshipProperty isSynthetic='false' name='FsRequest' assignable='true' cardinality='One2One' containment='false'>
+    <KeyRelationshipProperty isSynthetic='false' name='FsRequest' assignable='true' cardinality='One2One' containment='false'>
       <TypeName>dcmdbp._public.FsRequest</TypeName>
       <RelationshipProperty isSynthetic='false' name='FsGwrequestForFsRequest' assignable='true'>
       </RelationshipProperty>
@@ -5948,7 +5948,6 @@
     <DatabaseAttributeProperty isSynthetic='true' name='displayname' originalName='displayname' assignable='true' index='2' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-   
     <DatabaseAttributeProperty isSynthetic='true' name='internalname' originalName='internalname' assignable='true' index='4' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
@@ -6392,10 +6391,10 @@
         </ConditionalExpression>
       </GetterMethod>
     </CustomProperty>
-	 <DatabaseAttributeProperty isSynthetic='true' name='avinitialcontractdate' originalName='avinitialcontractdate' assignable='true' index='27' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avinitialcontractdate' originalName='avinitialcontractdate' assignable='true' index='27' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
       <TypeName>com.progress.dataxtend.si.util.DateTime</TypeName>
     </DatabaseAttributeProperty>
-	<DatabaseAttributeProperty isSynthetic='true' name='avkdpindicator' originalName='avkdpindicator' assignable='true' index='28' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avkdpindicator' originalName='avkdpindicator' assignable='true' index='28' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
       <TypeName>java.lang.Byte</TypeName>
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avlopexemptreason' originalName='avlopexemptreason' assignable='true' index='29' totalDigitCount='11' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
@@ -6421,6 +6420,10 @@
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='false' name='avipcversion' originalName='avipcversion' assignable='true' index='39' maxLength='11' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <Description>AVIPCVersion</Description>
+      <TypeName>java.lang.String</TypeName>
+    </DatabaseAttributeProperty>
+ <DatabaseAttributeProperty isSynthetic='false' name='avdistributorassignedagentid' originalName='avdistributorassignedagentid' assignable='true' index='40' maxLength='20' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
+      <Description>AVDistributorAssignedAgentID</Description>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
     <KeyDescriptor isSynthetic='true' name='DXPK_fs_party' enrichment='true'>
@@ -6472,11 +6475,11 @@
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='serverseqid' originalName='serverseqid' assignable='true' index='14' totalDigitCount='10' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='4'>
       <TypeName>java.lang.Integer</TypeName>
-    </DatabaseAttributeProperty>	
+    </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avaccountholdername' originalName='avaccountholdername' assignable='true' index='15' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-	<DatabaseAttributeProperty isSynthetic='true' name='avaccountnumber' originalName='avaccountnumber' assignable='true' index='16' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avaccountnumber' originalName='avaccountnumber' assignable='true' index='16' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avbankaccounttype' originalName='avbankaccounttype' assignable='true' index='17' totalDigitCount='11' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
@@ -6497,7 +6500,7 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='fsParty' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	<KeyRelationshipProperty isSynthetic='false' name='FsAccountdet' assignable='true' index='22' cardinality='Many2One' containment='false' collectionType='Set'>
+    <KeyRelationshipProperty isSynthetic='false' name='FsAccountdet' assignable='true' index='22' cardinality='Many2One' containment='false' collectionType='Set'>
       <TypeName>dcmdbp._public.FsAccountdet</TypeName>
       <RelationshipProperty isSynthetic='false' name='FsPayaccountForFsAccountdet' assignable='true'>
       </RelationshipProperty>
@@ -6505,10 +6508,8 @@
     </KeyRelationshipProperty>
     <KeyDescriptor isSynthetic='true' name='DXPK_fs_payaccount' enrichment='true'>
       <PropertyName>trilGid</PropertyName>
-    </KeyDescriptor> 
-    
+    </KeyDescriptor>
   </DatabaseEntityType>
-  
   <DatabaseEntityType isSynthetic='true' name='dcmdbp._public.FsPersonDetails' originalName='fs_person_details' isAbstract='false' primaryKeyDescriptor='DXPK_fs_person_details' dbType='table'>
     <DatabaseAttributeProperty isSynthetic='true' name='trilGid' originalName='tril_gid' assignable='true' index='0' required='true' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
@@ -6850,7 +6851,7 @@
     <DatabaseAttributeProperty isSynthetic='true' name='fsSource' originalName='fs_source' assignable='true' index='10' maxLength='255' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-	<KeyRelationshipProperty isSynthetic='false' name='FsAppoint' assignable='true' cardinality='Many2One' index='11' containment='false' collectionType='Set'>
+    <KeyRelationshipProperty isSynthetic='false' name='FsAppoint' assignable='true' index='11' cardinality='Many2One' containment='false' collectionType='Set'>
       <TypeName>dcmdbp._public.FsAppoint</TypeName>
       <RelationshipProperty isSynthetic='false' name='FsRequestForFsAppoint' assignable='true'>
       </RelationshipProperty>
@@ -6914,7 +6915,7 @@
     <DatabaseAttributeProperty isSynthetic='true' name='serverseqid' originalName='serverseqid' assignable='true' index='8' totalDigitCount='10' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='4'>
       <TypeName>java.lang.Integer</TypeName>
     </DatabaseAttributeProperty>
-	<KeyRelationshipProperty isSynthetic='false' name='Fs_Distributordata' assignable='true' cardinality='Many2One' containment='false' collectionType='Set'>
+    <KeyRelationshipProperty isSynthetic='false' name='Fs_Distributordata' assignable='true' cardinality='Many2One' containment='false' collectionType='Set'>
       <TypeName>dcmdbp._public.FsDistributordata</TypeName>
       <RelationshipProperty isSynthetic='false' name='FsRoleForFs_Distributordata' assignable='true'>
       </RelationshipProperty>
@@ -6926,7 +6927,6 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='fsParty' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	
     <KeyDescriptor isSynthetic='true' name='DXPK_fs_role' enrichment='true'>
       <PropertyName>trilGid</PropertyName>
     </KeyDescriptor>
@@ -13298,7 +13298,7 @@
       </RelationshipProperty>
       <KeyRelationshipMap fromPropertyName='fsAddress' toPropertyName='trilGid'/>
     </KeyRelationshipProperty>
-	<DatabaseAttributeProperty isSynthetic='true' name='avamlexclforassocperson' originalName='avamlexclforassocperson' assignable='true' index='16' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avamlexclforassocperson' originalName='avamlexclforassocperson' assignable='true' index='16' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
       <TypeName>java.lang.Byte</TypeName>
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avbkgndchkwaivforassocperson' originalName='avbkgndchkwaivforassocperson' assignable='true' index='17' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
@@ -13602,7 +13602,7 @@
     <DatabaseAttributeProperty isSynthetic='true' name='title' originalName='title' assignable='true' index='16' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-	<DatabaseAttributeProperty isSynthetic='true' name='avbeneficiaryinfoonfile' originalName='avbeneficiaryinfoonfile' assignable='true' index='44' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avbeneficiaryinfoonfile' originalName='avbeneficiaryinfoonfile' assignable='true' index='44' totalDigitCount='1' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='3'>
       <TypeName>java.lang.Byte</TypeName>
     </DatabaseAttributeProperty>
     <DatabaseAttributeProperty isSynthetic='true' name='avcrdnumber' originalName='avcrdnumber' assignable='true' index='45' maxLength='10' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
@@ -15509,52 +15509,52 @@
     </KeyDescriptor>
   </DatabaseEntityType>
   <DatabaseEntityType isSynthetic='true' name='dcmdbp._public.FsRirsaction' originalName='fs_rirsaction' isAbstract='false' primaryKeyDescriptor='DXPK_fs_rirsaction' dbType='table'>
-    <DatabaseAttributeProperty isSynthetic='true' name='trilGid' originalName='tril_gid' assignable='true' required='true' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='0'>
+    <DatabaseAttributeProperty isSynthetic='true' name='trilGid' originalName='tril_gid' assignable='true' index='0' required='true' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsActionid' originalName='fs_actionid' assignable='true' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='1'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsActionid' originalName='fs_actionid' assignable='true' index='1' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsDateaction' originalName='fs_dateaction' assignable='true' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93' index='2'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsDateaction' originalName='fs_dateaction' assignable='true' index='2' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
       <TypeName>com.progress.dataxtend.si.util.DateTime</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsDisposition' originalName='fs_disposition' assignable='true' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='3'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsDisposition' originalName='fs_disposition' assignable='true' index='3' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsEffectivedate' originalName='fs_effectivedate' assignable='true' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93' index='4'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsEffectivedate' originalName='fs_effectivedate' assignable='true' index='4' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
       <TypeName>com.progress.dataxtend.si.util.DateTime</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsEnterdate' originalName='fs_enterdate' assignable='true' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93' index='5'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsEnterdate' originalName='fs_enterdate' assignable='true' index='5' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
       <TypeName>com.progress.dataxtend.si.util.DateTime</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsEntityrole' originalName='fs_entityrole' assignable='true' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='6'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsEntityrole' originalName='fs_entityrole' assignable='true' index='6' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsFileref' originalName='fs_fileref' assignable='true' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='7'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsFileref' originalName='fs_fileref' assignable='true' index='7' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsLengthorder' originalName='fs_lengthorder' assignable='true' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5' index='8'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsLengthorder' originalName='fs_lengthorder' assignable='true' index='8' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsOrigin' originalName='fs_origin' assignable='true' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='9'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsOrigin' originalName='fs_origin' assignable='true' index='9' maxLength='100' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsParty' originalName='fs_party' assignable='true' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='10'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsParty' originalName='fs_party' assignable='true' index='10' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsPenalty' originalName='fs_penalty' assignable='true' totalDigitCount='17' fractionDigitCount='17' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='8' index='11'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsPenalty' originalName='fs_penalty' assignable='true' index='11' totalDigitCount='17' fractionDigitCount='17' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='8'>
       <TypeName>java.lang.Double</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsReasonforaction' originalName='fs_reasonforaction' assignable='true' maxLength='255' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='12'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsReasonforaction' originalName='fs_reasonforaction' assignable='true' index='12' maxLength='255' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsStatecode' originalName='fs_statecode' assignable='true' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5' index='13'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsStatecode' originalName='fs_statecode' assignable='true' index='13' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsStateid' originalName='fs_stateid' assignable='true' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5' index='14'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsStateid' originalName='fs_stateid' assignable='true' index='14' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsStateRirsId' originalName='fs_state_rirs_id' assignable='true' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='15'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsStateRirsId' originalName='fs_state_rirs_id' assignable='true' index='15' maxLength='50' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
     <KeyRelationshipProperty isSynthetic='false' name='FsParty1' assignable='true' cardinality='Many2One' containment='false' collectionType='Set'>
@@ -15565,38 +15565,38 @@
       <PropertyName>trilGid</PropertyName>
     </KeyDescriptor>
   </DatabaseEntityType>
-   <DatabaseEntityType isSynthetic='true' name='dcmdbp._public.Avfiagreement' originalName='avfiagreement' isAbstract='false' primaryKeyDescriptor='DXPK_avfiagreement' dbType='table'>
-    <DatabaseAttributeProperty isSynthetic='true' name='trilGid' originalName='tril_gid' assignable='true' required='true' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='0'>
+  <DatabaseEntityType isSynthetic='true' name='dcmdbp._public.Avfiagreement' originalName='avfiagreement' isAbstract='false' primaryKeyDescriptor='DXPK_avfiagreement' dbType='table'>
+    <DatabaseAttributeProperty isSynthetic='true' name='trilGid' originalName='tril_gid' assignable='true' index='0' required='true' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='avapplicable' originalName='avapplicable' assignable='true' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5' index='1'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avapplicable' originalName='avapplicable' assignable='true' index='1' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='avdate' originalName='avdate' assignable='true' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93' index='2'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avdate' originalName='avdate' assignable='true' index='2' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
       <TypeName>com.progress.dataxtend.si.util.DateTime</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='avenddate' originalName='avenddate' assignable='true' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93' index='3'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avenddate' originalName='avenddate' assignable='true' index='3' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
       <TypeName>com.progress.dataxtend.si.util.DateTime</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='avname' originalName='avname' assignable='true' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5' index='4'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avname' originalName='avname' assignable='true' index='4' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='avonfile' originalName='avonfile' assignable='true' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5' index='5'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avonfile' originalName='avonfile' assignable='true' index='5' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='avversion' originalName='avversion' assignable='true' maxLength='64' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='6'>
+    <DatabaseAttributeProperty isSynthetic='true' name='avversion' originalName='avversion' assignable='true' index='6' maxLength='64' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='fsparty' originalName='fsparty' assignable='true' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12' index='7'>
+    <DatabaseAttributeProperty isSynthetic='true' name='fsparty' originalName='fsparty' assignable='true' index='7' maxLength='34' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='12'>
       <TypeName>java.lang.String</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='modificationdate' originalName='modificationdate' assignable='true' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93' index='8'>
+    <DatabaseAttributeProperty isSynthetic='true' name='modificationdate' originalName='modificationdate' assignable='true' index='8' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='93'>
       <TypeName>com.progress.dataxtend.si.util.DateTime</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='seqid' originalName='seqid' assignable='true' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5' index='9'>
+    <DatabaseAttributeProperty isSynthetic='true' name='seqid' originalName='seqid' assignable='true' index='9' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
-    <DatabaseAttributeProperty isSynthetic='true' name='type' originalName='type' assignable='true' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5' index='10'>
+    <DatabaseAttributeProperty isSynthetic='true' name='type' originalName='type' assignable='true' index='10' totalDigitCount='19' indexColumn='false' keyGeneratorMethod='assigned' jdbcTypeCode='-5'>
       <TypeName>java.lang.Long</TypeName>
     </DatabaseAttributeProperty>
     <KeyRelationshipProperty isSynthetic='false' name='FsParty1' assignable='true' cardinality='Many2One' containment='false' collectionType='Set'>
