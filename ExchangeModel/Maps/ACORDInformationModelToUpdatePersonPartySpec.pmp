@@ -343,12 +343,20 @@
       <TransformationTarget isSynthetic='false' pathString='BeneficiaryInfoOnFile'>
       </TransformationTarget>
     </Transformation>
-    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+     <Transformation isSynthetic='false' nullHandling='Ignore Null'>
       <TransformationSource isSynthetic='false' name='' language='EXPR'>
         <ReturnTypeDescription></ReturnTypeDescription>
         <Code></Code>
-        <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/InitialContractDate'>
-        </PathExpression>
+		 <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/InitialContractDate'>
+            </PathExpression>
+          </MethodExpression>
+          <PathExpression isSynthetic='false' pathString='AthenePersonCustomfields/InitialContractDate'>
+          </PathExpression>
+        </ConditionalExpression>
       </TransformationSource>
       <TransformationTarget isSynthetic='false' pathString='InitialContractDate'>
       </TransformationTarget>
