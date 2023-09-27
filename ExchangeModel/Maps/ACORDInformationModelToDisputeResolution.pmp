@@ -2709,6 +2709,16 @@
       <TransformationTarget isSynthetic='false' pathString='EOWaived'>
       </TransformationTarget>
     </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='JITExempted'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='JITExempt'>
+      </TransformationTarget>
+    </Transformation>
   </ClassMap>
   <ClassMap isSynthetic='false' name='IPMContextToOtherCompanyAppoinmentsResponse' sourceTypeName='org.acord.IPMContext' targetTypeName='com.ipm.OtherCompanyAppointmentsResponse' autoReverse='false'>
     <Transformation isSynthetic='false'>

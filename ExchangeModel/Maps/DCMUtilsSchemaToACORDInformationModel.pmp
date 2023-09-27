@@ -109,6 +109,16 @@
       <TransformationTarget isSynthetic='false' pathString='BCExempt'>
       </TransformationTarget>
     </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='ResultParam5'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='JITExempted'>
+      </TransformationTarget>
+    </Transformation>
   </ClassMap>
   <ClassMap isSynthetic='false' name='ChildPositionTypeResponseToIPMContext' sourceTypeName='dcm.utils.ChildPositionTypeResponse' targetTypeName='org.acord.IPMContext' autoReverse='false'>
     <Transformation isSynthetic='false'>

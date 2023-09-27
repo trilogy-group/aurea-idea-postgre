@@ -616,6 +616,9 @@
     <AttributeProperty isSynthetic='false' name='BCExempt' assignable='true' index='1'>
       <TypeName>java.lang.Boolean</TypeName>
     </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='JITExempt' assignable='true' index='2'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' name='com.ipm.OtherCompanyAppointmentsRequest' isAbstract='false'>
     <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>

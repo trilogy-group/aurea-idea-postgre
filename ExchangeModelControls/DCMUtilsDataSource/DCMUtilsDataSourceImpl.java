@@ -431,6 +431,7 @@ public class DCMUtilsDataSourceImpl extends OperationDatasourceImpl {
 			res.setResultParam1(retVal.containsKey("Reason")?(String)retVal.get("Reason"):"");
 			res.setResultParam3(retVal.containsKey("EOWaived")?(boolean)retVal.get("EOWaived"):false);
 			res.setResultParam4(retVal.containsKey("BCExempt")?(boolean)retVal.get("BCExempt"):false);
+			res.setResultParam5(retVal.containsKey("JITExempt")?(boolean)retVal.get("JITExempt"):false);
 			return res;
 		}
 
@@ -1169,7 +1170,8 @@ public class DCMUtilsDataSourceImpl extends OperationDatasourceImpl {
 						logger.debug("TaxID:"+Parameter1.getTaxId()+" APID:"+Parameter1.getApId());
 						Thread.currentThread().setContextClassLoader(DCMClassLoaderHelper.s_dcmClassLoader);
 						Class clz = dcmClassLoader.loadClass("com.aviva.fs.DCMTZXIntegration.IMPDataRetriever");
-						Method method = clz.getMethod("checkRootAPTaxId", new Class[] {String.class,String.class,Date.class});
+						//Method method = clz.getMethod("checkRootAPTaxId", new Class[] {String.class,String.class,Date.class});
+						Method method = clz.getMethod("checkRootAPTaxId",new Class[]{String.class,String.class,Date.class,String.class});
 						Object service = clz.newInstance();
 						retVal = method.invoke(service, new Object[] {Parameter1.getApId(),Parameter1.getTaxId(),Parameter1.getContractEffectiveDate()});
 						

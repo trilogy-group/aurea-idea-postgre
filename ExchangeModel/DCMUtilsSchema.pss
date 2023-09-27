@@ -74,6 +74,9 @@
     <AttributeProperty isSynthetic='false' name='ResultParam4' assignable='true' index='3'>
       <TypeName>java.lang.Boolean</TypeName>
     </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ResultParam5' assignable='true' index='4'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
   </EntityType>
   <EntityType isSynthetic='false' name='dcm.utils.GenericRequest' isAbstract='false'>
     <AttributeProperty isSynthetic='false' name='PartyID' assignable='true' index='0'>
