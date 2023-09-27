@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ *      Copyright (C) Unpublished Versata Inc. All rights reserved.
+ *      Versata, Inc., Confidential and Proprietary.
+ *      This software is subject to copyright protection
+ *      under the laws of the United States and other countires.
+ *      Unless otherwise explicitly stated, this software is provided
+ *      by Versata "AS IS".
+ */
+ 
+This spec is used to insert Person party into DCM, person party page available under Party (Tab) - Search for Person
+
+Data File Format:
+Tax ID,Salutation,First Name,Middle Name,Last Name,Prof Designation,Date of Birth,Gender,National Origin,Marital Status,Spouse First Name,Spouse Last Name,Role,Contact Type,Communication Mode,Street1,Street2,Street3,City,State,Country,Zip Code,Phone Number,Fax Number,Email Address,Pager,Cell Phone,Title,Office Number,Description,Email,Fax,Phone1,Phone2,Legal Name,Join Date,NPN,Alternate Last Name,Preferred Name,Publicity Name,CRD Number,DTCCID,Party Role,Party Type,Renewal Fee Payee,Status Code,Status Start Date,Status End Date,User
+
+Sample Data:
+987654321,Mr.,Vasan,Vasan,Vasan,Technical Senior Associate,09/03/1983,MALE,FINLAND,SINGLE,N/A,N/A,DISTRIBUTOR,HOME,MAILING,Street1,street2,street3,Hanover,MA,CANADA,560029,918041322702,918041322999,Vasan@aurea.com,NOT AVAILABLE,919900152352,Aurean,918041322000,The Oxford University Graduate,frontdesk.trilogy@gmail.com,918041322999,918041322000,,Vasan,06/24/2006,N/A,M,Rahul,Rahul,471,120,Selling Agent,Compensation only,Distributor,Recontractable,1/1/2000,1/1/2010,sa
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}/InsertPersonPartySpec.xml -DDATA_FILE={File-Location}/InsertPersonPartyData.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=100
+
+ -->
+<loader:loader_spec xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:loader="http://dms.trilogy.com/Loader/Spec" xmlns="http://dms.trilogy.com/Loader/Spec" xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd" name="Person Parties Loader Spec">
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+		<!--property name="numThreads" value="4"/-->
+	</strategy>
+	<object name="person_party" class="PersonPartyUIValidator"/>
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="headerRows" value="1"/>
+		<!--property name="footerRows" value="1"/-->
+		<property name="quote_chars" value="&quot;"/>
+		<indexed_field name="tax id" index="0"/>
+		<indexed_field name="salutation" index="1"/>
+		<indexed_field name="first name" index="2"/>
+		<indexed_field name="middle name" index="3"/>
+		<indexed_field name="last name" index="4"/>
+		<indexed_field name="prof designation" index="5"/> <!-- Use this for Suffix-->
+		<indexed_field name="date of birth" index="6" translator="date_translator"/>
+		<indexed_field name="gender" index="7" translator="gender_translator"/>
+		<indexed_field name="national origin" index="8" translator="country_translator"/>
+		<indexed_field name="marital status" index="9" translator="marital_status_translator"/>
+		<indexed_field name="spouse first name" index="10"/>
+		<indexed_field name="spouse last name" index="11"/>
+		<indexed_field name="role" index="12" translator="role_translator"/>
+		<indexed_field name="contact type" index="13" translator="contact_type_translator"/>
+		<indexed_field name="communication mode" index="14" translator="communication_mode_translator"/>
+		<indexed_field name="street1" index="15"/>
+		<indexed_field name="street2" index="16"/>
+		<indexed_field name="street3" index="17"/>
+		<indexed_field name="city" index="18"/>
+		<indexed_field name="state" index="19" />
+		<indexed_field name="country" index="20" translator="country_translator"/>
+		<indexed_field name="zip code" index="21"/>
+		<indexed_field name="phone number" index="22"/>
+		<indexed_field name="fax number" index="23"/>
+		<indexed_field name="email address" index="24"/>
+		<indexed_field name="pager" index="25"/>
+		<indexed_field name="cell phone" index="26"/>
+		<indexed_field name="title" index="27"/>
+		<indexed_field name="office number" index="28"/>
+		<indexed_field name="description" index="29"/>
+		<indexed_field name="email" index="30"/>
+		<indexed_field name="fax" index="31"/>
+		<indexed_field name="phone1" index="32"/>
+		<indexed_field name="phone2" index="33"/>
+		<indexed_field name="legal name" index="34"/>
+		<indexed_field name="join date" index="35" translator="date_translator"/>
+		<indexed_field name="npn" index="36"/>
+		<indexed_field name="alternate last name" index="37"/>
+		<indexed_field name="preferred name" index="38"/>
+		<indexed_field name="publicity name" index="39"/>
+		<indexed_field name="crd number" index="40"/>
+		<indexed_field name="dtcc id" index="41"/>
+		<indexed_field name="party role" index="42"/>
+		<indexed_field name="party type" index="43"/>
+		<indexed_field name="renewal fee payee" index="44"/>
+		<indexed_field name="status code" index="45" translator="status_code_translator"/>
+		<indexed_field name="status reason" index="46"/>
+		<indexed_field name="status start date" index="47" translator="date_translator"/>
+		<indexed_field name="status end date" index="48" translator="date_translator"/>
+		<indexed_field name="usr" index="49"/>
+		<indexed_field name="syncWithPDB" index="50" translator="boolean_translator"/>
+						
+		<indexed_field name="Initial Contract Date" index="51" translator="date_translator"/>
+		<indexed_field name="Beneficiary Info On File" index="52" translator="boolean_translator"/>
+		
+        <indexed_field name="DBA" index="53"/>
+		<indexed_field name="Designation" index="54"/>
+		<indexed_field name="AVIPCOnFile" index="55" translator="boolean_translator"/>	
+		<indexed_field name="AVIPCEffectiveDate" index="56" translator="date_translator"/>		
+		<indexed_field name="AVIPCVersion" index="57"/>
+	</source>
+	<validation>
+		<rule name="duplicate_row_check" class="com.trilogy.fs.dms.tools.loader.rule.DuplicateRowsRule">
+			<property name="keys" value="tax id"/> 
+		</rule>
+	</validation>
+	<translator name="date_translator" class="com.aviva.fs.dms.tools.loader.translate.AVDateFormatTranslator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="treatEmptyAsNull" value="true"/>
+	</translator>
+	<translator name="gender_translator" class="enum_translator">
+		<property name="enumName" value="GENDER"/>
+	</translator>
+	<translator name="marital_status_translator" class="enum_translator">
+		<property name="enumName" value="MARITAL_STATUS"/>
+	</translator>
+	<translator name="role_translator" class="com.trilogy.fs.dms.tools.loader.translate.MultiRoleTranslator">
+		<property name="delimiter" value="|"/>
+	</translator>
+	<translator name="contact_type_translator" class="enum_translator">
+		<property name="enumName" value="CONTACT_TYPE"/>
+	</translator>
+	<translator name="communication_mode_translator" class="enum_translator">
+		<property name="enumName" value="CONTACT.COMM_MODE"/>
+	</translator>
+	<translator name="country_translator" class="enum_translator">
+		<property name="enumName" value="COUNTRY"/>
+	</translator>
+	<translator name="party_role_translator" class="enum_translator">
+		<property name="enumName" value="PartyRole"/>
+	</translator>
+	<translator name="party_type_translator" class="enum_translator">
+		<property name="enumName" value="PartyType"/>
+	</translator>
+	<translator name="renewal_fee_payee_translator" class="enum_translator">
+		<property name="enumName" value="RenewalFeePayee"/>
+	</translator>
+	<translator name="status_code_translator" class="enum_translator">
+		<property name="enumName" value="PartyUI.RecontractableStatus"/>
+	</translator>
+	<translator name="status_reason_translator" class="com.aviva.fs.dms.tools.loader.translate.AVPartyStatusReasonTranslator">
+		<property name="statusReasonBaseEnumName" value="PartyUI.RecontractableStatus.Reason"/>
+		<property name="statusEnumName" value="PartyUI.RecontractableStatus"/>
+	</translator>
+	<translator name="boolean_translator" class="com.trilogy.fs.dms.tools.loader.translate.BooleanTranslator">
+		<property name="true" value="true"/>
+		<property name="false" value="false"/>
+	</translator>
+	<translator name="state_translator" class="enum_translator">
+		<property name="enumName" value="Jurisdiction.STATE_OR_PROVINCE"/>
+	</translator>
+	<translator name="state_retranslator" class="enum_translator">
+		<property name="enumName" value="Jurisdiction.STATE_OR_PROVINCE"/>
+		<property name="valueToName" value="true"/>
+	</translator>	
+	<translator name="country_retranslator" class="enum_translator">
+		<property name="enumName" value="COUNTRY"/>
+		<property name="valueToName" value="true"/>
+	</translator>
+	<translator name="lop_exempt_reason_translator" class="enum_translator">
+		<property name="enumName" value="LOPExemptReason"/>
+		<property name="throwException" value="true"/>
+		<property name="useDefaultValue" value="false"/>		
+	</translator>
+	<translator name="lop_date_translator" class="select_first_available_translator">
+		<property name="defaultValue" value="01/01/1900"/>
+	</translator>
+	<!--resolver name="user_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+			SELECT usr FROM SCUser usr
+					WHERE usr.LoginName = {0}
+			]]></property>
+		<property name="keys" value="string userid"/>
+	</resolver-->
+	<resolver name="user_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value = "SELECT usr.GID gid, usr.LoginName logName FROM SCUser user"/>
+        <property name="gidAlias" value="gid"/>
+        <property name="keys" value="logName"/>
+    </resolver>
+	<!--constant name="false constant" class="value">
+		<property name="value" value="false"/>
+	</constant-->
+	<constant name="W9 on file" class="value">
+  		<property name="value" value="true"/>
+  	</constant>
+	<constant name="Charge Interest on debt" class="value">
+  		<property name="value" value="true"/>
+  	</constant>
+	<constant name="LOP Exempt Until Date" class="value">
+  		<property name="value" value="01/01/1900"/>
+  	</constant>
+	<map object="person_party">
+		<action name="insert"/>
+		<map_simple property="Person.TaxID" field="tax id"/>
+		<map_simple property="Person.Salutation" field="salutation"/>
+		<map_simple property="Person.FirstName" field="first name"/>
+		<map_simple property="Person.MiddleName" field="middle name"/>
+		<map_simple property="Person.LastName" field="last name"/>
+		<map_simple property="Person.ProfDesignation" field="prof designation"/>
+		<map_simple property="Person.Birthdate" field="date of birth"/>
+		<map_simple property="Person.Gender" field="gender"/>
+		<map_simple property="Person.NatlOrigin" field="national origin"/>
+		<map_simple property="Person.MaritalStatus" field="marital status"/>
+		<map_simple property="Person.SpouseFirstName" field="spouse first name"/>
+		<map_simple property="Person.SpouseLastName" field="spouse last name"/>
+		<map_simple property="Roles" field="role" tag="validator"/>
+		<map_simple property="ContactPoint.ContactType" field="contact type" tag="validator"/>
+		<map_simple property="ContactPoint.CommMode" field="communication mode" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Street1" field="street1" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Street2" field="street2" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Street3" field="street3" tag="validator"/>
+		<map_simple property="ContactPoint.Address.City" field="city" tag="validator"/>
+		<map_simple property="ContactPoint.Address.State" field="state" tag="validator" />
+		<map_simple property="ContactPoint.Address.Country" field="country" tag="validator" translator="country_retranslator"/>
+		<map_simple property="ContactPoint.Address.ZipCode" field="zip code" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Phone" field="phone number" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Fax" field="fax number" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Email" field="email address" tag="validator"/>
+		<map_simple property="ContactPoint.Address.Pager" field="pager" tag="validator"/>
+		<map_simple property="ContactPoint.Address.CellPhone" field="cell phone" tag="validator"/>
+		<!--map_simple property="Person.Title" field="title"/-->
+		<!--map_simple property="Person.OfficeNumber" field="office number"/-->
+		<!--map_simple property="Person.Description" field="description"/-->
+		<!--map_simple property="Person.Email" field="email"/-->
+		<!--map_simple property="Person.Fax" field="fax"/-->
+		<!--map_simple property="Person.Phone1" field="phone1"/-->
+		<!--map_simple property="Person.Phone2" field="phone2"/-->
+		<!--map_simple property="Person.LegalName" field="legal name"/-->
+		<!--map_simple property="Person.JoinDate" field="join date"/-->
+		<map_simple property="Person.NPN" field="npn"/>
+		<map_simple property="Person.AltLastName" field="alternate last name"/>
+		<map_simple property="Person.PreferredName" field="preferred name"/>
+		<!--map_simple property="Person.PublicityName" field="publicity name"/-->
+		<map_simple property="Person.AVCRDNumber" field="crd number"/>
+		<map_simple property="DTCCID" field="dtcc id"/>
+		<!--map_simple property="PartyRole" field="party role"/-->
+		<!--map_simple property="PartyType" field="party type"/-->
+		<!--map_simple property="RenewalFeePayee" field="renewal fee payee"/-->
+		<map_simple property="SyncPDB" field="syncWithPDB"/>
+		<map_simple property="NewStatus.StatusCode" field="status code" tag="validator"/>
+		<map_merge property="NewStatus.StatusReason" tag="validator" translator="status_reason_translator">
+			<field name="status code"/>
+			<field name="status reason"/>
+		</map_merge>
+		<map_simple property="NewStatus.StartDate" field="status start date" tag="validator"/>
+		<map_simple property="NewStatus.EndDate" field="status end date" tag="validator"/>
+		<!--map_object property="SCUser" resolver="user_resolver">
+			<field name="usr"/>
+		</map_object-->
+				
+		<map_simple property="AVInitialContractDate" field="Initial Contract Date"/>
+		<map_constant property="AVLOPExemptUntilDate" constant="LOP Exempt Until Date" translator="date_translator"/>
+		<map_constant property="AVW9onFile" constant="W9 on file"/>
+		<map_constant property="AVChargeIntOnDebt" constant="Charge Interest on debt"/>
+		<map_simple property="Person.AVBeneficiaryInfoOnFile" field="Beneficiary Info On File"/>
+        <map_simple property="Person.AVDesignation" field="DBA"/>
+        <map_simple property="Person.AVDBA" field="Designation"/>
+        <map_simple property="AVIPCOnFile" field="AVIPCOnFile"/>
+        <map_simple property="AVIPCEffectiveDate" field="AVIPCEffectiveDate"/>
+		<map_simple property="AVIPCVersion" field="AVIPCVersion"/>
+	</map>
+</loader:loader_spec>

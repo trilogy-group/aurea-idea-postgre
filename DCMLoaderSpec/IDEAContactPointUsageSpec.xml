@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ 
+This spec helps to insert/update Contact point usage for Person/Organization party into DCM, (i.e.) user can modify existing usage type to new contact point and new contact points can add with new usage type. The contact point usage page available under Party (Tab) - Search for Person or Organization - Contact Information (Sub-tab) - Contact Usages
+
+Prerequisite:
+=============
+1) Create Person/Organization party into DCM and mention tax id in the data file.
+2) Create contact points as per user requirements with new contact types and mention address info in the data file (Street, City, State, Country and ZipCode)
+
+Testcases:
+==========
+1) Edit existing contact usage with new contact points.
+2) Add new contact usage with new contact points.
+3) Edit existing contact usage with new start date and end date.
+
+Data File Format:
+==================
+UsageType,StartDate,EndDate,TaxID,Street1,City,State,Country,ZipCode,NewStartDate,NewEndDate
+Note: NewStartDate and NewEndDate is optional field, user needs to give new start date and end date in case of edit existing contact usage with new start data and end date.
+
+Sample Data:
+=============
+PRIMARY,09/19/2013,12/12/2013,445566,WORK_STREET1,Coimbatore,CA,INDIA,560030,,
+STATEMENT,09/19/2013,09/30/2013,445566,location_street1,BGL,CA,US,37373,,
+
+How to run:
+ant LoadFile -Denvironment=DCM -DSPEC_FILE={File-Location}\IDEAContactPointUsageSpec.xml -DDATA_FILE={File-Location}\IDEAContactPointUsageSpecData.csv -DOUTPUT_DIR={Temp-Dir} -DBATCH_SIZE=1
+Note: Batch size should be "1" to avoid Lock exception
+
+ -->
+<loader:loader_spec xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:loader="http://dms.trilogy.com/Loader/Spec" xmlns="http://dms.trilogy.com/Loader/Spec" xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd" name="Stock ContactPointsAndUsage Loader Spec">
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="1"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+		<property name="numThreads" value="1"/>
+	</strategy>
+	<object name="contact_point" class="AVIDEAContactPointUsageLoaderValidator"/>
+	<source name="load_file" class="delimited_file_parser">
+		<property name="filename" value="${FILENAME}"/>
+		<property name="delimiters" value=","/>
+		<property name="headerRows" value="1"/>
+		<property name="quote_chars" value="&quot;"/>
+		<indexed_field name="UsageType" index="0" translator="contact_usage_translator"/>
+		<indexed_field name="StartDate" index="1" translator="date_translator"/>
+		<indexed_field name="EndDate" index="2" translator="date_translator"/>
+		<indexed_field name="TaxID" index="3"/>
+		<indexed_field name="Street1" index="4"/>
+		<indexed_field name="City" index="5"/>
+		<indexed_field name="State" index="6"/>
+		<indexed_field name="Country" index="7"/>
+		<indexed_field name="ZipCode" index="8"/>
+		<indexed_field name="NewStartDate" index="9" translator="date_translator_allowNull"/>
+		<indexed_field name="NewEndDate" index="10" translator="date_translator_allowNull"/>
+		<indexed_field name="UsageGID" index="11"/>
+		<indexed_field name="ContactPointGID" index="12"/>
+		<indexed_field name="UsageAP" index="13"/>
+        <indexed_field name="OverrideDwnlnCommPref" index="14"/>
+		<indexed_field name="PartyID" index="15"/>
+	</source>
+	<translator name="contact_usage_translator" class="enum_translator">
+		<property name="enumName" value="CONTACT_USAGE"/>
+	</translator>
+	<translator name="date_translator" class="date_format_translator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="useDefaultValue" value="false"/>
+	</translator>
+	<translator name="date_translator_allowNull" class="date_format_translator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="treatEmptyAsNull" value="true"/>
+	</translator>
+	<translator name="boolean_translator" class="com.trilogy.fs.dms.tools.loader.translate.BooleanTranslator">
+        <property name="true" value="true"/>
+        <property name="false" value="false"/>
+        <property name="useDefaultValueForNull" value="false"/>
+    </translator>
+	<!--resolver name="contact_point_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+				SELECT contactpoint FROM FSContactPoint contactpoint WHERE 
+				contactpoint.GID = {0}
+			]]></property>
+		<property name="keys" value="string ContactPointGID"/>
+	</resolver-->
+	<resolver name="contact_point_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value = "SELECT contactpoint.GID gid, contactpoint.GID cpgid FROM FSContactPoint contactpoint"/>
+        <property name="gidAlias" value="gid"/>
+        <property name="keys" value="cpgid"/>
+    </resolver>
+	<!--resolver name="contact_pointusage_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+				SELECT cpu FROM FSContactPointUsage cpu WHERE 
+					cpu.GID = {0}
+			]]></property>
+		<property name="keys" value="string Usage_GID"/>
+	</resolver-->
+	<resolver name="contact_pointusage_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value = "SELECT cpu.GID gid, cpu.GID cpugid FROM FSContactPointUsage cpu"/>
+        <property name="gidAlias" value="gid"/>
+        <property name="keys" value="cpugid"/>
+    </resolver>
+	<!--resolver name="party_resolver" class="batch_query_resolver">
+		<property name="query"><![CDATA[
+				SELECT party.GID g FROM FSParty party WHERE 
+					party.UNID={0}
+			]]></property>
+		<property name="keys" value="string Party_ID"/>
+	</resolver-->
+	<resolver name="party_resolver" class="com.aviva.fs.dms.tools.loader.resolve.AVOQLResolver">
+		<property name="query" value = "SELECT party.GID gid, party.UNID unid FROM FSParty party"/>
+        <property name="gidAlias" value="gid"/>
+        <property name="keys" value="unid"/>
+    </resolver>
+	<map object="contact_point">
+		<action name="update or insert" resolver="contact_pointusage_resolver">
+			<field name="UsageGID"/>
+		</action>
+		<map_object property="LoaderParty" resolver="party_resolver" tag="precreate">
+			<field name="PartyID"/>
+		</map_object>
+		<map_object property="ExistingContactPoint" resolver="contact_point_resolver" tag="precreate">
+			<field name="ContactPointGID"/>
+		</map_object>
+		<map_simple property="Usage.StartDate" field="StartDate" tag="validator"/>
+		<map_simple property="Usage.EndDate" field="EndDate" tag="validator"/>  
+		<map_simple property="Usage.UsageType" field="UsageType" tag="validator"/>  
+        <map_simple property="LoaderUsageAP" field="UsageAP" tag="validator"/>
+        <map_simple property="Usage.AVOverrideDwnlnCommPref" field="OverrideDwnlnCommPref" translator="boolean_translator" tag="validator"/>
+	</map>
+</loader:loader_spec>

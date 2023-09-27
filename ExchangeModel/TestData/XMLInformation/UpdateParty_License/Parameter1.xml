@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:UpdateParty xmlns:ns2="http://www.XMLInformation.com/XMLInformation.xsd">
+    <ns2:PartyID>28</ns2:PartyID>
+    <ns2:Status>Active</ns2:Status>
+    <ns2:License>
+        <ns2:LicenseNumber>license3</ns2:LicenseNumber>
+        <ns2:StateID>MA</ns2:StateID>
+        <ns2:ClassCode>Agent</ns2:ClassCode>
+        <ns2:Resident>Y</ns2:Resident>
+        <ns2:StartDate>01/01/2000</ns2:StartDate>
+        <ns2:EndDate>10/10/2020</ns2:EndDate>
+        <ns2:Status>Active</ns2:Status>
+        <ns2:StatusDate>10/10/2013</ns2:StatusDate>
+        <ns2:Appointment>
+            <ns2:LOA_Code>Life</ns2:LOA_Code>
+            <ns2:FEIN>string</ns2:FEIN>
+            <ns2:CompanyTaxID>org-w1q1</ns2:CompanyTaxID>
+            <ns2:Status>Active</ns2:Status>
+            <ns2:StatusDate>01/01/2013</ns2:StatusDate>
+        </ns2:Appointment>
+        <ns2:LOA>
+            <ns2:Code>Life</ns2:Code>
+            <ns2:Name>string</ns2:Name>
+            <ns2:CECreditsNeeded>true</ns2:CECreditsNeeded>
+            <ns2:CECompliance>true</ns2:CECompliance>
+            <ns2:Status>Active</ns2:Status>
+            <ns2:StatusReason>N/A</ns2:StatusReason>
+            <ns2:StatusDate>10/10/2013</ns2:StatusDate>
+            <ns2:IssueDate>01/01/2012</ns2:IssueDate>
+        </ns2:LOA>
+    </ns2:License>
+</ns2:UpdateParty>

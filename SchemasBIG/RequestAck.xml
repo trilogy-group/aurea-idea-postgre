@@ -1,0 +1,9 @@
+<?xml version="1.0"?> 
+<BI_ACKNOWLEDGEMENT>     
+	<UserNm></UserNm>
+	<UserPwd></UserPwd>
+	<RequestId>requestidpassedinrequest</RequestId>
+	<StatusCd>Processed</StatusCd>
+	<Description>Processed</Description>
+	<RedirectLink>https://www.mybig.net</RedirectLink>
+</BI_ACKNOWLEDGEMENT>

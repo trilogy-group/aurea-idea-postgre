@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+   ====================================================================== 
+   ===== Process Domain Schema Module ===== 
+   NON NORMATIVE EXAMPLE PROVIDED FOR ACORD NDR ILLUSTRATION - ->
+    ====================================================================== 
+   
+      Standard Organization: ACORD
+      Version: Draft 18pla01 
+      Generated on: 25 March 2011
+   
+     COPYRIGHT NOTICE:
+     
+(c) 2011 ACORD. All Rights Reserved.
+
+Use of this Schema and its documentation are covered by the terms and conditions file that was included in the distribution file that you found this Schema.http://www.ACORD.org
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:acord-doc="http://www.acord.org/schema/documentation/draft/Annotations/1" xmlns="http://www.acord.org/schema/data/draft/ReusableDataComponents/1" targetNamespace="http://www.acord.org/schema/data/draft/ReusableDataComponents/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+   <xsd:annotation>
+      <xsd:appinfo>
+         <acord-doc:GenerationDateTime>3/25/2011</acord-doc:GenerationDateTime>
+      </xsd:appinfo>
+   </xsd:annotation>
+   <xsd:include schemaLocation="../data/ReusableDataComponents.xsd"/>
+
+   <xsd:element name="ProducerAppointmentNotify" type="ProducerAppointmentNotify_Type"/>
+   <xsd:complexType name="ProducerAppointmentNotify_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDMessage_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="ProducerAppointment" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:element name="ProducerAppointmentProcess" type="ProducerAppointmentProcess_Type"/>
+   <xsd:complexType name="ProducerAppointmentProcess_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDMessage_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="ProducerAppointment" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:element name="ProducerAppointmentProcessResult" type="ProducerAppointmentProcessResult_Type"/>
+   <xsd:complexType name="ProducerAppointmentProcessResult_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDMessageResult_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="ProducerAppointment" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:element name="ProducerLicenseApplicationNotify" type="ProducerLicenseApplicationNotify_Type"/>
+   <xsd:complexType name="ProducerLicenseApplicationNotify_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDMessage_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="ProducerLicenseApplication" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:element name="ProducerLicenseApplicationProcess" type="ProducerLicenseApplicationProcess_Type"/>
+   <xsd:complexType name="ProducerLicenseApplicationProcess_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDMessage_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="ProducerLicenseApplication" minOccurs="1" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:element name="ProducerLicenseApplicationProcessResult" type="ProducerLicenseApplicationProcessResult_Type"/>
+   <xsd:complexType name="ProducerLicenseApplicationProcessResult_Type">
+      <xsd:complexContent>
+         <xsd:extension base="ACORDMessageResult_Type">
+            <xsd:sequence>
+
+               <xsd:element ref="ProducerLicenseApplication" minOccurs="0" maxOccurs="unbounded"/>
+
+            </xsd:sequence>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+</xsd:schema>

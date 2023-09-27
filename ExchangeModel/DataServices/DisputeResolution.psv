@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DataServiceModel xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='com.ds.DisputeResolution' schemaName='com.disputeResolution.DisputeResolution'>
+  <ModelMap isSynthetic='false'>
+  </ModelMap>
+  <Operation isSynthetic='false' name='getOrganizations' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='getOrganizations' returnTypeName='com.disputeResolution.OrganizationRespond' language='JAVA' returnTypeElementName='getOrganizationPartyReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.disputeResolution.PartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='GetPartyInformation' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='GetPartyInformation' returnTypeName='com.disputeResolution.PartyRespond' language='JAVA' returnTypeElementName='GetPatyInformationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.disputeResolution.PartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='getPaymentAccountUpdates' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='getPaymentAccountUpdates' returnTypeName='com.disputeResolution.PaymentAccountRespond' language='JAVA' returnTypeElementName='getPaymentAccountReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.disputeResolution.PaymentAccountRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='getPersons' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='getPersons' returnTypeName='com.disputeResolution.PersonRespond' language='JAVA' returnTypeElementName='getPersonPartyReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.disputeResolution.PartyRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+  <Operation isSynthetic='false' name='getTransactions' returnRequest='true'>
+    <OperationMethod isSynthetic='false' name='getTransactions' returnTypeName='com.disputeResolution.TransactionRespond' language='JAVA' returnTypeElementName='getTransactionReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.disputeResolution.TransactionRequest' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </Operation>
+</DataServiceModel>

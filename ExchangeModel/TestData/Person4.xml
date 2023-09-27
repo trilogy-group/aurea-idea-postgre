@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Person xmlns="http://www.PersonInformation.com/PersonInformation.xsd" role="EMPLOYEE">
+    <PersonID>
+        <IDType>SSN</IDType>
+        <IDNumber>111-45-6666</IDNumber>
+    </PersonID>
+    <PersonID>
+        <IDType>license</IDType>
+        <IDNumber>999988776</IDNumber>
+    </PersonID>
+    <PersonName>
+        <fullName>Frank Koh</fullName>
+        <prefixTitleCode>Mr</prefixTitleCode>
+        <givenName>Frank</givenName>
+        <middleName>N/A</middleName>
+        <surname>Koh</surname>
+        <suffix>N/A</suffix>
+    </PersonName>
+    <PersonRelationship>
+		<RelationshipType>Spouse</RelationshipType>
+		<PersonID>
+			<IDType>SSN</IDType>
+			<IDNumber>445-44-5555</IDNumber>
+		</PersonID>
+		<PersonID>
+			<IDType>license</IDType>
+			<IDNumber>777776655</IDNumber>
+		</PersonID>
+		<PersonName>
+			<fullName>Ronit Koh</fullName>
+			<prefixTitleCode>Mrs</prefixTitleCode>
+			<givenName>Ronit</givenName>
+			<middleName></middleName>
+			<surname>Koh</surname>
+			<suffix></suffix>
+		</PersonName>
+    </PersonRelationship>
+    <Address>
+        <AddressType>Home</AddressType>
+        <Street1>343 Dunbury Circle</Street1>
+        <Street2/>
+        <Street3/>
+        <City>Dunbury</City>
+        <State>CT</State>
+        <County>Middlesex</County>
+        <Country>US</Country>
+        <ZipCode>01554</ZipCode>
+        <POBox/>
+    </Address>
+    <Fax number="304-333-3333" extention="123"/>
+    <Cell number="304-333-3334"/>
+    <Phone number="304-333-3335" extention=""/>
+    <Pager number="304-333-3336" extention=""/>
+    <deathIndicator>false</deathIndicator>
+    <bloodTypeCode>A Plus</bloodTypeCode>
+    <genderCode>Male</genderCode>
+    <nationality>US</nationality>
+    <missingIndicator>false</missingIndicator>
+    <maritalStatusCode>Married</maritalStatusCode>
+    <email>abc.koh@moremail.com</email>
+    <birthDate>09/03/1965</birthDate>
+</Person>

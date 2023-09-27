@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Example of a WSDL definition for a provider's defined Producer Licensing and Appointments Service based on AML (ACORD Messaging Library) -->
+<wsdl:definitions name="ProducerLicensingAppointments_Service"
+	targetNamespace="http://www.pla.com/webservices/producerlicensingappointments/www.acord.org/schema/ws-services/AML/1/draft"
+	xmlns:pttp="http://www.acord.org/schema/ws-porttypes/AML/1/draft"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:wssoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.xmlsoap.org/wsdl/
+	..\..\crossindustryschemas\wsdl-2004-08-24.xsd
+	http://schemas.xmlsoap.org/wsdl/soap12/ 
+	..\..\crossindustryschemas\wsdl11soap12.xsd">
+	<!--Import Port Types-->
+	<wsdl:import namespace="http://www.acord.org/schema/ws-porttypes/AML/1/draft"
+		location="ProducerLicensingAppointmentsProviderPortType_1-0-0_DRAFT.wsdl"/>
+	<!--Define Bindings-->
+	<wsdl:binding name="ProducerLicensingAppointments_Soap" type="pttp:ProducerLicensingAppointments">
+		<wssoap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ProducerAppointmentProcess">
+			<wssoap12:operation
+				soapAction="http://www.pla.com/webservices/producerlicensingappointments/www.acord.org/schema/ws-services/AML/1/draft/ProducerAppointmentProcess"/>
+			<wsdl:input>
+				<wssoap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wssoap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="AnyFault">
+				<wssoap12:fault name="AnyFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ProducerLicenseApplicationProcess">
+			<wssoap12:operation
+				soapAction="http://www.pla.com/webservices/producerlicensingappointments/www.acord.org/schema/ws-services/AML/1/draft/ProducerLicenseApplicationProcess"/>
+			<wsdl:input>
+				<wssoap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wssoap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="AnyFault">
+				<wssoap12:fault name="AnyFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="Retrieve">
+			<wssoap12:operation
+				soapAction="http://www.pla.com/webservices/producerlicensingappointments/www.acord.org/schema/ws-services/AML/1/draft/Retrieve"/>
+			<wsdl:input>
+				<wssoap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wssoap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="AnyFault">
+				<wssoap12:fault name="AnyFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<!--Define Services and Ports-->
+	<wsdl:service name="ProducerLicensingAppointments_Service">
+		<wsdl:port binding="ProducerLicensingAppointments_Soap" name="ProducerLicensingAppointments_IntendedRecipientOne">
+			<!-- Routing of the transaction to the proper back-end sytem is commonly done using a common set of port endpoint addresses combined with payload content base routing. However it is also possible to use different sets of port endpoint addresses to directly access the proper back-end system. In this case the endpoint addresses would need to be known by the web service invoker. -->
+			<wssoap12:address
+				location="http://acord-test.com/WebServices/ProducerLicensingAppointments/IntendedRecipientOne"
+			/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

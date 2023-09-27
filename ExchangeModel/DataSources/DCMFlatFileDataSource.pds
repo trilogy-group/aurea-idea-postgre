@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DatasourceModel xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' extensionId='com.aurea.dataxtend.si.flatfile.FlatFileModel' extensionClass='com.progress.dataxtend.si.flatfile.metamodel.FlatFileModelSubclass' name='dcm.DCMFlatFileDataSource' schemaName='dcm.FlatFileWrapperSchema'>
+  <ModelMap isSynthetic='false'>
+  </ModelMap>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertPerson' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertPerson' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertPersonReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='dcm.insertpersonpartyspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertOrganization' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertOrganization' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertOrganizationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='dcm.insertorgpartyspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUser' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertUser' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUserReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='insertuserspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateContactPoint'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateContactPoint' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateContactPointReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='contactpointsspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateTraining' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateTraining' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateTrainingReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='cecreditsspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateErrorAndOmission' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateErrorAndOmission' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateErrorAndOmissionReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='enononinheritancepolicyloaderspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdatePaymentAccount' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertUpdatePaymentAccount' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdatePaymentAccountReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='paymentaccountspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateAgreementParticipant'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateAgreementParticipant' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateAgreementParticipantReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='insertagreementparticipantrspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateLicense'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateLicense' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateLicenseReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='insertlicensesspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateLicenseLine'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateLicenseLine' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateLicenseLineReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='insertlicenselinespec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateAppointment'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateAppointment' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateAppointmentReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='insertappointmentspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='OrderLicenseSpecs' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='OrderLicenseSpecs' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='OrderLicenseSpecsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='dcm.ExecutionHelper' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdatePosition'>
+    <OperationMethod isSynthetic='false' name='InsertUpdatePosition' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdatePositionReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.comphierarchypositionspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdatePositionHolder'>
+    <OperationMethod isSynthetic='false' name='InsertUpdatePositionHolder' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdatePositionHolderReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='com.comphierarchypositionholderspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='OrderPositionSpecs' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='OrderPositionSpecs' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='OrderPositionSpecsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='dcm.ExecutionHelper' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateContactPointUsage'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateContactPointUsage' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateContactPointUsageReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='contactpointusagespec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='OrderContactSpecs' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='OrderContactSpecs' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='OrderContactSpecsReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='dcm.ExecutionHelper' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='UpdateOrganization' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='UpdateOrganization' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='UpdateOrganizationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='updateorgpartyspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='UpdatePerson' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='UpdatePerson' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='UpdatePersonReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='updatepersonpartyspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdatePartyStatus' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertUpdatePartyStatus' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdatePartyStatusReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='updatepartystatusspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <CustomDatasourceOperation isSynthetic='false' name='InsertUpdateComponentParticipation' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateComponentParticipation' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateContactPointUsageReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='insertupdatecomponentparticipantspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </CustomDatasourceOperation>
+  <DatasourceOperation isSynthetic='false' name='InsertUpdateFIAgreement' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertUpdateFIAgreement' returnTypeName='dcm.Alerts' language='JAVA' returnTypeElementName='InsertUpdateFIAgreementReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='ideafiagreementsspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </DatasourceOperation>
+  <DatasourceOperation isSynthetic='false' name='InsertOrgPrincipalRelation' action='OnInsert'>
+    <OperationMethod isSynthetic='false' name='InsertOrgPrincipalRelation' returnTypeName='dcm.OrgPrincipalAlerts' language='JAVA' returnTypeElementName='InsertOrgPrincipalRelationReturn'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <Parameter isSynthetic='false' name='Parameter1' typeName='ideaorgprincipalrelationshiploaderspec.ROOT' unbindable='false'>
+      </Parameter>
+    </OperationMethod>
+  </DatasourceOperation>
+</DatasourceModel>

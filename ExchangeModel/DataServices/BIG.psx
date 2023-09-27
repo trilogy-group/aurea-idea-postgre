@@ -1,0 +1,893 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XmlSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='true' name='com.big.BIG' upgradeCreatedFileInfo='false'>
+  <Package isSynthetic='true' name='big' javaPackage='com.big'>
+  </Package>
+  <XmlEntityType isSynthetic='true' name='com.big.BIG' originalName='BIG' isAbstract='false' xmlBeanDocClassName='noNamespace.BIGDocument' xmlBeanClassName='noNamespace.BIGDocument' isRootElement='true' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='BIG' originalName='BIG' assignable='true' index='0' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.BIGBackground</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGForBIG' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='BIG'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.BIGBackground' originalName='BIGBackground' isAbstract='false' xmlBeanClassName='noNamespace.BIGBackground' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='BIREQUEST' originalName='BI_REQUEST' assignable='true' index='0' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.BIGRequest</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGBackgroundForBIREQUEST' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='BIACKNOWLEDGEMENT' originalName='BI_ACKNOWLEDGEMENT' assignable='true' index='1' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.BIGAcknowledgement</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGBackgroundForBIACKNOWLEDGEMENT' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='BIPOLLRESPONSE' originalName='BI_POLL_RESPONSE' assignable='true' index='2' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.BIGPollResponse</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGBackgroundForBIPOLLRESPONSE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='BIRESPONSE' originalName='BI_RESPONSE' assignable='true' index='3' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.BIGResponse</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGBackgroundForBIRESPONSE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='BIRESPONSEACKNOWLEDGEMENT' originalName='BI_RESPONSE_ACKNOWLEDGEMENT' assignable='true' index='4' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.BIGResponseAcknowledgement</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGBackgroundForBIRESPONSEACKNOWLEDGEMENT' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BIREQUEST'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BIACKNOWLEDGEMENT'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BIPOLLRESPONSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BIRESPONSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BIRESPONSEACKNOWLEDGEMENT'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.BIGRequest' originalName='BIGRequest' isAbstract='false' xmlBeanClassName='noNamespace.BIGRequest' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='REQUESTINFO' originalName='REQUEST_INFO' assignable='true' index='0' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.RequestInfo</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGRequestForREQUESTINFO' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='SUBJECTINFO' originalName='SUBJECT_INFO' assignable='true' index='1' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.SubjectInfo</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGRequestForSUBJECTINFO' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='SERVICES' originalName='SERVICES' assignable='true' index='2' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Services</TypeName>
+      <RelationshipProperty isSynthetic='true' name='BIGRequestForSERVICES' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FormatVersion' originalName='FormatVersion' assignable='true' index='3' xsdType='string' isElement='false' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='REQUESTINFO'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='SUBJECTINFO'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SERVICES'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.RequestInfo' originalName='request_info' isAbstract='false' xmlBeanClassName='noNamespace.RequestInfo' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='RequestId' originalName='RequestId' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='UserNm' originalName='UserNm' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='UserPwd' originalName='UserPwd' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Requester' originalName='Requester' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DupOverrideCd' originalName='DupOverrideCd' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RequestDt' originalName='RequestDt' assignable='true' index='5' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.DateType</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Client' originalName='Client' assignable='true' index='6' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String7</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ClientLevel' originalName='ClientLevel' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ClientBillingCodeNum' originalName='ClientBillingCodeNum' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ClientBillingCodeNum2' originalName='ClientBillingCodeNum2' assignable='true' index='9' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ClientBillingCodeNum3' originalName='ClientBillingCodeNum3' assignable='true' index='10' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ClientBillingCodeNum4' originalName='ClientBillingCodeNum4' assignable='true' index='11' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ClientBillingCodeNum5' originalName='ClientBillingCodeNum5' assignable='true' index='12' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ClientBillingCodeNum6' originalName='ClientBillingCodeNum6' assignable='true' index='13' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Notes' originalName='Notes' assignable='true' index='14' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1000</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ResponseURL' originalName='ResponseURL' assignable='true' index='15' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1000</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SubjectWantsCopyInd' originalName='SubjectWantsCopyInd' assignable='true' index='16' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RequestId'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='UserNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='UserPwd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='Requester'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DupOverrideCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='RequestDt'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='Client'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ClientLevel'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ClientBillingCodeNum'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ClientBillingCodeNum2'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ClientBillingCodeNum3'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ClientBillingCodeNum4'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ClientBillingCodeNum5'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ClientBillingCodeNum6'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Notes'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ResponseURL'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SubjectWantsCopyInd'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.SubjectInfo' originalName='subject_info' isAbstract='false' xmlBeanClassName='noNamespace.SubjectInfo' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='ApplicantTypeCd' originalName='ApplicantTypeCd' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String11</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SSNTaxIdNum' originalName='SSNTaxIdNum' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String11</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SIN' originalName='SIN' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String11</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='BirthDt' originalName='BirthDt' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String10</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='4' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Name</TypeName>
+      <RelationshipProperty isSynthetic='true' name='SubjectInfoForNAME' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='5' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Address</TypeName>
+      <RelationshipProperty isSynthetic='true' name='SubjectInfoForADDRESS' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='OTHERNAMES' originalName='OTHER_NAMES' assignable='true' index='6' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Othernames</TypeName>
+      <RelationshipProperty isSynthetic='true' name='SubjectInfoForOTHERNAMES' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='OTHERADDRESSES' originalName='OTHER_ADDRESSES' assignable='true' index='7' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.OtherAddresses</TypeName>
+      <RelationshipProperty isSynthetic='true' name='SubjectInfoForOTHERADDRESSES' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='APPLICANTPHONE' originalName='APPLICANTPHONE' assignable='true' index='8' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Applicantphone</TypeName>
+      <RelationshipProperty isSynthetic='true' name='SubjectInfoForAPPLICANTPHONE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ApplicantEmail' originalName='ApplicantEmail' assignable='true' index='9' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ApplicantTypeCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SSNTaxIdNum'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SIN'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='BirthDt'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='NAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='OTHERNAMES'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='OTHERADDRESSES'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='APPLICANTPHONE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ApplicantEmail'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Services' originalName='services' isAbstract='false' xmlBeanClassName='noNamespace.Services' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='EDUCATION' originalName='EDUCATION' assignable='true' index='0' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.big.Education</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForEDUCATION' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ACTIONSBASE' originalName='ACTIONSBASE' assignable='true' index='1' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Actionsbase</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForACTIONSBASE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='EMPLOYMENT' originalName='EMPLOYMENT' assignable='true' index='2' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.big.Employment</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForEMPLOYMENT' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='MVR' originalName='MVR' assignable='true' index='3' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.big.Mvr</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForMVR' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='COURT' originalName='COURT' assignable='true' index='4' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Court</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForCOURT' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='DESIGNATION' originalName='DESIGNATION' assignable='true' index='5' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.big.Designation</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForDESIGNATION' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='PROFLICENSE' originalName='PROFLICENSE' assignable='true' index='6' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.big.Proflicense</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForPROFLICENSE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='REFERENCE' originalName='REFERENCE' assignable='true' index='7' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.big.Reference</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForREFERENCE' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='NCD' originalName='NCD' assignable='true' index='8' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Ncd</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForNCD' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='SECURITIES' originalName='SECURITIES' assignable='true' index='9' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Securities</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForSECURITIES' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='STATEINSURANCE' originalName='STATEINSURANCE' assignable='true' index='10' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Stateinsurance</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForSTATEINSURANCE' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='DEA' originalName='DEA' assignable='true' index='11' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Dea</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForDEA' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='CRISP' originalName='CRISP' assignable='true' index='12' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Crisp</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForCRISP' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='SEXOFFENDERS' originalName='SEXOFFENDERS' assignable='true' index='13' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Sexoffenders</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForSEXOFFENDERS' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='NPD' originalName='NPD' assignable='true' index='14' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Npd</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ServicesForNPD' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='EDUCATION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ACTIONSBASE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='EMPLOYMENT'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='MVR'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='COURT'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='DESIGNATION'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='PROFLICENSE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' elementPropertyName='REFERENCE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NCD'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SECURITIES'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='STATEINSURANCE'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DEA'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CRISP'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SEXOFFENDERS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='NPD'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Name' originalName='name' isAbstract='false' xmlBeanClassName='noNamespace.Name' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='Title' originalName='Title' assignable='true' index='0' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FirstNm' originalName='FirstNm' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String35</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='MiddleNm' originalName='MiddleNm' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String35</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LastNm' originalName='LastNm' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='SuffixNm' originalName='SuffixNm' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Title'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='FirstNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='MiddleNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LastNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='SuffixNm'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Address' originalName='address' isAbstract='false' xmlBeanClassName='noNamespace.Address' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='Address1' originalName='Address1' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Address2' originalName='Address2' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CityNm' originalName='CityNm' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String35</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='StateCd' originalName='StateCd' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String4</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ZipCode' originalName='ZipCode' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String10</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CountryCd' originalName='CountryCd' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String200</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='Address1'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Address2'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CityNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='StateCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ZipCode'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CountryCd'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Othernames' originalName='othernames' isAbstract='false' xmlBeanClassName='noNamespace.Othernames' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='0' required='true' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.big.Name</TypeName>
+      <RelationshipProperty isSynthetic='true' name='OthernamesForNAME' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' elementPropertyName='NAME'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.OtherAddresses' originalName='otherAddresses' isAbstract='false' xmlBeanClassName='noNamespace.OtherAddresses' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='0' required='true' collectionType='List' cardinality='One2Many' containment='true' isNillable='false'>
+      <TypeName>com.big.Address</TypeName>
+      <RelationshipProperty isSynthetic='true' name='OtherAddressesForADDRESS' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Applicantphone' originalName='applicantphone' isAbstract='false' xmlBeanClassName='noNamespace.Applicantphone' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='ApplicantPhoneType' originalName='ApplicantPhoneType' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String20</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ApplicantPhoneNum' originalName='ApplicantPhoneNum' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String20</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ApplicantPhoneType'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ApplicantPhoneNum'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Contact' originalName='contact' isAbstract='false' xmlBeanClassName='noNamespace.Contact' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='0' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Name</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ContactForNAME' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='NAME'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Education' originalName='education' isAbstract='false' xmlBeanClassName='noNamespace.Education' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='SchoolNm' originalName='SchoolNm' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LocationNm' originalName='LocationNm' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DatesAttended' originalName='DatesAttended' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ToPresentCd' originalName='ToPresentCd' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='DegreeNm' originalName='DegreeNm' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String255</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='MajorNm' originalName='MajorNm' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String255</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PhoneNum' originalName='PhoneNum' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Comments' originalName='Comments' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1000</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='GraduatedInd' originalName='GraduatedInd' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='AttendedFromDate' originalName='AttendedFromDate' assignable='true' index='9' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='AttendedToDate' originalName='AttendedToDate' assignable='true' index='10' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='GraduatedDate' originalName='GraduatedDate' assignable='true' index='11' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='SchoolNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LocationNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='DatesAttended'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ToPresentCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DegreeNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='MajorNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='PhoneNum'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Comments'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='GraduatedInd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='AttendedFromDate'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='AttendedToDate'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='GraduatedDate'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Employment' originalName='employment' isAbstract='false' xmlBeanClassName='noNamespace.Employment' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='EmployerNm' originalName='EmployerNm' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ApplicantJobTitleNm' originalName='ApplicantJobTitleNm' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='FromEmployedDt' originalName='FromEmployedDt' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String10</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ToEmployedDt' originalName='ToEmployedDt' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String10</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CurrentEmployerInd' originalName='CurrentEmployerInd' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ReasonForLeaving' originalName='ReasonForLeaving' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String255</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LevelSalary' originalName='LevelSalary' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='CONTACT' originalName='CONTACT' assignable='true' index='7' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Contact</TypeName>
+      <RelationshipProperty isSynthetic='true' name='EmploymentForCONTACT' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PhoneNum' originalName='PhoneNum' assignable='true' index='8' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='9' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Address</TypeName>
+      <RelationshipProperty isSynthetic='true' name='EmploymentForADDRESS' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Comments' originalName='Comments' assignable='true' index='10' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1000</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ContactEmployerInd' originalName='ContactEmployerInd' assignable='true' index='11' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='EmployerNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ApplicantJobTitleNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='FromEmployedDt'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ToEmployedDt'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CurrentEmployerInd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ReasonForLeaving'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LevelSalary'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CONTACT'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PhoneNum'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Comments'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ContactEmployerInd'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Mvr' originalName='mvr' isAbstract='false' xmlBeanClassName='noNamespace.Mvr' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='StateCd' originalName='StateCd' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LicenseNum' originalName='LicenseNum' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CDLLicenseInd' originalName='CDLLicenseInd' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='StateCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LicenseNum'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='CDLLicenseInd'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Designation' originalName='designation' isAbstract='false' xmlBeanClassName='noNamespace.Designation' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='DesignationNm' originalName='DesignationNm' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String255</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='YearsAssociated' originalName='YearsAssociated' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='IssuingOrganization' originalName='IssuingOrganization' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String150</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='IssueLocation' originalName='IssueLocation' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String150</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LicenseId' originalName='LicenseId' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String150</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Notes' originalName='Notes' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String255</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='DesignationNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='YearsAssociated'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='IssuingOrganization'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='IssueLocation'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LicenseId'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Notes'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Proflicense' originalName='proflicense' isAbstract='false' xmlBeanClassName='noNamespace.Proflicense' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='LicenseName' originalName='LicenseName' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String255</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='IssuingOrganization' originalName='IssuingOrganization' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String150</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LicenseId' originalName='LicenseId' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String150</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='EffectiveDate' originalName='EffectiveDate' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String150</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ExpirationDate' originalName='ExpirationDate' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String150</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Notes' originalName='Notes' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String255</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LicenseName'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='IssuingOrganization'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='LicenseId'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='EffectiveDate'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ExpirationDate'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Notes'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Reference' originalName='reference' isAbstract='false' xmlBeanClassName='noNamespace.Reference' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlRelationshipProperty isSynthetic='true' name='NAME' originalName='NAME' assignable='true' index='0' required='true' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Name</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ReferenceForNAME' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PhoneNum' originalName='PhoneNum' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Company' originalName='Company' assignable='true' index='2' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Fax' originalName='Fax' assignable='true' index='3' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='EmailAddress' originalName='EmailAddress' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String200</TypeName>
+    </XmlAttributeProperty>
+    <XmlRelationshipProperty isSynthetic='true' name='ADDRESS' originalName='ADDRESS' assignable='true' index='5' cardinality='One2One' containment='true' isNillable='false'>
+      <TypeName>com.big.Address</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ReferenceForADDRESS' assignable='true'>
+      </RelationshipProperty>
+    </XmlRelationshipProperty>
+    <XmlAttributeProperty isSynthetic='true' name='LengthKnown' originalName='LengthKnown' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='NAME'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PhoneNum'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Company'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Fax'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='EmailAddress'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='ADDRESS'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='LengthKnown'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Actionsbase' originalName='actionsbase' isAbstract='false' xmlBeanClassName='noNamespace.Actionsbase' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Court' originalName='court' isAbstract='false' xmlBeanClassName='noNamespace.Court' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Ncd' originalName='ncd' isAbstract='false' xmlBeanClassName='noNamespace.Ncd' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Securities' originalName='securities' isAbstract='false' xmlBeanClassName='noNamespace.Securities' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Stateinsurance' originalName='stateinsurance' isAbstract='false' xmlBeanClassName='noNamespace.Stateinsurance' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Dea' originalName='dea' isAbstract='false' xmlBeanClassName='noNamespace.Dea' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Crisp' originalName='crisp' isAbstract='false' xmlBeanClassName='noNamespace.Crisp' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Sexoffenders' originalName='sexoffenders' isAbstract='false' xmlBeanClassName='noNamespace.Sexoffenders' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.Npd' originalName='npd' isAbstract='false' xmlBeanClassName='noNamespace.Npd' isRootElement='false' isAnonymousType='false' isQualified='false'>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.BIGAcknowledgement' originalName='BIGAcknowledgement' isAbstract='false' xmlBeanClassName='noNamespace.BIGAcknowledgement' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='UserNm' originalName='UserNm' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='UserPwd' originalName='UserPwd' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RequestId' originalName='RequestId' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='StatusCd' originalName='StatusCd' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Description' originalName='Description' assignable='true' index='4' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1000</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RedirectLink' originalName='RedirectLink' assignable='true' index='5' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1000</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='UserNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='UserPwd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='RequestId'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='StatusCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Description'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RedirectLink'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.BIGPollResponse' originalName='BIGPollResponse' isAbstract='false' xmlBeanClassName='noNamespace.BIGPollResponse' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='UserNm' originalName='UserNm' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='UserPwd' originalName='UserPwd' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RequestId' originalName='RequestId' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Client' originalName='Client' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String7</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='UserNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='UserPwd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='RequestId'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='Client'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.BIGResponse' originalName='BIGResponse' isAbstract='false' xmlBeanClassName='noNamespace.BIGResponse' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='UserNm' originalName='UserNm' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='UserPwd' originalName='UserPwd' assignable='true' index='1' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RequestId' originalName='RequestId' assignable='true' index='2' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String100</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='ClientCaseId' originalName='ClientCaseId' assignable='true' index='3' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String7</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='StatusCd' originalName='StatusCd' assignable='true' index='4' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='PassReviewStatusCd' originalName='PassReviewStatusCd' assignable='true' index='5' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String10</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CreditCheckResultCd' originalName='CreditCheckResultCd' assignable='true' index='6' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String10</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='CriminalBackgroundCheckResultCd' originalName='CriminalBackgroundCheckResultCd' assignable='true' index='7' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String10</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='OFACBackgroundCheckResultCd' originalName='OFACBackgroundCheckResultCd' assignable='true' index='8' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String10</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='RedirectLink' originalName='RedirectLink' assignable='true' index='9' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1000</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='UserNm'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='UserPwd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='RequestId'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='ClientCaseId'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='StatusCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='PassReviewStatusCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CreditCheckResultCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='CriminalBackgroundCheckResultCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='OFACBackgroundCheckResultCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='RedirectLink'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlEntityType isSynthetic='true' name='com.big.BIGResponseAcknowledgement' originalName='BIGResponseAcknowledgement' isAbstract='false' xmlBeanClassName='noNamespace.BIGResponseAcknowledgement' isRootElement='false' isAnonymousType='false' isQualified='false'>
+    <XmlAttributeProperty isSynthetic='true' name='StatusCd' originalName='StatusCd' assignable='true' index='0' required='true' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String30</TypeName>
+    </XmlAttributeProperty>
+    <XmlAttributeProperty isSynthetic='true' name='Description' originalName='Description' assignable='true' index='1' xsdType='string' isElement='true' isNillable='false'>
+      <TypeName>com.big.String1000</TypeName>
+    </XmlAttributeProperty>
+    <SequenceParticle isSynthetic='true' minOccurs='1' maxOccurs='1'>
+      <ElementParticle isSynthetic='true' minOccurs='1' maxOccurs='1' elementPropertyName='StatusCd'>
+      </ElementParticle>
+      <ElementParticle isSynthetic='true' minOccurs='0' maxOccurs='1' elementPropertyName='Description'>
+      </ElementParticle>
+    </SequenceParticle>
+  </XmlEntityType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String1' originalName='string_1' restricts='java.lang.String' maxLength='1' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String4' originalName='string_4' restricts='java.lang.String' maxLength='4' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String7' originalName='string_7' restricts='java.lang.String' maxLength='7' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String10' originalName='string_10' restricts='java.lang.String' maxLength='10' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String11' originalName='string_11' restricts='java.lang.String' maxLength='11' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String20' originalName='string_20' restricts='java.lang.String' maxLength='20' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String30' originalName='string_30' restricts='java.lang.String' maxLength='30' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String35' originalName='string_35' restricts='java.lang.String' maxLength='35' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String100' originalName='string_100' restricts='java.lang.String' maxLength='100' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String200' originalName='string_200' restricts='java.lang.String' maxLength='200' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String255' originalName='string_255' restricts='java.lang.String' maxLength='255' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String150' originalName='string_150' restricts='java.lang.String' maxLength='150' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.String1000' originalName='string_1000' restricts='java.lang.String' maxLength='1000' xsdType='string'>
+  </XmlSimpleType>
+  <XmlSimpleType isSynthetic='true' name='com.big.DateType' originalName='date_type' restricts='java.lang.String' lengthEqualTo='10' pattern='((01|02|03|04|05|06|07|08|09|10|11|12)/(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31)/[1-2][0-9][0-9][0-9])' xsdType='string'>
+  </XmlSimpleType>
+  <ImportConfiguration>SchemasBIG/big_integration.xsd</ImportConfiguration>
+  <XmlFileInformation isSynthetic='true' name='big_integration.xsd' qualifiedAttributeForm='false' qualifiedElementForm='false' namespace='' root='true' sourceFile='../SchemasBIG/big_integration.xsd'>
+    <PackageObjectName>big</PackageObjectName>
+  </XmlFileInformation>
+</XmlSchema>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DomainSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='dcm.FlatFileWrapperSchema' preserveWhitespaces='false'>
+  <Package isSynthetic='false' name='dcm' javaPackage='dcm'>
+  </Package>
+  <EntityType isSynthetic='false' name='dcm.ExecutionHelper' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='ROOTLicense' assignable='true' index='2' cardinality='One2One' containment='false'>
+      <TypeName>insertlicensesspec.ROOT</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ExecutionHelperForROOTLicense' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='ROOTLicenseLine' assignable='true' index='1' cardinality='One2One' containment='false'>
+      <TypeName>insertlicenselinespec.ROOT</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ExecutionHelperForROOTLicenseLine' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='ROOTAppointment' assignable='true' index='0' cardinality='One2One' containment='false'>
+      <TypeName>insertappointmentspec.ROOT</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ExecutionHelperForROOTAppointment' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='ROOTPosition' assignable='true' index='3' cardinality='One2One' containment='false'>
+      <TypeName>com.comphierarchypositionspec.ROOT</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ExecutionHelperForROOTPosition' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='ROOTPositionHolder' assignable='true' index='4' cardinality='One2One' containment='false'>
+      <TypeName>com.comphierarchypositionholderspec.ROOT</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ExecutionHelperForROOTPositionHolder' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='ROOTAgreementParticipant' assignable='true' index='5' cardinality='One2One' containment='false'>
+      <TypeName>insertagreementparticipantrspec.ROOT</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ExecutionHelperForROOTAgreementParticipant' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='ROOTContactPointUsage' assignable='true' index='6' cardinality='One2One' containment='false'>
+      <TypeName>contactpointusagespec.ROOT</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ExecutionHelperForROOTContactPointUsage' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='ROOTContactPoint' assignable='true' index='7' cardinality='One2One' containment='false'>
+      <TypeName>contactpointsspec.ROOT</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ExecutionHelperForROOTContactPoint' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='ApptOnlyFlag' assignable='true' index='8'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.MessageAlert' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Severity' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RowNumber' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Message' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Operation' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <CustomProperty isSynthetic='false' name='MessageAlertToDesc' assignable='false' typeInferred='true'>
+      <TypeName>java.lang.String</TypeName>
+      <GetterMethod isSynthetic='false' name='getMessageAlertToDesc' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='concat'>
+          </MethodReference>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='concat'>
+            </MethodReference>
+            <Literal isSynthetic='false' typeName='java.lang.String' literalString='Row:'>
+            </Literal>
+            <PathExpression isSynthetic='false' pathString='RowNumber'>
+            </PathExpression>
+          </MethodExpression>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='concat'>
+            </MethodReference>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='concat'>
+              </MethodReference>
+              <Literal isSynthetic='false' typeName='java.lang.String' literalString='|Severity:'>
+              </Literal>
+              <PathExpression isSynthetic='false' pathString='Severity'>
+              </PathExpression>
+            </MethodExpression>
+            <MethodExpression isSynthetic='false' infix='false'>
+              <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='concat'>
+              </MethodReference>
+              <MethodExpression isSynthetic='false' infix='false'>
+                <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='concat'>
+                </MethodReference>
+                <Literal isSynthetic='false' typeName='java.lang.String' literalString='|Message:'>
+                </Literal>
+                <PathExpression isSynthetic='false' pathString='Message'>
+                </PathExpression>
+              </MethodExpression>
+              <MethodExpression isSynthetic='false' infix='false'>
+                <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='concat'>
+                </MethodReference>
+                <Literal isSynthetic='false' typeName='java.lang.String' literalString='|Operation:'>
+                </Literal>
+                <PathExpression isSynthetic='false' pathString='Operation'>
+                </PathExpression>
+              </MethodExpression>
+            </MethodExpression>
+          </MethodExpression>
+        </MethodExpression>
+      </GetterMethod>
+    </CustomProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.Alerts' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='MessageAlert' assignable='true' index='0' cardinality='One2Many' containment='false' collectionType='List'>
+      <TypeName>dcm.MessageAlert</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AlertsForMessageAlert' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='dcm.OrgPrincipalAlerts' superclassName='dcm.Alerts' isAbstract='false'>
+  </EntityType>
+  <Import schemaName='dcm.insertpersonpartyspec.InsertPersonPartySpec'/>
+  <Import schemaName='dcm.insertorgpartyspec.InsertOrgPartySpec'/>
+  <Import schemaName='contactpointsspec.ContactPointsSpec'/>
+  <Import schemaName='cecreditsspec.CECreditsSpec'/>
+  <Import schemaName='enononinheritancepolicyloaderspec.EnONonInheritancePolicyLoaderSpec'/>
+  <Import schemaName='paymentaccountspec.PaymentAccountSpec'/>
+  <Import schemaName='insertagreementparticipantrspec.InsertAgreementParticipantSpec'/>
+  <Import schemaName='insertuserspec.InsertUserSpec'/>
+  <Import schemaName='insertlicenselinespec.InsertLicenseLineSpec'/>
+  <Import schemaName='insertlicensesspec.InsertLicensesSpec'/>
+  <Import schemaName='insertappointmentspec.InsertAppointmentSpec'/>
+  <Import schemaName='com.comphierarchypositionholderspec.CompHierarchyPositionHolderSpec'/>
+  <Import schemaName='com.comphierarchypositionspec.CompHierarchyPositionSpec'/>
+  <Import schemaName='contactpointusagespec.ContactPointUsageSpec'/>
+  <Import schemaName='updateorgpartyspec.UpdateOrgPartySpec'/>
+  <Import schemaName='updatepersonpartyspec.UpdatePersonPartySpec'/>
+  <Import schemaName='updatepartystatusspec.UpdatePartyStatusSpec'/>
+  <Import schemaName='insertupdatecomponentparticipantspec.InsertUpdateComponentParticipantSpec'/>
+  <Import schemaName='ideafiagreementsspec.IDEAFIAgreementsSpec'/>
+  <Import schemaName='ideaorgprincipalrelationshiploaderspec.IDEAOrgPrincipalRelationshipLoaderSpec'/>
+  <SchemaRootType>dcm.ExecutionHelper</SchemaRootType>
+</DomainSchema>

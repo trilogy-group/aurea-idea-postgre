@@ -1,0 +1,18 @@
+<Event type="Address Change">
+<ContactInformation>
+  <PartyInfo>
+     <PartyID>38</PartyID>
+     <PartyName>Olaf Albertson</PartyName>
+  </PartyInfo>  
+  <Contact>
+     <Street1>321 Willard Way - Test</Street1>
+     <Street2></Street2>
+     <City>Adel</City>
+     <State>OR</State>
+     <Country>US</Country>
+     <Phone>8981212121</Phone>
+     <CellPhone>2271111111</CellPhone>
+     <Email>Ondine@gmail.com</Email>
+  </Contact>
+</ContactInformation>
+</Event>

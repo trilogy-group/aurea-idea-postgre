@@ -1,0 +1,707 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SchemaMap xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='ACORDInformationModelToInsertAppointmentSpec' sourceSchemaName='org.acord.ACORDInformationModel' targetSchemaName='insertappointmentspec.InsertAppointmentSpec'>
+  <EnumerationMap isSynthetic='false' name='EnumerationMap1' sourceTypeName='org.acord.aim.Registration.RegistrationCodeLists.RegistrationStatusCodeList' targetTypeName='insertappointmentspec.AppointmentStatus'>
+    <ValuePair isSynthetic='false' sourceGenerator='Active' targetGenerator='Active'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Disqualified' targetGenerator='Cancelled'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Draft' targetGenerator='Requestpending'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Effective' targetGenerator='Requestpending'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Expired' targetGenerator='Cancelled'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Final' targetGenerator='Active'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Inactive' targetGenerator='Cancelled'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Initial' targetGenerator='Requestpending'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Issued' targetGenerator='Active'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Rejected' targetGenerator='Cancelled'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Requested' targetGenerator='Requestpending'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Revoked' targetGenerator='Cancelled'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Suspended' targetGenerator='Cancelled'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Temporary' targetGenerator='Active'>
+    </ValuePair>
+  </EnumerationMap>
+  <EnumerationMap isSynthetic='false' name='EnumerationMap2' sourceTypeName='org.acord.aim.CommonElements.CommonCodeLists.StatusReasonCodeList' targetTypeName='insertappointmentspec.AppointmentStatusReason'>
+    <ValuePair isSynthetic='false' sourceGenerator='AgreementAdditionChangeinProgress' targetGenerator='NA'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='AgreementChangeCausedFreeze' targetGenerator='SuspendedforCompliance'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='AgreementHolderServiceFreeze' targetGenerator='SuspendedforCompliance'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Appeal' targetGenerator='SuspendedforCompliance'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Applicantdeclinedoffer' targetGenerator='VoluntaryTermination'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='ChangeRequestDenied' targetGenerator='Revoked'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='ComplexAgreementAdditionHistoricalAddition' targetGenerator='NA'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='GroupExpired' targetGenerator='Revoked'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='HistoricalAddition' targetGenerator='NA'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='InsuredDeath' targetGenerator='Death'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Noresponsefromapplicant' targetGenerator='NA'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Other' targetGenerator='NA'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='PayorDeath' targetGenerator='Death'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='PayorDisabled' targetGenerator='NA'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='ProcessingSystemProblemCausedFreeze' targetGenerator='SuspendedforCompliance'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Producernotapprovedtosell' targetGenerator='Revoked'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='PVTWSLossofSightorLimbs' targetGenerator='Revoked'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Renumbered' targetGenerator='NA'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Unapprovedlicensingorappointment' targetGenerator='Revoked'>
+    </ValuePair>
+    <ValuePair isSynthetic='false' sourceGenerator='Unknown' targetGenerator='NA'>
+    </ValuePair>
+  </EnumerationMap>
+  <ClassMap isSynthetic='false' name='PersonToROOT' sourceTypeName='org.acord.aim.Party.Person' targetTypeName='insertappointmentspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForPersonToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForPerson/ContextExtension/hasAppointment'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonRegistrationOnPerson/asPersonProducerLicense/ProducerLicenseComponent'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrganizationToROOT' sourceTypeName='org.acord.aim.Party.Organization' targetTypeName='insertappointmentspec.ROOT' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForOrganizationToROOT' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='true'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.BooleanLibrary' methodName='and'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='Enriched'>
+        </PathExpression>
+        <PathExpression isSynthetic='false' pathString='UpdatePartyContextForOrganization/ContextExtension/hasAppointment'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrganizationRegistrationRegistersOrganization/asOrganizationProducerLicense/ProducerLicenseComponent'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='RECORD'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='PersonRegistrationToRECORD' sourceTypeName='org.acord.aim.Registration.PartyRegistrationSubtypes.PersonRegistration' targetTypeName='insertappointmentspec.RECORD' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForPersonRegistrationToRECORD' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='false'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/identifier'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/registrationAuthorityTypeCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='residentStatus'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/typeName'>
+            </PathExpression>
+          </MethodExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+        </CollectionExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/RegistrationOnPlace/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='jurisdiction'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/ProducerLicenseComponent/LOA'>
+            </PathExpression>
+          </MethodExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+        </CollectionExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='loACode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/ProducerLicenseComponent/CompanyCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='companyTaxID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/ProducerLicenseComponent/StatusReason'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StatusReason'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <Literal isSynthetic='false' typeName='insertappointmentspec.LicenseLicenseClass' literalString='Individual'>
+        </Literal>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseClass'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonForPersonRegistrationOnPerson/TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='holderID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/ProducerLicenseComponent/SendToNIPR'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='sendToNIPR'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/ProducerLicenseComponent/Terminate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='terminate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/ProducerLicenseComponent/SubJurisdiction'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='subJurisdiction'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/ProducerLicenseComponent/Status'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StatusCode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='asPersonProducerLicense/ProducerLicenseComponent/StatusDate/DateType'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='dateStatusEffective'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='OrganizationRegistrationToRECORD' sourceTypeName='org.acord.aim.Registration.PartyRegistrationSubtypes.OrganizationRegistration' targetTypeName='insertappointmentspec.RECORD' autoReverse='false'>
+    <Precondition isSynthetic='false' name='preconditionForOrganizationRegistrationToRECORD' language='EXPR'>
+      <ReturnTypeDescription></ReturnTypeDescription>
+      <Code></Code>
+      <MethodExpression isSynthetic='false' infix='false'>
+        <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+        </MethodReference>
+        <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense'>
+        </PathExpression>
+      </MethodExpression>
+    </Precondition>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/identifier'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/typeName'>
+            </PathExpression>
+          </MethodExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+        </CollectionExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/registrationAuthorityTypeCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='residentStatus'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/RegistrationOnPlace/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='jurisdiction'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/ProducerLicenseComponent/LOA'>
+            </PathExpression>
+          </MethodExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+        </CollectionExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='loACode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/ProducerLicenseComponent/StatusReason'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StatusReason'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/ProducerLicenseComponent/CompanyCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='companyTaxID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <Literal isSynthetic='false' typeName='insertappointmentspec.LicenseLicenseClass' literalString='Corporation'>
+        </Literal>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseClass'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrganizationForOrganizationRegistrationRegistersOrganization/TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='holderID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/ProducerLicenseComponent/SubJurisdiction'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='subJurisdiction'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/ProducerLicenseComponent/Status'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StatusCode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='asOrganizationProducerLicense/ProducerLicenseComponent/StatusDate/DateType'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='dateStatusEffective'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+  <ClassMap isSynthetic='false' name='ProducerLicenseComponentToRECORD' sourceTypeName='org.acord.aim.Registration.PartyRegistrationSubtypes.ProducerLicenseComponent' targetTypeName='insertappointmentspec.RECORD' autoReverse='false'>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Terminate'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='terminate'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='SubJurisdiction'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='subJurisdiction'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='StatusReason'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StatusReason'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='Status'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='StatusCode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='SendToNIPR'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='sendToNIPR'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonProducerLicenseForProducerLicenseComponent/registrationAuthorityTypeCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='residentStatus'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='LOA'>
+            </PathExpression>
+          </MethodExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+        </CollectionExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='loACode'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='PersonProducerLicenseForProducerLicenseComponent/typeName'>
+            </PathExpression>
+          </MethodExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+        </CollectionExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonProducerLicenseForProducerLicenseComponent/identifier'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonProducerLicenseForProducerLicenseComponent/RegistrationOnPlace/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='jurisdiction'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='PersonProducerLicenseForProducerLicenseComponent/PersonForPersonRegistrationOnPerson/TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='holderID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <MethodExpression isSynthetic='false' infix='false'>
+          <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.StringLibrary' methodName='formatDate'>
+          </MethodReference>
+          <PathExpression isSynthetic='false' pathString='StatusDate/DateType'>
+          </PathExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='MM/dd/yyyy'>
+          </Literal>
+        </MethodExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='dateStatusEffective'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='CompanyCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='companyTaxID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false' nullHandling='Ignore Null'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <ConditionalExpression isSynthetic='false'>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='hasValue'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='PersonProducerLicenseForProducerLicenseComponent'>
+            </PathExpression>
+          </MethodExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='Individual'>
+          </Literal>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='Corporation'>
+          </Literal>
+        </ConditionalExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseClass'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrganizationProducerLicenseForProducerLicenseComponent/OrganizationForOrganizationRegistrationRegistersOrganization/TaxID'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='holderID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrganizationProducerLicenseForProducerLicenseComponent/RegistrationOnPlace/name'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='jurisdiction'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrganizationProducerLicenseForProducerLicenseComponent/identifier'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseID'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <CollectionExpression isSynthetic='false' prefixFunction='joinStringsOf'>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+          <MethodExpression isSynthetic='false' infix='false'>
+            <MethodReference isSynthetic='false' className='com.pantero.runtime.metamodel.expressions.library.ObjectLibrary' methodName='valueOf'>
+            </MethodReference>
+            <PathExpression isSynthetic='false' pathString='OrganizationProducerLicenseForProducerLicenseComponent/typeName'>
+            </PathExpression>
+          </MethodExpression>
+          <Literal isSynthetic='false' typeName='java.lang.String' literalString='&quot;'>
+          </Literal>
+        </CollectionExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='licenseType'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='OrganizationProducerLicenseForProducerLicenseComponent/registrationAuthorityTypeCode'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='residentStatus'>
+      </TransformationTarget>
+    </Transformation>
+    <Transformation isSynthetic='false'>
+      <TransformationSource isSynthetic='false' name='' language='EXPR'>
+        <ReturnTypeDescription></ReturnTypeDescription>
+        <Code></Code>
+        <PathExpression isSynthetic='false' pathString='typeName'>
+        </PathExpression>
+      </TransformationSource>
+      <TransformationTarget isSynthetic='false' pathString='PartyType'>
+      </TransformationTarget>
+    </Transformation>
+  </ClassMap>
+</SchemaMap>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loader:loader_spec
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+	xmlns="http://dms.trilogy.com/Loader/Spec"
+	xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+	name="Update Agreement Participant Status Loader Spec">
+
+	<error_handlers>
+		<handler name="idea_log_error_handler" class="log_message_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/${ERROR_FILENAME}"/>
+		</handler>
+	</error_handlers>
+	<strategy name="strategy" class="${STRATEGY}">
+		<property name="memory.batch_size" value="${BATCH_SIZE}"/>
+		<property name="exitIfSanityCheckFails" value="${SANITY_CHECK}"/>
+	</strategy>
+
+	<object name="st" class="AgreementParticipantStatusValidator"/>
+
+	<source name="load_file" class="delimited_file_parser">
+			<property name="filename" value="${FILENAME}"/>
+			<property name="delimiters" value=","/>
+			<property name="headerRows" value="1"/>
+			<property name="quote_chars" value="&quot;"/>
+		
+			<indexed_field name="ap_Unid" index="0"/>
+			<indexed_field name="st_StartDate" index="1" translator="date_translator" />
+			<indexed_field name="st_EndDate" index="2" translator="date_translator" />
+			<indexed_field name="st_StatusCode" index="3" translator="StatusCode_translator"/>
+			<indexed_field name="st_StatusReason" index="4"/>
+	</source>
+	
+	<translator name="date_translator" class="com.aviva.fs.dms.tools.loader.translate.AVDateFormatTranslator">
+		<property name="formatString" value="MM/dd/yyyy"/>
+		<property name="treatEmptyAsNull" value="false"/>
+	</translator>
+		
+	<translator name="StatusCode_translator" class="enum_translator">
+		<property name="enumName" value="AgreementParticipant.Status"/>
+		<property name="throwException" value="true"/>
+        <property name="useDefaultValue" value="false"/>
+	</translator>
+		
+	<translator name="status_reason_translator" class="com.aviva.fs.dms.tools.loader.translate.AVPartyStatusReasonTranslator">
+		<property name="statusReasonBaseEnumName" value="AgreementParticipant.Status.Reason"/>
+		<property name="statusEnumName" value="AgreementParticipant.Status"/>
+	</translator>
+	
+	<resolver name="ap_resolver" class="single_key_resolver">
+		<property name="className" value="FSAgreementParticipant"/>
+		<property name="key" value="Unid"/>
+		<property name="preCacheTables" value="false"/>
+	</resolver>
+	<translator name="boolean_translator" class="boolean_translator">
+		<property name="true" value="true" />
+		<property name="false" value="false" />
+	</translator>
+	<constant name="CascadeCompRelCompoPart" class="value">
+  		<property name="value" value="true"/>
+  	</constant>
+
+	<constant name="CascadeAgrPartChildren" class="value">
+  		<property name="value" value="0"/>
+  	</constant>
+	
+	<map object="st">
+		<action name="insert"/>
+		<map_object property="AgreementParticipant" resolver="ap_resolver" tag="precreate">
+			<field name="ap_Unid"/>
+		</map_object>
+		<map_simple property="NewStatus.StartDate" field="st_StartDate" tag="validator"/>
+		<map_simple property="NewStatus.EndDate" field="st_EndDate" tag="validator"/>
+		<map_simple property="NewStatus.StatusCode" field="st_StatusCode" tag="validator"/>
+		<map_constant property="CascadeCompRelCompoPart" constant="CascadeCompRelCompoPart" tag="validator" translator="boolean_translator"/>		
+		<map_merge property="NewStatus.StatusReason" tag="validator" translator="status_reason_translator">
+			<field name="st_StatusCode"/>
+			<field name="st_StatusReason"/>
+		</map_merge>
+	</map>
+	
+</loader:loader_spec>

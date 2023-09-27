@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run:RuntimeReport isEmpty="false" xmlns:run="http://www.pantero.com/runtimereport">
+  <run:RuleResults>
+    <run:Category name="ContactPointsSpecSchemaValidation">
+      <run:Result name="requiredForRECORDOnROOT" subjectType="contactpointsspec.ROOT" message="RECORD in ROOT is required" category="ContactPointsSpecSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="ROOT(session/id = 2/570)"/>
+        <run:Detail value="false" message="RECORD null hasValue is false"/>
+      </run:Result>
+    </run:Category>
+    <run:Category name="CECreditsSpecSchemaValidation">
+      <run:Result name="requiredForRECORDOnROOT" subjectType="cecreditsspec.ROOT" message="RECORD in ROOT is required" category="CECreditsSpecSchemaValidation" value="false" connective="All">
+        <run:SubjectKey name="toString" value="ROOT(session/id = 2/569)"/>
+        <run:Detail value="false" message="RECORD null hasValue is false"/>
+      </run:Result>
+    </run:Category>
+  </run:RuleResults>
+</run:RuntimeReport>

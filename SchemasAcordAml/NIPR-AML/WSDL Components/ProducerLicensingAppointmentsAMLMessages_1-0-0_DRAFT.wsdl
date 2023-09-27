@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--WSDL definition for Producer Licensing and Appointments Messages based on AML (ACORD Messaging Library)-->
+<wsdl:definitions name="ProducerLicensingAppointmentsMessages_Definitions"
+	targetNamespace="http://www.acord.org/schema/ws-messages/AML/1/draft"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ac="http://www.acord.org/schema/data/ReusableDataComponents/1"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.xmlsoap.org/wsdl/
+	..\..\crossindustryschemas\wsdl-2004-08-24.xsd">
+	<wsdl:types>
+		<xs:schema targetNamespace="http://www.acord.org/schema/data/ReusableDataComponents/1">
+			<xs:import namespace="http://www.acord.org/schema/data/ReusableDataComponents/1" schemaLocation="..\messages\AMLMessages.xsd"/>
+			<xs:element name="ProducerAppointmentProcess" type="xs:anyType"/>
+			<xs:element name="ProducerAppointmentProcessResult" type="xs:anyType"/>
+			<xs:element name="ProducerAppointmentNotify" type="xs:anyType"/>
+			<xs:element name="ProducerLicenseApplicationProcess" type="xs:anyType"/>
+			<xs:element name="ProducerLicenseApplicationProcessResult" type="xs:anyType"/>
+			<xs:element name="ProducerLicenseApplicationNotify" type="xs:anyType"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="ProducerAppointmentProcess">
+		<wsdl:part name="ProducerAppointmentProcess_Part"
+			element="ac:ProducerAppointmentProcess"/>
+	</wsdl:message>
+	<wsdl:message name="ProducerAppointmentProcessResult">
+		<wsdl:part name="ProducerAppointmentProcessResult_Part"
+			element="ac:ProducerAppointmentProcessResult"/>
+	</wsdl:message>
+	<wsdl:message name="ProducerAppointmentNotify">
+		<wsdl:part name="ProducerAppointmentNotify_Part"
+			element="ac:ProducerAppointmentNotify_Part"/>
+	</wsdl:message>
+	<wsdl:message name="ProducerLicenseApplicationProcess">
+		<wsdl:part name="ProducerLicenseApplicationProcess_Part"
+			element="ac:ProducerLicenseApplicationProcess"/>
+	</wsdl:message>
+	<wsdl:message name="ProducerLicenseApplicationProcessResult">
+		<wsdl:part name="ProducerLicenseApplicationProcessResult_Part"
+			element="ac:ProducerLicenseApplicationProcessResult"/>
+	</wsdl:message>
+	<wsdl:message name="ProducerLicenseApplicationNotify">
+		<wsdl:part name="ProducerLicenseApplicationNotify_Part"
+			element="ac:ProducerLicenseApplicationNotify"/>
+	</wsdl:message>
+</wsdl:definitions>

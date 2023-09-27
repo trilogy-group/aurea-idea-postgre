@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DomainSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' name='com.nipr.schema.NIPRSchema'>
+  <Package isSynthetic='false' name='NIPRSchema' javaPackage='com.nipr.schema'>
+  </Package>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Getter' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='LastName' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='RequestInformation' assignable='true' index='4' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.RequestInformation</TypeName>
+      <RelationshipProperty isSynthetic='false' name='GetterForRequestInformation' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='Type' assignable='true' index='4'>
+      <TypeName>com.nipr.schema.ProducerType</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TaxID' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.RequestInformation' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='CustomerNumber' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='PinNumber' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Result' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Organization' assignable='true' index='0' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Organization</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ResultForOrganization' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Person' assignable='true' index='1' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Person</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ResultForPerson' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Error' assignable='true' index='3' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Error</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ResultForError' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Organization' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Address' assignable='true' index='2' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Address</TypeName>
+      <RelationshipProperty isSynthetic='false' name='OrganizationForAddress' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='License' assignable='true' index='3' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.License</TypeName>
+      <RelationshipProperty isSynthetic='false' name='OrganizationForLicense' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='OrganizationName' assignable='true' index='3' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Name</TypeName>
+      <RelationshipProperty isSynthetic='false' name='OrganizationForOrganizationName' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Person' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='DOB' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='PersonName' assignable='true' index='2' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Name</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PersonForPersonName' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Address' assignable='true' index='3' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Address</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PersonForAddress' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='License' assignable='true' index='4' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.License</TypeName>
+      <RelationshipProperty isSynthetic='false' name='PersonForLicense' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Address' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Type' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Line1' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Line2' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Line3' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='City' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='State' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ZipCode' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Country' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='UpdateDate' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ForState' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Province' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.License' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='LicenseNumber' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Status' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='State' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Resident' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='IssueDate' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ExpirationDate' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusDate' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Appointment' assignable='true' index='8' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>com.nipr.schema.Appointment</TypeName>
+      <RelationshipProperty isSynthetic='false' name='LicenseForAppointment' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='LineOfAuthority' assignable='true' index='9' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.LineOfAuthority</TypeName>
+      <RelationshipProperty isSynthetic='false' name='LicenseForLineOfAuthority' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='ResidentClass' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ResidentLicenseNumber' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ClassInfo' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Country' assignable='true' index='12'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Appointment' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Status' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='LOA' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FEIN' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CompanyCode' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TerminationReason' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ReasonDate' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='RenewalDate' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TaxID' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Jurisdiction' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TransactionType' assignable='true' index='9'>
+      <TypeName>com.nipr.schema.TransactionType</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Applicant' assignable='true' index='10' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Applicant</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AppointmentForApplicant' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Appointer' assignable='true' index='11' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Appointer</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AppointmentForAppointer' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.LineOfAuthority' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Code' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Name' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CECreditsNeeded' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CECompliance' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Status' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusReason' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StatusDate' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='IssueDate' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.RequesterInfo' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='User' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Password' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Applicant' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Address' assignable='true' index='0' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Address</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ApplicantForAddress' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='Type' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TaxNumber' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Name' assignable='true' index='5' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Name</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ApplicantForName' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Email' assignable='true' index='6' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.CodeValue</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ApplicantForEmail' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Phone' assignable='true' index='7' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.CodeValue</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ApplicantForPhone' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='License' assignable='true' index='8' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.License</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ApplicantForLicense' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='DateIncorporated' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='OrganizationType' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CountryCode' assignable='true' index='10'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='BirthDate' assignable='true' index='11'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Gender' assignable='true' index='12'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Name' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Type' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FirstName' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='MiddleName' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='lastName' assignable='true' index='3'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Prefix' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Suffix' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Location' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='FullName' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.CodeValue' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Code' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Value' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Appointer' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Type' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CompanyCode' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TaxNumber' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Name' assignable='true' index='3' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Name</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AppointerForName' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Address' assignable='true' index='4' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Address</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AppointerForAddress' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Phone' assignable='true' index='5' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.CodeValue</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AppointerForPhone' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='License' assignable='true' index='6' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.License</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AppointerForLicense' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='NPN' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StateCompanyID' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EnumerationType isSynthetic='false' name='com.nipr.schema.TransactionType' restricts='java.lang.String'>
+    <Enumerand isSynthetic='false' name='Appointment' generator='01'>
+    </Enumerand>
+    <Enumerand isSynthetic='false' name='Termination' generator='02'>
+    </Enumerand>
+    <Enumerand isSynthetic='false' name='AppointmentRenewal' generator='03'>
+    </Enumerand>
+  </EnumerationType>
+  <EnumerationType isSynthetic='false' name='com.nipr.schema.ProducerType' restricts='java.lang.String'>
+    <Enumerand isSynthetic='false' name='Person' generator='Person'>
+    </Enumerand>
+    <Enumerand isSynthetic='false' name='Organization' generator='Organization'>
+    </Enumerand>
+  </EnumerationType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Error' isAbstract='false'>
+    <AttributeProperty isSynthetic='false' name='Description' assignable='true' index='0'>
+      <TypeName>List&lt;java.lang.String&gt;</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Transaction' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Applicant' assignable='true' index='0' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Applicant</TypeName>
+      <RelationshipProperty isSynthetic='false' name='TransactionForApplicant' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Appointer' assignable='true' index='1' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Appointer</TypeName>
+      <RelationshipProperty isSynthetic='false' name='TransactionForAppointer' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Authorization' assignable='true' index='2' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Authorization</TypeName>
+      <RelationshipProperty isSynthetic='false' name='TransactionForAuthorization' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Contact' assignable='true' index='3' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Contact</TypeName>
+      <RelationshipProperty isSynthetic='false' name='TransactionForContact' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='License' assignable='true' index='4' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.License</TypeName>
+      <RelationshipProperty isSynthetic='false' name='TransactionForLicense' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='Customer' assignable='true' index='0'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CustomerBatch' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='CustomerTransaction' assignable='true' index='2'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Entity' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='NIPRTransaction' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='ProcessFee' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StateCode' assignable='true' index='6'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='StateFee' assignable='true' index='7'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TransactionFee' assignable='true' index='8'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TransactionType' assignable='true' index='9'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='TransactionStatus' assignable='true' index='15'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Valid' assignable='true' index='16'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='Approved' assignable='true' index='17'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Authorization' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Address' assignable='true' index='0' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Address</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AuthorizationForAddress' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='Compliance' assignable='true' index='1'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='false' name='Email' assignable='true' index='2' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.CodeValue</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AuthorizationForEmail' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Name' assignable='true' index='3' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Name</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AuthorizationForName' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Phone' assignable='true' index='4' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.CodeValue</TypeName>
+      <RelationshipProperty isSynthetic='false' name='AuthorizationForPhone' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='PrepererCode' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Contact' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Address' assignable='true' index='0' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Address</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ContactForAddress' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Name' assignable='true' index='1' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Name</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ContactForName' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Email' assignable='true' index='2' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.CodeValue</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ContactForEmail' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Phone' assignable='true' index='3' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.CodeValue</TypeName>
+      <RelationshipProperty isSynthetic='false' name='ContactForPhone' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <AttributeProperty isSynthetic='false' name='Origin' assignable='true' index='4'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='false' name='User' assignable='true' index='5'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='false' name='com.nipr.schema.Gateway' isAbstract='false'>
+    <RelationshipProperty isSynthetic='false' name='Transaction' assignable='true' index='1' collectionType='Set' cardinality='One2Many' containment='false'>
+      <TypeName>com.nipr.schema.Transaction</TypeName>
+      <RelationshipProperty isSynthetic='false' name='GetwayForTransaction' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Information' assignable='true' index='0' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.RequesterInfo</TypeName>
+      <RelationshipProperty isSynthetic='false' name='GetwayForRequestInfo' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='false' name='Error' assignable='true' index='2' cardinality='One2One' containment='false'>
+      <TypeName>com.nipr.schema.Error</TypeName>
+      <RelationshipProperty isSynthetic='false' name='GatewayForError' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+</DomainSchema>

@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DomainSchema xmlns='http://www.pantero.com/metamodel2' isSynthetic='true' name='runtimereport.CommonRuntimeReportSchema'>
+  <Package isSynthetic='true' name='runtimereport' javaPackage='runtimereport'>
+  </Package>
+  <EntityType isSynthetic='true' name='runtimereport.SubjectKey' isAbstract='false'>
+    <UserAnnotation isSynthetic='true' name='com.pantero.toString'>
+      <Value>Name</Value>
+    </UserAnnotation>
+    <AttributeProperty isSynthetic='true' name='Name' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Value' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.Result' isAbstract='false'>
+    <UserAnnotation isSynthetic='true' name='com.pantero.toString'>
+      <Value>Name</Value>
+    </UserAnnotation>
+    <AttributeProperty isSynthetic='true' name='Name' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='SubjectType' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Message' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Category' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Value' assignable='true'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Connective' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='true' name='SubjectKey' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.SubjectKey</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ResultForSubjectKey' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='true' name='Detail' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.Detail</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ResultForDetail' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='true' name='Debug' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.Debug</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ResultForDebug' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.ExprResult' isAbstract='false'>
+    <UserAnnotation isSynthetic='true' name='com.pantero.toString'>
+      <Value>Message</Value>
+    </UserAnnotation>
+    <AttributeProperty isSynthetic='true' name='Value' assignable='true'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Message' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='true' name='Result' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.Result</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ExprResultForResult' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.Detail' superclassName='runtimereport.ExprResult' isAbstract='false'>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.Debug' superclassName='runtimereport.ExprResult' isAbstract='false'>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.Category' isAbstract='false'>
+    <UserAnnotation isSynthetic='true' name='com.pantero.toString'>
+      <Value>Name</Value>
+    </UserAnnotation>
+    <AttributeProperty isSynthetic='true' name='Name' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='true' name='Result' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.Result</TypeName>
+      <RelationshipProperty isSynthetic='true' name='CategoryForResult' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.RuleResults' isAbstract='false'>
+    <RelationshipProperty isSynthetic='true' name='Category' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.Category</TypeName>
+      <RelationshipProperty isSynthetic='true' name='RuleResultsForCategory' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.TransformationFailure' isAbstract='false'>
+    <UserAnnotation isSynthetic='true' name='com.pantero.toString'>
+      <Value>Message</Value>
+    </UserAnnotation>
+    <AttributeProperty isSynthetic='true' name='Category' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='SourceXPath' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='TargetXPath' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='SourceType' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='TargetType' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='EnumerationMap' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Message' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Value' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.ClassMapFailure' isAbstract='false'>
+    <UserAnnotation isSynthetic='true' name='com.pantero.toString'>
+      <Value>Message</Value>
+    </UserAnnotation>
+    <AttributeProperty isSynthetic='true' name='ClassMap' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='SourceType' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='TargetType' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Message' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='true' name='SourceKey' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.SubjectKey</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ClassMapFailureForSourceKey' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='true' name='TargetKey' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.SubjectKey</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ClassMapFailureForTargetKey' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='true' name='TransformationFailure' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.TransformationFailure</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ClassMapFailureForTransformationFailure' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.MappingFailures' isAbstract='false'>
+    <RelationshipProperty isSynthetic='true' name='ClassMapFailure' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.ClassMapFailure</TypeName>
+      <RelationshipProperty isSynthetic='true' name='MappingFailuresForClassMapFailure' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.Exception' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='Component' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='Message' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+    <AttributeProperty isSynthetic='true' name='StackTrace' assignable='true'>
+      <TypeName>java.lang.String</TypeName>
+    </AttributeProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.DatasourceWarnings' isAbstract='false'>
+    <RelationshipProperty isSynthetic='true' name='Exception' assignable='true' collectionType='Set' cardinality='One2Many' containment='true'>
+      <TypeName>runtimereport.Exception</TypeName>
+      <RelationshipProperty isSynthetic='true' name='DatasourceWarningsForException' assignable='true' collectionType='Set'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.Problems' isAbstract='false'>
+    <RelationshipProperty isSynthetic='true' name='MappingFailures' assignable='true' cardinality='One2One' containment='true'>
+      <TypeName>runtimereport.MappingFailures</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ProblemsForMappingFailures' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='true' name='DatasourceWarnings' assignable='true' cardinality='One2One' containment='true'>
+      <TypeName>runtimereport.DatasourceWarnings</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ProblemsForDatasourceWarnings' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='true' name='Exception' assignable='true' cardinality='One2One' containment='true'>
+      <TypeName>runtimereport.Exception</TypeName>
+      <RelationshipProperty isSynthetic='true' name='ProblemsForException' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+  <EntityType isSynthetic='true' name='runtimereport.RuntimeReport' isAbstract='false'>
+    <AttributeProperty isSynthetic='true' name='IsEmpty' assignable='true' defaultLiteral='true'>
+      <TypeName>java.lang.Boolean</TypeName>
+    </AttributeProperty>
+    <RelationshipProperty isSynthetic='true' name='RuleResults' assignable='true' cardinality='One2One' containment='true'>
+      <TypeName>runtimereport.RuleResults</TypeName>
+      <RelationshipProperty isSynthetic='true' name='RuntimeReportForRuleResults' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+    <RelationshipProperty isSynthetic='true' name='Problems' assignable='true' cardinality='One2One' containment='true'>
+      <TypeName>runtimereport.Problems</TypeName>
+      <RelationshipProperty isSynthetic='true' name='RuntimeReportForProblems' assignable='true'>
+      </RelationshipProperty>
+    </RelationshipProperty>
+  </EntityType>
+</DomainSchema>

@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PanteroRuntimeConfigurationData xmlns='http://www.pantero.com/metamodel2' isSynthetic='false' applicationName='DataXtendSIApplication' currentRuntimeEnvironment='default' defaultXmlSource='com.pantero.runtime.xml.JaxbSource'>
+  <RuntimeEnvironment isSynthetic='false' name='default'>
+    <Description>This built-in runtime environment is the default for upgrading old projects and when no other runtime environment exists</Description>
+    <DataSourceConnection isSynthetic='true' model='DCMdbODatabase'>
+      <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.Oracle11DatabaseType' dbTypeClassName='com.pantero.metamodel.datasources.database.Oracle11DatabaseType'>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.connection.provider_class' value='org.hibernate.connection.C3P0ConnectionProvider'>
+        </SourceLocationParameter>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.c3p0.timeout' value='0'>
+        </SourceLocationParameter>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.c3p0.max_size' value='20'>
+        </SourceLocationParameter>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.c3p0.min_size' value='5'>
+        </SourceLocationParameter>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.c3p0.idle_test_period' value='0'>
+        </SourceLocationParameter>
+        <URL>jdbc:oracle:thin:@localhost:1521:ORCL</URL>
+        <Username>aviva</Username>
+        <Password>B64I:vrYGNkrVYkQ=</Password>
+        <DbSourceLocationSchemaParameter isSynthetic='true' databaseInformation='MCC' runtimeDatabaseSchema='AVIVA'/>
+      </JdbcSourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='DCMdbPDatabase'>
+      <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.database.postgre.PostgreSQLDatabaseType' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.connection.provider_class' value='org.hibernate.connection.C3P0ConnectionProvider'>
+        </SourceLocationParameter>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.c3p0.timeout' value='0'>
+        </SourceLocationParameter>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.c3p0.max_size' value='20'>
+        </SourceLocationParameter>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.c3p0.min_size' value='5'>
+        </SourceLocationParameter>
+        <SourceLocationParameter isSynthetic='true' name='hibernate.c3p0.idle_test_period' value='0'>
+        </SourceLocationParameter>
+        <URL>jdbc:postgresql://localhost:5432/aviva</URL>
+        <Username>aviva</Username>
+        <Password>B64I:W0FAyKbr8B_CX0turR-0oA==</Password>
+        <DbSourceLocationSchemaParameter isSynthetic='true' databaseInformation='public' runtimeDatabaseSchema='public'/>
+      </JdbcSourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='DCMdbP2011Database'>
+      <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.database.postgre.PostgreSQLDatabaseType' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
+        <URL>jdbc:postgresql://localhost:5432/dcmHM</URL>
+        <Username>dcm13</Username>
+        <Password>B64I:porux0CtwBk=</Password>
+      </JdbcSourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='DCMdbO2011Database'>
+      <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.Oracle11DatabaseType' dbTypeClassName='com.pantero.metamodel.datasources.database.Oracle11DatabaseType'>
+        <URL>jdbc:oracle:thin:@dcm-development1-hmdv1db1.cpgklp97sidi.us-east-1.rds.amazonaws.com:3306/HMDV1DB1</URL>
+        <Username>DCM</Username>
+        <Password>B64I:NTDReLQyiOlsASJ0hyHifg==</Password>
+        <DbSourceLocationSchemaParameter isSynthetic='true' databaseInformation='DCM2011' runtimeDatabaseSchema='DCM'/>
+      </JdbcSourceLocation>
+    </DataSourceConnection>
+  </RuntimeEnvironment>
+  <RuntimeEnvironment isSynthetic='false' name='Localhost' xmlSource='com.pantero.runtime.xml.JaxbSource'>
+    <Description>This built-in runtime environment is the default for upgrading old projects and when no other runtime environment exists</Description>
+    <DataSourceConnection isSynthetic='false' model='DCMdbODatabase'>
+      <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.dataxtend.si.database.Oracle11DatabaseType' dbTypeClassName='com.pantero.metamodel.datasources.database.Oracle11DatabaseType'>
+        <URL>jdbc:oracle:thin:@localhost:1521:orcl</URL>
+        <Username>mcc</Username>
+        <Password>B64I:q287K4bj3PU=</Password>
+        <DbSourceLocationSchemaParameter isSynthetic='true' databaseInformation='MCC' runtimeDatabaseSchema='MCC'/>
+      </JdbcSourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='false' model='DCMdbPDatabase'>
+      <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.database.postgre.PostgreSQLDatabaseType' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
+        <URL>jdbc:postgresql://localhost:5432/aviva</URL>
+        <Username>aviva</Username>
+        <Password>B64I:W0FAyKbr8B_CX0turR-0oA==</Password>
+        <DbSourceLocationSchemaParameter isSynthetic='true' databaseInformation='public' runtimeDatabaseSchema='aviva'/>
+      </JdbcSourceLocation>
+    </DataSourceConnection>
+  </RuntimeEnvironment>
+  <RuntimeEnvironment isSynthetic='false' name='NIPR'>
+    <DataSourceConnection isSynthetic='false' model='NIPRXMLDataSource'>
+      <HTTPSourceLocation isSynthetic='false' wrappedWithSoap='NO WRAP' HttpMethod='GET'>
+        <URL>https://pdb-services-beta.nipr.com/pdb-xml-reports/</URL>
+        <ServiceName>TBD</ServiceName>
+        <ServiceNamespace>TBD</ServiceNamespace>
+        <ServiceNamespacePrefix></ServiceNamespacePrefix>
+      </HTTPSourceLocation>
+    </DataSourceConnection>
+    <SSLConfig isSynthetic='false' TrustStoreType='Windows-ROOT' Provider='SunMSCAPI'>
+    </SSLConfig>
+  </RuntimeEnvironment>
+  <RuntimeEnvironment isSynthetic='false' name='BIG'>
+    <DataSourceConnection isSynthetic='false' model='BIGXMLDataSource'>
+      <HTTPSourceLocation isSynthetic='false' wrappedWithSoap='NO WRAP' HttpMethod='POST'>
+        <URL>http://172.30.78.59:8090/Server/ServerClass</URL>
+        <ServiceName>ServerClass</ServiceName>
+        <ServiceNamespace>http://server.aurea.com</ServiceNamespace>
+        <ServiceNamespacePrefix></ServiceNamespacePrefix>
+      </HTTPSourceLocation>
+    </DataSourceConnection>
+  </RuntimeEnvironment>
+  <RuntimeEnvironment isSynthetic='false' name='NIPRGateway' xmlSource='com.pantero.runtime.xml.JaxbSource'>
+    <DataSourceConnection isSynthetic='false' model='NIPRGatewayDataSource'>
+      <HTTPSourceLocation isSynthetic='false' wrappedWithSoap='NO WRAP' HttpMethod='POST'>
+        <URL>https://pdb-services-beta.nipr.com/gateway-realtime/realtime</URL>
+        <ServiceName>NIPR gateway</ServiceName>
+        <ServiceNamespace></ServiceNamespace>
+        <ServiceNamespacePrefix></ServiceNamespacePrefix>
+      </HTTPSourceLocation>
+    </DataSourceConnection>
+    <SSLConfig isSynthetic='false' TrustStoreType='Windows-ROOT' Provider='SunMSCAPI'>
+    </SSLConfig>
+  </RuntimeEnvironment>
+  <RuntimeEnvironment isSynthetic='false' name='Mock' xmlSource='com.pantero.runtime.xml.JaxbSource'>
+    <DataSourceConnection isSynthetic='false' model='BIGXMLDataSource' xmlSource='com.pantero.runtime.xml.JaxbSource'>
+      <SourceLocation isSynthetic='false' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData/Mock/BIGDataSource</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='false' model='DCMdbPDatabase'>
+      <SourceLocation isSynthetic='false' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData/Mock/IPMDataService</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+  </RuntimeEnvironment>
+  <RuntimeEnvironment isSynthetic='false' name='Recorded'>
+    <Description>RuntimeEnvironment to re-run recorded test-cases using stubbed data for the datasources.</Description>
+    <DataSourceConnection isSynthetic='true' model='DCMFlatFileDataSource'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='BIGXMLDataSource'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='DCMdbPDatabase'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='DCMdbODatabase'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='NIPRXMLDataSource'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='NIPRGatewayDataSource'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='DCMUtilsDataSource'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='DCMdbP2011Database'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+    <DataSourceConnection isSynthetic='true' model='DCMdbO2011Database'>
+      <SourceLocation isSynthetic='true' extensionId='com.aurea.dataxtend.si.datasources.xmlfolder.config.XMLFolderSourceLocation' extensionClass='com.pantero.metamodel.datasources.FolderSourceLocation'>
+        <ExtensionProperty name='xmlFolder'>
+          <Value>TestData\Record</Value>
+        </ExtensionProperty>
+      </SourceLocation>
+    </DataSourceConnection>
+  </RuntimeEnvironment>
+  <RuntimeEnvironment isSynthetic='false' name='Localhost2011' xmlSource='com.pantero.runtime.xml.JaxbSource'>
+    <Description>This built-in runtime environment is the default for upgrading old projects and when no other runtime environment exists</Description>
+    <DataSourceConnection isSynthetic='false' model='DCMdbP2011Database'>
+      <JdbcSourceLocation isSynthetic='false' dbTypeId='com.aurea.database.postgre.PostgreSQLDatabaseType' dbTypeClassName='com.aurea.database.postgre.PostgreSQLDatabaseType'>
+        <URL>jdbc:postgresql://localhost:5432/dcmHM</URL>
+        <Username>dcm13</Username>
+        <Password>B64I:porux0CtwBk=</Password>
+        <DbSourceLocationSchemaParameter isSynthetic='true' databaseInformation='public' runtimeDatabaseSchema='public'/>
+      </JdbcSourceLocation>
+    </DataSourceConnection>
+  </RuntimeEnvironment>
+  <RuntimeConfigurations defaultConfiguration='Insert'>
+    <RuntimeConfiguration isSynthetic='false' name='Migrate' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' mode='write' failOnError='false' returnMessages='true' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbPDatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='NIPRXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbP2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbO2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='LoadWarehouse' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbPDatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='NIPRXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbP2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbO2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='ProcessEvent' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbPDatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='NIPRXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbP2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbO2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='Insert' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMUtilsDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbP2011Database' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbO2011Database' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='default' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMdbODatabase' mode='read' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='BIGXMLDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbPDatabase' mode='read' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='NIPRXMLDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMUtilsDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbP2011Database' mode='read' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbO2011Database' mode='read' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='BIG' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='BIGXMLDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbP2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbO2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='DCM_Oracle' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMdbODatabase' mode='read' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='BIGXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbPDatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='NIPRXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMUtilsDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbP2011Database' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbO2011Database' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='DCM_PostgreSQL' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMdbODatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbPDatabase' mode='read' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='BIGXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='NIPRXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMUtilsDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbP2011Database' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbO2011Database' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='NIPR' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='NIPRXMLDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbP2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbO2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='NIPRGateway' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='NIPRGatewayDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbP2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='DCMdbO2011Database' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='DCM_PostgreSQL2011' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMdbODatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbPDatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbP2011Database' mode='read' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbO2011Database' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='BIGXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='NIPRXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMUtilsDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+    <RuntimeConfiguration isSynthetic='false' name='DCM_Oracle2011' TransactionMode='Local'>
+      <DataSource isSynthetic='false' model='DCMdbODatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbPDatabase' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbO2011Database' mode='read' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMdbP2011Database' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='BIGXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='NIPRXMLDataSource' mode='none' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMFlatFileDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='false' model='DCMUtilsDataSource' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <DataSource isSynthetic='true' model='IDEAOrgPrincipalRelationshipLoaderSpecDataSource' operationExecution='Operation order' failOnError='false' preinsertValidate='true'>
+      </DataSource>
+      <RuntimeConfigParameter isSynthetic='true' name='propagate.db.keys' value='false'>
+      </RuntimeConfigParameter>
+    </RuntimeConfiguration>
+  </RuntimeConfigurations>
+</PanteroRuntimeConfigurationData>

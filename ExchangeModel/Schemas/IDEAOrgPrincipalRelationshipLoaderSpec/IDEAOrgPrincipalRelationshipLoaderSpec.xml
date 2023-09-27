@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loader:loader_spec
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:loader="http://dms.trilogy.com/Loader/Spec"
+    xmlns="http://dms.trilogy.com/Loader/Spec"
+    xsi:schemaLocation="http://dms.trilogy.com/Loader/Spec LoaderSpec.xsd"
+    name="Org Prinicipal Loader Spec">
+    
+    <error_handlers>
+		<handler name="failed_rows_handler" class="failed_rows_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/OrgPrinicipal_FailedRows.csv"/>
+		</handler>
+		<handler name="loader_save_error_handler" class="loader_save_error_handler">
+	  		<property name="filename" value="${OUTPUT_DIR}/OrgPrinicipal_ErrorRows.csv"/>
+  		</handler> 
+  		<handler name="restart_file_handler" class="restart_file_error_handler">
+			<property name="filename" value="${OUTPUT_DIR}/OrgPrinicipal_RestartFile.csv"/>
+		</handler>
+		<handler name="csv_handler" class="com.trilogy.fs.dms.tools.loader.error.CsvWriterErrorHandler">
+			<property name="error_csv" value="${OUTPUT_DIR}/OrgPrinicipal_errors.csv" />
+			<property name="source" value="OrgPrinicipal"/>
+		</handler>
+	</error_handlers>
+
+    <strategy name="strategy" class="dms_validator_strategy">
+        <property name="memory.batch_size" value="${BATCH_SIZE}"/>
+    </strategy>
+
+    <object name="OrgPrincipal" class="PrincipalsRelationshipsValidator"/>
+
+    <source name="load_file" class="delimited_file_parser">
+        <property name="filename" value="${FILENAME}"/>
+        <property name="delimiters" value=","/>
+        <property name="headerRows" value="1"/>
+		<property name="quote_chars" value="&quot;"/>
+		
+        <indexed_field name="OrgTaxID" index="0"/>
+        <indexed_field name="PersonSSN" index="1"/>
+        <indexed_field name="StartDate" index="2"/>
+        <indexed_field name="EndDate" index="3"/>
+		<indexed_field name="RelationshipType" index="4"/>
+    </source>
+	
+    <resolver name="person_party_resolver" class="batch_query_resolver">
+        <property name="query">
+            <![CDATA[SELECT p from FSParty p, SCPerson per where p.Party=per and per.TaxID = {0}]]>
+        </property>
+        <property name="keys" value="string ssn"/>
+    </resolver>
+
+	<resolver name="org_party_resolver" class="batch_query_resolver">
+        <property name="query">
+            <![CDATA[SELECT p from FSParty p, SCOrganization org where p.Party=org and org.TaxID = {0}]]>
+        </property>
+        <property name="keys" value="string taxid"/>
+    </resolver>
+	
+    <translator name="date_translator" class="com.aviva.fs.dms.tools.loader.translate.AVDateFormatTranslator">
+        <property name="formatString" value="MM/dd/yyyy"/>
+        <property name="treatEmptyAsNull" value="true"/>
+    </translator>
+	
+	<translator name="type_translator" class="enum_translator">
+        <property name="enumName" value="RELATIONSHIP.PartyRelationships.PrincipalOrg"/>
+		<property name="throwException" value="true"/>
+        <property name="useDefaultValue" value="false"/>		
+    </translator>
+	
+    <map object="OrgPrincipal">
+		<action name="insert"/>
+        <map_object property="Party" resolver="org_party_resolver" tag="state">
+            <field name="OrgTaxID"/>
+        </map_object>
+		<map_object property="SupplierObject" resolver="person_party_resolver">
+            <field name="PersonSSN"/>
+        </map_object>
+		<map_simple property="StartDate" field="StartDate" translator="date_translator"/>
+        <map_simple property="EndDate" field="EndDate" translator="date_translator"/>
+        <map_simple property="RelationshipType" field="RelationshipType" translator="type_translator"/>
+    </map>
+
+</loader:loader_spec>
